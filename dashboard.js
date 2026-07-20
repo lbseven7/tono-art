@@ -112,8 +112,14 @@
               Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto. Toda pintura realista começa aqui.
             </p>
             <div class="w-full max-w-2xl mx-auto">
-              <div class="relative rounded-2xl overflow-hidden border border-white/10" style="padding-top:56.25%">
-                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen loading="lazy"></iframe>
+              <div class="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer group" style="padding-top:56.25%">
+                <img src="images/hero-site.jpg" alt="Tono - Plataforma de Análise Realista" class="absolute inset-0 w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                  <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+                <span class="absolute bottom-3 right-3 px-2 py-1 rounded bg-black/60 text-white text-[11px] font-mono">Em breve</span>
               </div>
               <div class="flex items-center justify-center gap-2 mt-4">
                 <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-[10px] uppercase tracking-[0.15em] font-medium">▶ Vídeo Tutorial</span>
