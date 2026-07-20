@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Tono - Thumbnail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family: 'Lovelo Line'; src: url('fonts/lovelo/Lovelo Line Light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Lovelo Line'; src: url('fonts/lovelo/Lovelo Line Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Gradiente de fundo */
+    .bg-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(216, 136, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(216, 136, 0, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, #0a0a0f 0%, #111118 100%);
+    }
+
+    /* Barra de valores tonais */
+    .scale-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      display: flex;
+    }
+
+    .scale-bar div {
+      flex: 1;
+      height: 100%;
+    }
+
+    /* Lado esquerdo - Texto */
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 80px;
+      width: 55%;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #d88800;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: #f5f5f5;
+      margin-bottom: 24px;
+    }
+
+    .title span {
+      color: #d88800;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      color: #8a8a8e;
+      line-height: 1.6;
+      max-width: 480px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 32px;
+      padding: 10px 20px;
+      background: rgba(216, 136, 0, 0.1);
+      border: 1px solid rgba(216, 136, 0, 0.3);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #d88800;
+      width: fit-content;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #d88800;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Lado direito - Visual */
+    .visual {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Escala de cinzas vertical */
+    .scale-vertical {
+      display: flex;
+      gap: 6px;
+      align-items: flex-end;
+      height: 400px;
+      transform: rotate(-5deg);
+      margin-right: 40px;
+    }
+
+    .scale-vertical .swatch {
+      width: 48px;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .scale-vertical .swatch::after {
+      content: attr(data-value);
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-family: 'Inter', monospace;
+      font-weight: 500;
+      color: #666;
+    }
+
+    /* Círculo decorativo */
+    .circle-decor {
+      position: absolute;
+      right: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #ffffff 0deg,
+        #cccccc 36deg,
+        #999999 72deg,
+        #666666 108deg,
+        #333333 144deg,
+        #000000 180deg,
+        #333333 216deg,
+        #666666 252deg,
+        #999999 288deg,
+        #cccccc 324deg,
+        #ffffff 360deg
+      );
+      opacity: 0.15;
+      filter: blur(40px);
+    }
+
+    /* Grade sutil */
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* Logo Tono */
+    .logo {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      font-family: 'Lovelo Line', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 2px;
+      z-index: 20;
+    }
+
+    .logo span {
+      color: #d88800;
+    }
+
+    /* Botão play */
+    .play-btn {
+      position: absolute;
+      right: 140px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #d88800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(216, 136, 0, 0.4);
+      z-index: 15;
+    }
+
+    .play-btn::after {
+      content: "";
+      border-style: solid;
+      border-width: 14px 0 14px 24px;
+      border-color: transparent transparent transparent #0a0a0f;
+      margin-left: 4px;
+    }
+
+    /* Valores destacados */
+    .values-highlight {
+      position: absolute;
+      bottom: 80px;
+      right: 80px;
+      display: flex;
+      gap: 16px;
+      z-index: 15;
+    }
+
+    .value-card {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .value-card .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #d88800;
+    }
+
+    .value-card .label {
+      font-size: 10px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bg-gradient"></div>
+    <div class="grid-overlay"></div>
+
+    <div class="logo">T<span>O</span>NO</div>
+
+    <div class="content">
+      <p class="eyebrow">Plataforma de Análise Realista</p>
+      <h1 class="title">Domine os<br><span>Valores Tonais</span></h1>
+      <p class="subtitle">16 ferramentas interativas para treinar percepção de luz, sombra e contraste na sua pintura.</p>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Acesse agora em tono.art.br
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="circle-decor"></div>
+      <div class="scale-vertical">
+        <div class="swatch" style="height: 100%; background: #ffffff;" data-value="0"></div>
+        <div class="swatch" style="height: 91%; background: #e6e6e6;" data-value="1"></div>
+        <div class="swatch" style="height: 82%; background: #cccccc;" data-value="2"></div>
+        <div class="swatch" style="height: 73%; background: #b3b3b3;" data-value="3"></div>
+        <div class="swatch" style="height: 64%; background: #999999;" data-value="4"></div>
+        <div class="swatch" style="height: 55%; background: #808080;" data-value="5"></div>
+        <div class="swatch" style="height: 46%; background: #666666;" data-value="6"></div>
+        <div class="swatch" style="height: 37%; background: #4d4d4d;" data-value="7"></div>
+        <div class="swatch" style="height: 28%; background: #333333;" data-value="8"></div>
+        <div class="swatch" style="height: 19%; background: #191919;" data-value="9"></div>
+        <div class="swatch" style="height: 10%; background: #000000;" data-value="10"></div>
+      </div>
+      <div class="play-btn"></div>
+    </div>
+
+    <div class="values-highlight">
+      <div class="value-card">
+        <div class="number">16</div>
+        <div class="label">Ferramentas</div>
+      </div>
+      <div class="value-card">
+        <div class="number">11</div>
+        <div class="label">Valores</div>
+      </div>
+      <div class="value-card">
+        <div class="number">0</div>
+        <div class="label">Instalação</div>
+      </div>
+    </div>
+
+    <div class="scale-bar">
+      <div style="background:#ffffff"></div>
+      <div style="background:#e6e6e6"></div>
+      <div style="background:#cccccc"></div>
+      <div style="background:#b3b3b3"></div>
+      <div style="background:#999999"></div>
+      <div style="background:#808080"></div>
+      <div style="background:#666666"></div>
+      <div style="background:#4d4d4d"></div>
+      <div style="background:#333333"></div>
+      <div style="background:#191919"></div>
+      <div style="background:#000000"></div>
+    </div>
+  </div>
+</body>
+</html>

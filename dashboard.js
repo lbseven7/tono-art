@@ -113,7 +113,7 @@
             </p>
             <div class="w-full max-w-2xl mx-auto">
               <div class="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer group" style="padding-top:56.25%">
-                <img src="images/hero-site.jpg" alt="Tono - Plataforma de Análise Realista" class="absolute inset-0 w-full h-full object-cover" />
+                <img src="images/thumb-video.png" alt="Tono - Plataforma de Análise Realista" class="absolute inset-0 w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                   <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                     <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
