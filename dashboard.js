@@ -97,8 +97,8 @@
       <button onclick="navigate('${m.id}')" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
         <div class="text-accent mb-6 text-2xl">${m.icon}</div>
         <h3 class="font-display text-2xl mb-3">${m.title}</h3>
-        <p class="text-muted text-sm leading-relaxed mb-6 font-light">${m.desc}</p>
-        <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:gap-3 transition-all">Acessar →</span>
+        <p class="text-muted text-base leading-relaxed mb-6 font-light">${m.desc}</p>
+        <span class="inline-flex items-center gap-2 text-base text-accent group-hover:gap-3 transition-all">Acessar →</span>
       </button>`).join('');
 
     app.innerHTML = `
@@ -106,7 +106,7 @@
         <section class="relative flex flex-col items-center justify-center px-6 py-24 md:py-40 text-center overflow-hidden">
           <div class="absolute top-0 left-0 right-0 flex" style="height:6px">${strip}</div>
           <div class="fade-in relative z-10 max-w-3xl">
-            <p class="text-accent text-xs md:text-sm tracking-[0.3em] uppercase mb-6">Tono</p>
+            <p class="text-accent text-sm md:text-base tracking-[0.3em] uppercase mb-6">Tono</p>
             <h1 class="font-display text-4xl md:text-7xl leading-[1.05] mb-8">Tono —<br>Análise Realista</h1>
             <p class="text-muted text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto font-light">
               Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto. Toda pintura realista começa aqui.
@@ -123,10 +123,10 @@
               </div>
               <div class="flex items-center justify-center gap-2 mt-4">
                 <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-[10px] uppercase tracking-[0.15em] font-medium">▶ Vídeo Tutorial</span>
-                <p class="text-xs text-muted">Veja como usar o Tono passo a passo</p>
+                <p class="text-sm text-muted">Veja como usar o Tono passo a passo</p>
               </div>
             </div>
-            <button onclick="navigate('escala')" class="mt-10 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-sm tracking-wide hover:bg-accent transition-colors">
+            <button onclick="navigate('escala')" class="mt-10 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-base tracking-wide hover:bg-accent transition-colors">
               Quero Aprender Agora!
             </button>
           </div>
