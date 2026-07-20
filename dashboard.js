@@ -22,11 +22,11 @@
   ];
 
   const pigmentos = {
-    branco: { nome: 'Branco de Titónio', codigo: 'PW6', desc: 'O branco mais opaco e usado em pintura hiper realista; cobertura míxima e neutralidade de tom.' },
+    branco: { nome: 'Branco de Titânio', codigo: 'PW6', desc: 'O branco mais opaco e usado em pintura hiper realista; cobertura máxima e neutralidade de tom.' },
     preto:  { nome: 'Negro de Marfim',   codigo: 'PBk9', desc: 'Preto neutro e levemente amadeirado, não puxa a mistura para o azul ou o marrom como outros pretos.' },
   };
   const pigmentosAlternativos = [
-    { nome: 'Branco de Zinco',  codigo: 'PW4',  papel: 'Alternativa ao Branco de Titónio', desc: 'Mais transparente e frio; produz cinzas ligeiramente mais suaves.' },
+    { nome: 'Branco de Zinco',  codigo: 'PW4',  papel: 'Alternativa ao Branco de Titânio', desc: 'Mais transparente e frio; produz cinzas ligeiramente mais suaves.' },
     { nome: 'Preto Marte',      codigo: 'PBk11', papel: 'Alternativa ao Negro de Marfim', desc: 'Preto opaco levemente avermelhado, seca mais rípido em óleo.' },
     { nome: 'Negro Fumo',       codigo: 'PBk6/7', papel: 'Alternativa ao Negro de Marfim', desc: 'Muito intenso e frio; cobre bem, mas domina a mistura em pequenas quantidades.' },
   ];
@@ -68,7 +68,7 @@
   });
 
   function navigate(page) {
-    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderLocalizador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, tutoriais: renderTutoriais };
+    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, tutoriais: renderTutoriais };
     if (!isPro && !ferramentasGratis.includes(page)) { mostrarModalPremium(); return; }
     document.getElementById('app').innerHTML = '';
     (map[page] || renderHome)();
@@ -442,7 +442,7 @@
               <span class="text-accent text-3xl">⊑</span>
             </div>
             <h1 class="font-display text-5xl md:text-6xl mb-3">${pct}%</h1>
-            <p class="text-muted mb-2">Vocã acertou <span class="text-fg">${acertos}</span> de ${TOTAL_RODADAS} valores</p>
+            <p class="text-muted mb-2">Você acertou <span class="text-fg">${acertos}</span> de ${TOTAL_RODADAS} valores</p>
             <p class="text-accent text-sm mb-12">${msg}</p>
             <button onclick="navigate('treino')" class="inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-sm hover:bg-accent transition-colors">→ Tentar novamente</button>
           </div>
@@ -716,7 +716,7 @@
                     <span id="val-intensidade" class="text-accent font-mono">100%</span>
                   </div>
                   <input type="range" id="sl-intensidade" min="0" max="100" value="100" class="w-full" oninput="onSlider('intensidade', this.value)" />
-                  <p class="text-xs text-muted mt-1">0% = cor original ┬À 100% = cinza completo</p>
+                  <p class="text-xs text-muted mt-1">0% = cor original → 100% = cinza completo</p>
                 </div>
               </div>
 
@@ -726,7 +726,7 @@
                 <div class="space-y-3">
                   ${[
                     { id:'luminancia', label:'Luminância <span class="text-accent text-xs">(recomendado)</span>', desc:'Pesos ITU-R BT.601: 0.299R + 0.587G + 0.114B. Mais próximo da percepção humana.' },
-                    { id:'media',      label:'Média simples',         desc:'Média aritmêtica dos canais R, G e B.' },
+                    { id:'media',      label:'Média simples',         desc:'Média aritmética dos canais R, G e B.' },
                     { id:'maximo',     label:'Valor míximo',          desc:'Usa o canal com maior valor entre R, G e B.' },
                   ].map(m => `
                     <label class="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${m.id==='luminancia'?'border-accent/40 bg-accent/[0.04]':'border-white/10 hover:border-white/20'}" id="lbl-${m.id}">
@@ -980,7 +980,7 @@
                 <div class="space-y-3">
                   ${[
                     { id:'luminancia', label:'Luminância <span class="text-accent text-xs">(recomendado)</span>', desc:'Pesos ITU-R BT.601. Mais próximo da percepção humana.' },
-                    { id:'media',      label:'Média simples',         desc:'Média aritmêtica dos canais R, G e B.' },
+                    { id:'media',      label:'Média simples',         desc:'Média aritmética dos canais R, G e B.' },
                   ].map(m => `
                     <label class="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${m.id==='luminancia'?'border-accent/40 bg-accent/[0.04]':'border-white/10 hover:border-white/20'}" id="pz-lbl-${m.id}">
                       <input type="radio" name="pz-metodo" value="${m.id}" ${m.id==='luminancia'?'checked':''} class="mt-1 accent-[#d88800]" onchange="pzOnMetodo('${m.id}')" />
@@ -1561,7 +1561,7 @@
                     <span id="rl-val-limiar" class="text-accent font-mono">30</span>
                   </div>
                   <input type="range" id="rl-sl-limiar" min="5" max="120" value="30" class="w-full" oninput="rlOnSlider('limiar', this.value)" />
-                  <p class="text-xs text-muted mt-1">Menor = mais detalhes ┬À Maior = apenas contornos fortes</p>
+                  <p class="text-xs text-muted mt-1">Menor = mais detalhes → Maior = apenas contornos fortes</p>
                 </div>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
@@ -1587,7 +1587,7 @@
                     O algoritmo <span class="text-fg font-medium">Sobel</span> detecta bordas calculando o gradiente de intensidade em cada pixel. Primeiro, a imagem é convertida para cinzas e suavizada (filtro Gaussiano). Depois, duas míscaras 3×3 calculam a variação horizontal e vertical. A intensidade do contorno é dada pela magnitude do gradiente — pixels com variação alta são bordas.
                   </p>
                   <p class="text-sm text-muted leading-relaxed mt-3">
-                    <span class="text-accent font-medium">Dica prítica:</span> Para preparar a tela, use suavização 2—3 e limiar 25—40. Para um estudo detalhado, diminua o limiar e aumente a suavização.
+                    <span class="text-accent font-medium">Dica prática:</span> Para preparar a tela, use suavização 2—3 e limiar 25—40. Para um estudo detalhado, diminua o limiar e aumente a suavização.
                   </p>
                 </div>
               </div>
@@ -1782,7 +1782,7 @@
     // 3. Sobel
     const edges = rlSobel(smoothed, W, H);
 
-    // 4. Encontrar magnitude míxima para normalização
+    // 4. Encontrar magnitude máxima para normalização
     let maxMag = 0;
     for (let i = 0; i < edges.length; i++) {
       if (edges[i] > maxMag) maxMag = edges[i];
@@ -2122,7 +2122,7 @@
           </div>
         </div>
         <div class="p-3 rounded-lg border border-accent/20 bg-accent/[0.04]">
-          <p class="text-xs text-accent">Mistura: <span class="font-medium">${escala.branco} partes branco ┬À ${escala.preto} partes preto</span></p>
+          <p class="text-xs text-accent">Mistura: <span class="font-medium">${escala.branco} partes branco → ${escala.preto} partes preto</span></p>
         </div>`;
     }
 
@@ -4119,7 +4119,7 @@
         <div class="max-w-6xl mx-auto">
           <div class="fade-in mb-10">
             <h1 class="font-display text-4xl md:text-5xl mb-4">Tutoriais</h1>
-            <p class="text-muted max-w-2xl font-light">Aulas de teoria para treinar seu olhar. Assista, estudе e aplique na prática.</p>
+            <p class="text-muted max-w-2xl font-light">Aulas de teoria para treinar seu olhar. Assista, estude e aplique na prática.</p>
           </div>
           ${hasVideos ? `
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

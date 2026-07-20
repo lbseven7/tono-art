@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -101,7 +102,7 @@
       box-shadow: 0 24px 60px rgba(0,0,0,0.6);
     }
 
-    /* Impress�o */
+    /* Impressão */
     @media print {
       body * { visibility: hidden; }
       #print-target, #print-target * {
@@ -181,7 +182,7 @@
   <main id="app" class="pt-14 md:pt-16 md:ml-60"></main>
 
   <script>
-    localStorage.removeItem('tono_pro');
+    // localStorage.removeItem('tono_pro');
 
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
