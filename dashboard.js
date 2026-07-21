@@ -311,7 +311,7 @@
             <div class="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
               <i class="fa-solid fa-music text-accent/60 text-sm"></i>
               <span class="text-xs text-muted">Fundo musical</span>
-              <input id="bgm-volume" type="range" min="0" max="20" value="10" class="flex-1 h-1 cursor-pointer">
+              <input id="bgm-volume" type="range" min="0" max="20" value="5" class="flex-1 h-1 cursor-pointer">
               <button id="bgm-toggle" onclick="toggleBGM()" class="text-xs text-accent/60 hover:text-accent transition-colors">ON</button>
             </div>
             <p class="text-xs text-muted mt-3 text-center">Duração: ${ep.duracao}</p>
