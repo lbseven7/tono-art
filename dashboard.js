@@ -219,7 +219,7 @@
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-3xl mx-auto">
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Ensino</h1>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">TonoCast</h1>
             <p class="text-muted max-w-2xl font-light">Episódios em áudio sobre escala de cinzas, valores tonais e percepção visual. Ouça enquanto prepara sua tela, mistura tintas ou simplesmente descansa.</p>
           </div>
           <div class="space-y-4">
@@ -255,7 +255,7 @@
         <div class="max-w-3xl mx-auto">
 
           <button onclick="renderEnsino()" class="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors mb-8">
-            <span>&lsaquo;</span> Voltar para Ensino
+            <span>&lsaquo;</span> Voltar para TonoCast
           </button>
 
           <div class="fade-in mb-8">
