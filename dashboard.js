@@ -228,7 +228,8 @@
   let ensinoState = { episodioAtual: null, tocando: false };
 
   function renderEnsino() {
-    if (bgmAudio) bgmAudio.pause();
+    if (bgmCurrent) bgmCurrent.pause();
+    if (bgmNext) bgmNext.pause();
     const app = document.getElementById('app');
     const listaHtml = episodios.map(ep => `
       <button onclick="renderEpisodio(${ep.id})" class="w-full text-left p-5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-accent/30 transition-all fade-in">
@@ -334,38 +335,87 @@
   }
 
   // ── Background Music ──────────────────────────────────────────────
-  let bgmAudio = null;
+  let bgmCurrent = null;
+  let bgmNext = null;
   let bgmEnabled = true;
+  let bgmVolume = 0.12;
+
+  function createBGMInstance() {
+    const audio = new Audio('audio/Infraction- Wild Nature.wav');
+    audio.volume = bgmVolume;
+    return audio;
+  }
 
   function initBGM() {
     const voice = document.getElementById('ensino-audio');
     const volumeSlider = document.getElementById('bgm-volume');
     if (!voice) return;
 
-    if (!bgmAudio) {
-      bgmAudio = new Audio('audio/Infraction- Wild Nature.wav');
-      bgmAudio.loop = true;
-      bgmAudio.volume = volumeSlider ? volumeSlider.value / 100 : 0.12;
+    if (!bgmCurrent) {
+      bgmCurrent = createBGMInstance();
+      bgmNext = createBGMInstance();
+      bgmVolume = volumeSlider ? volumeSlider.value / 100 : 0.12;
+      bgmCurrent.volume = bgmVolume;
+      bgmNext.volume = 0;
+
+      bgmCurrent.addEventListener('timeupdate', () => {
+        if (!bgmEnabled || !bgmCurrent.duration) return;
+        const remaining = bgmCurrent.duration - bgmCurrent.currentTime;
+        if (remaining < 1.5 && bgmNext.volume === 0) {
+          bgmNext.currentTime = 0;
+          bgmNext.volume = bgmVolume;
+          bgmNext.play().catch(() => {});
+        }
+        if (remaining < 0.5) {
+          bgmCurrent.volume = Math.max(0, (remaining / 0.5) * bgmVolume);
+          bgmNext.volume = bgmVolume;
+        }
+      });
+
+      bgmNext.addEventListener('timeupdate', () => {
+        if (!bgmNext.duration) return;
+        const remaining = bgmNext.duration - bgmNext.currentTime;
+        if (remaining < 1.5 && bgmCurrent.volume === 0) {
+          bgmCurrent.currentTime = 0;
+          bgmCurrent.volume = bgmVolume;
+          bgmCurrent.play().catch(() => {});
+        }
+        if (remaining < 0.5) {
+          bgmNext.volume = Math.max(0, (remaining / 0.5) * bgmVolume);
+          bgmCurrent.volume = bgmVolume;
+        }
+      });
     }
 
     voice.addEventListener('play', () => {
-      if (bgmEnabled) bgmAudio.play().catch(() => {});
+      if (bgmEnabled) {
+        bgmCurrent.play().catch(() => {});
+      }
     });
-    voice.addEventListener('pause', () => bgmAudio.pause());
+    voice.addEventListener('pause', () => {
+      bgmCurrent.pause();
+      bgmNext.pause();
+    });
     voice.addEventListener('ended', () => {
-      bgmAudio.pause();
+      bgmCurrent.pause();
+      bgmNext.pause();
+      bgmNext.volume = 0;
       const idx = episodios.findIndex(e => e.id === ensinoState.episodioAtual?.id);
       if (idx >= 0 && idx < episodios.length - 1) {
         renderEpisodio(episodios[idx + 1].id);
       }
     });
     voice.addEventListener('seeking', () => {
-      bgmAudio.currentTime = voice.currentTime;
+      bgmCurrent.currentTime = 0;
+      bgmNext.currentTime = 0;
+      bgmNext.volume = 0;
     });
 
     if (volumeSlider) {
       volumeSlider.addEventListener('input', () => {
-        bgmAudio.volume = volumeSlider.value / 100;
+        bgmVolume = volumeSlider.value / 100;
+        if (bgmCurrent && bgmCurrent.volume > 0) bgmCurrent.volume = bgmVolume;
+        if (bgmNext && bgmNext.volume > 0) bgmNext.volume = bgmVolume;
       });
     }
   }
@@ -376,9 +426,10 @@
     const voice = document.getElementById('ensino-audio');
     if (btn) btn.textContent = bgmEnabled ? 'ON' : 'OFF';
     if (bgmEnabled && voice && !voice.paused) {
-      bgmAudio.play().catch(() => {});
+      bgmCurrent.play().catch(() => {});
     } else {
-      bgmAudio.pause();
+      bgmCurrent.pause();
+      bgmNext.pause();
     }
   }
 
