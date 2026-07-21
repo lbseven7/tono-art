@@ -228,8 +228,7 @@
   let ensinoState = { episodioAtual: null, tocando: false };
 
   function renderEnsino() {
-    if (bgmCurrent) bgmCurrent.pause();
-    if (bgmNext) bgmNext.pause();
+    stopBGM();
     const app = document.getElementById('app');
     const listaHtml = episodios.map(ep => `
       <button onclick="renderEpisodio(${ep.id})" class="w-full text-left p-5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-accent/30 transition-all fade-in">
@@ -339,11 +338,37 @@
   let bgmNext = null;
   let bgmEnabled = true;
   let bgmVolume = 0.12;
+  let bgmInterval = null;
 
   function createBGMInstance() {
     const audio = new Audio('audio/Infraction- Wild Nature.wav');
     audio.volume = bgmVolume;
     return audio;
+  }
+
+  function startBGMLoop() {
+    if (bgmInterval) clearInterval(bgmInterval);
+    bgmCurrent.currentTime = 0;
+    bgmCurrent.volume = bgmVolume;
+    bgmNext.volume = 0;
+    bgmCurrent.play().catch(() => {});
+
+    bgmInterval = setInterval(() => {
+      if (!bgmEnabled || !bgmCurrent.duration) return;
+      const remaining = bgmCurrent.duration - bgmCurrent.currentTime;
+      if (remaining < 2) {
+        bgmNext.currentTime = 0;
+        bgmNext.volume = bgmVolume;
+        bgmNext.play().catch(() => {});
+        [bgmCurrent, bgmNext] = [bgmNext, bgmCurrent];
+      }
+    }, 200);
+  }
+
+  function stopBGM() {
+    if (bgmInterval) { clearInterval(bgmInterval); bgmInterval = null; }
+    if (bgmCurrent) bgmCurrent.pause();
+    if (bgmNext) { bgmNext.pause(); bgmNext.volume = 0; }
   }
 
   function initBGM() {
@@ -355,60 +380,21 @@
       bgmCurrent = createBGMInstance();
       bgmNext = createBGMInstance();
       bgmVolume = volumeSlider ? volumeSlider.value / 100 : 0.12;
-      bgmCurrent.volume = bgmVolume;
-      bgmNext.volume = 0;
-
-      bgmCurrent.addEventListener('timeupdate', () => {
-        if (!bgmEnabled || !bgmCurrent.duration) return;
-        const remaining = bgmCurrent.duration - bgmCurrent.currentTime;
-        if (remaining < 1.5 && bgmNext.volume === 0) {
-          bgmNext.currentTime = 0;
-          bgmNext.volume = bgmVolume;
-          bgmNext.play().catch(() => {});
-        }
-        if (remaining < 0.5) {
-          bgmCurrent.volume = Math.max(0, (remaining / 0.5) * bgmVolume);
-          bgmNext.volume = bgmVolume;
-        }
-      });
-
-      bgmNext.addEventListener('timeupdate', () => {
-        if (!bgmNext.duration) return;
-        const remaining = bgmNext.duration - bgmNext.currentTime;
-        if (remaining < 1.5 && bgmCurrent.volume === 0) {
-          bgmCurrent.currentTime = 0;
-          bgmCurrent.volume = bgmVolume;
-          bgmCurrent.play().catch(() => {});
-        }
-        if (remaining < 0.5) {
-          bgmNext.volume = Math.max(0, (remaining / 0.5) * bgmVolume);
-          bgmCurrent.volume = bgmVolume;
-        }
-      });
     }
 
     voice.addEventListener('play', () => {
-      if (bgmEnabled) {
-        bgmCurrent.play().catch(() => {});
-      }
+      if (bgmEnabled) startBGMLoop();
     });
-    voice.addEventListener('pause', () => {
-      bgmCurrent.pause();
-      bgmNext.pause();
-    });
+    voice.addEventListener('pause', () => stopBGM());
     voice.addEventListener('ended', () => {
-      bgmCurrent.pause();
-      bgmNext.pause();
-      bgmNext.volume = 0;
+      stopBGM();
       const idx = episodios.findIndex(e => e.id === ensinoState.episodioAtual?.id);
       if (idx >= 0 && idx < episodios.length - 1) {
         renderEpisodio(episodios[idx + 1].id);
       }
     });
     voice.addEventListener('seeking', () => {
-      bgmCurrent.currentTime = 0;
-      bgmNext.currentTime = 0;
-      bgmNext.volume = 0;
+      if (bgmEnabled && !voice.paused) startBGMLoop();
     });
 
     if (volumeSlider) {
@@ -426,10 +412,9 @@
     const voice = document.getElementById('ensino-audio');
     if (btn) btn.textContent = bgmEnabled ? 'ON' : 'OFF';
     if (bgmEnabled && voice && !voice.paused) {
-      bgmCurrent.play().catch(() => {});
+      startBGMLoop();
     } else {
-      bgmCurrent.pause();
-      bgmNext.pause();
+      stopBGM();
     }
   }
 
