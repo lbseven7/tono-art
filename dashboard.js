@@ -51,7 +51,7 @@
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" class="text-accent"><rect x="5" y="11" width="18" height="14" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
         </div>
         <h2 class="font-display text-2xl mb-2">Tono Premium</h2>
-        <p class="text-muted text-sm leading-relaxed mb-6 max-w-xs mx-auto">Esta ferramenta é exclusiva do plano premium. Desbloqueie todas as ferramentas e domine a pintura hiperrealista.</p>
+        <p class="text-muted text-sm leading-relaxed mb-6 max-w-xs mx-auto">Esta ferramenta é exclusiva do plano premium. Desbloqueie todas as ferramentas e domine os valores tonais.</p>
         <a href="venda.html" class="inline-flex items-center gap-2 px-8 py-3 bg-accent text-bg rounded-full text-sm font-medium hover:brightness-110 active:scale-95 transition-all">
           Desbloquear Acesso
         </a>
@@ -94,7 +94,7 @@
       { id:'quadricular',icon:'#', title:'Quadricular Imagem',   desc:'Sobreponha uma grade na imagem para copiar quadrado por quadrado — técnica clássica para desenhar com precisão.' },
       { id:'ilusao',    icon:'◐', title:'Ilusão de Óptica',    desc:'Veja como o cérebro engana — o mesmo cinza parece diferente conforme o fundo. Contraste simultâneo na prática.' },
     ].map(m => `
-      <button onclick="navigate('${m.id}')" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
+      <button onclick="navigate('${m.id}')" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all card-hover">
         <div class="text-accent mb-6 text-2xl">${m.icon}</div>
         <h3 class="font-display text-2xl mb-3">${m.title}</h3>
         <p class="text-muted text-base leading-relaxed mb-6 font-light">${m.desc}</p>
@@ -103,17 +103,18 @@
 
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)">
-        <section class="relative flex flex-col items-center justify-center px-6 py-24 md:py-40 text-center overflow-hidden">
+
+        <section class="relative flex flex-col items-center justify-center px-6 py-12 md:py-16 text-center overflow-hidden">
           <div class="absolute top-0 left-0 right-0 flex" style="height:6px">${strip}</div>
           <div class="fade-in relative z-10 max-w-3xl">
-            <p class="text-accent text-sm md:text-base tracking-[0.3em] uppercase mb-6">Tono</p>
-            <h1 class="font-display text-4xl md:text-7xl leading-[1.05] mb-8">Tono —<br>Análise Realista</h1>
-            <p class="text-muted text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto font-light">
-              Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto. Toda pintura realista começa aqui.
+            <p class="text-accent text-sm tracking-[0.3em] uppercase mb-3">Tono</p>
+            <h1 class="font-display text-3xl md:text-5xl leading-[1.1] mb-4">Escala e Valor Tonal</h1>
+            <p class="text-muted text-base leading-relaxed mb-6 max-w-xl mx-auto font-light">
+              Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto.
             </p>
             <div class="w-full max-w-2xl mx-auto">
               <div class="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer group" style="padding-top:56.25%">
-                <img src="images/thumb-video.png" alt="Tono - Plataforma de Análise Realista" class="absolute inset-0 w-full h-full object-cover" />
+                <img src="images/thumb-video.png" alt="Tono - Escala e Valor Tonal" class="absolute inset-0 w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                   <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                     <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -121,12 +122,12 @@
                 </div>
                 <span class="absolute bottom-3 right-3 px-2 py-1 rounded bg-black/60 text-white text-[11px] font-mono">Em breve</span>
               </div>
-              <div class="flex items-center justify-center gap-2 mt-4">
+              <div class="flex items-center justify-center gap-2 mt-3">
                 <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-[10px] uppercase tracking-[0.15em] font-medium">▶ Vídeo Tutorial</span>
                 <p class="text-sm text-muted">Veja como usar o Tono passo a passo</p>
               </div>
             </div>
-            <button onclick="navigate('escala')" class="mt-10 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-base tracking-wide hover:bg-accent transition-colors">
+            <button onclick="navigate('escala')" class="mt-6 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-base tracking-wide hover:bg-accent transition-colors">
               Quero Aprender Agora!
             </button>
           </div>
@@ -144,9 +145,9 @@
   const episodios = [
     {
       id: 1,
-      titulo: 'O que é Hiperrealismo?',
+      titulo: 'O que é Valor Tonal?',
       duracao: '12 min',
-      descricao: 'Conceito, história e diferença entre realismo e hiperrealismo. Por que o hiperrealismo vai além da simples reprodução fotográfica.',
+      descricao: 'Conceito, importância e por que valores tonais são a base de qualquer pintura que funciona.',
       ferramentas: [],
       arquivo: 'audio/episodio-01.mp3',
     },
@@ -186,7 +187,7 @@
       id: 6,
       titulo: 'O Processo Completo',
       duracao: '18 min',
-      descricao: 'Passo a passo completo de uma pintura hiperrealista: da preparação da tela ao acabamento final.',
+      descricao: 'Passo a passo completo de uma pintura com valores bem resolvidos: da preparação da tela ao acabamento final.',
       ferramentas: ['janela'],
       arquivo: 'audio/episodio-06.mp3',
     },
@@ -219,7 +220,7 @@
         <div class="max-w-3xl mx-auto">
           <div class="fade-in mb-10">
             <h1 class="font-display text-4xl md:text-5xl mb-4">Ensino</h1>
-            <p class="text-muted max-w-2xl font-light">Episódios em áudio sobre os fundamentos do hiperrealismo. Ouça enquanto prepara sua tela, mistura tintas ou simplesmente descansa.</p>
+            <p class="text-muted max-w-2xl font-light">Episódios em áudio sobre escala de cinzas, valores tonais e percepção visual. Ouça enquanto prepara sua tela, mistura tintas ou simplesmente descansa.</p>
           </div>
           <div class="space-y-4">
             ${listaHtml}
@@ -327,7 +328,7 @@
         <div class="max-w-6xl mx-auto">
           <div class="fade-in mb-12">
             <h1 class="font-display text-4xl md:text-5xl mb-4">Escala de Cinzas</h1>
-            <p class="text-muted max-w-2xl font-light">A escala de valores é a espinha dorsal da pintura hiper realista. Toque em qualquer tom para explorar suas propriedades e misturas.</p>
+            <p class="text-muted max-w-2xl font-light">A escala de valores é a espinha dorsal de qualquer pintura. Toque em qualquer tom para explorar suas propriedades e misturas.</p>
           </div>
           <div id="escala-preview" class="mb-8"></div>
           <div id="escala-strip"   class="mb-8"></div>
@@ -3124,7 +3125,7 @@
           <!-- Header -->
           <div class="fade-in mb-10">
             <h1 class="font-display text-4xl md:text-5xl mb-4">Ilusão de Óptica do Valor</h1>
-            <p class="text-muted max-w-2xl font-light">O maior inimigo do hiper-realismo não é a falta de coordenação — é o próprio <span class="text-fg font-medium">cérebro</span>, que tenta "corrigir" o que vemos. Três passos para treinar o olho.</p>
+            <p class="text-muted max-w-2xl font-light">O maior inimigo da percepção tonal não é a falta de coordenação — é o próprio <span class="text-fg font-medium">cérebro</span>, que tenta "corrigir" o que vemos. Três passos para treinar o olho.</p>
           </div>
 
           <!-- ═══ PASSO 1: Teoria — Ilusão de Profundidade ═══ -->
@@ -3872,8 +3873,8 @@
         { nome: 'Comparação lado a lado', desc: 'Pinte ao lado da referência e compare visualmente para ajustar valores.', tempo: '4h', dificuldade: 'Médio' },
       ]},
       { semana: 8, titulo: 'Projeto Final', foco: 'Integração completa', exercicios: [
-        { nome: 'Hiperrealismo: objeto', desc: 'Escolha um objeto com textura e luz definida. Pinte em tamanho real.', tempo: '8h', dificuldade: 'Difícil' },
-        { nome: 'Hiperrealismo: retrato', desc: 'Retrato completo usando todas as técnicas das semanas anteriores.', tempo: '10h', dificuldade: 'Difícil' },
+        { nome: 'Projeto: objeto com textura', desc: 'Escolha um objeto com textura e luz definida. Pinte em tamanho real.', tempo: '8h', dificuldade: 'Difícil' },
+        { nome: 'Projeto: retrato completo', desc: 'Retrato completo usando todas as técnicas das semanas anteriores.', tempo: '10h', dificuldade: 'Difícil' },
       ]},
     ];
 
@@ -3883,7 +3884,7 @@
         <div class="max-w-4xl mx-auto">
           <div class="fade-in mb-10">
             <h1 class="font-display text-4xl md:text-5xl mb-4">Exercícios Progressivos</h1>
-            <p class="text-muted max-w-2xl font-light">8 semanas estruturadas do básico ao hiperrealismo. Cada semana tem um foco e exercícios práticos.</p>
+            <p class="text-muted max-w-2xl font-light">8 semanas estruturadas do básico à aplicação avançada. Cada semana tem um foco e exercícios práticos.</p>
           </div>
           <div class="space-y-4">
             ${semanas.map(s => `
@@ -4112,9 +4113,9 @@
 
   // ── TUTORIAIS (YouTube embutido) ────────────────────────────────────────
   const tutoriais = [
-    { id: 'YOUTUBE_ID_AQUI', titulo: 'O que é Valor Tonal', descricao: 'Entenda a diferença entre cor e valor — a base de tudo na pintura realista.', duracao: '00:00' },
+    { id: 'YOUTUBE_ID_AQUI', titulo: 'O que é Valor Tonal', descricao: 'Entenda a diferença entre cor e valor — a base de qualquer pintura.', duracao: '00:00' },
     { id: 'YOUTUBE_ID_AQUI', titulo: 'Escala de Cinzas na Prática', descricao: 'Como treinar o olhar para enxergar apenas valores, ignorando a cor.', duracao: '00:00' },
-    { id: 'YOUTUBE_ID_AQUI', titulo: 'Compreendendo a Luz', descricao: 'O princípio fundamental por trás do hiperrealismo: luz determina forma.', duracao: '00:00' },
+    { id: 'YOUTUBE_ID_AQUI', titulo: 'Compreendendo a Luz', descricao: 'O princípio fundamental: luz determina forma e valor define profundidade.', duracao: '00:00' },
   ];
 
   function renderTutoriais() {
