@@ -145,57 +145,90 @@
   const episodios = [
     {
       id: 1,
-      titulo: 'O que é Valor Tonal?',
-      duracao: '12 min',
-      descricao: 'Conceito, importância e por que valores tonais são a base de qualquer pintura que funciona.',
+      titulo: 'Introdução',
+      duracao: '—',
+      descricao: 'Apresentação do TonoCast. O que você vai aprender sobre escala de cinzas, valores tonais e percepção visual.',
       ferramentas: [],
-      arquivo: 'audio/episodio-01.mp3',
+      arquivo: 'audio/Introdução.m4a',
     },
     {
       id: 2,
-      titulo: 'Domine os Valores',
-      duracao: '15 min',
-      descricao: 'Por que valores são a base de toda pintura realista. Como treinar sua percepção para enxergar valores onde outros veem apenas cores.',
-      ferramentas: ['escala', 'treino', 'localizador'],
-      arquivo: 'audio/episodio-02.mp3',
+      titulo: 'O que é Valor Tonal?',
+      duracao: '—',
+      descricao: 'Conceito de valor tonal, importância na pintura e por que é a base de qualquer obra que funciona.',
+      ferramentas: ['escala', 'treino'],
+      arquivo: 'audio/Slide 1.m4a',
     },
     {
       id: 3,
-      titulo: 'Luz e Sombra',
-      duracao: '14 min',
-      descricao: 'Como a luz cria forma, profundidade e volume. Tipos de luz, sombras projetadas e como analisar a direção da luz em uma referência.',
-      ferramentas: ['luz', 'localizador'],
-      arquivo: 'audio/episodio-03.mp3',
+      titulo: 'A Escala de Cinzas',
+      duracao: '—',
+      descricao: 'Estudo da escala completa de 11 valores, do branco puro ao preto absoluto.',
+      ferramentas: ['escala'],
+      arquivo: 'audio/Slide 2.m4a',
     },
     {
       id: 4,
-      titulo: 'Misturas e Paleta',
-      duracao: '13 min',
-      descricao: 'Técnicas de mistura para obter tons precisos. Como escolher e limitar sua paleta para manter harmonia na pintura.',
-      ferramentas: ['escala', 'paleta'],
-      arquivo: 'audio/episodio-04.mp3',
+      titulo: 'Percepção Visual',
+      duracao: '—',
+      descricao: 'Como o cérebro processa valores e por que enganos visuais acontecem na pintura.',
+      ferramentas: ['treino', 'ilusao'],
+      arquivo: 'audio/Slide 3.m4a',
     },
     {
       id: 5,
-      titulo: 'Transferência e Grade',
-      duracao: '11 min',
-      descricao: 'Métodos para transferir sua referência para a tela com precisão. O poder da técnica de quadriculação.',
-      ferramentas: ['quadricular', 'riscoLinear'],
-      arquivo: 'audio/episodio-05.mp3',
+      titulo: 'Luz e Sombra',
+      duracao: '—',
+      descricao: 'Como a luz cria forma, profundidade e volume. Tipos de luz e sombras projetadas.',
+      ferramentas: ['luz', 'localizador'],
+      arquivo: 'audio/Slide 4.m4a',
     },
     {
       id: 6,
+      titulo: 'Análise de Referência',
+      duracao: '—',
+      descricao: 'Como decompor uma imagem em blocos de valor para estudar e pintar.',
+      ferramentas: ['posterizar', 'zonas'],
+      arquivo: 'audio/Slide 5.m4a',
+    },
+    {
+      id: 7,
+      titulo: 'Misturas e Paleta',
+      duracao: '—',
+      descricao: 'Técnicas de mistura para obter tons precisos. Como escolher e limitar sua paleta.',
+      ferramentas: ['paleta', 'converter'],
+      arquivo: 'audio/Slide 6.m4a',
+    },
+    {
+      id: 8,
+      titulo: 'Transferência e Grade',
+      duracao: '—',
+      descricao: 'Métodos para transferir sua referência para a tela com precisão usando grade.',
+      ferramentas: ['quadricular', 'riscoLinear'],
+      arquivo: 'audio/Slide 7.m4a',
+    },
+    {
+      id: 9,
       titulo: 'O Processo Completo',
-      duracao: '18 min',
-      descricao: 'Passo a passo completo de uma pintura com valores bem resolvidos: da preparação da tela ao acabamento final.',
+      duracao: '—',
+      descricao: 'Passo a passo completo de uma pintura com valores bem resolvidos.',
       ferramentas: ['janela'],
-      arquivo: 'audio/episodio-06.mp3',
+      arquivo: 'audio/Slide 8.m4a',
+    },
+    {
+      id: 10,
+      titulo: 'Considerações Finais',
+      duracao: '—',
+      descricao: 'Resumo, dicas finais e próximos passos na sua jornada com valores tonais.',
+      ferramentas: [],
+      arquivo: 'audio/Fim.m4a',
     },
   ];
 
   let ensinoState = { episodioAtual: null, tocando: false };
 
   function renderEnsino() {
+    if (bgmAudio) bgmAudio.pause();
     const app = document.getElementById('app');
     const listaHtml = episodios.map(ep => `
       <button onclick="renderEpisodio(${ep.id})" class="w-full text-left p-5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-accent/30 transition-all fade-in">
@@ -272,9 +305,15 @@
           <!-- Player -->
           <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02] mb-8">
             <audio id="ensino-audio" class="w-full" controls preload="none">
-              <source src="${ep.arquivo}" type="audio/mpeg">
+              <source src="${ep.arquivo}" type="audio/mp4">
               Seu navegador não suporta o elemento de áudio.
             </audio>
+            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
+              <i class="fa-solid fa-music text-accent/60 text-sm"></i>
+              <span class="text-xs text-muted">Fundo musical</span>
+              <input id="bgm-volume" type="range" min="0" max="20" value="10" class="flex-1 h-1 cursor-pointer">
+              <button id="bgm-toggle" onclick="toggleBGM()" class="text-xs text-accent/60 hover:text-accent transition-colors">ON</button>
+            </div>
             <p class="text-xs text-muted mt-3 text-center">Duração: ${ep.duracao}</p>
           </div>
 
@@ -287,6 +326,50 @@
           </div>
         </div>
       </div>`;
+    setTimeout(() => initBGM(), 100);
+  }
+
+  // ── Background Music ──────────────────────────────────────────────
+  let bgmAudio = null;
+  let bgmEnabled = true;
+
+  function initBGM() {
+    const voice = document.getElementById('ensino-audio');
+    const volumeSlider = document.getElementById('bgm-volume');
+    if (!voice) return;
+
+    if (!bgmAudio) {
+      bgmAudio = new Audio('audio/Infraction- Wild Nature.wav');
+      bgmAudio.loop = true;
+      bgmAudio.volume = volumeSlider ? volumeSlider.value / 100 : 0.12;
+    }
+
+    voice.addEventListener('play', () => {
+      if (bgmEnabled) bgmAudio.play().catch(() => {});
+    });
+    voice.addEventListener('pause', () => bgmAudio.pause());
+    voice.addEventListener('ended', () => bgmAudio.pause());
+    voice.addEventListener('seeking', () => {
+      bgmAudio.currentTime = voice.currentTime;
+    });
+
+    if (volumeSlider) {
+      volumeSlider.addEventListener('input', () => {
+        bgmAudio.volume = volumeSlider.value / 100;
+      });
+    }
+  }
+
+  function toggleBGM() {
+    bgmEnabled = !bgmEnabled;
+    const btn = document.getElementById('bgm-toggle');
+    const voice = document.getElementById('ensino-audio');
+    if (btn) btn.textContent = bgmEnabled ? 'ON' : 'OFF';
+    if (bgmEnabled && voice && !voice.paused) {
+      bgmAudio.play().catch(() => {});
+    } else {
+      bgmAudio.pause();
+    }
   }
 
   // ── Escala ────────────────────────────────────────────────────────────
