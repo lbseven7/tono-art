@@ -2725,8 +2725,12 @@
                   </div>
                 </div>
                 <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 mt-2 leading-relaxed"></p>
+                <div class="mt-3">
+                  <p class="text-xs text-muted mb-2">Preview da grade</p>
+                  <canvas id="qd-calc-preview" class="w-full rounded-lg border border-white/10" style="background:#1a1a1a" width="280" height="200"></canvas>
+                </div>
                 <button onclick="qdAplicarGradeCalculada()" class="w-full mt-3 px-4 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-medium hover:bg-accent/25 transition-colors">
-                  <i class="fa-solid fa-grid-4 mr-2"></i>Aplicar grade ao preview
+                  <i class="fa-solid fa-table-cells-large mr-2"></i>Aplicar grade ao preview
                 </button>
               </div>
             </div>
@@ -2854,6 +2858,59 @@
     } else {
       alertEl.innerHTML = '⚡ Altura limitante. Desenho ocupa ' + fmt(areaW) + 'cm da largura da tela (' + fmt(telaW) + 'cm). Sobram ' + fmt(telaW - areaW) + 'cm na horizontal.';
     }
+
+    qdCalcPreviewDraw(refW, refH, areaW, areaH, cols, rows);
+  }
+
+  function qdCalcPreviewDraw(refW, refH, areaW, areaH, cols, rows) {
+    const canvas = document.getElementById('qd-calc-preview');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const cW = canvas.width, cH = canvas.height;
+    ctx.clearRect(0, 0, cW, cH);
+
+    const pad = 12;
+    const drawW = cW - pad * 2;
+    const drawH = cH - pad * 2;
+
+    const imgRatio = areaW / areaH;
+    const canRatio = drawW / drawH;
+    let dW, dH;
+    if (imgRatio > canRatio) {
+      dW = drawW;
+      dH = drawW / imgRatio;
+    } else {
+      dH = drawH;
+      dW = drawH * imgRatio;
+    }
+    const ox = (cW - dW) / 2;
+    const oy = (cH - dH) / 2;
+
+    ctx.fillStyle = '#2a2a2a';
+    ctx.fillRect(ox, oy, dW, dH);
+
+    ctx.strokeStyle = quadricularState.corGrid === '#ffffff' ? 'rgba(255,255,255,0.6)' : quadricularState.corGrid;
+    ctx.lineWidth = 1;
+
+    const cellW = dW / cols;
+    const cellH = dH / rows;
+
+    for (let c = 1; c < cols; c++) {
+      ctx.beginPath();
+      ctx.moveTo(Math.round(ox + c * cellW) + 0.5, oy);
+      ctx.lineTo(Math.round(ox + c * cellW) + 0.5, oy + dH);
+      ctx.stroke();
+    }
+    for (let r = 1; r < rows; r++) {
+      ctx.beginPath();
+      ctx.moveTo(ox, Math.round(oy + r * cellH) + 0.5);
+      ctx.lineTo(ox + dW, Math.round(oy + r * cellH) + 0.5);
+      ctx.stroke();
+    }
+
+    ctx.strokeStyle = quadricularState.corGrid === '#ffffff' ? 'rgba(255,255,255,0.8)' : quadricularState.corGrid;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(ox, oy, dW, dH);
   }
 
   function simplifyRatio(a, b) {
@@ -2878,10 +2935,8 @@
     }
 
     const tamanhoQuadRef = Math.max(refW, refH) > 30 ? 5 : 2;
-    const qtdQuadrados = Math.ceil(Math.max(refW, refH) / tamanhoQuadRef);
-
-    const cols = Math.min(Math.max(qtdQuadrados, 2), 30);
-    const rows = Math.min(Math.max(Math.ceil(Math.max(refW, refH) * (refH > refW ? refH / refW : refW / refH) / tamanhoQuadRef), 2), 30);
+    const cols = Math.min(Math.max(Math.ceil(refW / tamanhoQuadRef), 2), 30);
+    const rows = Math.min(Math.max(Math.ceil(refH / tamanhoQuadRef), 2), 30);
 
     quadricularState.cols = cols;
     quadricularState.rows = rows;
