@@ -2725,6 +2725,9 @@
                   </div>
                 </div>
                 <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 mt-2 leading-relaxed"></p>
+                <button onclick="qdAplicarGradeCalculada()" class="w-full mt-3 px-4 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-medium hover:bg-accent/25 transition-colors">
+                  <i class="fa-solid fa-grid-4 mr-2"></i>Aplicar grade ao preview
+                </button>
               </div>
             </div>
           </div>
@@ -2857,6 +2860,41 @@
     const gcd = (x, y) => y === 0 ? x : gcd(y, x % y);
     const d = gcd(Math.round(a * 10), Math.round(b * 10));
     return (Math.round(a * 10) / d) + ':' + (Math.round(b * 10) / d);
+  }
+
+  function qdAplicarGradeCalculada() {
+    const refW = parseFloat(document.getElementById('qd-ref-w').value) || 8;
+    const refH = parseFloat(document.getElementById('qd-ref-h').value) || 12;
+    const telaW = parseFloat(document.getElementById('qd-tela-w').value) || 50;
+    const telaH = parseFloat(document.getElementById('qd-tela-h').value) || 70;
+
+    const refRatio = refW / refH;
+    const telaRatio = telaW / telaH;
+    let escala;
+    if (refRatio > telaRatio) {
+      escala = telaW / refW;
+    } else {
+      escala = telaH / refH;
+    }
+
+    const tamanhoQuadRef = Math.max(refW, refH) > 30 ? 5 : 2;
+    const qtdQuadrados = Math.ceil(Math.max(refW, refH) / tamanhoQuadRef);
+
+    const cols = Math.min(Math.max(qtdQuadrados, 2), 30);
+    const rows = Math.min(Math.max(Math.ceil(Math.max(refW, refH) * (refH > refW ? refH / refW : refW / refH) / tamanhoQuadRef), 2), 30);
+
+    quadricularState.cols = cols;
+    quadricularState.rows = rows;
+
+    const slC = document.getElementById('qd-sl-cols');
+    const slR = document.getElementById('qd-sl-rows');
+    if (slC) { slC.value = Math.min(cols, 20); }
+    if (slR) { slR.value = Math.min(rows, 20); }
+    document.getElementById('qd-val-cols').textContent = cols;
+    document.getElementById('qd-val-rows').textContent = rows;
+
+    qdCalcUpdate();
+    qdAplicarGrade();
   }
 
   function qdResetar() {
