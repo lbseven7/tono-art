@@ -2644,94 +2644,104 @@
           <!-- Painel de Cálculo de Proporção -->
           <div id="qd-calc-section" class="hidden p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
             <h3 class="font-display text-xl mb-6">Cálculo de Proporção</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-              <!-- Referência -->
-              <div class="space-y-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-2">Referência (foto)</p>
-                <div class="grid grid-cols-2 gap-3">
-                  <div>
-                    <label class="text-xs text-muted block mb-1">Largura (cm)</label>
-                    <input type="number" id="qd-ref-w" value="8" min="1" step="0.5" class="w-full p-2.5 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Coluna 1: Inputs -->
+              <div class="space-y-5">
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-2">
+                    <p class="text-xs uppercase tracking-[0.2em] text-accent">Referência</p>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div>
+                        <label class="text-[11px] text-muted block mb-1">Larg. (cm)</label>
+                        <input type="number" id="qd-ref-w" value="8" min="1" step="0.5" class="w-full p-2 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+                      </div>
+                      <div>
+                        <label class="text-[11px] text-muted block mb-1">Alt. (cm)</label>
+                        <input type="number" id="qd-ref-h" value="12" min="1" step="0.5" class="w-full p-2 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+                      </div>
+                    </div>
+                    <p class="text-[11px] text-muted">Proporção: <span id="qd-calc-ref-ratio" class="text-fg font-mono">2:3</span></p>
                   </div>
-                  <div>
-                    <label class="text-xs text-muted block mb-1">Altura (cm)</label>
-                    <input type="number" id="qd-ref-h" value="12" min="1" step="0.5" class="w-full p-2.5 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+                  <div class="space-y-2">
+                    <p class="text-xs uppercase tracking-[0.2em] text-accent">Tela / Papel</p>
+                    <div class="grid grid-cols-2 gap-2">
+                      <div>
+                        <label class="text-[11px] text-muted block mb-1">Larg. (cm)</label>
+                        <input type="number" id="qd-tela-w" value="50" min="1" step="1" class="w-full p-2 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+                      </div>
+                      <div>
+                        <label class="text-[11px] text-muted block mb-1">Alt. (cm)</label>
+                        <input type="number" id="qd-tela-h" value="70" min="1" step="1" class="w-full p-2 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+                      </div>
+                    </div>
+                    <p class="text-[11px] text-muted">Proporção: <span id="qd-calc-tela-ratio" class="text-fg font-mono">5:7</span></p>
+                    <div class="flex flex-wrap gap-1 mt-1">
+                      <button onclick="qdSetPreset(30,40)" class="px-2 py-0.5 text-[10px] rounded border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">30×40</button>
+                      <button onclick="qdSetPreset(40,50)" class="px-2 py-0.5 text-[10px] rounded border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">40×50</button>
+                      <button onclick="qdSetPreset(50,70)" class="px-2 py-0.5 text-[10px] rounded border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">50×70</button>
+                      <button onclick="qdSetPreset(60,80)" class="px-2 py-0.5 text-[10px] rounded border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">60×80</button>
+                      <button onclick="qdSetPreset(80,100)" class="px-2 py-0.5 text-[10px] rounded border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">80×100</button>
+                      <button onclick="qdSetPreset(100,120)" class="px-2 py-0.5 text-[10px] rounded border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">100×120</button>
+                    </div>
                   </div>
                 </div>
-                <p class="text-xs text-muted">Proporção: <span id="qd-calc-ref-ratio" class="text-fg font-mono">2:3</span></p>
-              </div>
 
-              <!-- Tela/Papel -->
-              <div class="space-y-4">
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-2">Tela / Papel</p>
-                <div class="grid grid-cols-2 gap-3">
-                  <div>
-                    <label class="text-xs text-muted block mb-1">Largura (cm)</label>
-                    <input type="number" id="qd-tela-w" value="50" min="1" step="1" class="w-full p-2.5 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
-                  </div>
-                  <div>
-                    <label class="text-xs text-muted block mb-1">Altura (cm)</label>
-                    <input type="number" id="qd-tela-h" value="70" min="1" step="1" class="w-full p-2.5 rounded-lg bg-white/5 border border-white/10 text-fg text-sm focus:border-accent outline-none" oninput="qdCalcUpdate()" />
+                <!-- Grade automática -->
+                <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03]">
+                  <p class="text-[11px] text-muted mb-2">Grade automática</p>
+                  <div class="grid grid-cols-3 gap-2 text-center">
+                    <div>
+                      <p class="text-[10px] text-muted">Quad. ref.</p>
+                      <p id="qd-calc-quad-ref" class="text-sm text-fg font-mono">2×2 cm</p>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-muted">Quad. tela</p>
+                      <p id="qd-calc-quad-tela" class="text-sm text-accent font-mono font-medium">8.3×8.3 cm</p>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-muted">Total</p>
+                      <p id="qd-calc-qtd" class="text-sm text-fg font-mono">6×6 (36)</p>
+                    </div>
                   </div>
                 </div>
-                <p class="text-xs text-muted">Proporção: <span id="qd-calc-tela-ratio" class="text-fg font-mono">5:7</span></p>
-                <div class="flex flex-wrap gap-1.5 mt-2">
-                  <button onclick="qdSetPreset(30,40)" class="px-2 py-1 text-[10px] rounded-md border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">30×40</button>
-                  <button onclick="qdSetPreset(40,50)" class="px-2 py-1 text-[10px] rounded-md border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">40×50</button>
-                  <button onclick="qdSetPreset(50,70)" class="px-2 py-1 text-[10px] rounded-md border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">50×70</button>
-                  <button onclick="qdSetPreset(60,80)" class="px-2 py-1 text-[10px] rounded-md border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">60×80</button>
-                  <button onclick="qdSetPreset(80,100)" class="px-2 py-1 text-[10px] rounded-md border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">80×100</button>
-                  <button onclick="qdSetPreset(100,120)" class="px-2 py-1 text-[10px] rounded-md border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">100×120</button>
-                </div>
-              </div>
 
-              <!-- Resultado -->
-              <div class="space-y-3">
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-2">Resultado</p>
-                <div class="p-4 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
-                  <div class="flex justify-between text-sm">
-                    <span class="text-muted">Fator de escala</span>
-                    <span id="qd-calc-escala" class="text-accent font-mono font-medium">×4.17</span>
-                  </div>
-                  <div class="flex justify-between text-sm">
-                    <span class="text-muted">Área na tela</span>
-                    <span id="qd-calc-area" class="text-fg font-mono">33.3 × 50 cm</span>
-                  </div>
-                  <div class="border-t border-white/10 pt-3 mt-3">
-                    <p class="text-xs text-muted mb-2">Tamanho de cada célula</p>
-                    <div class="flex justify-between text-sm">
-                      <span class="text-muted">Na referência</span>
-                      <span id="qd-calc-cell-ref" class="text-fg font-mono">1.6 × 2.4 cm</span>
-                    </div>
-                    <div class="flex justify-between text-sm mt-1">
-                      <span class="text-muted">Na tela</span>
-                      <span id="qd-calc-cell-tela" class="text-accent font-mono font-medium">6.67 × 10 cm</span>
-                    </div>
-                  </div>
-                  <div class="border-t border-white/10 pt-3 mt-3">
-                    <p class="text-xs text-muted mb-2">Grade automática</p>
-                    <div class="flex justify-between text-sm">
-                      <span class="text-muted">Quad. na ref.</span>
-                      <span id="qd-calc-quad-ref" class="text-fg font-mono">2 × 2 cm</span>
-                    </div>
-                    <div class="flex justify-between text-sm mt-1">
-                      <span class="text-muted">Quad. na tela</span>
-                      <span id="qd-calc-quad-tela" class="text-accent font-mono font-medium">8.33 × 8.33 cm</span>
-                    </div>
-                    <div class="flex justify-between text-sm mt-1">
-                      <span class="text-muted">Total</span>
-                      <span id="qd-calc-qtd" class="text-fg font-mono">6 × 6 (36 total)</span>
-                    </div>
-                  </div>
-                </div>
-                <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 mt-2 leading-relaxed"></p>
-                <div class="mt-3">
-                  <p class="text-xs text-muted mb-2">Preview da grade</p>
-                  <canvas id="qd-calc-preview" class="w-full rounded-lg border border-white/10" style="background:#1a1a1a" width="280" height="200"></canvas>
-                </div>
-                <button onclick="qdAplicarGradeCalculada()" class="w-full mt-3 px-4 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-medium hover:bg-accent/25 transition-colors">
+                <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 leading-relaxed"></p>
+                <button onclick="qdAplicarGradeCalculada()" class="w-full px-4 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-medium hover:bg-accent/25 transition-colors">
                   <i class="fa-solid fa-table-cells-large mr-2"></i>Aplicar grade ao preview
                 </button>
+              </div>
+
+              <!-- Coluna 2: Resultado + Preview -->
+              <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+                    <p class="text-[10px] text-muted mb-1">Fator de escala</p>
+                    <p id="qd-calc-escala" class="text-xl text-accent font-mono font-bold">×4.17</p>
+                  </div>
+                  <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+                    <p class="text-[10px] text-muted mb-1">Área na tela</p>
+                    <p id="qd-calc-area" class="text-sm text-fg font-mono font-medium">33.3 × 50 cm</p>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03]">
+                  <p class="text-[11px] text-muted mb-2">Tamanho de cada célula</p>
+                  <div class="grid grid-cols-2 gap-2 text-center">
+                    <div>
+                      <p class="text-[10px] text-muted">Referência</p>
+                      <p id="qd-calc-cell-ref" class="text-sm text-fg font-mono">1.6 × 2.4 cm</p>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-muted">Tela</p>
+                      <p id="qd-calc-cell-tela" class="text-sm text-accent font-mono font-medium">6.67 × 10 cm</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="text-[11px] text-muted mb-1.5">Preview da grade</p>
+                  <canvas id="qd-calc-preview" class="w-full rounded-lg border border-white/10" style="background:#1a1a1a" width="400" height="280"></canvas>
+                </div>
               </div>
             </div>
           </div>
