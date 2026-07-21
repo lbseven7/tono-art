@@ -326,7 +326,11 @@
           </div>
         </div>
       </div>`;
-    setTimeout(() => initBGM(), 100);
+    setTimeout(() => {
+      initBGM();
+      const voice = document.getElementById('ensino-audio');
+      if (voice) voice.play().catch(() => {});
+    }, 100);
   }
 
   // ── Background Music ──────────────────────────────────────────────
@@ -348,7 +352,13 @@
       if (bgmEnabled) bgmAudio.play().catch(() => {});
     });
     voice.addEventListener('pause', () => bgmAudio.pause());
-    voice.addEventListener('ended', () => bgmAudio.pause());
+    voice.addEventListener('ended', () => {
+      bgmAudio.pause();
+      const idx = episodios.findIndex(e => e.id === ensinoState.episodioAtual?.id);
+      if (idx >= 0 && idx < episodios.length - 1) {
+        renderEpisodio(episodios[idx + 1].id);
+      }
+    });
     voice.addEventListener('seeking', () => {
       bgmAudio.currentTime = voice.currentTime;
     });
