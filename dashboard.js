@@ -79,10 +79,89 @@
     window.scrollTo(0, 0);
   }
 
+  // ── Home Carousel ─────────────────────────────────────────────────────
+  const homeCarousel = { total: 13, atual: 0, timer: null };
+
+  function homeUpdateSlide() {
+    document.querySelectorAll('[data-slide]').forEach((el, i) => {
+      el.classList.toggle('opacity-100', i === homeCarousel.atual);
+      el.classList.toggle('opacity-0', i !== homeCarousel.atual);
+      el.classList.toggle('pointer-events-none', i !== homeCarousel.atual);
+    });
+    document.querySelectorAll('[data-dot]').forEach((el, i) => {
+      el.classList.toggle('bg-accent', i === homeCarousel.atual);
+      el.classList.toggle('w-5', i === homeCarousel.atual);
+      el.classList.toggle('bg-fg/20', i !== homeCarousel.atual);
+      el.classList.toggle('w-2', i !== homeCarousel.atual);
+    });
+  }
+
+  function homeGoSlide(i) {
+    homeCarousel.atual = i;
+    homeUpdateSlide();
+    homeResetTimer();
+  }
+
+  function homeNextSlide() {
+    homeCarousel.atual = (homeCarousel.atual + 1) % homeCarousel.total;
+    homeUpdateSlide();
+  }
+
+  function homePrevSlide() {
+    homeCarousel.atual = (homeCarousel.atual - 1 + homeCarousel.total) % homeCarousel.total;
+    homeUpdateSlide();
+  }
+
+  function homeResetTimer() {
+    clearInterval(homeCarousel.timer);
+    homeCarousel.timer = setInterval(homeNextSlide, 5000);
+  }
+
   // ── Home ──────────────────────────────────────────────────────────────
   function renderHome() {
     const app = document.getElementById('app');
     const strip = escalaCinza.map(v => `<div class="flex-1 swatch-grow" style="background-color:${v.hex};animation-delay:${0.05*v.valor}s"></div>`).join('');
+
+    const slides = [
+      { icon:'▮', title:'Escala de Cinzas', desc:'Estude a escala completa de 11 valores — do branco ao preto. Guia de misturas incluído.', cta:'escala', tag:'Base' },
+      { img:'images/1.webp' },
+      { icon:'⊑', title:'Converter para Cinzas', desc:'Transforme qualquer foto em escala de cinzas para revelar a estrutura tonal.', cta:'converter', tag:'Análise' },
+      { img:'images/3.webp' },
+      { icon:'◧', title:'Posterizar', desc:'Reduza a imagem a poucos tons — enxergue as regiões de valor como blocos.', cta:'posterizar', tag:'Análise' },
+      { img:'images/4.webp' },
+      { icon:'#', title:'Quadricular', desc:'Grade sobre a imagem para copiar quadrado por quadrado com precisão.', cta:'quadricular', tag:'Preparo' },
+      { img:'images/5.webp' },
+      { icon:'◐', title:'Risco Linear', desc:'Extraia contornos como linha — ideal para estudar formas e preparar a tela.', cta:'riscoLinear', tag:'Preparo' },
+      { img:'images/6.webp' },
+      { icon:'⊞', title:'Janela Física', desc:'Máscara com abertura — isole uma área e estude detalhes sem distração.', cta:'janela', tag:'Preparo' },
+      { icon:'◉', title:'Localizar Valor', desc:'Clique em qualquer ponto e descubra o valor exato, RGB e zona.', cta:'localizador', tag:'Análise' },
+      { icon:'🧠', title:'Treino de Valores', desc:'Quiz interativo — teste e evolua sua precisão ao identificar valores.', cta:'treino', tag:'Prática' },
+    ];
+
+    const slideHtml = slides.map((s, i) => {
+      if (s.img) {
+        return `
+      <div class="absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}" data-slide="${i}">
+        <img src="${s.img}" alt="" class="w-full h-full object-cover">
+      </div>`;
+      }
+      return `
+      <div class="absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}" data-slide="${i}">
+        <div class="w-full h-full flex flex-col items-center justify-center text-center p-8 md:p-12">
+          <span class="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[10px] uppercase tracking-[0.15em] font-medium mb-4">${s.tag}</span>
+          <div class="text-4xl md:text-5xl mb-4">${s.icon}</div>
+          <h3 class="font-display text-xl md:text-2xl mb-2">${s.title}</h3>
+          <p class="text-muted text-sm md:text-base max-w-md font-light mb-5">${s.desc}</p>
+          <button onclick="navigate('${s.cta}')" class="inline-flex items-center gap-2 px-6 py-2.5 bg-accent/10 hover:bg-accent/20 text-accent rounded-full text-sm transition-colors">
+            Acessar <span class="text-xs">→</span>
+          </button>
+        </div>
+      </div>`;
+    }).join('');
+
+    const dotsHtml = slides.map((_, i) => `
+      <button onclick="homeGoSlide(${i})" class="w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-accent w-5' : 'bg-fg/20 hover:bg-fg/40'}" data-dot="${i}"></button>`).join('');
+
     const modulos = [
       { id:'escala',   icon:'▮', title:'Escala de Cinzas',    desc:'Estude a escala completa de 11 valores em cinza, do branco puro ao preto absoluto. Guia de misturas incluído.' },
       { id:'treino',   icon:'▤', title:'Treino de Valores',   desc:'Pratique identificar valores na escala de cinzas e avalie sua precisão visual.' },
@@ -109,25 +188,22 @@
           <div class="fade-in relative z-10 max-w-3xl">
             <p class="text-accent text-sm tracking-[0.3em] uppercase mb-3">Tono</p>
             <h1 class="font-display text-3xl md:text-5xl leading-[1.1] mb-4">Escala e Valor Tonal</h1>
-            <p class="text-muted text-base leading-relaxed mb-6 max-w-xl mx-auto font-light">
+            <p class="text-muted text-base leading-relaxed mb-8 max-w-xl mx-auto font-light">
               Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto.
             </p>
-            <div class="w-full max-w-2xl mx-auto">
-              <div class="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer group" style="padding-top:56.25%">
-                <img src="images/thumb-video.png" alt="Tono - Escala e Valor Tonal" class="absolute inset-0 w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                  <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-accent/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </div>
-                </div>
-                <span class="absolute bottom-3 right-3 px-2 py-1 rounded bg-black/60 text-white text-[11px] font-mono">Em breve</span>
+            <div class="w-full max-w-2xl mx-auto relative">
+              <div id="home-carousel" class="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]" style="aspect-ratio:16/9">
+                ${slideHtml}
+                <button onclick="homePrevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-colors text-sm backdrop-blur-sm z-10">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button onclick="homeNextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-colors text-sm backdrop-blur-sm z-10">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
               </div>
-              <div class="flex items-center justify-center gap-2 mt-3">
-                <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-[10px] uppercase tracking-[0.15em] font-medium">▶ Vídeo Tutorial</span>
-                <p class="text-sm text-muted">Veja como usar o Tono passo a passo</p>
-              </div>
+              <div class="flex items-center justify-center gap-2 mt-4">${dotsHtml}</div>
             </div>
-            <button onclick="navigate('escala')" class="mt-6 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-base tracking-wide hover:bg-accent transition-colors">
+            <button onclick="navigate('escala')" class="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-base tracking-wide hover:bg-accent transition-colors">
               Quero Aprender Agora!
             </button>
           </div>
@@ -139,6 +215,7 @@
           <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-5 fade-in">${modulos}</div>
         </section>
       </div>`;
+    homeResetTimer();
   }
 
   // ── Ensino (Podcast) ───────────────────────────────────────────────
@@ -1569,8 +1646,9 @@
         const txtColor = v > 5 ? '#333' : '#eee';
         gridHtml += `<div class="aspect-square rounded-lg flex items-center justify-center border border-white/10" style="background:${hex}">
           <span class="font-mono text-sm font-bold" style="color:${txtColor}">${v}</span>
-        </div>`;
-      }
+      </div>`;
+    homeResetTimer();
+  }
     }
     gridHtml += '</div>';
     gridNumEl.innerHTML = gridHtml;
