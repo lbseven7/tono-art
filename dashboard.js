@@ -157,7 +157,7 @@
       duracao: '—',
       descricao: 'Conceito de valor tonal, importância na pintura e por que é a base de qualquer obra que funciona.',
       ferramentas: ['escala', 'treino'],
-      arquivo: 'audio/Slide 1.m4a',
+      arquivo: 'audio/Ep1.m4a',
     },
     {
       id: 3,
@@ -165,7 +165,7 @@
       duracao: '—',
       descricao: 'Estudo da escala completa de 11 valores, do branco puro ao preto absoluto.',
       ferramentas: ['escala'],
-      arquivo: 'audio/Slide 2.m4a',
+      arquivo: 'audio/Ep2.m4a',
     },
     {
       id: 4,
@@ -173,7 +173,7 @@
       duracao: '—',
       descricao: 'Como o cérebro processa valores e por que enganos visuais acontecem na pintura.',
       ferramentas: ['treino', 'ilusao'],
-      arquivo: 'audio/Slide 3.m4a',
+      arquivo: 'audio/Ep3.m4a',
     },
     {
       id: 5,
@@ -181,7 +181,7 @@
       duracao: '—',
       descricao: 'Como a luz cria forma, profundidade e volume. Tipos de luz e sombras projetadas.',
       ferramentas: ['luz', 'localizador'],
-      arquivo: 'audio/Slide 4.m4a',
+      arquivo: 'audio/Ep4.m4a',
     },
     {
       id: 6,
@@ -189,7 +189,7 @@
       duracao: '—',
       descricao: 'Como decompor uma imagem em blocos de valor para estudar e pintar.',
       ferramentas: ['posterizar', 'zonas'],
-      arquivo: 'audio/Slide 5.m4a',
+      arquivo: 'audio/Ep5.m4a',
     },
     {
       id: 7,
@@ -197,7 +197,7 @@
       duracao: '—',
       descricao: 'Técnicas de mistura para obter tons precisos. Como escolher e limitar sua paleta.',
       ferramentas: ['paleta', 'converter'],
-      arquivo: 'audio/Slide 6.m4a',
+      arquivo: 'audio/Ep6.m4a',
     },
     {
       id: 8,
@@ -205,7 +205,7 @@
       duracao: '—',
       descricao: 'Métodos para transferir sua referência para a tela com precisão usando grade.',
       ferramentas: ['quadricular', 'riscoLinear'],
-      arquivo: 'audio/Slide 7.m4a',
+      arquivo: 'audio/Ep7.m4a',
     },
     {
       id: 9,
@@ -213,7 +213,7 @@
       duracao: '—',
       descricao: 'Passo a passo completo de uma pintura com valores bem resolvidos.',
       ferramentas: ['janela'],
-      arquivo: 'audio/Slide 8.m4a',
+      arquivo: 'audio/Ep8.m4a',
     },
     {
       id: 10,
