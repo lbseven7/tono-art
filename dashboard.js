@@ -39,37 +39,8 @@
   const isPro = localStorage.getItem('tono_pro') === 'true';
 
   // ── Router ────────────────────────────────────────────────────────────
-  const ferramentasGratis = ['home', 'escala', 'treino', 'tutoriais'];
-
-  function mostrarModalPremium() {
-    if (document.querySelector('.premium-overlay')) return;
-    const overlay = document.createElement('div');
-    overlay.className = 'premium-overlay';
-    overlay.innerHTML = `
-      <div class="premium-modal">
-        <div class="w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center mb-5 mx-auto">
-          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" class="text-accent"><rect x="5" y="11" width="18" height="14" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        </div>
-        <h2 class="font-display text-2xl mb-2">Tono Premium</h2>
-        <p class="text-muted text-sm leading-relaxed mb-6 max-w-xs mx-auto">Esta ferramenta é exclusiva do plano premium. Desbloqueie todas as ferramentas e domine os valores tonais.</p>
-        <a href="venda.html" class="inline-flex items-center gap-2 px-8 py-3 bg-accent text-bg rounded-full text-sm font-medium hover:brightness-110 active:scale-95 transition-all">
-          Desbloquear Acesso
-        </a>
-        <button onclick="this.closest('.premium-overlay').remove()" class="block mt-4 text-xs text-muted hover:text-fg transition-colors">
-          Voltar
-        </button>
-      </div>`;
-    document.body.appendChild(overlay);
-  }
-
-  document.addEventListener('click', e => {
-    const btn = e.target.closest('[data-premium]');
-    if (btn && !isPro) { e.stopPropagation(); mostrarModalPremium(); }
-  });
-
   function navigate(page) {
     const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, tutoriais: renderTutoriais };
-    if (!isPro && !ferramentasGratis.includes(page)) { mostrarModalPremium(); return; }
     document.getElementById('app').innerHTML = '';
     (map[page] || renderHome)();
     document.querySelectorAll('.sidebar-link').forEach(el => {
