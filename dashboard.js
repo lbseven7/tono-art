@@ -110,6 +110,79 @@ const dashboardTranslations = {
       preto: 'Preto',
       partes: 'partes',
       guiaMisturasExtra: 'Use este guia como referência ao preparar suas tintas.'
+    },
+    instrucoes: {
+      comoUsar: 'Como usar',
+      escala: [
+        { title: 'Clique em um valor', desc: 'Selecione qualquer tom da escala para ver detalhes.' },
+        { title: 'Veja as misturas', desc: 'Confira as proporções de branco e preto para cada tom.' },
+        { title: 'Estude as dicas', desc: 'Aprenda alternativas de pigmentos e aplicações práticas.' }
+      ],
+      treino: [
+        { title: 'Olhe o swatch', desc: 'Analise a cor/valor mostrada acima.' },
+        { title: 'Clique no valor', desc: 'Escolha o número (0-10) que corresponde ao tom.' },
+        { title: 'Confira o resultado', desc: 'Veja se acertou e continue até o final.' }
+      ],
+      converter: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Ajuste os controles', desc: 'Mude brilho, contraste e método de conversão.' },
+        { title: 'Baixe o resultado', desc: 'Salve a imagem convertida em cinzas.' }
+      ],
+      posterizar: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Escolha o nível', desc: 'Selecione quantos tons deseja (3 a 11).' },
+        { title: 'Analise e baixe', desc: 'Estude as regiões de valor e salve o resultado.' }
+      ],
+      zonas: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Configure a grade', desc: 'Escolha o tamanho da grade e a sobreposição.' },
+        { title: 'Estude o mapa', desc: 'Analise os valores de cada zona e baixe.' }
+      ],
+      risco: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Ajuste sensibilidade', desc: 'Controle o limiar e suavização dos contornos.' },
+        { title: 'Baixe o contorno', desc: 'Salve o desenho de linha resultante.' }
+      ],
+      isolador: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Passe o mouse', desc: 'Clique ou arraste sobre a imagem para ver o valor.' },
+        { title: 'Isole e baixe', desc: 'Use a faixa de valores para isolar e salve.' }
+      ],
+      janela: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Arraste a janela', desc: 'Mova o bloco vazado para isolar a área desejada.' },
+        { title: 'Ajuste e baixe', desc: 'Mude o tamanho da abertura e salve o recorte.' }
+      ],
+      quadricular: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Defina a grade', desc: 'Escolha colunas/linhas e espessura da grade.' },
+        { title: 'Desenhe e baixe', desc: 'Copie célula por célula e salve a referência.' }
+      ],
+      ilusao: [
+        { title: 'Estude a teoria', desc: 'Entenda como o cérebro distorce os valores.' },
+        { title: 'Pratique o exercício', desc: 'Teste a ilusão com o simulador interativo.' },
+        { title: 'Aplique as técnicas', desc: 'Aprenda a contornar a ilusão ao pintar.' }
+      ],
+      localizador: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Clique na imagem', desc: 'Toque em qualquer ponto para ver o valor exato.' },
+        { title: 'Isole e analise', desc: 'Use a faixa de valores para estudar a distribuição.' }
+      ],
+      paleta: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Veja as cores', desc: 'O sistema extrai automaticamente as cores dominantes.' },
+        { title: 'Copie os valores', desc: 'Use os hex/RGB para misturar suas tintas.' }
+      ],
+      exercicios: [
+        { title: 'Clique na semana', desc: 'Abra o accordion para ver os exercícios.' },
+        { title: 'Siga a ordem', desc: 'Cada semana builds sobre a anterior.' },
+        { title: 'Pratique', desc: 'Faça os exercícios na tela ou no papel.' }
+      ],
+      luz: [
+        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+        { title: 'Veja o mapa de luz', desc: 'O sistema identifica a direção e intensidade.' },
+        { title: 'Aplique na pintura', desc: 'Use as dicas para aplicar luz e sombra.' }
+      ]
     }
   },
   en: {
@@ -207,6 +280,79 @@ const dashboardTranslations = {
       preto: 'Black',
       partes: 'parts',
       guiaMisturasExtra: 'Use this guide as a reference when preparing your paints.'
+    },
+    instrucoes: {
+      comoUsar: 'How to use',
+      escala: [
+        { title: 'Click a value', desc: 'Select any tone on the scale to see details.' },
+        { title: 'View mixtures', desc: 'Check the white and black proportions for each tone.' },
+        { title: 'Study the tips', desc: 'Learn about alternative pigments and practical applications.' }
+      ],
+      treino: [
+        { title: 'Look at the swatch', desc: 'Analyze the color/value shown above.' },
+        { title: 'Click the value', desc: 'Choose the number (0-10) that matches the tone.' },
+        { title: 'Check the result', desc: 'See if you got it right and continue to the end.' }
+      ],
+      converter: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Adjust the controls', desc: 'Change brightness, contrast, and conversion method.' },
+        { title: 'Download the result', desc: 'Save the grayscale converted image.' }
+      ],
+      posterizar: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Choose the level', desc: 'Select how many tones you want (3 to 11).' },
+        { title: 'Analyze and download', desc: 'Study the value regions and save the result.' }
+      ],
+      zonas: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Configure the grid', desc: 'Choose the grid size and overlay.' },
+        { title: 'Study the map', desc: 'Analyze the values of each zone and download.' }
+      ],
+      risco: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Adjust sensitivity', desc: 'Control the threshold and contour smoothing.' },
+        { title: 'Download the contour', desc: 'Save the resulting line drawing.' }
+      ],
+      isolador: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Hover over the image', desc: 'Click or drag to see the exact value.' },
+        { title: 'Isolate and download', desc: 'Use the value range to isolate and save.' }
+      ],
+      janela: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Drag the window', desc: 'Move the cutout block to isolate the desired area.' },
+        { title: 'Adjust and download', desc: 'Change the opening size and save the crop.' }
+      ],
+      quadricular: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Define the grid', desc: 'Choose columns/rows and grid thickness.' },
+        { title: 'Draw and download', desc: 'Copy cell by cell and save the reference.' }
+      ],
+      ilusao: [
+        { title: 'Study the theory', desc: 'Understand how the brain distorts values.' },
+        { title: 'Practice the exercise', desc: 'Test the illusion with the interactive simulator.' },
+        { title: 'Apply the techniques', desc: 'Learn to overcome the illusion when painting.' }
+      ],
+      localizador: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'Click on the image', desc: 'Tap any point to see the exact value.' },
+        { title: 'Isolate and analyze', desc: 'Use the value range to study the distribution.' }
+      ],
+      paleta: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'See the colors', desc: 'The system automatically extracts dominant colors.' },
+        { title: 'Copy the values', desc: 'Use the hex/RGB to mix your paints.' }
+      ],
+      exercicios: [
+        { title: 'Click on the week', desc: 'Open the accordion to see the exercises.' },
+        { title: 'Follow the order', desc: 'Each week builds on the previous one.' },
+        { title: 'Practice', desc: 'Do the exercises on canvas or on paper.' }
+      ],
+      luz: [
+        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
+        { title: 'See the light map', desc: 'The system identifies direction and intensity.' },
+        { title: 'Apply to painting', desc: 'Use the tips to apply light and shadow.' }
+      ]
     }
   },
   es: {
@@ -320,6 +466,79 @@ const dashboardTranslations = {
       partes: 'partes',
       guiaMisturasExtra: 'Use esta guía como referencia al preparar tus pinturas.'
     },
+    instrucoes: {
+      comoUsar: 'Cómo usar',
+      escala: [
+        { title: 'Haz clic en un valor', desc: 'Selecciona cualquier tono de la escala para ver detalles.' },
+        { title: 'Ve las mezclas', desc: 'Revisa las proporciones de blanco y negro para cada tono.' },
+        { title: 'Estudia los consejos', desc: 'Aprende alternativas de pigmentos y aplicaciones prácticas.' }
+      ],
+      treino: [
+        { title: 'Mira el swatch', desc: 'Analiza el color/valor mostrado arriba.' },
+        { title: 'Haz clic en el valor', desc: 'Elige el número (0-10) que corresponde al tono.' },
+        { title: 'Revisa el resultado', desc: 'Mira si acertaste y continúa hasta el final.' }
+      ],
+      converter: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Ajusta los controles', desc: 'Cambia brillo, contraste y método de conversión.' },
+        { title: 'Descarga el resultado', desc: 'Guarda la imagen convertida a escala de grises.' }
+      ],
+      posterizar: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Elige el nivel', desc: 'Selecciona cuántos tonos deseas (3 a 11).' },
+        { title: 'Analiza y descarga', desc: 'Estudia las regiones de valor y guarda el resultado.' }
+      ],
+      zonas: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Configura la cuadrícula', desc: 'Elige el tamaño de la cuadrícula y la superposición.' },
+        { title: 'Estudia el mapa', desc: 'Analiza los valores de cada zona y descarga.' }
+      ],
+      risco: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Ajusta la sensibilidad', desc: 'Controla el umbral y la suavización de los contornos.' },
+        { title: 'Descarga el contorno', desc: 'Guarda el dibujo de línea resultante.' }
+      ],
+      isolador: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Pasa el mouse', desc: 'Haz clic o arrastra sobre la imagen para ver el valor.' },
+        { title: 'Aísla y descarga', desc: 'Usa la banda de valores para aislar y guardar.' }
+      ],
+      janela: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Arrastra la ventana', desc: 'Mueve el bloque vaciado para aislar el área deseada.' },
+        { title: 'Ajusta y descarga', desc: 'Cambia el tamaño de la abertura y guarda el recorte.' }
+      ],
+      quadricular: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Define la cuadrícula', desc: 'Elige columnas/filas y el grosor de la cuadrícula.' },
+        { title: 'Dibuja y descarga', desc: 'Copia celda por celda y guarda la referencia.' }
+      ],
+      ilusao: [
+        { title: 'Estudia la teoría', desc: 'Entiende cómo el cerebro distorsiona los valores.' },
+        { title: 'Practica el ejercicio', desc: 'Prueba la ilusión con el simulador interactivo.' },
+        { title: 'Aplica las técnicas', desc: 'Aprende a superar la ilusión al pintar.' }
+      ],
+      localizador: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Haz clic en la imagen', desc: 'Toca cualquier punto para ver el valor exacto.' },
+        { title: 'Aísla y analiza', desc: 'Usa la banda de valores para estudiar la distribución.' }
+      ],
+      paleta: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Ve los colores', desc: 'El sistema extrae automáticamente los colores dominantes.' },
+        { title: 'Copia los valores', desc: 'Usa los hex/RGB para mezclar tus pinturas.' }
+      ],
+      exercicios: [
+        { title: 'Haz clic en la semana', desc: 'Abre el acordeón para ver los ejercicios.' },
+        { title: 'Sigue el orden', desc: 'Cada semana se construye sobre la anterior.' },
+        { title: 'Practica', desc: 'Haz los ejercicios en el lienzo o en papel.' }
+      ],
+      luz: [
+        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
+        { title: 'Ve el mapa de luz', desc: 'El sistema identifica la dirección e intensidad.' },
+        { title: 'Aplica en la pintura', desc: 'Usa los consejos para aplicar luz y sombra.' }
+      ]
+    }
   }
 };
 
@@ -374,10 +593,10 @@ function getDashboardTranslation() {
   const isPro = localStorage.getItem('tono_pro') === 'true';
 
   // ── Instruction Card Helper ──────────────────────────────────────────
-  function renderInstructionCard(steps) {
+  function renderInstructionCard(steps, label) {
     return `
       <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 mb-8 fade-in">
-        <p class="text-xs uppercase tracking-wider text-muted mb-3 font-medium">Como usar</p>
+        <p class="text-xs uppercase tracking-wider text-muted mb-3 font-medium">${label || 'Como usar'}</p>
         <div class="flex flex-col sm:flex-row gap-4">
           ${steps.map((s, i) => `
             <div class="flex items-start gap-3 flex-1">
@@ -790,11 +1009,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">${t.escalaPage.desc}</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Clique em um valor', desc: 'Selecione qualquer tom da escala para ver detalhes.' },
-            { title: 'Veja as misturas', desc: 'Confira as proporções de branco e preto para cada tom.' },
-            { title: 'Estude as dicas', desc: 'Aprenda alternativas de pigmentos e aplicações práticas.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.escala, t.instrucoes.comoUsar)}
 
           <div id="escala-preview" class="mb-8"></div>
           <div id="escala-strip" class="mb-8"></div>
@@ -986,11 +1201,7 @@ function getDashboardTranslation() {
             </div>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Olhe o swatch', desc: 'Analise a cor/valor mostrada acima.' },
-            { title: 'Clique no valor', desc: 'Escolha o número (0-10) que corresponde ao tom.' },
-            { title: 'Confira o resultado', desc: 'Veja se acertou e continue até o final.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.treino, t.instrucoes.comoUsar)}
 
           <!-- Barra de progresso -->
           <div class="w-full rounded-full mb-10" style="height:3px;background:hsl(0 0% 14%)">
@@ -1137,11 +1348,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Faça o upload de uma foto e converta-a para escala de cinzas. Ajuste brilho e contraste para isolar os valores que importam.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Ajuste os controles', desc: 'Mude brilho, contraste e método de conversão.' },
-            { title: 'Baixe o resultado', desc: 'Salve a imagem convertida em cinzas.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.converter, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="upload-zone"
@@ -1436,11 +1643,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Reduza qualquer imagem a poucos tons de cinza para enxergar apenas as regiões de valor — como blocos. Essa é a forma mais eficaz de treinar o olhar para pintar.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Escolha o nível', desc: 'Selecione quantos tons deseja (3 a 11).' },
-            { title: 'Analise e baixe', desc: 'Estude as regiões de valor e salve o resultado.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.posterizar, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="pz-upload-zone"
@@ -1693,11 +1896,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Divida a imagem em uma grade e descubra o valor dominante de cada zona na escala de cinza — é o mapa tonal que você monta antes de pintar.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Configure a grade', desc: 'Escolha o tamanho da grade e a sobreposição.' },
-            { title: 'Estude o mapa', desc: 'Analise os valores de cada zona e baixe.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.zonas, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="zn-upload-zone"
@@ -2037,11 +2236,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Extraia os contornos de qualquer imagem como um desenho de linha. Ideal para estudar formas, preparar a tela com o contorno base, ou simplificar uma referência complexa.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Ajuste sensibilidade', desc: 'Controle o limiar e suavização dos contornos.' },
-            { title: 'Baixe o contorno', desc: 'Salve o desenho de linha resultante.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.risco, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="rl-upload-zone"
@@ -2373,11 +2568,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Passe o mouse ou arraste o dedo sobre a imagem para isolar o valor tonal exato de qualquer ponto — sem ilusões de ótica.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Passe o mouse', desc: 'Clique ou arraste sobre a imagem para ver o valor.' },
-            { title: 'Isole e baixe', desc: 'Use a faixa de valores para isolar e salve.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.isolador, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="iso-upload-zone"
@@ -2852,11 +3043,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Isole detalhes bloqueando o contexto ao redor. Arraste o bloco vazado sobre a foto para estudar valores, texturas e micro-anatomias sem sofrer interferãncia das luzes ao redor.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Arraste a janela', desc: 'Mova o bloco vazado para isolar a área desejada.' },
-            { title: 'Ajuste e baixe', desc: 'Mude o tamanho da abertura e salve o recorte.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.janela, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="jn-upload-zone"
@@ -3082,11 +3269,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Sobreponha uma grade na referência para copiar a imagem quadrado por quadrado — a técnica clássica para quem quer desenhar com precisão sem precisar saber desenhar.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Defina a grade', desc: 'Escolha colunas/linhas e espessura da grade.' },
-            { title: 'Desenhe e baixe', desc: 'Copie célula por célula e salve a referência.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.quadricular, t.instrucoes.comoUsar)}
 
           <!-- Upload zone -->
           <div id="qd-upload-zone"
@@ -3767,11 +3950,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">O maior inimigo da percepção tonal não é a falta de coordenação — é o próprio <span class="text-fg font-medium">cérebro</span>, que tenta "corrigir" o que vemos. Três passos para treinar o olho.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Estude a teoria', desc: 'Entenda como o cérebro distorce os valores.' },
-            { title: 'Pratique o exercício', desc: 'Teste a ilusão com o simulador interativo.' },
-            { title: 'Aplique as técnicas', desc: 'Aprenda a contornar a ilusão ao pintar.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.ilusao, t.instrucoes.comoUsar)}
 
           <!-- ═══ PASSO 1: Teoria — Ilusão de Profundidade ═══ -->
           <div class="mb-12">
@@ -3967,11 +4146,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Clique em qualquer ponto da imagem para descobrir o valor tonal exato (0–10). Isole uma faixa de valores para estudar a distribuição tonal.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Clique na imagem', desc: 'Toque em qualquer ponto para ver o valor exato.' },
-            { title: 'Isole e analise', desc: 'Use a faixa de valores para estudar a distribuição.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.localizador, t.instrucoes.comoUsar)}
 
           <div id="lv-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('lv-file-input').click()">
             <input type="file" id="lv-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="lvProcessFile(event)" />
@@ -4380,11 +4555,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Analisa a imagem e extrai as cores dominantes com os valores hex exatos para misturar.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Veja as cores', desc: 'O sistema extrai automaticamente as cores dominantes.' },
-            { title: 'Copie os valores', desc: 'Use os hex/RGB para misturar suas tintas.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.paleta, t.instrucoes.comoUsar)}
 
           <div id="pe-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('pe-file-input').click()">
             <input type="file" id="pe-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="peProcessFile(event)" />
@@ -4546,11 +4717,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">8 semanas estruturadas do básico à aplicação avançada. Cada semana tem um foco e exercícios práticos.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Clique na semana', desc: 'Abra o accordion para ver os exercícios.' },
-            { title: 'Siga a ordem', desc: 'Cada semana builds sobre a anterior.' },
-            { title: 'Pratique', desc: 'Faça os exercícios na tela ou no papel.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.exercicios, t.instrucoes.comoUsar)}
 
           <div class="space-y-4">
             ${semanas.map(s => `
@@ -4606,11 +4773,7 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.</p>
           </div>
 
-          ${renderInstructionCard([
-            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-            { title: 'Veja o mapa de luz', desc: 'O sistema identifica a direção e intensidade.' },
-            { title: 'Aplique na pintura', desc: 'Use as dicas para aplicar luz e sombra.' }
-          ])}
+          ${renderInstructionCard(t.instrucoes.luz, t.instrucoes.comoUsar)}
 
           <div id="la-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('la-file-input').click()">
             <input type="file" id="la-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="laProcessFile(event)" />
