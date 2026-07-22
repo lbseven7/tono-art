@@ -80,7 +80,7 @@
   }
 
   // ── Home Carousel ─────────────────────────────────────────────────────
-  const homeCarousel = { total: 13, atual: 0, timer: null };
+  const homeCarousel = { total: 9, atual: 0, timer: null };
 
   function homeUpdateSlide() {
     document.querySelectorAll('[data-slide]').forEach((el, i) => {
@@ -123,41 +123,21 @@
     const strip = escalaCinza.map(v => `<div class="flex-1 swatch-grow" style="background-color:${v.hex};animation-delay:${0.05*v.valor}s"></div>`).join('');
 
     const slides = [
-      { icon:'▮', title:'Escala de Cinzas', desc:'Estude a escala completa de 11 valores — do branco ao preto. Guia de misturas incluído.', cta:'escala', tag:'Base' },
-      { img:'images/1.webp' },
-      { icon:'⊑', title:'Converter para Cinzas', desc:'Transforme qualquer foto em escala de cinzas para revelar a estrutura tonal.', cta:'converter', tag:'Análise' },
-      { img:'images/3.webp' },
-      { icon:'◧', title:'Posterizar', desc:'Reduza a imagem a poucos tons — enxergue as regiões de valor como blocos.', cta:'posterizar', tag:'Análise' },
-      { img:'images/4.webp' },
-      { icon:'#', title:'Quadricular', desc:'Grade sobre a imagem para copiar quadrado por quadrado com precisão.', cta:'quadricular', tag:'Preparo' },
-      { img:'images/5.webp' },
-      { icon:'◐', title:'Risco Linear', desc:'Extraia contornos como linha — ideal para estudar formas e preparar a tela.', cta:'riscoLinear', tag:'Preparo' },
-      { img:'images/6.webp' },
-      { icon:'⊞', title:'Janela Física', desc:'Máscara com abertura — isole uma área e estude detalhes sem distração.', cta:'janela', tag:'Preparo' },
-      { icon:'◉', title:'Localizar Valor', desc:'Clique em qualquer ponto e descubra o valor exato, RGB e zona.', cta:'localizador', tag:'Análise' },
-      { icon:'🧠', title:'Treino de Valores', desc:'Quiz interativo — teste e evolua sua precisão ao identificar valores.', cta:'treino', tag:'Prática' },
+      'images/slides (1).jpg',
+      'images/slides (2).jpg',
+      'images/slides (3).jpg',
+      'images/slides (4).jpg',
+      'images/slides (5).jpg',
+      'images/slides (6).jpg',
+      'images/slides (7).jpg',
+      'images/slides (8).jpg',
+      'images/slides (9).jpg',
     ];
 
-    const slideHtml = slides.map((s, i) => {
-      if (s.img) {
-        return `
+    const slideHtml = slides.map((src, i) => `
       <div class="absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}" data-slide="${i}">
-        <img src="${s.img}" alt="" class="w-full h-full object-cover">
-      </div>`;
-      }
-      return `
-      <div class="absolute inset-0 transition-opacity duration-500 ${i === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}" data-slide="${i}">
-        <div class="w-full h-full flex flex-col items-center justify-center text-center p-8 md:p-12">
-          <span class="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[10px] uppercase tracking-[0.15em] font-medium mb-4">${s.tag}</span>
-          <div class="text-4xl md:text-5xl mb-4">${s.icon}</div>
-          <h3 class="font-display text-xl md:text-2xl mb-2">${s.title}</h3>
-          <p class="text-muted text-sm md:text-base max-w-md font-light mb-5">${s.desc}</p>
-          <button onclick="navigate('${s.cta}')" class="inline-flex items-center gap-2 px-6 py-2.5 bg-accent/10 hover:bg-accent/20 text-accent rounded-full text-sm transition-colors">
-            Acessar <span class="text-xs">→</span>
-          </button>
-        </div>
-      </div>`;
-    }).join('');
+        <img src="${src}" alt="Obra de Leo Barbosa" class="w-full h-full object-cover">
+      </div>`).join('');
 
     const dotsHtml = slides.map((_, i) => `
       <button onclick="homeGoSlide(${i})" class="w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-accent w-5' : 'bg-fg/20 hover:bg-fg/40'}" data-dot="${i}"></button>`).join('');
@@ -194,6 +174,7 @@
             <div class="w-full max-w-2xl mx-auto relative">
               <div id="home-carousel" class="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]" style="aspect-ratio:16/9">
                 ${slideHtml}
+                <span class="absolute bottom-3 right-4 font-signature text-white/70 text-2xl z-10 pointer-events-none" style="text-shadow:0 1px 4px rgba(0,0,0,.6)">leob.</span>
                 <button onclick="homePrevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-colors text-sm backdrop-blur-sm z-10">
                   <i class="fa-solid fa-chevron-left"></i>
                 </button>
