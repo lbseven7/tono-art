@@ -373,6 +373,25 @@ function getDashboardTranslation() {
   }
   const isPro = localStorage.getItem('tono_pro') === 'true';
 
+  // ── Instruction Card Helper ──────────────────────────────────────────
+  function renderInstructionCard(steps) {
+    return `
+      <div class="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 mb-8 fade-in">
+        <p class="text-xs uppercase tracking-wider text-muted mb-3 font-medium">Como usar</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          ${steps.map((s, i) => `
+            <div class="flex items-start gap-3 flex-1">
+              <div class="w-6 h-6 rounded-full bg-accent/20 text-accent flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">${i + 1}</div>
+              <div>
+                <p class="text-sm font-medium text-fg">${s.title}</p>
+                <p class="text-xs text-muted mt-0.5">${s.desc}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
   // ── Router ────────────────────────────────────────────────────────────
   function navigate(page) {
     const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, tutoriais: renderTutoriais };
@@ -770,6 +789,13 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">${t.escalaPage.header}</h1>
             <p class="text-muted max-w-2xl font-light">${t.escalaPage.desc}</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Clique em um valor', desc: 'Selecione qualquer tom da escala para ver detalhes.' },
+            { title: 'Veja as misturas', desc: 'Confira as proporções de branco e preto para cada tom.' },
+            { title: 'Estude as dicas', desc: 'Aprenda alternativas de pigmentos e aplicações práticas.' }
+          ])}
+
           <div id="escala-preview" class="mb-8"></div>
           <div id="escala-strip" class="mb-8"></div>
           <div id="escala-details"></div>
@@ -959,6 +985,13 @@ function getDashboardTranslation() {
               <p class="text-sm font-medium text-accent">${t.treino.acertos}: ${acertos}</p>
             </div>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Olhe o swatch', desc: 'Analise a cor/valor mostrada acima.' },
+            { title: 'Clique no valor', desc: 'Escolha o número (0-10) que corresponde ao tom.' },
+            { title: 'Confira o resultado', desc: 'Veja se acertou e continue até o final.' }
+          ])}
+
           <!-- Barra de progresso -->
           <div class="w-full rounded-full mb-10" style="height:3px;background:hsl(0 0% 14%)">
             <div class="h-full rounded-full transition-all duration-500" style="width:${progresso}%;background:#d88800"></div>
@@ -1103,6 +1136,12 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Converter para Cinzas</h1>
             <p class="text-muted max-w-2xl font-light">Faça o upload de uma foto e converta-a para escala de cinzas. Ajuste brilho e contraste para isolar os valores que importam.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Ajuste os controles', desc: 'Mude brilho, contraste e método de conversão.' },
+            { title: 'Baixe o resultado', desc: 'Salve a imagem convertida em cinzas.' }
+          ])}
 
           <!-- Upload zone -->
           <div id="upload-zone"
@@ -1397,6 +1436,12 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Reduza qualquer imagem a poucos tons de cinza para enxergar apenas as regiões de valor — como blocos. Essa é a forma mais eficaz de treinar o olhar para pintar.</p>
           </div>
 
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Escolha o nível', desc: 'Selecione quantos tons deseja (3 a 11).' },
+            { title: 'Analise e baixe', desc: 'Estude as regiões de valor e salve o resultado.' }
+          ])}
+
           <!-- Upload zone -->
           <div id="pz-upload-zone"
             class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]"
@@ -1647,6 +1692,12 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Mapear Zonas</h1>
             <p class="text-muted max-w-2xl font-light">Divida a imagem em uma grade e descubra o valor dominante de cada zona na escala de cinza — é o mapa tonal que você monta antes de pintar.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Configure a grade', desc: 'Escolha o tamanho da grade e a sobreposição.' },
+            { title: 'Estude o mapa', desc: 'Analise os valores de cada zona e baixe.' }
+          ])}
 
           <!-- Upload zone -->
           <div id="zn-upload-zone"
@@ -1986,6 +2037,12 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Extraia os contornos de qualquer imagem como um desenho de linha. Ideal para estudar formas, preparar a tela com o contorno base, ou simplificar uma referência complexa.</p>
           </div>
 
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Ajuste sensibilidade', desc: 'Controle o limiar e suavização dos contornos.' },
+            { title: 'Baixe o contorno', desc: 'Salve o desenho de linha resultante.' }
+          ])}
+
           <!-- Upload zone -->
           <div id="rl-upload-zone"
             class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]"
@@ -2315,6 +2372,12 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Isolador Tonal Dinâmico</h1>
             <p class="text-muted max-w-2xl font-light">Passe o mouse ou arraste o dedo sobre a imagem para isolar o valor tonal exato de qualquer ponto — sem ilusões de ótica.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Passe o mouse', desc: 'Clique ou arraste sobre a imagem para ver o valor.' },
+            { title: 'Isole e baixe', desc: 'Use a faixa de valores para isolar e salve.' }
+          ])}
 
           <!-- Upload zone -->
           <div id="iso-upload-zone"
@@ -2789,6 +2852,12 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">Isole detalhes bloqueando o contexto ao redor. Arraste o bloco vazado sobre a foto para estudar valores, texturas e micro-anatomias sem sofrer interferãncia das luzes ao redor.</p>
           </div>
 
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Arraste a janela', desc: 'Mova o bloco vazado para isolar a área desejada.' },
+            { title: 'Ajuste e baixe', desc: 'Mude o tamanho da abertura e salve o recorte.' }
+          ])}
+
           <!-- Upload zone -->
           <div id="jn-upload-zone"
             class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]"
@@ -3012,6 +3081,12 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Quadricular Imagem</h1>
             <p class="text-muted max-w-2xl font-light">Sobreponha uma grade na referência para copiar a imagem quadrado por quadrado — a técnica clássica para quem quer desenhar com precisão sem precisar saber desenhar.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Defina a grade', desc: 'Escolha colunas/linhas e espessura da grade.' },
+            { title: 'Desenhe e baixe', desc: 'Copie célula por célula e salve a referência.' }
+          ])}
 
           <!-- Upload zone -->
           <div id="qd-upload-zone"
@@ -3692,6 +3767,12 @@ function getDashboardTranslation() {
             <p class="text-muted max-w-2xl font-light">O maior inimigo da percepção tonal não é a falta de coordenação — é o próprio <span class="text-fg font-medium">cérebro</span>, que tenta "corrigir" o que vemos. Três passos para treinar o olho.</p>
           </div>
 
+          ${renderInstructionCard([
+            { title: 'Estude a teoria', desc: 'Entenda como o cérebro distorce os valores.' },
+            { title: 'Pratique o exercício', desc: 'Teste a ilusão com o simulador interativo.' },
+            { title: 'Aplique as técnicas', desc: 'Aprenda a contornar a ilusão ao pintar.' }
+          ])}
+
           <!-- ═══ PASSO 1: Teoria — Ilusão de Profundidade ═══ -->
           <div class="mb-12">
             <div class="flex items-center gap-3 mb-6">
@@ -3885,6 +3966,13 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Localizar Valor</h1>
             <p class="text-muted max-w-2xl font-light">Clique em qualquer ponto da imagem para descobrir o valor tonal exato (0–10). Isole uma faixa de valores para estudar a distribuição tonal.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Clique na imagem', desc: 'Toque em qualquer ponto para ver o valor exato.' },
+            { title: 'Isole e analise', desc: 'Use a faixa de valores para estudar a distribuição.' }
+          ])}
+
           <div id="lv-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('lv-file-input').click()">
             <input type="file" id="lv-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="lvProcessFile(event)" />
             <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
@@ -4291,6 +4379,13 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Extrair Paleta</h1>
             <p class="text-muted max-w-2xl font-light">Analisa a imagem e extrai as cores dominantes com os valores hex exatos para misturar.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Veja as cores', desc: 'O sistema extrai automaticamente as cores dominantes.' },
+            { title: 'Copie os valores', desc: 'Use os hex/RGB para misturar suas tintas.' }
+          ])}
+
           <div id="pe-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('pe-file-input').click()">
             <input type="file" id="pe-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="peProcessFile(event)" />
             <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
@@ -4450,6 +4545,13 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Exercícios Progressivos</h1>
             <p class="text-muted max-w-2xl font-light">8 semanas estruturadas do básico à aplicação avançada. Cada semana tem um foco e exercícios práticos.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Clique na semana', desc: 'Abra o accordion para ver os exercícios.' },
+            { title: 'Siga a ordem', desc: 'Cada semana builds sobre a anterior.' },
+            { title: 'Pratique', desc: 'Faça os exercícios na tela ou no papel.' }
+          ])}
+
           <div class="space-y-4">
             ${semanas.map(s => `
               <div class="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
@@ -4503,6 +4605,13 @@ function getDashboardTranslation() {
             <h1 class="font-display text-4xl md:text-5xl mb-4">Análise de Luz</h1>
             <p class="text-muted max-w-2xl font-light">Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.</p>
           </div>
+
+          ${renderInstructionCard([
+            { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
+            { title: 'Veja o mapa de luz', desc: 'O sistema identifica a direção e intensidade.' },
+            { title: 'Aplique na pintura', desc: 'Use as dicas para aplicar luz e sombra.' }
+          ])}
+
           <div id="la-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('la-file-input').click()">
             <input type="file" id="la-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="laProcessFile(event)" />
             <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
