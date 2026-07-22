@@ -133,6 +133,18 @@
         <img src="images/logo-oficial/logo-sb-tono-b.png" alt="TONO" class="h-18 w-auto">
       </button>
       <div class="flex items-center gap-1">
+        <!-- Language Selector -->
+        <div class="relative">
+          <button onclick="toggleLangDropdown()" class="text-fg text-sm p-2 flex items-center gap-1 border border-fg/10 rounded-lg hover:border-accent/40 transition-colors">
+            <span id="current-lang-m">PT</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </button>
+          <div id="lang-dropdown-m" class="hidden absolute right-0 top-full mt-1 bg-bg border border-fg/10 rounded-lg p-2 z-20 shadow-xl">
+            <button onclick="setLanguage('pt')" class="w-full text-left px-3 py-2 rounded hover:bg-fg/5 text-sm">🇧🇷 PT</button>
+            <button onclick="setLanguage('en')" class="w-full text-left px-3 py-2 rounded hover:bg-fg/5 text-sm">🇺🇸 EN</button>
+            <button onclick="setLanguage('es')" class="w-full text-left px-3 py-2 rounded hover:bg-fg/5 text-sm">🇪🇸 ES</button>
+          </div>
+        </div>
         <button onclick="toggleTheme()" class="text-fg text-xl p-2" title="Alternar tema">
           <svg id="icon-moon-m" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 9.5A6.5 6.5 0 0 1 6.5 1a7 7 0 1 0 8.5 8.5z"/></svg>
           <svg id="icon-sun-m" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><circle cx="9" cy="9" r="3.5"/><path d="M9 1v1M9 16v1M1 9h1M16 9h1M3.05 3.05l.7.7M14.25 14.25l.7.7M3.05 14.95l.7-.7M14.25 3.75l.7-.7"/></svg>
@@ -151,33 +163,47 @@
       <button onclick="navigate('home')" class="flex items-center">
         <img src="images/logo-oficial/logo-sb-tono-b.png" alt="TONO" class="h-20 w-auto">
       </button>
-      <button onclick="toggleTheme()" id="theme-toggle" class="text-muted hover:text-fg transition-colors p-1.5 rounded-lg hover:bg-fg/5" title="Alternar tema">
-        <svg id="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 9.5A6.5 6.5 0 0 1 6.5 1a7 7 0 1 0 8.5 8.5z"/></svg>
-        <svg id="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><circle cx="9" cy="9" r="3.5"/><path d="M9 1v1M9 16v1M1 9h1M16 9h1M3.05 3.05l.7.7M14.25 14.25l.7.7M3.05 14.95l.7-.7M14.25 3.75l.7-.7"/></svg>
-      </button>
+      <div class="flex items-center gap-2">
+        <!-- Language Selector -->
+        <div class="relative">
+          <button onclick="toggleLangDropdown()" class="text-muted hover:text-fg text-sm p-2 flex items-center gap-1 border border-fg/10 rounded-lg hover:border-accent/40 transition-colors">
+            <span id="current-lang">PT</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </button>
+          <div id="lang-dropdown" class="hidden absolute right-0 top-full mt-1 bg-bg border border-fg/10 rounded-lg p-2 z-20 shadow-xl">
+            <button onclick="setLanguage('pt')" class="w-full text-left px-3 py-2 rounded hover:bg-fg/5 text-sm">🇧🇷 PT</button>
+            <button onclick="setLanguage('en')" class="w-full text-left px-3 py-2 rounded hover:bg-fg/5 text-sm">🇺🇸 EN</button>
+            <button onclick="setLanguage('es')" class="w-full text-left px-3 py-2 rounded hover:bg-fg/5 text-sm">🇪🇸 ES</button>
+          </div>
+        </div>
+        <button onclick="toggleTheme()" id="theme-toggle" class="text-muted hover:text-fg transition-colors p-1.5 rounded-lg hover:bg-fg/5" title="Alternar tema">
+          <svg id="icon-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 9.5A6.5 6.5 0 0 1 6.5 1a7 7 0 1 0 8.5 8.5z"/></svg>
+          <svg id="icon-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><circle cx="9" cy="9" r="3.5"/><path d="M9 1v1M9 16v1M1 9h1M16 9h1M3.05 3.05l.7.7M14.25 14.25l.7.7M3.05 14.95l.7-.7M14.25 3.75l.7-.7"/></svg>
+        </button>
+      </div>
     </div>
     <nav class="flex-1 py-3 overflow-y-auto no-scrollbar">
-      <button onclick="navigate('home'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="home"><i class="fa-solid fa-house w-5 text-center text-accent text-sm"></i> Início</button>
-      <button onclick="navigate('ensino'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="ensino"><i class="fa-solid fa-microphone-lines w-5 text-center text-accent text-sm"></i> TonoCast</button>
-      <button onclick="navigate('escala'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="escala"><i class="fa-solid fa-sliders w-5 text-center text-accent text-sm"></i> Escala</button>
-      <button onclick="navigate('treino'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="treino"><i class="fa-solid fa-brain w-5 text-center text-accent text-sm"></i> Treino</button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="converter"><i class="fa-solid fa-right-left w-5 text-center text-accent/40 text-sm"></i> Converter <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="posterizar"><i class="fa-solid fa-layer-group w-5 text-center text-accent/40 text-sm"></i> Posterizar <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="zonas"><i class="fa-solid fa-map-location-dot w-5 text-center text-accent/40 text-sm"></i> Mapear <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="navigate('riscoLinear'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="riscoLinear"><i class="fa-solid fa-pen-fancy w-5 text-center text-accent text-sm"></i> Risco</button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="janela"><i class="fa-solid fa-window-maximize w-5 text-center text-accent/40 text-sm"></i> Janela <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="quadricular"><i class="fa-solid fa-border-all w-5 text-center text-accent/40 text-sm"></i> Quadricular <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="ilusao"><i class="fa-solid fa-eye w-5 text-center text-accent/40 text-sm"></i> Ilusão <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="navigate('home'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="home"><i class="fa-solid fa-house w-5 text-center text-accent text-sm"></i> <span data-i18n="sidebar.home">Início</span></button>
+      <button onclick="navigate('ensino'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="ensino"><i class="fa-solid fa-microphone-lines w-5 text-center text-accent text-sm"></i> <span data-i18n="sidebar.tonocast">TonoCast</span></button>
+      <button onclick="navigate('escala'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="escala"><i class="fa-solid fa-sliders w-5 text-center text-accent text-sm"></i> <span data-i18n="sidebar.escala">Escala</span></button>
+      <button onclick="navigate('treino'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="treino"><i class="fa-solid fa-brain w-5 text-center text-accent text-sm"></i> <span data-i18n="sidebar.treino">Treino</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="converter"><i class="fa-solid fa-right-left w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.converter">Converter</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="posterizar"><i class="fa-solid fa-layer-group w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.posterizar">Posterizar</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="zonas"><i class="fa-solid fa-map-location-dot w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.mapear">Mapear</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="navigate('riscoLinear'); toggleSidebar()" class="sidebar-link w-full flex items-center gap-3 px-5 py-3 text-base text-muted hover:text-fg hover:bg-fg/5 transition-colors rounded-lg mx-1" data-sidebar="riscoLinear"><i class="fa-solid fa-pen-fancy w-5 text-center text-accent text-sm"></i> <span data-i18n="sidebar.risco">Risco</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="janela"><i class="fa-solid fa-window-maximize w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.janela">Janela</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="quadricular"><i class="fa-solid fa-border-all w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.quadricular">Quadricular</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="ilusao"><i class="fa-solid fa-eye w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.ilusao">Ilusão</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
       <div class="mx-5 my-2 border-t border-fg/5"></div>
-      <p class="px-5 py-1 text-[10px] uppercase tracking-[0.2em] text-muted/50">Avançado</p>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="localizador"><i class="fa-solid fa-crosshairs w-5 text-center text-accent/40 text-sm"></i> Localizar Valor <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="paleta"><i class="fa-solid fa-palette w-5 text-center text-accent/40 text-sm"></i> Extrair Paleta <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="exercicios"><i class="fa-solid fa-book-open w-5 text-center text-accent/40 text-sm"></i> Exercícios <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
-      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="luz"><i class="fa-solid fa-sun w-5 text-center text-accent/40 text-sm"></i> Análise de Luz <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <p class="px-5 py-1 text-[10px] uppercase tracking-[0.2em] text-muted/50" data-i18n="sidebar.avancado">Avançado</p>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="localizador"><i class="fa-solid fa-crosshairs w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.localizarValor">Localizar Valor</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="paleta"><i class="fa-solid fa-palette w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.extrairPaleta">Extrair Paleta</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="exercicios"><i class="fa-solid fa-book-open w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.exercicios">Exercícios</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
+      <button onclick="showPremiumPopup(); toggleSidebar()" class="sidebar-link sidebar-pro w-full flex items-center gap-3 px-5 py-3 text-base text-muted/40 cursor-not-allowed rounded-lg mx-1" data-sidebar="luz"><i class="fa-solid fa-sun w-5 text-center text-accent/40 text-sm"></i> <span data-i18n="sidebar.analiseLuz">Análise de Luz</span> <span class="ml-auto text-[9px] text-accent/50 border border-accent/20 rounded px-1.5 py-0.5">PRO</span></button>
       <div id="sidebar-banner" class="mx-4 mt-4 p-4 rounded-xl bg-accent/10 border border-accent/20">
-        <p class="text-[10px] uppercase tracking-wider text-accent/60 mb-1">Tono Pro</p>
-        <p class="text-xs text-fg/80 leading-relaxed mb-3">Desbloqueie todas as ferramentas e domine os valores tonais.</p>
-        <a href="sales-page.html" class="block w-full text-center text-xs font-medium py-2 rounded-lg bg-accent text-bg hover:brightness-110 active:scale-95 transition-all">
+        <p class="text-[10px] uppercase tracking-wider text-accent/60 mb-1" data-i18n="sidebar.pro">Tono Pro</p>
+        <p class="text-xs text-fg/80 leading-relaxed mb-3" data-i18n="sidebar.proDesc">Desbloqueie todas as ferramentas e domine os valores tonais.</p>
+        <a href="sales-page.html" class="block w-full text-center text-xs font-medium py-2 rounded-lg bg-accent text-bg hover:brightness-110 active:scale-95 transition-all" data-i18n="sidebar.acessarAgora">
           Acessar Agora
         </a>
       </div>
@@ -189,6 +215,146 @@
   <script>
     // localStorage.removeItem('tono_pro');
 
+    // --- Translations ---
+    const translations = {
+      pt: {
+        sidebar: {
+          home: 'Início',
+          tonocast: 'TonoCast',
+          escala: 'Escala',
+          treino: 'Treino',
+          converter: 'Converter',
+          posterizar: 'Posterizar',
+          mapear: 'Mapear',
+          risco: 'Risco',
+          janela: 'Janela',
+          quadricular: 'Quadricular',
+          ilusao: 'Ilusão',
+          avancado: 'Avançado',
+          localizarValor: 'Localizar Valor',
+          extrairPaleta: 'Extrair Paleta',
+          exercicios: 'Exercícios',
+          analiseLuz: 'Análise de Luz',
+          pro: 'Tono Pro',
+          proDesc: 'Desbloqueie todas as ferramentas e domine os valores tonais.',
+          acessarAgora: 'Acessar Agora'
+        },
+        premium: {
+          title: 'Ferramenta PRO',
+          desc: 'Assine o Tono Pro para desbloquear todas as ferramentas e dominar os valores tonais.',
+          cta: 'Acessar Agora',
+          close: 'Fechar'
+        }
+      },
+      en: {
+        sidebar: {
+          home: 'Home',
+          tonocast: 'TonoCast',
+          escala: 'Scale',
+          treino: 'Training',
+          converter: 'Convert',
+          posterizar: 'Posterize',
+          mapear: 'Map',
+          risco: 'Sketch',
+          janela: 'Window',
+          quadricular: 'Grid',
+          ilusao: 'Illusion',
+          avancado: 'Advanced',
+          localizarValor: 'Locate Value',
+          extrairPaleta: 'Extract Palette',
+          exercicios: 'Exercises',
+          analiseLuz: 'Light Analysis',
+          pro: 'Tono Pro',
+          proDesc: 'Unlock all tools and master tonal values.',
+          acessarAgora: 'Access Now'
+        },
+        premium: {
+          title: 'PRO Tool',
+          desc: 'Subscribe to Tono Pro to unlock all tools and master tonal values.',
+          cta: 'Access Now',
+          close: 'Close'
+        }
+      },
+      es: {
+        sidebar: {
+          home: 'Inicio',
+          tonocast: 'TonoCast',
+          escala: 'Escala',
+          treino: 'Entrenamiento',
+          converter: 'Convertir',
+          posterizar: 'Posterizar',
+          mapear: 'Mapear',
+          risco: 'Dibujo',
+          janela: 'Ventana',
+          quadricular: 'Cuadrícula',
+          ilusao: 'Ilusión',
+          avancado: 'Avanzado',
+          localizarValor: 'Localizar Valor',
+          extrairPaleta: 'Extraer Paleta',
+          exercicios: 'Ejercicios',
+          analiseLuz: 'Análisis de Luz',
+          pro: 'Tono Pro',
+          proDesc: 'Desbloquea todas las herramientas y domina los valores tonales.',
+          acessarAgora: 'Acceder Ahora'
+        },
+        premium: {
+          title: 'Herramienta PRO',
+          desc: 'Suscríbete a Tono Pro para desbloquear todas las herramientas y dominar los valores tonales.',
+          cta: 'Acceder Ahora',
+          close: 'Cerrar'
+        }
+      }
+    };
+
+    let currentLang = localStorage.getItem('tono_lang') || 'pt';
+
+    function toggleLangDropdown() {
+      const dropdown = document.getElementById('lang-dropdown');
+      const dropdownM = document.getElementById('lang-dropdown-m');
+      if (dropdown) dropdown.classList.toggle('hidden');
+      if (dropdownM) dropdownM.classList.toggle('hidden');
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('tono_lang', lang);
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang === 'es' ? 'es-ES' : 'en-US';
+      
+      // Update language labels
+      const langLabel = lang.toUpperCase();
+      const currentLangEl = document.getElementById('current-lang');
+      const currentLangMEl = document.getElementById('current-lang-m');
+      if (currentLangEl) currentLangEl.textContent = langLabel;
+      if (currentLangMEl) currentLangMEl.textContent = langLabel;
+      
+      // Close dropdowns
+      const dropdown = document.getElementById('lang-dropdown');
+      const dropdownM = document.getElementById('lang-dropdown-m');
+      if (dropdown) dropdown.classList.add('hidden');
+      if (dropdownM) dropdownM.classList.add('hidden');
+      
+      applyTranslations();
+      
+      // Re-render current page to apply translations in dashboard
+      const currentPage = window.location.hash.replace('#', '') || 'home';
+      navigate(currentPage);
+    }
+
+    function applyTranslations() {
+      const t = translations[currentLang];
+      
+      // Update elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let value = t;
+        for (const k of keys) {
+          value = value?.[k];
+        }
+        if (value) el.textContent = value;
+      });
+    }
+
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebar-overlay');
@@ -199,8 +365,7 @@
     function toggleTheme() {
       const isLight = document.documentElement.classList.toggle('light');
       localStorage.setItem('tono_theme', isLight ? 'light' : 'dark');
-    updateIcons();
-    updateLogo();
+      updateIcons();
       updateLogo();
     }
 
@@ -214,23 +379,28 @@
     }
 
     // Init theme
-    const saved = localStorage.getItem('tono_theme');
-    if (saved === 'light' || (!saved && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+    const savedTheme = localStorage.getItem('tono_theme');
+    if (savedTheme === 'light' || (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
       document.documentElement.classList.add('light');
     }
     updateIcons();
+    
+    // Init language
+    const savedLang = localStorage.getItem('tono_lang') || 'pt';
+    setLanguage(savedLang);
 
     function showPremiumPopup() {
+      const t = translations[currentLang].premium;
       const overlay = document.createElement('div');
       overlay.className = 'premium-overlay';
       overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
       overlay.innerHTML = `
         <div class="premium-modal">
           <div style="font-size:40px;margin-bottom:16px;">🔒</div>
-          <h3 style="font-size:18px;font-weight:600;color:#fff;margin-bottom:8px;">Ferramenta PRO</h3>
-          <p style="font-size:14px;color:#adaba5;margin-bottom:24px;line-height:1.5;">Assine o Tono Pro para desbloquear todas as ferramentas e dominar os valores tonais.</p>
-          <a href="sales-page.html" style="display:block;width:100%;padding:14px;border-radius:8px;background:linear-gradient(180deg,#e8c96a 0%,#d88800 55%,#b06e00 100%);color:#1c1200;font-weight:700;font-size:15px;text-decoration:none;text-align:center;transition:transform .15s ease,box-shadow .15s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 24px rgba(212,175,55,0.35)'" onmouseout="this.style.transform='';this.style.boxShadow=''">Acessar Agora</a>
-          <button onclick="this.closest('.premium-overlay').remove()" style="margin-top:12px;background:none;border:none;color:#6b6b6e;font-size:13px;cursor:pointer;">Fechar</button>
+          <h3 style="font-size:18px;font-weight:600;color:#fff;margin-bottom:8px;">${t.title}</h3>
+          <p style="font-size:14px;color:#adaba5;margin-bottom:24px;line-height:1.5;">${t.desc}</p>
+          <a href="sales-page.html" style="display:block;width:100%;padding:14px;border-radius:8px;background:linear-gradient(180deg,#e8c96a 0%,#d88800 55%,#b06e00 100%);color:#1c1200;font-weight:700;font-size:15px;text-decoration:none;text-align:center;transition:transform .15s ease,box-shadow .15s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 24px rgba(212,175,55,0.35)'" onmouseout="this.style.transform='';this.style.boxShadow=''">${t.cta}</a>
+          <button onclick="this.closest('.premium-overlay').remove()" style="margin-top:12px;background:none;border:none;color:#6b6b6e;font-size:13px;cursor:pointer;">${t.close}</button>
         </div>
       `;
       document.body.appendChild(overlay);
