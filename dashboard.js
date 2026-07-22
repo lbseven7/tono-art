@@ -320,22 +320,6 @@ const dashboardTranslations = {
       partes: 'partes',
       guiaMisturasExtra: 'Use esta guía como referencia al preparar tus pinturas.'
     },
-    treino: {
-      header: 'Entrenamiento de Valores',
-      desc: 'Identifica el valor tonal correcto de la muestra',
-      rodada: 'Ronda',
-      acertos: 'Correctos:',
-      correto: '¡Correcto! Valor {valor} — {nome}',
-      incorreto: 'Incorrecto. Correcto: {valor} — {nome}',
-      proximo: 'Siguiente →',
-      verResultado: 'Ver Resultado',
-      resultadoHeader: '{percent}%',
-      resultadoDesc: 'Acertaste {acertos} de {total} valores',
-      excelente: '¡Excelente percepción tonal!',
-      bom: 'Buen progreso, sigue practicando.',
-      revisar: 'Revisa la escala de grises e inténtalo de nuevo.',
-      tentarNovamente: 'Intentar de Nuevo'
-    }
   }
 };
 
