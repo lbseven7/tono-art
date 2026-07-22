@@ -1,9 +1,13 @@
 /**
  * Tono Chat Widget
  * Botão flutuante que abre o chat do Professor Leo no Tono.
+ * Usage: <script src="tono-chat-widget.js" data-lang="en"></script>
  */
 (function () {
-  var CHAT_URL = "https://leobchat.vercel.app/widget-tono.html";
+  var BASE_URL = "https://leobchat.vercel.app/widget-tono.html";
+  var scriptTag = document.currentScript;
+  var lang = (scriptTag && scriptTag.getAttribute("data-lang")) || "pt";
+  var CHAT_URL = BASE_URL + "?lang=" + encodeURIComponent(lang);
 
   var css = "\n\
     #tono-chat-fab {\n\
