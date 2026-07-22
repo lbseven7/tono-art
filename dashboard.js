@@ -1,17 +1,368 @@
+// ── Translations ─────────────────────────────────────────────────────────
+const dashboardTranslations = {
+  pt: {
+    escala: {
+      brancoPuro: 'Branco Puro',
+      cinzaClaro1: 'Cinza Claro 1',
+      cinzaClaro2: 'Cinza Claro 2',
+      cinzaClaro3: 'Cinza Claro 3',
+      cinzaMedioClaro: 'Cinza Médio Claro',
+      cinzaMedio: 'Cinza Médio',
+      cinzaMedioEscuro: 'Cinza Médio Escuro',
+      cinzaEscuro1: 'Cinza Escuro 1',
+      cinzaEscuro2: 'Cinza Escuro 2',
+      cinzaEscuro3: 'Cinza Escuro 3',
+      pretoPuro: 'Preto Puro'
+    },
+    dicas: [
+      'Comece sempre com a cor mais clara (branco) e adicione o preto aos poucos.',
+      'Use uma espessura limpa para cada mistura — contamina altera o valor.',
+      'Teste o tom sobre um papel de papel branco para avaliar corretamente.',
+      'O olho se adapta rapidamente: observe cada mistura por no máximo 5 segundos.',
+      'Prepare todos os 11 valores de uma vez para ter a escala completa.'
+    ],
+    pigmentos: {
+      branco: {
+        nome: 'Branco de Titânio',
+        desc: 'O branco mais opaco e usado em pintura hiper realista; cobertura máxima e neutralidade de tom.'
+      },
+      preto: {
+        nome: 'Negro de Marfim',
+        desc: 'Preto neutro e levemente amadeirado, não puxa a mistura para o azul ou o marrom como outros pretos.'
+      }
+    },
+    pigmentosAlternativos: [
+      { nome: 'Branco de Zinco', papel: 'Alternativa ao Branco de Titânio', desc: 'Mais transparente e frio; produz cinzas ligeiramente mais suaves.' },
+      { nome: 'Preto Marte', papel: 'Alternativa ao Negro de Marfim', desc: 'Preto opaco levemente avermelhado, seca mais rápido em óleo.' },
+      { nome: 'Negro Fumo', papel: 'Alternativa ao Negro de Marfim', desc: 'Muito intenso e frio; cobre bem, mas domina a mistura em pequenas quantidades.' }
+    ],
+    home: {
+      header: 'Escala e Valor Tonal',
+      desc: 'Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto.',
+      cta: 'Quero Aprender Agora!',
+      acessar: 'Acessar →',
+      modules: [
+        { title: 'Escala de Cinzas', desc: 'Estude a escala completa de 11 valores em cinza, do branco puro ao preto absoluto. Guia de misturas incluído.' },
+        { title: 'Treino de Valores', desc: 'Pratique identificar valores na escala de cinzas e avalie sua precisão visual.' },
+        { title: 'Converter para Cinzas', desc: 'Transforme qualquer imagem em escala de cinzas para estudar a estrutura tonal.' },
+        { title: 'Posterizar', desc: 'Reduza a imagem a poucos tons de cinza para enxergar as regiões de valor como blocos.' },
+        { title: 'Mapear Zonas', desc: 'Divida a imagem em zonas de cinza e identifique o valor dominante de cada região — como um mapa tonal.' },
+        { title: 'Risco Linear', desc: 'Extraia o contorno da imagem como linha — ideal para estudar formas e preparar a tela.' },
+        { title: 'Janela Física', desc: 'Isole uma área da imagem com uma máscara — como um cartão vazado. Arraste para estudar detalhes.' },
+        { title: 'Quadricular Imagem', desc: 'Sobreponha uma grade na imagem para copiar quadrado por quadrado — técnica clássica para desenhar com precisão.' },
+        { title: 'Ilusão de Óptica', desc: 'Veja como o cérebro engana — o mesmo cinza parece diferente conforme o fundo. Contraste simultâneo na prática.' }
+      ]
+    },
+    treino: {
+      header: 'Treino de Valores',
+      desc: 'Identifique o valor tonal correto da amostra',
+      rodada: 'Rodada {rodada}/{total}',
+      acertos: 'Acertos',
+      correto: 'Correto! Valor {valor} — {nome}',
+      incorreto: 'Incorreto. Correto: {valor} — {nome}',
+      proximo: 'Próximo →',
+      verResultado: 'Ver resultado',
+      resultadoHeader: '{percent}%',
+      resultadoDesc: 'Você acertou {acertos} de {total} valores',
+      excelente: 'Excelente percepção tonal!',
+      bom: 'Bom progresso, continue praticando.',
+      revisar: 'Revise a escala de cinzas e tente novamente.',
+      tentarNovamente: 'Tentar novamente'
+    },
+    ensino: {
+      header: 'TonoCast',
+      desc: 'Episódios em áudio sobre escala de cinzas, valores tonais e percepção visual. Ouça enquanto prepara sua tela, mistura tintas ou simplesmente descansa.',
+      voltar: 'Voltar para TonoCast',
+      episodio: 'Episódio',
+      de: 'de',
+      ferramentasRelacionadas: 'Ferramentas Relacionadas',
+      ferramenta: 'ferramenta',
+      ferramentas: 'ferramentas',
+      fundoMusical: 'Fundo musical',
+      duracao: 'Duração:',
+      episodios: [
+        { titulo: 'Introdução', descricao: 'Apresentação do TonoCast. O que você vai aprender sobre escala de cinzas, valores tonais e percepção visual.' },
+        { titulo: 'O que é Valor Tonal?', descricao: 'Conceito de valor tonal, importância na pintura e por que é a base de qualquer obra que funciona.' },
+        { titulo: 'A Escala de Cinzas', descricao: 'Estudo da escala completa de 11 valores, do branco puro ao preto absoluto.' },
+        { titulo: 'Luz e Sombra', descricao: 'Como a luz cria forma, profundidade e volume. Os componentes básicos de luz e sombra e como se traduzem em valores.' },
+        { titulo: 'Misturas e Paleta', descricao: 'Técnicas de mistura para obter tons precisos. Proporções básicas, erros comuns e como escolher sua paleta.' },
+        { titulo: 'Ilusão de Óptica do Valor', descricao: 'Como o cérebro processa valores e por que enganos visuais acontecem. Como combater as ilusões de óptica.' },
+        { titulo: 'Posterização e Zonas', descricao: 'O que é posterizar e como usar o sistema de zonas para analisar e reproduzir valores com precisão.' },
+        { titulo: 'Risco Linear e Quadricular', descricao: 'Métodos de desenho para transferir sua referência para a tela: risco linear e quadricular.' },
+        { titulo: 'Converter e Isolador', descricao: 'Como usar as ferramentas de conversão e isolamento para analisar e trabalhar com valores.' },
+        { titulo: 'Considerações Finais', descricao: 'Resumo, dicas finais e próximos passos na sua jornada com valores tonais.' }
+      ],
+      ferramentasNomes: {
+        escala: 'Escala de Cinzas', treino: 'Treino de Valores', localizador: 'Localizar Valor', luz: 'Análise de Luz', paleta: 'Extrair Paleta', quadricular: 'Quadricular', riscoLinear: 'Risco Linear', janela: 'Janela Física', tutoriais: 'Tutoriais'
+      }
+    },
+    escalaPage: {
+      header: 'Escala de Cinzas',
+      desc: 'A escala de valores é a espinha dorsal de qualquer pintura. Toque em qualquer tom para explorar suas propriedades e misturas.',
+      guiaMisturas: 'Guia de Misturas',
+      guiaMisturasDesc: 'Cada valor tonal é obtido misturando {branco} e {preto} em proporções precisas.',
+      dicasMisturas: 'Dicas de Misturas',
+      pigmentosAlternativos: 'Pigmentos Alternativos',
+      pigmentosAlternativosDesc: 'Caso não tenha os pigmentos de referência, estas são substituições comuns — o resultado tonal muda ligeiramente de temperatura.',
+      valor: 'Valor',
+      cor: 'Cor',
+      branco: 'Branco',
+      preto: 'Preto',
+      partes: 'partes',
+      guiaMisturasExtra: 'Use este guia como referência ao preparar suas tintas.'
+    }
+  },
+  en: {
+
+    escala: {
+      brancoPuro: 'Pure White',
+      cinzaClaro1: 'Light Gray 1',
+      cinzaClaro2: 'Light Gray 2',
+      cinzaClaro3: 'Light Gray 3',
+      cinzaMedioClaro: 'Medium Light Gray',
+      cinzaMedio: 'Medium Gray',
+      cinzaMedioEscuro: 'Medium Dark Gray',
+      cinzaEscuro1: 'Dark Gray 1',
+      cinzaEscuro2: 'Dark Gray 2',
+      cinzaEscuro3: 'Dark Gray 3',
+      pretoPuro: 'Pure Black'
+    },
+    dicas: [
+      'Always start with the lightest color (white) and add black gradually.',
+      'Use a clean brush for each mixture — contamination changes the value.',
+      'Test the tone on white paper to evaluate correctly.',
+      'The eye adapts quickly: observe each mixture for a maximum of 5 seconds.',
+      'Prepare all 11 values at once to have the complete scale.'
+    ],
+    pigmentos: {
+      branco: {
+        nome: 'Titanium White',
+        desc: 'The most opaque white used in hyper-realistic painting; maximum coverage and tonal neutrality.'
+      },
+      preto: {
+        nome: 'Ivory Black',
+        desc: 'Neutral, slightly warm black, doesn\'t pull the mixture toward blue or brown like other blacks.'
+      }
+    },
+    pigmentosAlternativos: [
+      { nome: 'Zinc White', papel: 'Alternative to Titanium White', desc: 'More transparent and cool; produces slightly smoother grays.' },
+      { nome: 'Mars Black', papel: 'Alternative to Ivory Black', desc: 'Opaque, slightly reddish black, dries faster in oil.' },
+      { nome: 'Lamp Black', papel: 'Alternative to Ivory Black', desc: 'Very intense and cool; covers well but dominates the mixture in small amounts.' }
+    ],
+    home: {
+      header: 'Scale and Tonal Value',
+      desc: 'Master the grayscale. Learn to see, classify, and mix each tonal value — from white to black.',
+      cta: 'I Want to Learn Now!',
+      acessar: 'Access →',
+      modules: [
+        { title: 'Grayscale', desc: 'Study the complete 11-value grayscale, from pure white to pure black. Mixing guide included.' },
+        { title: 'Value Training', desc: 'Practice identifying values on the grayscale and evaluate your visual accuracy.' },
+        { title: 'Convert to Grayscale', desc: 'Transform any image to grayscale to study the tonal structure.' },
+        { title: 'Posterize', desc: 'Reduce the image to a few gray tones to see value regions as blocks.' },
+        { title: 'Map Zones', desc: 'Divide the image into gray zones and identify the dominant value of each region — like a tonal map.' },
+        { title: 'Linear Sketch', desc: 'Extract the contour of the image as a line — ideal for studying shapes and preparing the canvas.' },
+        { title: 'Physical Window', desc: 'Isolate an area of the image with a mask — like a cut-out card. Drag to study details.' },
+        { title: 'Grid Image', desc: 'Overlay a grid on the image to copy square by square — classic technique for precise drawing.' },
+        { title: 'Optical Illusion', desc: 'See how the brain tricks you — the same gray looks different depending on the background. Simultaneous contrast in practice.' }
+      ]
+    },
+    ensino: {
+      header: 'TonoCast',
+      desc: 'Audio episodes about grayscale, tonal values, and visual perception. Listen while preparing your canvas, mixing paints, or simply resting.',
+      voltar: 'Back to TonoCast',
+      episodio: 'Episode',
+      de: 'of',
+      ferramentasRelacionadas: 'Related Tools',
+      ferramenta: 'tool',
+      ferramentas: 'tools',
+      fundoMusical: 'Background music',
+      duracao: 'Duration:',
+      episodios: [
+        { titulo: 'Introduction', descricao: 'Presentation of TonoCast. What you will learn about grayscale, tonal values, and visual perception.' },
+        { titulo: 'What is Tonal Value?', descricao: 'Concept of tonal value, importance in painting, and why it is the foundation of any successful artwork.' },
+        { titulo: 'The Grayscale', descricao: 'Study of the complete 11-value scale, from pure white to pure black.' },
+        { titulo: 'Light and Shadow', descricao: 'How light creates form, depth, and volume. The basic components of light and shadow and how they translate into values.' },
+        { titulo: 'Mixing and Palette', descricao: 'Mixing techniques to get precise tones. Basic proportions, common mistakes, and how to choose your palette.' },
+        { titulo: 'Value Optical Illusion', descricao: 'How the brain processes values and why visual illusions happen. How to combat optical illusions.' },
+        { titulo: 'Posterization and Zones', descricao: 'What posterizing is and how to use the zone system to analyze and reproduce values accurately.' },
+        { titulo: 'Linear Sketch and Grid', descricao: 'Drawing methods to transfer your reference to the canvas: linear sketch and grid.' },
+        { titulo: 'Convert and Isolator', descricao: 'How to use conversion and isolation tools to analyze and work with values.' },
+        { titulo: 'Final Thoughts', descricao: 'Summary, final tips, and next steps in your tonal value journey.' }
+      ],
+      ferramentasNomes: {
+        escala: 'Grayscale', treino: 'Value Training', localizador: 'Locate Value', luz: 'Light Analysis', paleta: 'Extract Palette', quadricular: 'Grid', riscoLinear: 'Linear Sketch', janela: 'Physical Window', tutoriais: 'Tutorials'
+      }
+    },
+    escalaPage: {
+      header: 'Grayscale',
+      desc: 'The value scale is the backbone of any painting. Tap any tone to explore its properties and mixtures.',
+      guiaMisturas: 'Mixing Guide',
+      guiaMisturasDesc: 'Each tonal value is obtained by mixing {branco} and {preto} in precise proportions.',
+      dicasMisturas: 'Mixing Tips',
+      pigmentosAlternativos: 'Alternative Pigments',
+      pigmentosAlternativosDesc: 'If you don\'t have the reference pigments, these are common substitutions — the tonal result changes temperature slightly.',
+      valor: 'Value',
+      cor: 'Color',
+      branco: 'White',
+      preto: 'Black',
+      partes: 'parts',
+      guiaMisturasExtra: 'Use this guide as a reference when preparing your paints.'
+    }
+  },
+  es: {
+    treino: {
+      header: 'Entrenamiento de Valores',
+      desc: 'Identifica el valor tonal correcto de la muestra',
+      rodada: 'Ronda {rodada}/{total}',
+      acertos: 'Correctos',
+      correto: '¡Correcto! Valor {valor} — {nome}',
+      incorreto: 'Incorrecto. Correcto: {valor} — {nome}',
+      proximo: 'Siguiente →',
+      verResultado: 'Ver Resultado',
+      resultadoHeader: '{percent}%',
+      resultadoDesc: 'Acertaste {acertos} de {total} valores',
+      excelente: '¡Excelente percepción tonal!',
+      bom: 'Buen progreso, sigue practicando.',
+      revisar: 'Revisa la escala de grises y vuelve a intentarlo.',
+      tentarNovamente: 'Intentar de Nuevo'
+    },
+    escala: {
+      brancoPuro: 'Blanco Puro',
+      cinzaClaro1: 'Gris Claro 1',
+      cinzaClaro2: 'Gris Claro 2',
+      cinzaClaro3: 'Gris Claro 3',
+      cinzaMedioClaro: 'Gris Medio Claro',
+      cinzaMedio: 'Gris Medio',
+      cinzaMedioEscuro: 'Gris Medio Oscuro',
+      cinzaEscuro1: 'Gris Oscuro 1',
+      cinzaEscuro2: 'Gris Oscuro 2',
+      cinzaEscuro3: 'Gris Oscuro 3',
+      pretoPuro: 'Negro Puro'
+    },
+    dicas: [
+      'Empieza siempre con el color más claro (blanco) y añade negro gradualmente.',
+      'Usa un pincel limpio para cada mezcla — la contaminación cambia el valor.',
+      'Prueba el tono sobre papel blanco para evaluar correctamente.',
+      'El ojo se adapta rápido: observa cada mezcla por máximo 5 segundos.',
+      'Prepara todos los 11 valores de una vez para tener la escala completa.'
+    ],
+    pigmentos: {
+      branco: {
+        nombre: 'Blanco de Titanio',
+        desc: 'El blanco más opaco usado en pintura hiperrealista; cobertura máxima y neutralidad tonal.'
+      },
+      preto: {
+        nombre: 'Negro de Marfil',
+        desc: 'Negro neutro y ligeramente cálido, no tira la mezcla hacia el azul o el marrón como otros negros.'
+      }
+    },
+    pigmentosAlternativos: [
+      { nombre: 'Blanco de Zinc', papel: 'Alternativa al Blanco de Titanio', desc: 'Más transparente y frío; produce grises ligeramente más suaves.' },
+      { nombre: 'Negro Marte', papel: 'Alternativa al Negro de Marfil', desc: 'Negro opaco ligeramente rojizo, seca más rápido en óleo.' },
+      { nombre: 'Negro de Humo', papel: 'Alternativa al Negro de Marfil', desc: 'Muy intenso y frío; cubre bien pero domina la mezcla en pequeñas cantidades.' }
+    ],
+    home: {
+      header: 'Escala y Valor Tonal',
+      desc: 'Domina la escala de grises. Aprende a ver, clasificar y mezclar cada valor tonal — del blanco al negro.',
+      cta: '¡Quiero Aprender Ahora!',
+      acessar: 'Acceder →',
+      modules: [
+        { title: 'Escala de Grises', desc: 'Estudia la escala completa de 11 valores en gris, del blanco puro al negro puro. Guía de mezclas incluido.' },
+        { title: 'Entrenamiento de Valores', desc: 'Practica identificar valores en la escala de grises y evalúa tu precisión visual.' },
+        { title: 'Convertir a Grises', desc: 'Transforma cualquier imagen a escala de grises para estudiar la estructura tonal.' },
+        { title: 'Posterizar', desc: 'Reduce la imagen a pocos tonos de gris para ver las regiones de valor como bloques.' },
+        { title: 'Mapear Zonas', desc: 'Divide la imagen en zonas de gris e identifica el valor dominante de cada región — como un mapa tonal.' },
+        { title: 'Dibujo Lineal', desc: 'Extrae el contorno de la imagen como línea — ideal para estudiar formas y preparar el lienzo.' },
+        { title: 'Ventana Física', desc: 'Isola un área de la imagen con una máscara — como una tarjeta recortada. Arrastra para estudiar detalles.' },
+        { title: 'Imagen Cuadriculada', desc: 'Superpone una cuadrícula en la imagen para copiar cuadrado por cuadrado — técnica clásica para dibujar con precisión.' },
+        { title: 'Ilusión Óptica', desc: 'Ve cómo el cerebro engaña — el mismo gris se ve diferente según el fondo. Contraste simultáneo en práctica.' }
+      ]
+    },
+    ensino: {
+      header: 'TonoCast',
+      desc: 'Episodios de audio sobre escala de grises, valores tonales y percepción visual. Escucha mientras preparas tu lienzo, mezclas pinturas o simplemente descansas.',
+      voltar: 'Volver a TonoCast',
+      episodio: 'Episodio',
+      de: 'de',
+      ferramentasRelacionadas: 'Herramientas Relacionadas',
+      ferramenta: 'herramienta',
+      ferramentas: 'herramientas',
+      fundoMusical: 'Música de fondo',
+      duracao: 'Duración:',
+      episodios: [
+        { titulo: 'Introducción', descricao: 'Presentación de TonoCast. Lo que aprenderás sobre escala de grises, valores tonales y percepción visual.' },
+        { titulo: '¿Qué es el Valor Tonal?', descricao: 'Concepto de valor tonal, importancia en la pintura y por qué es la base de cualquier obra que funcione.' },
+        { titulo: 'La Escala de Grises', descricao: 'Estudio de la escala completa de 11 valores, del blanco puro al negro puro.' },
+        { titulo: 'Luz y Sombra', descricao: 'Cómo la luz crea forma, profundidad y volumen. Los componentes básicos de luz y sombra y cómo se traducen en valores.' },
+        { titulo: 'Mezclas y Paleta', descricao: 'Técnicas de mezcla para obtener tonos precisos. Proporciones básicas, errores comunes y cómo elegir tu paleta.' },
+        { titulo: 'Ilusión Óptica del Valor', descricao: 'Cómo el cerebro procesa valores y por qué ocurren engaños visuales. Cómo combatir las ilusiones ópticas.' },
+        { titulo: 'Posterización y Zonas', descricao: 'Qué es posterizar y cómo usar el sistema de zonas para analizar y reproducir valores con precisión.' },
+        { titulo: 'Dibujo Lineal y Cuadrícula', descricao: 'Métodos de dibujo para transferir tu referencia al lienzo: dibujo lineal y cuadrícula.' },
+        { titulo: 'Convertir y Isolador', descricao: 'Cómo usar las herramientas de conversión y aislamiento para analizar y trabajar con valores.' },
+        { titulo: 'Consideraciones Finales', descricao: 'Resumen, consejos finales y próximos pasos en tu viaje con valores tonales.' }
+      ],
+      ferramentasNomes: {
+        escala: 'Escala de Grises', treino: 'Entrenamiento de Valores', localizador: 'Localizar Valor', luz: 'Análisis de Luz', paleta: 'Extraer Paleta', quadricular: 'Cuadrícula', riscoLinear: 'Dibujo Lineal', janela: 'Ventana Física', tutoriais: 'Tutoriales'
+      }
+    },
+    escalaPage: {
+      header: 'Escala de Grises',
+      desc: 'La escala de valores es la columna vertebral de cualquier pintura. Toca cualquier tono para explorar sus propiedades y mezclas.',
+      guiaMisturas: 'Guía de Mezclas',
+      guiaMisturasDesc: 'Cada valor tonal se obtiene mezclando {branco} y {preto} en proporções precisas.',
+      dicasMisturas: 'Consejos de Mezcla',
+      pigmentosAlternativos: 'Pigmentos Alternativos',
+      pigmentosAlternativosDesc: 'Si no tienes los pigmentos de referencia, estas son sustituciones comunes — el resultado tonal cambia ligeramente de temperatura.',
+      valor: 'Valor',
+      cor: 'Color',
+      branco: 'Blanco',
+      preto: 'Negro',
+      partes: 'partes',
+      guiaMisturasExtra: 'Use esta guía como referencia al preparar tus pinturas.'
+    },
+    treino: {
+      header: 'Entrenamiento de Valores',
+      desc: 'Identifica el valor tonal correcto de la muestra',
+      rodada: 'Ronda',
+      acertos: 'Correctos:',
+      correto: '¡Correcto! Valor {valor} — {nome}',
+      incorreto: 'Incorrecto. Correcto: {valor} — {nome}',
+      proximo: 'Siguiente →',
+      verResultado: 'Ver Resultado',
+      resultadoHeader: '{percent}%',
+      resultadoDesc: 'Acertaste {acertos} de {total} valores',
+      excelente: '¡Excelente percepción tonal!',
+      bom: 'Buen progreso, sigue practicando.',
+      revisar: 'Revisa la escala de grises e inténtalo de nuevo.',
+      tentarNovamente: 'Intentar de Nuevo'
+    }
+  }
+};
+
+function getDashboardTranslation() {
+  const lang = localStorage.getItem('tono_lang') || 'pt';
+  return dashboardTranslations[lang] || dashboardTranslations.pt;
+}
+
 // ── Data ──────────────────────────────────────────────────────────────
-  const escalaCinza = [
-    { valor:0,  hex:'#FFFFFF', branco:10, preto:0,  nome:'Branco Puro'       },
-    { valor:1,  hex:'#E6E6E6', branco:9,  preto:1,  nome:'Cinza Claro 1'     },
-    { valor:2,  hex:'#CCCCCC', branco:8,  preto:2,  nome:'Cinza Claro 2'     },
-    { valor:3,  hex:'#B3B3B3', branco:7,  preto:3,  nome:'Cinza Claro 3'     },
-    { valor:4,  hex:'#999999', branco:6,  preto:4,  nome:'Cinza Médio Claro' },
-    { valor:5,  hex:'#808080', branco:5,  preto:5,  nome:'Cinza Médio'       },
-    { valor:6,  hex:'#666666', branco:4,  preto:6,  nome:'Cinza Médio Escuro'},
-    { valor:7,  hex:'#4D4D4D', branco:3,  preto:7,  nome:'Cinza Escuro 1'    },
-    { valor:8,  hex:'#333333', branco:2,  preto:8,  nome:'Cinza Escuro 2'    },
-    { valor:9,  hex:'#191919', branco:1,  preto:9,  nome:'Cinza Escuro 3'    },
-    { valor:10, hex:'#000000', branco:0,  preto:10, nome:'Preto Puro'        },
-  ];
+  function getEscalaCinza() {
+    const t = getDashboardTranslation();
+    return [
+      { valor:0,  hex:'#FFFFFF', branco:10, preto:0,  nome:t.escala.brancoPuro     },
+      { valor:1,  hex:'#E6E6E6', branco:9,  preto:1,  nome:t.escala.cinzaClaro1    },
+      { valor:2,  hex:'#CCCCCC', branco:8,  preto:2,  nome:t.escala.cinzaClaro2    },
+      { valor:3,  hex:'#B3B3B3', branco:7,  preto:3,  nome:t.escala.cinzaClaro3    },
+      { valor:4,  hex:'#999999', branco:6,  preto:4,  nome:t.escala.cinzaMedioClaro },
+      { valor:5,  hex:'#808080', branco:5,  preto:5,  nome:t.escala.cinzaMedio     },
+      { valor:6,  hex:'#666666', branco:4,  preto:6,  nome:t.escala.cinzaMedioEscuro },
+      { valor:7,  hex:'#4D4D4D', branco:3,  preto:7,  nome:t.escala.cinzaEscuro1    },
+      { valor:8,  hex:'#333333', branco:2,  preto:8,  nome:t.escala.cinzaEscuro2    },
+      { valor:9,  hex:'#191919', branco:1,  preto:9,  nome:t.escala.cinzaEscuro3    },
+      { valor:10, hex:'#000000', branco:0,  preto:10, nome:t.escala.pretoPuro        },
+    ];
+  }
+
+  const escalaCinza = getEscalaCinza();
 
   const dicas = [
     'Comece sempre com a cor mais clara (branco) e adicione o preto aos poucos.',
@@ -91,6 +442,8 @@
   // ── Home ──────────────────────────────────────────────────────────────
   function renderHome() {
     const app = document.getElementById('app');
+    const t = getDashboardTranslation();
+    const escalaCinza = getEscalaCinza();
     const strip = escalaCinza.map(v => `<div class="flex-1 swatch-grow" style="background-color:${v.hex};animation-delay:${0.05*v.valor}s"></div>`).join('');
 
     const slides = [
@@ -113,23 +466,18 @@
     const dotsHtml = slides.map((_, i) => `
       <button onclick="homeGoSlide(${i})" class="w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-accent w-5' : 'bg-fg/20 hover:bg-fg/40'}" data-dot="${i}"></button>`).join('');
 
-    const modulos = [
-      { id:'escala',   icon:'▮', title:'Escala de Cinzas',    desc:'Estude a escala completa de 11 valores em cinza, do branco puro ao preto absoluto. Guia de misturas incluído.' },
-      { id:'treino',   icon:'▤', title:'Treino de Valores',   desc:'Pratique identificar valores na escala de cinzas e avalie sua precisão visual.' },
-      { id:'converter',icon:'⊑', title:'Converter para Cinzas', desc:'Transforme qualquer imagem em escala de cinzas para estudar a estrutura tonal.' },
-      { id:'posterizar',icon:'◧', title:'Posterizar',           desc:'Reduza a imagem a poucos tons de cinza para enxergar as regiões de valor como blocos.' },
-      { id:'zonas',     icon:'▦', title:'Mapear Zonas',          desc:'Divida a imagem em zonas de cinza e identifique o valor dominante de cada região — como um mapa tonal.' },
-      { id:'riscoLinear',icon:'◐', title:'Risco Linear',          desc:'Extraia o contorno da imagem como linha — ideal para estudar formas e preparar a tela.' },
-      { id:'janela',    icon:'⊞', title:'Janela Física',        desc:'Isole uma área da imagem com uma máscara — como um cartão vazado. Arraste para estudar detalhes.' },
-      { id:'quadricular',icon:'#', title:'Quadricular Imagem',   desc:'Sobreponha uma grade na imagem para copiar quadrado por quadrado — técnica clássica para desenhar com precisão.' },
-      { id:'ilusao',    icon:'◐', title:'Ilusão de Óptica',    desc:'Veja como o cérebro engana — o mesmo cinza parece diferente conforme o fundo. Contraste simultâneo na prática.' },
-    ].map(m => `
-      <button onclick="navigate('${m.id}')" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all card-hover">
-        <div class="text-accent mb-6 text-2xl">${m.icon}</div>
-        <h3 class="font-display text-2xl mb-3">${m.title}</h3>
-        <p class="text-muted text-base leading-relaxed mb-6 font-light">${m.desc}</p>
-        <span class="inline-flex items-center gap-2 text-base text-accent group-hover:gap-3 transition-all">Acessar →</span>
-      </button>`).join('');
+    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'zonas', 'riscoLinear', 'janela', 'quadricular', 'ilusao'];
+    const moduleIcons = ['▮', '▤', '⊑', '◧', '▦', '◐', '⊞', '#', '◐'];
+    const modulos = moduleIds.map((id, i) => {
+      const module = t.home.modules[i];
+      return `
+        <button onclick="navigate('${id}')" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all card-hover">
+          <div class="text-accent mb-6 text-2xl">${moduleIcons[i]}</div>
+          <h3 class="font-display text-2xl mb-3">${module.title}</h3>
+          <p class="text-muted text-base leading-relaxed mb-6 font-light">${module.desc}</p>
+          <span class="inline-flex items-center gap-2 text-base text-accent group-hover:gap-3 transition-all">${t.home.acessar}</span>
+        </button>`;
+    }).join('');
 
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)">
@@ -138,9 +486,9 @@
           <div class="absolute top-0 left-0 right-0 flex" style="height:6px">${strip}</div>
           <div class="fade-in relative z-10 max-w-3xl">
             <p class="text-accent text-sm tracking-[0.3em] uppercase mb-3">Tono</p>
-            <h1 class="font-display text-3xl md:text-5xl leading-[1.1] mb-4">Escala e Valor Tonal</h1>
+            <h1 class="font-display text-3xl md:text-5xl leading-[1.1] mb-4">${t.home.header}</h1>
             <p class="text-muted text-base leading-relaxed mb-8 max-w-xl mx-auto font-light">
-              Domine a escala de cinzas. Aprenda a enxergar, classificar e misturar cada valor tonal — do branco ao preto.
+              ${t.home.desc}
             </p>
             <div class="w-full max-w-2xl mx-auto relative">
               <div id="home-carousel" class="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02]" style="aspect-ratio:16/9">
@@ -156,7 +504,7 @@
               <div class="flex items-center justify-center gap-2 mt-4">${dotsHtml}</div>
             </div>
             <button onclick="navigate('escala')" class="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-base tracking-wide hover:bg-accent transition-colors">
-              Quero Aprender Agora!
+              ${t.home.cta}
             </button>
           </div>
         </section>
@@ -171,94 +519,33 @@
   }
 
   // ── Ensino (Podcast) ───────────────────────────────────────────────
-  const episodios = [
-    {
-      id: 1,
-      titulo: 'Introdução',
-      duracao: '—',
-      descricao: 'Apresentação do TonoCast. O que você vai aprender sobre escala de cinzas, valores tonais e percepção visual.',
-      ferramentas: [],
-      arquivo: 'audio/Introdução.m4a',
-    },
-    {
-      id: 2,
-      titulo: 'O que é Valor Tonal?',
-      duracao: '—',
-      descricao: 'Conceito de valor tonal, importância na pintura e por que é a base de qualquer obra que funciona.',
-      ferramentas: ['escala', 'treino'],
-      arquivo: 'audio/Ep1.m4a',
-    },
-    {
-      id: 3,
-      titulo: 'A Escala de Cinzas',
-      duracao: '—',
-      descricao: 'Estudo da escala completa de 11 valores, do branco puro ao preto absoluto.',
-      ferramentas: ['escala'],
-      arquivo: 'audio/Ep2.m4a',
-    },
-    {
-      id: 4,
-      titulo: 'Luz e Sombra',
-      duracao: '—',
-      descricao: 'Como a luz cria forma, profundidade e volume. Os componentes básicos de luz e sombra e como se traduzem em valores.',
-      ferramentas: ['luz', 'localizador'],
-      arquivo: 'audio/Ep3.m4a',
-    },
-    {
-      id: 5,
-      titulo: 'Misturas e Paleta',
-      duracao: '—',
-      descricao: 'Técnicas de mistura para obter tons precisos. Proporções básicas, erros comuns e como escolher sua paleta.',
-      ferramentas: ['paleta', 'converter'],
-      arquivo: 'audio/Ep4.m4a',
-    },
-    {
-      id: 6,
-      titulo: 'Ilusão de Óptica do Valor',
-      duracao: '—',
-      descricao: 'Como o cérebro processa valores e por que enganos visuais acontecem. Como combater as ilusões de óptica.',
-      ferramentas: ['treino', 'ilusao'],
-      arquivo: 'audio/Ep5.m4a',
-    },
-    {
-      id: 7,
-      titulo: 'Posterização e Zonas',
-      duracao: '—',
-      descricao: 'O que é posterizar e como usar o sistema de zonas para analisar e reproduzir valores com precisão.',
-      ferramentas: ['posterizar', 'zonas'],
-      arquivo: 'audio/Ep6.m4a',
-    },
-    {
-      id: 8,
-      titulo: 'Risco Linear e Quadricular',
-      duracao: '—',
-      descricao: 'Métodos de desenho para transferir sua referência para a tela: risco linear e quadricular.',
-      ferramentas: ['quadricular', 'riscoLinear'],
-      arquivo: 'audio/Ep7.m4a',
-    },
-    {
-      id: 9,
-      titulo: 'Converter e Isolador',
-      duracao: '—',
-      descricao: 'Como usar as ferramentas de conversão e isolamento para analisar e trabalhar com valores.',
-      ferramentas: ['converter'],
-      arquivo: 'audio/Ep8.m4a',
-    },
-    {
-      id: 10,
-      titulo: 'Considerações Finais',
-      duracao: '—',
-      descricao: 'Resumo, dicas finais e próximos passos na sua jornada com valores tonais.',
-      ferramentas: [],
-      arquivo: 'audio/Fim.m4a',
-    },
-  ];
+  function getEpisodios() {
+    const t = getDashboardTranslation();
+    return [
+      { id: 1, duracao: '—', ferramentas: [], arquivo: 'audio/Introdução.m4a' },
+      { id: 2, duracao: '—', ferramentas: ['escala', 'treino'], arquivo: 'audio/Ep1.m4a' },
+      { id: 3, duracao: '—', ferramentas: ['escala'], arquivo: 'audio/Ep2.m4a' },
+      { id: 4, duracao: '—', ferramentas: ['luz', 'localizador'], arquivo: 'audio/Ep3.m4a' },
+      { id: 5, duracao: '—', ferramentas: ['paleta', 'converter'], arquivo: 'audio/Ep4.m4a' },
+      { id: 6, duracao: '—', ferramentas: ['treino', 'ilusao'], arquivo: 'audio/Ep5.m4a' },
+      { id: 7, duracao: '—', ferramentas: ['posterizar', 'zonas'], arquivo: 'audio/Ep6.m4a' },
+      { id: 8, duracao: '—', ferramentas: ['quadricular', 'riscoLinear'], arquivo: 'audio/Ep7.m4a' },
+      { id: 9, duracao: '—', ferramentas: ['converter'], arquivo: 'audio/Ep8.m4a' },
+      { id: 10, duracao: '—', ferramentas: [], arquivo: 'audio/Fim.m4a' },
+    ].map((ep, i) => ({
+      ...ep,
+      titulo: t.ensino.episodios[i].titulo,
+      descricao: t.ensino.episodios[i].descricao
+    }));
+  }
 
   let ensinoState = { episodioAtual: null, tocando: false };
 
   function renderEnsino() {
     stopBGM();
     const app = document.getElementById('app');
+    const t = getDashboardTranslation();
+    const episodios = getEpisodios();
     const listaHtml = episodios.map(ep => `
       <button onclick="renderEpisodio(${ep.id})" class="w-full text-left p-5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:border-accent/30 transition-all fade-in">
         <div class="flex items-start justify-between gap-4">
@@ -270,7 +557,7 @@
             <p class="text-sm text-muted leading-relaxed mb-3">${ep.descricao}</p>
             <div class="flex items-center gap-3 text-xs text-muted">
               <span>&#x25B6; ${ep.duracao}</span>
-              ${ep.ferramentas.length ? `<span class="text-accent/60">+ ${ep.ferramentas.length} ferramenta${ep.ferramentas.length > 1 ? 's' : ''}</span>` : ''}
+              ${ep.ferramentas.length ? `<span class="text-accent/60">+ ${ep.ferramentas.length} ${ep.ferramentas.length > 1 ? t.ensino.ferramentas : t.ensino.ferramenta}</span>` : ''}
             </div>
           </div>
           <span class="text-accent text-lg mt-2">&rsaquo;</span>
@@ -281,8 +568,8 @@
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-3xl mx-auto">
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">TonoCast</h1>
-            <p class="text-muted max-w-2xl font-light">Episódios em áudio sobre escala de cinzas, valores tonais e percepção visual. Ouça enquanto prepara sua tela, mistura tintas ou simplesmente descansa.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.ensino.header}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.ensino.desc}</p>
           </div>
           <div class="space-y-4">
             ${listaHtml}
@@ -292,16 +579,18 @@
   }
 
   function renderEpisodio(id) {
+    const t = getDashboardTranslation();
+    const episodios = getEpisodios();
     const ep = episodios.find(e => e.id === id);
     if (!ep) { renderEnsino(); return; }
     ensinoState.episodioAtual = ep;
 
     const ferramentasHtml = ep.ferramentas.length ? `
       <div class="mt-8 p-6 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-xs uppercase tracking-[0.2em] text-accent mb-4">Ferramentas Relacionadas</p>
+        <p class="text-xs uppercase tracking-[0.2em] text-accent mb-4">${t.ensino.ferramentasRelacionadas}</p>
         <div class="flex flex-wrap gap-2">
           ${ep.ferramentas.map(f => {
-            const nomes = { escala:'Escala de Cinzas', treino:'Treino de Valores', localizador:'Localizar Valor', luz:'Análise de Luz', paleta:'Extrair Paleta', quadricular:'Quadricular', riscoLinear:'Risco Linear', janela:'Janela Física', tutoriais:'Tutoriais' };
+            const nomes = t.ensino.ferramentasNomes;
             return `<button onclick="navigate('${f}')" class="px-4 py-2 rounded-lg text-sm border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${nomes[f] || f}</button>`;
           }).join('')}
         </div>
@@ -317,14 +606,14 @@
         <div class="max-w-3xl mx-auto">
 
           <button onclick="renderEnsino()" class="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors mb-8">
-            <span>&lsaquo;</span> Voltar para TonoCast
+            <span>&lsaquo;</span> ${t.ensino.voltar}
           </button>
 
           <div class="fade-in mb-8">
             <div class="flex items-center gap-3 mb-4">
               <span class="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center text-sm font-mono font-bold">${ep.id}</span>
               <div>
-                <p class="text-xs text-muted">Episódio ${ep.id} de ${episodios.length}</p>
+                <p class="text-xs text-muted">${t.ensino.episodio} ${ep.id} ${t.ensino.de} ${episodios.length}</p>
                 <h1 class="font-display text-2xl md:text-3xl">${ep.titulo}</h1>
               </div>
             </div>
@@ -339,11 +628,11 @@
             </audio>
             <div class="flex items-center gap-3 mt-4 pt-4 border-t border-white/10">
               <i class="fa-solid fa-music text-accent/60 text-sm"></i>
-              <span class="text-xs text-muted">Fundo musical</span>
+              <span class="text-xs text-muted">${t.ensino.fundoMusical}</span>
               <input id="bgm-volume" type="range" min="0" max="20" value="5" class="flex-1 h-1 cursor-pointer">
               <button id="bgm-toggle" onclick="toggleBGM()" class="text-xs text-accent/60 hover:text-accent transition-colors">ON</button>
             </div>
-            <p class="text-xs text-muted mt-3 text-center">Duração: ${ep.duracao}</p>
+            <p class="text-xs text-muted mt-3 text-center">${t.ensino.duracao} ${ep.duracao}</p>
           </div>
 
           ${ferramentasHtml}
@@ -417,7 +706,7 @@
     voice.addEventListener('pause', () => stopBGM());
     voice.addEventListener('ended', () => {
       stopBGM();
-      const idx = episodios.findIndex(e => e.id === ensinoState.episodioAtual?.id);
+      const idx = getEpisodios().findIndex(e => e.id === ensinoState.episodioAtual?.id);
       if (idx >= 0 && idx < episodios.length - 1) {
         renderEpisodio(episodios[idx + 1].id);
       }
@@ -452,6 +741,15 @@
 
   function renderEscala() {
     const app = document.getElementById('app');
+    const t = getDashboardTranslation();
+    const escalaCinza = getEscalaCinza();
+    const pigmentos = {
+      branco: { nome: t.pigmentos.branco.nome, codigo: 'PW6', desc: t.pigmentos.branco.desc },
+      preto: { nome: t.pigmentos.preto.nome, codigo: 'PBk9', desc: t.pigmentos.preto.desc }
+    };
+    const pigmentosAlternativos = t.pigmentosAlternativos.map((p, i) => ({
+      nome: p.nome, codigo: ['PW4', 'PBk11', 'PBk6/7'][i], papel: p.papel, desc: p.desc
+    }));
     const rows = escalaCinza.map((v,i) => `
       <div class="grid items-center p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors fade-in" style="grid-template-columns:auto auto 1fr;gap:0.75rem 1rem;animation-delay:${i*0.04}s">
         <div><p class="font-display text-3xl">${v.valor}</p></div>
@@ -464,13 +762,13 @@
           <span class="text-right w-8 text-muted" title="${pigmentos.branco.nome}">${v.branco}B</span>
           <div class="flex-1 h-6 rounded overflow-hidden flex" style="box-shadow:0 0 0 1px hsl(0 0% 14%)">
             ${v.branco > 0 ? `<div class="bg-white" style="width:${v.branco*10}%"></div>` : ''}
-            ${v.preto  > 0 ? `<div class="bg-black" style="width:${v.preto*10}%"></div>`  : ''}
+            ${v.preto > 0 ? `<div class="bg-black" style="width:${v.preto*10}%"></div>` : ''}
           </div>
           <span class="w-8 text-muted" title="${pigmentos.preto.nome}">${v.preto}P</span>
           <span class="text-muted ml-1">${v.branco===0?'100% preto':v.preto===0?'100% branco':`${v.branco}:${v.preto}`}</span>
         </div>
       </div>`).join('');
-    const tips = dicas.map(d => `<li>— ${d}</li>`).join('');
+    const tips = t.dicas.map(d => `<li>— ${d}</li>`).join('');
     const alternativas = pigmentosAlternativos.map(p => `
       <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
         <div class="flex items-center justify-between mb-1">
@@ -485,16 +783,16 @@
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-6xl mx-auto">
           <div class="fade-in mb-12">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Escala de Cinzas</h1>
-            <p class="text-muted max-w-2xl font-light">A escala de valores é a espinha dorsal de qualquer pintura. Toque em qualquer tom para explorar suas propriedades e misturas.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.escalaPage.header}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.escalaPage.desc}</p>
           </div>
           <div id="escala-preview" class="mb-8"></div>
-          <div id="escala-strip"   class="mb-8"></div>
+          <div id="escala-strip" class="mb-8"></div>
           <div id="escala-details"></div>
 
           <div class="mt-16 p-8 rounded-2xl border border-white/10 bg-white/[0.02] fade-in">
-            <h3 class="font-display text-xl mb-1">Guia de Misturas</h3>
-            <p class="text-sm text-muted mb-5 font-light">Cada valor tonal é obtido misturando ${pigmentos.branco.nome} e ${pigmentos.preto.nome} em proporções precisas.</p>
+            <h3 class="font-display text-xl mb-1">${t.escalaPage.guiaMisturas}</h3>
+            <p class="text-sm text-muted mb-5 font-light">${t.escalaPage.guiaMisturasDesc.replace('{branco}', pigmentos.branco.nome).replace('{preto}', pigmentos.preto.nome)}</p>
             <div class="space-y-3">${rows}</div>
           </div>
 
@@ -502,15 +800,15 @@
             <div class="flex items-start gap-4">
               <span class="text-accent flex-shrink-0 mt-1 text-2xl">◇</span>
               <div>
-                <h3 class="font-display text-xl mb-4">Dicas de Mistura</h3>
+                <h3 class="font-display text-xl mb-4">${t.escalaPage.dicasMisturas}</h3>
                 <ul class="space-y-2 text-sm text-muted">${tips}</ul>
               </div>
             </div>
           </div>
 
           <div class="mt-6 p-8 rounded-2xl border border-white/10 bg-white/[0.02] fade-in">
-            <h3 class="font-display text-xl mb-1">Pigmentos Alternativos</h3>
-            <p class="text-sm text-muted mb-5 font-light">Caso não tenha os pigmentos de referência, estas são substituições comuns — o resultado tonal muda ligeiramente de temperatura.</p>
+            <h3 class="font-display text-xl mb-1">${t.escalaPage.pigmentosAlternativos}</h3>
+            <p class="text-sm text-muted mb-5 font-light">${t.escalaPage.pigmentosAlternativosDesc}</p>
             <div class="grid md:grid-cols-3 gap-4">${alternativas}</div>
           </div>
         </div>
@@ -521,6 +819,7 @@
   }
 
   function renderEscalaStrip() {
+    const escalaCinza = getEscalaCinza();
     const el = document.getElementById('escala-strip');
     el.className = 'flex rounded-xl overflow-hidden border border-white/10';
     el.style.height = '5rem';
@@ -533,13 +832,15 @@
   function selectEscala(i) { selecionadoIdx = i; renderEscalaStrip(); renderEscalaPreview(); renderEscalaDetails(); }
 
   function renderEscalaPreview() {
+    const escalaCinza = getEscalaCinza();
+    const t = getDashboardTranslation();
     const v = escalaCinza[selecionadoIdx];
     const txt = v.valor > 5 ? 'hsl(0 0% 60%)' : 'hsl(0 0% 20%)';
     document.getElementById('escala-preview').innerHTML = `
       <div class="fade-in relative rounded-2xl overflow-hidden border border-white/10" style="background-color:${v.hex};height:16rem">
         <div class="absolute inset-0 flex items-end justify-between p-6 md:p-8">
           <div>
-            <p class="text-xs uppercase mb-1 opacity-60 tracking-[0.2em]" style="color:${txt}">Valor</p>
+            <p class="text-xs uppercase mb-1 opacity-60 tracking-[0.2em]" style="color:${txt}">${t.escalaPage.valor || 'Valor'}</p>
             <p class="font-display leading-none" style="font-size:clamp(3.5rem,10vw,6rem);color:${txt}">${v.valor}</p>
           </div>
           <div class="text-right">
@@ -551,24 +852,26 @@
   }
 
   function renderEscalaDetails() {
+    const escalaCinza = getEscalaCinza();
+    const t = getDashboardTranslation();
     const v = escalaCinza[selecionadoIdx];
     document.getElementById('escala-details').innerHTML = `
       <div class="grid md:grid-cols-3 gap-4 fade-in">
         <div class="p-6 rounded-xl border border-white/10 bg-white/[0.02]">
-          <p class="text-xs tracking-[0.2em] uppercase text-accent mb-2">Cor</p>
+          <p class="text-xs tracking-[0.2em] uppercase text-accent mb-2">${t.escalaPage.cor || 'Cor'}</p>
           <p class="font-display text-2xl">${v.nome}</p>
           <p class="text-sm text-muted font-mono mt-1">${v.hex}</p>
         </div>
         <div class="p-6 rounded-xl border border-white/10 bg-white/[0.02]">
-          <p class="text-xs tracking-[0.2em] uppercase text-accent mb-2">Branco</p>
-          <p class="font-display text-2xl">${v.branco} <span class="text-sm text-muted">partes</span></p>
+          <p class="text-xs tracking-[0.2em] uppercase text-accent mb-2">${t.escalaPage.branco || 'Branco'}</p>
+          <p class="font-display text-2xl">${v.branco} <span class="text-sm text-muted">${t.escalaPage.partes || 'partes'}</span></p>
           <div class="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
             <div class="h-full bg-fg rounded-full transition-all duration-300" style="width:${v.branco*10}%"></div>
           </div>
         </div>
         <div class="p-6 rounded-xl border border-white/10 bg-white/[0.02]">
-          <p class="text-xs tracking-[0.2em] uppercase text-accent mb-2">Preto</p>
-          <p class="font-display text-2xl">${v.preto} <span class="text-sm text-muted">partes</span></p>
+          <p class="text-xs tracking-[0.2em] uppercase text-accent mb-2">${t.escalaPage.preto || 'Preto'}</p>
+          <p class="font-display text-2xl">${v.preto} <span class="text-sm text-muted">${t.escalaPage.partes || 'partes'}</span></p>
           <div class="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
             <div class="h-full bg-black rounded-full transition-all duration-300" style="width:${v.preto*10}%"></div>
           </div>
@@ -581,6 +884,7 @@
   let treinoState = { rodada:1, acertos:0, alvo:null, resposta:null, fase:'jogando' };
 
   function sortearValor(excluirValor) {
+    const escalaCinza = getEscalaCinza();
     let v;
     do { v = escalaCinza[Math.floor(Math.random() * escalaCinza.length)]; }
     while (excluirValor !== undefined && v.valor === excluirValor);
@@ -594,22 +898,27 @@
 
   function renderTreinoView() {
     const app = document.getElementById('app');
+    const t = getDashboardTranslation();
+    const escalaCinza = getEscalaCinza();
     const { rodada, acertos, alvo, resposta, fase } = treinoState;
 
     // ── Resultado final
     if (fase === 'resultado') {
       const pct  = Math.round((acertos / TOTAL_RODADAS) * 100);
-      const msg  = pct >= 80 ? 'Excelente percepção tonal!' : pct >= 50 ? 'Bom progresso, continue praticando.' : 'Revise a escala de cinzas e tente novamente.';
+      let msg;
+      if (pct >= 80) msg = t.treino.excelente;
+      else if (pct >= 50) msg = t.treino.bom;
+      else msg = t.treino.revisar;
       app.innerHTML = `
         <div style="min-height:calc(100vh - 4rem)" class="flex items-center justify-center px-6 py-12">
           <div class="max-w-lg w-full text-center fade-in">
             <div class="inline-flex items-center justify-center w-20 h-20 rounded-full border-2 border-accent mb-8">
               <span class="text-accent text-3xl">⊑</span>
             </div>
-            <h1 class="font-display text-5xl md:text-6xl mb-3">${pct}%</h1>
-            <p class="text-muted mb-2">Você acertou <span class="text-fg">${acertos}</span> de ${TOTAL_RODADAS} valores</p>
+            <h1 class="font-display text-5xl md:text-6xl mb-3">${t.treino.resultadoHeader.replace('{percent}', pct)}</h1>
+            <p class="text-muted mb-2">${t.treino.resultadoDesc.replace('{acertos}', acertos).replace('{total}', TOTAL_RODADAS)}</p>
             <p class="text-accent text-sm mb-12">${msg}</p>
-            <button onclick="navigate('treino')" class="inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-sm hover:bg-accent transition-colors">→ Tentar novamente</button>
+            <button onclick="navigate('treino')" class="inline-flex items-center gap-2 px-8 py-4 bg-fg text-bg rounded-full text-sm hover:bg-accent transition-colors">${t.treino.tentarNovamente}</button>
           </div>
         </div>`;
       return;
@@ -642,10 +951,10 @@
       feedbackHtml = `
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-6 rounded-xl border border-white/10 bg-white/[0.02] fade-in">
           <span style="color:${ok?'#d88800':'hsl(0 72% 51%)'}">
-            ${ok ? `✔ Correto! Valor ${alvo.valor} — ${alvo.nome}` : `✘ Incorreto. Correto: ${alvo.valor} — ${alvo.nome}`}
+            ${ok ? `✔ ${t.treino.correto.replace('{valor}', alvo.valor).replace('{nome}', alvo.nome)}` : `✘ ${t.treino.incorreto.replace('{valor}', alvo.valor).replace('{nome}', alvo.nome)}`}
           </span>
           <button onclick="proximaRodadaTreino()" class="px-6 py-3 bg-fg text-bg rounded-full text-sm whitespace-nowrap hover:bg-accent transition-colors">
-            ${rodada >= TOTAL_RODADAS ? 'Ver resultado' : 'Próximo →'}
+            ${rodada >= TOTAL_RODADAS ? t.treino.verResultado : t.treino.proximo}
           </button>
         </div>`;
     }
@@ -658,12 +967,12 @@
           <!-- Header -->
           <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-0 mb-8">
             <div>
-              <h1 class="font-display text-4xl md:text-5xl mb-1">Treino de Valores</h1>
-              <p class="text-sm font-light text-muted">Identifique o valor tonal correto da amostra</p>
+              <h1 class="font-display text-4xl md:text-5xl mb-1">${t.treino.header}</h1>
+              <p class="text-sm font-light text-muted">${t.treino.desc}</p>
             </div>
             <div class="text-right sm:ml-8">
-              <p class="text-sm text-muted">Rodada ${rodada}/${TOTAL_RODADAS}</p>
-              <p class="text-sm font-medium text-accent">Acertos: ${acertos}</p>
+              <p class="text-sm text-muted">${t.treino.rodada.replace('{rodada}', rodada).replace('{total}', TOTAL_RODADAS)}</p>
+              <p class="text-sm font-medium text-accent">${t.treino.acertos}: ${acertos}</p>
             </div>
           </div>
           <!-- Barra de progresso -->
@@ -700,6 +1009,15 @@
   // ── Misturas ──────────────────────────────────────────────────────────
   function renderMisturas() {
     const app = document.getElementById('app');
+    const t = getDashboardTranslation();
+    const escalaCinza = getEscalaCinza();
+    const pigmentos = {
+      branco: { nome: t.pigmentos.branco.nome, codigo: 'PW6', desc: t.pigmentos.branco.desc },
+      preto: { nome: t.pigmentos.preto.nome, codigo: 'PBk9', desc: t.pigmentos.preto.desc }
+    };
+    const pigmentosAlternativos = t.pigmentosAlternativos.map((p, i) => ({
+      nome: p.nome, codigo: ['PW4', 'PBk11', 'PBk6/7'][i], papel: p.papel, desc: p.desc
+    }));
     const rows = escalaCinza.map((v,i) => `
       <div class="grid items-center p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors fade-in" style="grid-template-columns:auto auto 1fr;gap:0.75rem 1rem;animation-delay:${i*0.04}s">
         <div><p class="font-display text-3xl">${v.valor}</p></div>
@@ -718,7 +1036,7 @@
           <span class="text-muted ml-1">${v.branco===0?'100% preto':v.preto===0?'100% branco':`${v.branco}:${v.preto}`}</span>
         </div>
       </div>`).join('');
-    const tips = dicas.map(d => `<li>— ${d}</li>`).join('');
+    const tips = t.dicas.map(d => `<li>— ${d}</li>`).join('');
     const alternativas = pigmentosAlternativos.map(p => `
       <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
         <div class="flex items-center justify-between mb-1">
@@ -733,8 +1051,8 @@
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-6xl mx-auto">
           <div class="fade-in mb-12">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Guia de Misturas</h1>
-            <p class="text-muted max-w-2xl font-light">Cada valor tonal é obtido misturando ${pigmentos.branco.nome} e ${pigmentos.preto.nome} em proporções precisas. Use este guia como referência ao preparar suas tintas.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.escalaPage.guiaMisturas}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.escalaPage.guiaMisturasDesc.replace('{branco}', pigmentos.branco.nome).replace('{preto}', pigmentos.preto.nome)} ${t.escalaPage.guiaMisturasExtra || 'Use este guia como referência ao preparar suas tintas.'}</p>
           </div>
 
           <!-- Pigmentos de referência -->
@@ -767,15 +1085,15 @@
             <div class="flex items-start gap-4">
               <span class="text-accent flex-shrink-0 mt-1 text-2xl">◇</span>
               <div>
-                <h3 class="font-display text-xl mb-4">Dicas de Mistura</h3>
+                <h3 class="font-display text-xl mb-4">${t.escalaPage.dicasMisturas}</h3>
                 <ul class="space-y-2 text-sm text-muted">${tips}</ul>
               </div>
             </div>
           </div>
 
           <div class="mt-6 p-8 rounded-2xl border border-white/10 bg-white/[0.02] fade-in">
-            <h3 class="font-display text-xl mb-1">Pigmentos Alternativos</h3>
-            <p class="text-sm text-muted mb-5 font-light">Caso não tenha os pigmentos de referência, estas são substituições comuns — o resultado tonal muda ligeiramente de temperatura.</p>
+            <h3 class="font-display text-xl mb-1">${t.escalaPage.pigmentosAlternativos}</h3>
+            <p class="text-sm text-muted mb-5 font-light">${t.escalaPage.pigmentosAlternativosDesc}</p>
             <div class="grid md:grid-cols-3 gap-4">${alternativas}</div>
           </div>
         </div>
