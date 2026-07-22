@@ -224,3 +224,5 @@
 - **Legendas:** Obrigatórias.
 - **Transições:** Suaves (fade), sem efeitos chamativos.
 - **Cores da apresentação:** Fundo escuro (#0a0a0a), texto claro (#f0ede8), acento amber (#d88800). Consistente com a identidade visual do Tono.
+
+https://audiocleaner.ai/pt-br/ai-audio-translator
