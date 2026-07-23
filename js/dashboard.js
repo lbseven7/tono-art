@@ -669,15 +669,15 @@ function getDashboardTranslation() {
     const strip = escalaCinza.map(v => `<div class="flex-1 swatch-grow" style="background-color:${v.hex};animation-delay:${0.05*v.valor}s"></div>`).join('');
 
     const slides = [
-      'images/slides (1).jpg',
-      'images/slides (2).jpg',
-      'images/slides (3).jpg',
-      'images/slides (4).jpg',
-      'images/slides (5).jpg',
-      'images/slides (6).jpg',
-      'images/slides (7).jpg',
-      'images/slides (8).jpg',
-      'images/slides (9).jpg',
+      'images/slide-01.jpg',
+      'images/slide-02.jpg',
+      'images/slide-03.jpg',
+      'images/slide-04.jpg',
+      'images/slide-05.jpg',
+      'images/slide-06.jpg',
+      'images/slide-07.jpg',
+      'images/slide-08.jpg',
+      'images/slide-09.jpg',
     ];
 
     const slideHtml = slides.map((src, i) => `
@@ -744,16 +744,16 @@ function getDashboardTranslation() {
   function getEpisodios() {
     const t = getDashboardTranslation();
     return [
-      { id: 1, duracao: '—', ferramentas: [], arquivo: 'audio/Introdução.m4a' },
-      { id: 2, duracao: '—', ferramentas: ['escala', 'treino'], arquivo: 'audio/Ep1.m4a' },
-      { id: 3, duracao: '—', ferramentas: ['escala'], arquivo: 'audio/Ep2.m4a' },
-      { id: 4, duracao: '—', ferramentas: ['luz', 'localizador'], arquivo: 'audio/Ep3.m4a' },
-      { id: 5, duracao: '—', ferramentas: ['paleta', 'converter'], arquivo: 'audio/Ep4.m4a' },
-      { id: 6, duracao: '—', ferramentas: ['treino', 'ilusao'], arquivo: 'audio/Ep5.m4a' },
-      { id: 7, duracao: '—', ferramentas: ['posterizar', 'zonas'], arquivo: 'audio/Ep6.m4a' },
-      { id: 8, duracao: '—', ferramentas: ['quadricular', 'riscoLinear'], arquivo: 'audio/Ep7.m4a' },
-      { id: 9, duracao: '—', ferramentas: ['converter'], arquivo: 'audio/Ep8.m4a' },
-      { id: 10, duracao: '—', ferramentas: [], arquivo: 'audio/Fim.m4a' },
+      { id: 1, duracao: '—', ferramentas: [], arquivo: 'audio/intro.m4a' },
+      { id: 2, duracao: '—', ferramentas: ['escala', 'treino'], arquivo: 'audio/ep01.m4a' },
+      { id: 3, duracao: '—', ferramentas: ['escala'], arquivo: 'audio/ep02.m4a' },
+      { id: 4, duracao: '—', ferramentas: ['luz', 'localizador'], arquivo: 'audio/ep03.m4a' },
+      { id: 5, duracao: '—', ferramentas: ['paleta', 'converter'], arquivo: 'audio/ep04.m4a' },
+      { id: 6, duracao: '—', ferramentas: ['treino', 'ilusao'], arquivo: 'audio/ep05.m4a' },
+      { id: 7, duracao: '—', ferramentas: ['posterizar', 'zonas'], arquivo: 'audio/ep06.m4a' },
+      { id: 8, duracao: '—', ferramentas: ['quadricular', 'riscoLinear'], arquivo: 'audio/ep07.m4a' },
+      { id: 9, duracao: '—', ferramentas: ['converter'], arquivo: 'audio/ep08.m4a' },
+      { id: 10, duracao: '—', ferramentas: [], arquivo: 'audio/fim.m4a' },
     ].map((ep, i) => ({
       ...ep,
       titulo: t.ensino.episodios[i].titulo,
@@ -881,7 +881,7 @@ function getDashboardTranslation() {
   let bgmInterval = null;
 
   function createBGMInstance() {
-    const audio = new Audio('audio/Infraction- Wild Nature.wav');
+    const audio = new Audio('audio/background.wav');
     audio.volume = bgmVolume;
     return audio;
   }
