@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'Lovelo';
+  src: url('../fonts/lovelo/Lovelo/Commercial/TTF/Lovelo-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lovelo';
+  src: url('../fonts/lovelo/Lovelo/Commercial/TTF/Lovelo-LineBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lovelo';
+  src: url('../fonts/lovelo/Lovelo/Commercial/TTF/Lovelo-LineLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #f0ede8;
+  --accent: #d88800;
+  --muted: #8a8580;
+  --card: #141414;
+  --border: #242424;
+}
+
+@page {
+  size: A4;
+  margin: 2.5cm 2cm;
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+}
+
+@page cover {
+  margin: 0;
+  @bottom-center { content: none; }
+}
+
+@page toc {
+  @bottom-center {
+    content: counter(page, lower-roman);
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: var(--muted);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 11pt;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Capa ── */
+.cover {
+  page: cover;
+  width: 210mm;
+  height: 297mm;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  opacity: 0.08;
+}
+
+.cover-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 32px;
+  opacity: 0.95;
+}
+
+.cover-title {
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 900;
+  font-size: 36pt;
+  color: var(--fg);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16pt;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 48px;
+}
+
+.cover-meta {
+  font-size: 9pt;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cover-accent-bar {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 24px auto;
+}
+
+/* ── Sumário ── */
+.toc {
+  page: toc;
+  page-break-after: always;
+  padding: 0;
+}
+
+.toc h2 {
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 700;
+  font-size: 18pt;
+  color: var(--accent);
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.toc-list li:last-child {
+  border-bottom: none;
+}
+
+.toc-episode {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-right: 12px;
+  min-width: 48px;
+}
+
+.toc-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 14pt;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+/* ── Conteúdo ── */
+.tutorial {
+  page-break-before: always;
+}
+
+.tutorial:first-of-type {
+  page-break-before: auto;
+}
+
+.episode-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 900;
+  font-size: 24pt;
+  color: var(--fg);
+  line-height: 1.2;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+}
+
+h2 {
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 700;
+  font-size: 14pt;
+  color: var(--fg);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+p {
+  margin-bottom: 12px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Slide Figure ── */
+.slide-figure {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.slide-img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.slide-caption {
+  font-size: 8pt;
+  color: var(--muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ── Separador de Seções ── */
+.section-divider {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.section-divider::before {
+  content: '◆ ◆ ◆';
+  color: var(--accent);
+  font-size: 8pt;
+  letter-spacing: 8px;
+}
+
+/* ── Bloco de Perguntas/Respostas ── */
+.qa-section {
+  margin-top: 20px;
+}
+
+.qa-section h3 {
+  font-family: 'Lovelo', sans-serif;
+  font-weight: 700;
+  font-size: 11pt;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.qa-item {
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+}
+
+.qa-item p {
+  margin-bottom: 0;
+}
+
+/* ── Escala de Cinzas (exemplo visual) ── */
+.value-scale {
+  display: flex;
+  gap: 2px;
+  margin: 16px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.value-scale div {
+  flex: 1;
+  height: 32px;
+}
+
+/* ── Nota / Tip ── */
+.note {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 10pt;
+}
+
+.note strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Rodapé ── */
+.footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 8pt;
+  color: var(--muted);
+  text-align: center;
+}
