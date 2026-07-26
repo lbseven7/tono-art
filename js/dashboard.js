@@ -5057,13 +5057,14 @@ function getDashboardTranslation() {
     if (isPro) {
       const banner = document.getElementById('sidebar-banner');
       if (banner) banner.remove();
-      document.querySelectorAll('[data-premium]').forEach(btn => {
+      document.querySelectorAll('[data-premium], .sidebar-pro').forEach(btn => {
         btn.removeAttribute('data-premium');
-        btn.classList.remove('sidebar-premium', 'cursor-not-allowed', 'text-muted/40');
-        btn.classList.add('text-muted', 'hover:text-fg', 'hover:bg-white/5');
+        btn.classList.remove('sidebar-premium', 'sidebar-pro', 'cursor-not-allowed', 'text-muted/40');
+        btn.classList.add('text-muted', 'hover:text-fg', 'hover:bg-fg/5');
+        btn.style.pointerEvents = '';
         const badge = btn.querySelector('span:last-child');
-        if (badge && badge.textContent === 'PRO') badge.remove();
-        const icon = btn.querySelector('span:first-child');
+        if (badge && badge.textContent.trim() === 'PRO') badge.remove();
+        const icon = btn.querySelector('i');
         if (icon) { icon.classList.remove('text-accent/40'); icon.classList.add('text-accent'); }
       });
     }
