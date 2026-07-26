@@ -216,6 +216,43 @@
     }
     updateIcons();
   </script>
+  <style>
+    #btn-back-float {
+      position: fixed;
+      bottom: 92px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #d88800;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(216, 136, 0, 0.4);
+      z-index: 99999;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    #btn-back-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(216, 136, 0, 0.55);
+    }
+    #btn-back-float svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    @media (max-width: 480px) {
+      #btn-back-float {
+        bottom: 84px;
+        right: 16px;
+      }
+    }
+  </style>
+  <button id="btn-back-float" aria-label="Voltar">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+  </button>
   <script src="js/dashboard.js"></script>
   <script src="js/tono-chat-widget.js"></script>
 </body>

@@ -647,6 +647,11 @@ function getDashboardTranslation() {
       btnBack.classList.toggle('hidden', page === 'home');
       btnBack.onclick = () => navigate(prev || 'home');
     }
+    const btnBackFloat = document.getElementById('btn-back-float');
+    if (btnBackFloat) {
+      btnBackFloat.style.display = page === 'home' ? 'none' : 'flex';
+      btnBackFloat.onclick = () => navigate(prev || 'home');
+    }
     window.scrollTo(0, 0);
   }
 
