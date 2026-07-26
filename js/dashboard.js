@@ -616,14 +616,18 @@ function getDashboardTranslation() {
   }
 
   // ── Router ────────────────────────────────────────────────────────────
+  let lastPage = 'home';
   function navigate(page) {
     const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz /*, tutoriais: renderTutoriais */ };
+    if (page !== 'home') lastPage = page;
     document.getElementById('app').innerHTML = '';
     (map[page] || renderHome)();
     document.querySelectorAll('.sidebar-link').forEach(el => {
       el.classList.toggle('text-accent', el.dataset.sidebar === page);
       el.classList.toggle('text-muted',  el.dataset.sidebar !== page);
     });
+    const btnBack = document.getElementById('btn-back-m');
+    if (btnBack) btnBack.classList.toggle('hidden', page === 'home');
     window.scrollTo(0, 0);
   }
 
