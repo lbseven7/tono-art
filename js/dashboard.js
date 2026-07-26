@@ -631,10 +631,11 @@ function getDashboardTranslation() {
   }
 
   // ── Router ────────────────────────────────────────────────────────────
-  let lastPage = 'home';
+  let currentPage = 'home';
   function navigate(page) {
     const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz /*, tutoriais: renderTutoriais */ };
-    if (page !== 'home') lastPage = page;
+    const prev = currentPage;
+    currentPage = page;
     document.getElementById('app').innerHTML = '';
     (map[page] || renderHome)();
     document.querySelectorAll('.sidebar-link').forEach(el => {
@@ -642,7 +643,10 @@ function getDashboardTranslation() {
       el.classList.toggle('text-muted',  el.dataset.sidebar !== page);
     });
     const btnBack = document.getElementById('btn-back-m');
-    if (btnBack) btnBack.classList.toggle('hidden', page === 'home');
+    if (btnBack) {
+      btnBack.classList.toggle('hidden', page === 'home');
+      btnBack.onclick = () => navigate(prev || 'home');
+    }
     window.scrollTo(0, 0);
   }
 
