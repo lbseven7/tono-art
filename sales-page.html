@@ -200,28 +200,43 @@
       justify-content: center;
       flex-direction: column;
       gap: 14px;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.06), transparent 60%),
-        linear-gradient(135deg, #1a1a1c, #0a0a0b);
+      cursor: pointer;
     }
 
-    .play-btn {
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #e9d187, var(--ember) 55%, var(--ember-dark));
+    .video-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .video-placeholder > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .play-btn-yt {
+      width: 68px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 0, 0, 0.85);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+      transition: background .2s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
 
-    .play-btn:after {
+    .play-btn-yt:hover {
+      background: rgba(255, 0, 0, 1);
+    }
+
+    .play-btn-yt:after {
       content: "";
       border-style: solid;
-      border-width: 12px 0 12px 20px;
-      border-color: transparent transparent transparent #1c1200;
-      margin-left: 4px;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 3px;
     }
 
     .video-placeholder p {
@@ -738,15 +753,14 @@
 
       <div class="easel">
         <div class="canvas-frame">
-          <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo()">
-            <div class="play-btn"></div>
-            <p>ASSISTA: COMO FUNCIONA A PLATAFORMA</p>
+          <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo()" style="background-image:url('images/thumbnail-tono-youtube.png');background-size:cover;background-position:center;">
+            <div class="play-btn-yt"></div>
           </div>
         </div>
         <div class="easel-leg"></div>
       </div>
 
-      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Quero acesso à
+      <a class="btn btn-primary" href="https://pay.hotmart.com/Y106895541H" target="_blank" rel="noopener">Quero acesso à
         Plataforma</a>
       <span class="btn-sub">Acesso imediato · Garantia incondicional</span>
     </div>
@@ -983,7 +997,7 @@
           <li><span class="check">✓</span> Acesso à lista de espera dos próximos guias</li>
         </ul>
 
-        <a class="btn btn-primary" style="width:100%;" href="#" target="_blank"
+        <a class="btn btn-primary" style="width:100%;" href="https://pay.hotmart.com/Y106895541H" target="_blank"
           rel="noopener">Quero acesso à Plataforma</a>
         <span class="btn-sub">Pagamento processado com segurança pela Hotmart</span>
       </div>
@@ -1042,7 +1056,7 @@
   <script>
     function loadVideo() {
       var box = document.getElementById('videoPlaceholder');
-      box.outerHTML = '<iframe src="#" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+      box.outerHTML = '<iframe src="https://www.youtube.com/embed/S4i6lk0IlZk?autoplay=1&vq=hd1080&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
     }
   </script>
 

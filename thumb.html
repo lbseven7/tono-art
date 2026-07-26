@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Tono Vox - Thumbnail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/lovelo" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(216, 136, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(216, 136, 0, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 20%, rgba(216, 136, 0, 0.05) 0%, transparent 40%),
+        linear-gradient(135deg, #0a0a0f 0%, #111118 100%);
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .scale-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 5px;
+      display: flex;
+      z-index: 20;
+    }
+    .scale-bar.top { top: 0; }
+    .scale-bar.bottom { bottom: 0; }
+    .scale-bar div { flex: 1; }
+
+    .glow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(216,136,0,0.18) 0%, transparent 65%);
+      border-radius: 50%;
+      filter: blur(50px);
+      z-index: 5;
+    }
+
+    .logo-wrap {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo-circle {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(216,136,0,0.08);
+      border: 3px solid rgba(216,136,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 60px rgba(216,136,0,0.15),
+        0 0 120px rgba(216,136,0,0.08);
+    }
+
+    .logo-circle img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Lovelo', sans-serif;
+      font-weight: 900;
+      font-size: 56px;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      text-align: center;
+    }
+
+    .vox-tag {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #0a0a0f;
+      background: #d88800;
+      padding: 6px 16px;
+      border-radius: 4px;
+      margin-top: -8px;
+    }
+
+    .left {
+      position: absolute;
+      left: 60px;
+      bottom: 80px;
+      z-index: 20;
+      max-width: 340px;
+    }
+
+    .left .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #d88800;
+      margin-bottom: 12px;
+    }
+
+    .left h2 {
+      font-family: 'Lovelo', sans-serif;
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 1.1;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .left .sub {
+      font-size: 14px;
+      color: #8a8a8e;
+      line-height: 1.5;
+    }
+
+    .right {
+      position: absolute;
+      right: 60px;
+      bottom: 80px;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #c0c0c0;
+    }
+
+    .badge-item .icon {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bg"></div>
+    <div class="grid"></div>
+    <div class="glow"></div>
+
+    <div class="scale-bar top">
+      <div style="background:#ffffff"></div>
+      <div style="background:#e6e6e6"></div>
+      <div style="background:#cccccc"></div>
+      <div style="background:#b3b3b3"></div>
+      <div style="background:#999999"></div>
+      <div style="background:#808080"></div>
+      <div style="background:#666666"></div>
+      <div style="background:#4d4d4d"></div>
+      <div style="background:#333333"></div>
+      <div style="background:#191919"></div>
+      <div style="background:#000000"></div>
+    </div>
+
+    <div class="logo-wrap">
+      <div class="logo-circle">
+        <img src="images/logo-oficial/logo-sb.png" alt="Tono">
+      </div>
+      <div class="logo-text">TONO.ART</div>
+      <div class="vox-tag">Comunidade</div>
+    </div>
+
+    <div class="left">
+      <div class="tag">Espaço Exclusivo</div>
+      <h2>Afie o olhar<br>com quem entende</h2>
+      <p class="sub">Troque experiência, receba feedback e evolua na prática de valores tonais.</p>
+    </div>
+
+    <div class="right">
+      <div class="badge-item"><span class="icon">🎨</span> Desafios semanais</div>
+      <div class="badge-item"><span class="icon">👁️</span> Análise de obras</div>
+      <div class="badge-item"><span class="icon">💬</span> Grupo de estudo</div>
+    </div>
+
+    <div class="scale-bar bottom">
+      <div style="background:#ffffff"></div>
+      <div style="background:#e6e6e6"></div>
+      <div style="background:#cccccc"></div>
+      <div style="background:#b3b3b3"></div>
+      <div style="background:#999999"></div>
+      <div style="background:#808080"></div>
+      <div style="background:#666666"></div>
+      <div style="background:#4d4d4d"></div>
+      <div style="background:#333333"></div>
+      <div style="background:#191919"></div>
+      <div style="background:#000000"></div>
+    </div>
+  </div>
+</body>
+</html>
