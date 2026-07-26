@@ -642,11 +642,6 @@ function getDashboardTranslation() {
       el.classList.toggle('text-accent', el.dataset.sidebar === page);
       el.classList.toggle('text-muted',  el.dataset.sidebar !== page);
     });
-    const btnBack = document.getElementById('btn-back-m');
-    if (btnBack) {
-      btnBack.classList.toggle('hidden', page === 'home');
-      btnBack.onclick = () => navigate(prev || 'home');
-    }
     const btnBackFloat = document.getElementById('btn-back-float');
     if (btnBackFloat) {
       btnBackFloat.style.display = page === 'home' ? 'none' : 'flex';
