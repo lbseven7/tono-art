@@ -586,8 +586,12 @@ function getDashboardTranslation() {
   ];
 
   // ── Premium ──────────────────────────────────────────────────────────
-  if (new URLSearchParams(location.search).get('pro') === 'true') {
+  const proParam = new URLSearchParams(location.search).get('pro');
+  if (proParam === 'true') {
     localStorage.setItem('tono_pro', 'true');
+    history.replaceState(null, '', location.pathname);
+  } else if (proParam === 'false') {
+    localStorage.removeItem('tono_pro');
     history.replaceState(null, '', location.pathname);
   }
   const isPro = localStorage.getItem('tono_pro') === 'true';
@@ -613,7 +617,7 @@ function getDashboardTranslation() {
 
   // ── Router ────────────────────────────────────────────────────────────
   function navigate(page) {
-    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, tutoriais: renderTutoriais };
+    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz /*, tutoriais: renderTutoriais */ };
     document.getElementById('app').innerHTML = '';
     (map[page] || renderHome)();
     document.querySelectorAll('.sidebar-link').forEach(el => {
@@ -690,11 +694,16 @@ function getDashboardTranslation() {
 
     const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'zonas', 'riscoLinear', 'janela', 'quadricular', 'ilusao'];
     const moduleIcons = ['▮', '▤', '⊑', '◧', '▦', '◐', '⊞', '#', '◐'];
+    const proTools = ['converter', 'posterizar', 'zonas', 'janela', 'quadricular', 'ilusao'];
     const modulos = moduleIds.map((id, i) => {
       const module = t.home.modules[i];
+      const isProTool = proTools.includes(id);
+      const clickAction = isProTool
+        ? (typeof showPremiumPopup !== 'undefined' ? `showPremiumPopup('${id}')` : `navigate('${id}')`)
+        : `navigate('${id}')`;
       return `
-        <button onclick="navigate('${id}')" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all card-hover">
-          <div class="text-accent mb-6 text-2xl">${moduleIcons[i]}</div>
+        <button onclick="${clickAction}" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all card-hover">
+          <div class="text-accent mb-6 text-2xl">${moduleIcons[i]}${isProTool ? ' <span class="text-[10px] align-top border border-accent/30 rounded px-1.5 py-0.5 ml-1 text-accent/60">PRO</span>' : ''}</div>
           <h3 class="font-display text-2xl mb-3">${module.title}</h3>
           <p class="text-muted text-base leading-relaxed mb-6 font-light">${module.desc}</p>
           <span class="inline-flex items-center gap-2 text-base text-accent group-hover:gap-3 transition-all">${t.home.acessar}</span>
@@ -1337,6 +1346,7 @@ function getDashboardTranslation() {
   };
 
   function renderConverter() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -1632,6 +1642,7 @@ function getDashboardTranslation() {
   };
 
   function renderPosterizar() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -1885,6 +1896,7 @@ function getDashboardTranslation() {
   };
 
   function renderZonas() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -2151,8 +2163,7 @@ function getDashboardTranslation() {
         gridHtml += `<div class="aspect-square rounded-lg flex items-center justify-center border border-white/10" style="background:${hex}">
           <span class="font-mono text-sm font-bold" style="color:${txtColor}">${v}</span>
       </div>`;
-    homeResetTimer();
-  }
+      }
     }
     gridHtml += '</div>';
     gridNumEl.innerHTML = gridHtml;
@@ -2225,6 +2236,7 @@ function getDashboardTranslation() {
   };
 
   function renderRiscoLinear() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -2557,6 +2569,7 @@ function getDashboardTranslation() {
   }
 
   function renderIsolador() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -3032,6 +3045,7 @@ function getDashboardTranslation() {
   };
 
   function renderJanela() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -3258,6 +3272,7 @@ function getDashboardTranslation() {
   };
 
   function renderQuadricular() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -3929,6 +3944,7 @@ function getDashboardTranslation() {
   let ilusaoState = { valor: 5 };
 
   function renderIlusao() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     const v = ilusaoState.valor;
     const esc = escalaCinza[v];
@@ -4137,6 +4153,7 @@ function getDashboardTranslation() {
   };
 
   function renderLocalizador() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -4546,6 +4563,7 @@ function getDashboardTranslation() {
   let paletaState = { imageData: null };
 
   function renderPaleta() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
@@ -4666,6 +4684,7 @@ function getDashboardTranslation() {
   // ── 4. EXERCÍCIOS PROGRESSIVOS ───────────────────────────────────────
   // ══════════════════════════════════════════════════════════════════════
   function renderExercicios() {
+    const t = getDashboardTranslation();
     const semanas = [
       { semana: 1, titulo: 'Escala de Cinzas', foco: 'Valor tonal', exercicios: [
         { nome: 'Barra de 11 valores', desc: 'Pinte uma barra contínua do branco ao preto em 11 passos iguais. Use apenas preto e branco.', tempo: '2h', dificuldade: 'Fácil' },
@@ -4764,6 +4783,7 @@ function getDashboardTranslation() {
   let luzState = { imageData: null };
 
   function renderLuz() {
+    const t = getDashboardTranslation();
     const app = document.getElementById('app');
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
