@@ -4309,6 +4309,9 @@ function getDashboardTranslation() {
         c.onclick = lvClick;
         c.onmousemove = lvMove;
         c.onmouseleave = () => document.getElementById('lv-loupe').classList.add('hidden');
+        c.addEventListener('touchstart', lvTouch, { passive: false });
+        c.addEventListener('touchmove', lvTouch, { passive: false });
+        c.addEventListener('touchend', () => document.getElementById('lv-loupe').classList.add('hidden'));
         lvRenderHistograma();
       };
       img.src = ev.target.result;
@@ -4391,6 +4394,17 @@ function getDashboardTranslation() {
 
     loupe.style.backgroundImage = `url(${tempCanvas.toDataURL()})`;
     loupe.style.backgroundSize = '100% 100%';
+  }
+
+  function lvTouch(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    if (!touch) return;
+    const c = document.getElementById('lv-canvas');
+    const rect = c.getBoundingClientRect();
+    const fakeEvent = { clientX: touch.clientX, clientY: touch.clientY };
+    if (e.type === 'touchstart') lvClick(fakeEvent);
+    lvMove(fakeEvent);
   }
 
   // ── Localizador: isolamento tonal ──────────────────────────────────
