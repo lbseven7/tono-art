@@ -186,7 +186,22 @@ const dashboardTranslations = {
     }
   },
   en: {
-
+    treino: {
+      header: 'Value Training',
+      desc: 'Identify the correct tonal value of the sample',
+      rodada: 'Round {rodada}/{total}',
+      acertos: 'Correct',
+      correto: 'Correct! Value {valor} — {nome}',
+      incorreto: 'Incorrect. Correct: {valor} — {nome}',
+      proximo: 'Next →',
+      verResultado: 'See Result',
+      resultadoHeader: '{percent}%',
+      resultadoDesc: 'You got {acertos} of {total} values',
+      excelente: 'Excellent tonal perception!',
+      bom: 'Good progress, keep practicing.',
+      revisar: 'Review the grayscale and try again.',
+      tentarNovamente: 'Try Again'
+    },
     escala: {
       brancoPuro: 'Pure White',
       cinzaClaro1: 'Light Gray 1',
