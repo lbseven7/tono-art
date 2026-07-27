@@ -493,8 +493,10 @@
       applyTranslations();
       
       // Re-render current page to apply translations in dashboard
-      const currentPage = window.location.hash.replace('#', '') || 'home';
-      navigate(currentPage);
+      if (typeof navigate === 'function') {
+        const currentPage = window.location.hash.replace('#', '') || 'home';
+        navigate(currentPage);
+      }
     }
 
     function updateMetaTags(lang) {
@@ -604,7 +606,7 @@
 
     function showPremiumPopup(page) {
       if (typeof isPro !== 'undefined' && isPro && page) {
-        navigate(page);
+        if (typeof navigate === 'function') navigate(page);
         return;
       }
       const t = translations[currentLang].premium;
