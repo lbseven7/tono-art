@@ -1,0 +1,12 @@
+{
+  "name": "tono-art",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i css/input.css -o css/tailwind-output.css --minify",
+    "watch:css": "npx tailwindcss -i css/input.css -o css/tailwind-output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3"
+  }
+}
