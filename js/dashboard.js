@@ -50,7 +50,12 @@ const dashboardTranslations = {
         { title: 'Risco Linear', desc: 'Extraia o contorno da imagem como linha — ideal para estudar formas e preparar a tela.' },
         { title: 'Janela Física', desc: 'Isole uma área da imagem com uma máscara — como um cartão vazado. Arraste para estudar detalhes.' },
         { title: 'Quadricular Imagem', desc: 'Sobreponha uma grade na imagem para copiar quadrado por quadrado — técnica clássica para desenhar com precisão.' },
-        { title: 'Ilusão de Óptica', desc: 'Veja como o cérebro engana — o mesmo cinza parece diferente conforme o fundo. Contraste simultâneo na prática.' }
+        { title: 'Ilusão de Óptica', desc: 'Veja como o cérebro engana — o mesmo cinza parece diferente conforme o fundo. Contraste simultâneo na prática.' },
+        { title: 'Isolador Tonal', desc: 'Passe o mouse sobre a imagem para isolar o valor tonal exato de qualquer ponto — sem ilusões de ótica.' },
+        { title: 'Localizar Valor', desc: 'Clique em qualquer ponto da imagem para descobrir o valor tonal exato (0–10) e estudar a distribuição.' },
+        { title: 'Extrair Paleta', desc: 'Analisa a imagem e extrai as cores dominantes com os valores hex exatos para misturar.' },
+        { title: 'Exercícios', desc: '8 semanas estruturadas do básico à aplicação avançada. Exercícios práticos para treinar o olhar.' },
+        { title: 'Análise de Luz', desc: 'Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.' }
       ]
     },
     treino: {
@@ -183,6 +188,40 @@ const dashboardTranslations = {
         { title: 'Veja o mapa de luz', desc: 'O sistema identifica a direção e intensidade.' },
         { title: 'Aplique na pintura', desc: 'Use as dicas para aplicar luz e sombra.' }
       ]
+    },
+    tools: {
+      converter: { title: 'Converter para Cinzas', desc: 'Faça o upload de uma foto e converta-a para escala de cinzas. Ajuste brilho e contraste para isolar os valores que importam.' },
+      posterizar: { title: 'Posterizar', desc: 'Reduza qualquer imagem a poucos tons de cinza para enxergar apenas as regiões de valor — como blocos. Essa é a forma mais eficaz de treinar o olhar para pintar.' },
+      zonas: { title: 'Mapear Zonas', desc: 'Divida a imagem em uma grade e descubra o valor dominante de cada zona na escala de cinza — é o mapa tonal que você monta antes de pintar.' },
+      riscoLinear: { title: 'Risco Linear', desc: 'Extraia os contornos de qualquer imagem como um desenho de linha. Ideal para estudar formas, preparar a tela com o contorno base, ou simplificar uma referência complexa.' },
+      isolador: { title: 'Isolador Tonal Dinâmico', desc: 'Passe o mouse ou arraste o dedo sobre a imagem para isolar o valor tonal exato de qualquer ponto — sem ilusões de ótica.' },
+      janela: { title: 'Simulador de Janela Física', desc: 'Isole detalhes bloqueando o contexto ao redor. Arraste o bloco vazado sobre a foto para estudar valores, texturas e micro-anatomias sem interferência das luzes ao redor.' },
+      quadricular: { title: 'Quadricular Imagem', desc: 'Sobreponha uma grade na referência para copiar a imagem quadrado por quadrado — a técnica clássica para quem quer desenhar com precisão sem precisar saber desenhar.' },
+      ilusao: { title: 'Ilusão de Óptica do Valor', desc: 'O maior inimigo da percepção tonal não é a falta de coordenação — é o próprio cérebro, que tenta "corrigir" o que vemos. Três passos para treinar o olho.' },
+      localizador: { title: 'Localizar Valor', desc: 'Clique em qualquer ponto da imagem para descobrir o valor tonal exato (0–10). Isole uma faixa de valores para estudar a distribuição tonal.' },
+      paleta: { title: 'Extrair Paleta', desc: 'Analisa a imagem e extrai as cores dominantes com os valores hex exatos para misturar.' },
+      exercicios: { title: 'Exercícios Progressivos', desc: '8 semanas estruturadas do básico à aplicação avançada. Cada semana tem um foco e exercícios práticos.' },
+      luz: { title: 'Análise de Luz', desc: 'Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.',
+        upload: 'Clique ou arraste uma imagem',
+        uploadLoaded: 'Imagem carregada',
+        changeImage: 'Trocar Imagem',
+        mapLabel: 'Mapa de Luz',
+        lightDir: 'Direção da Luz',
+        lightZones: 'Zonas de Luz',
+        contrast: 'Contraste',
+        highContrast: 'Alto contraste — luz e sombra bem definidas',
+        midContrast: 'Contraste médio — tons intermediários dominam',
+        lowContrast: 'Baixo contraste — pouca variação tonal',
+        tipPrefix: 'Dica:',
+        tipBody: 'A luz vem de <span class="text-fg font-medium">{direction}</span>. Ao pintar, comece pelas sombras do lado oposto e vá adicionando luz gradualmente. Contraste de <span class="text-fg font-medium">{contrast}%</span> — ',
+        tipHigh: 'use preto puro nas sombras e branco nos destaques.',
+        tipMid: 'evite preto puro, use camadas de cinza escuro.',
+        tipLow: 'foque em transições suaves de meia-tom.',
+        dirRight: 'Direita', dirDown: 'Abaixo', dirLeft: 'Esquerda', dirUp: 'Acima',
+        dirTopLeft: 'Superior Esquerda', dirBottomLeft: 'Inferior Esquerda',
+        dirTopRight: 'Superior Direita', dirBottomRight: 'Inferior Direita',
+        zoneHighlights: 'Destaques', zoneLights: 'Claras', zoneMids: 'Médios', zoneDarks: 'Escuras', zoneShadows: 'Sombras'
+      }
     }
   },
   en: {
@@ -251,7 +290,12 @@ const dashboardTranslations = {
         { title: 'Linear Sketch', desc: 'Extract the contour of the image as a line — ideal for studying shapes and preparing the canvas.' },
         { title: 'Physical Window', desc: 'Isolate an area of the image with a mask — like a cut-out card. Drag to study details.' },
         { title: 'Grid Image', desc: 'Overlay a grid on the image to copy square by square — classic technique for precise drawing.' },
-        { title: 'Optical Illusion', desc: 'See how the brain tricks you — the same gray looks different depending on the background. Simultaneous contrast in practice.' }
+        { title: 'Optical Illusion', desc: 'See how the brain tricks you — the same gray looks different depending on the background. Simultaneous contrast in practice.' },
+        { title: 'Tonal Isolator', desc: 'Hover over the image to isolate the exact tonal value of any point — no optical illusions.' },
+        { title: 'Locate Value', desc: 'Click any point on the image to find the exact tonal value (0–10) and study the tonal distribution.' },
+        { title: 'Extract Palette', desc: 'Analyzes the image and extracts dominant colors with exact hex values for mixing.' },
+        { title: 'Exercises', desc: '8 structured weeks from basics to advanced application. Practical exercises to train your eye.' },
+        { title: 'Light Analysis', desc: 'Identifies the direction of light in the reference and shows how it affects values in each zone of the image.' }
       ]
     },
     ensino: {
@@ -368,6 +412,40 @@ const dashboardTranslations = {
         { title: 'See the light map', desc: 'The system identifies direction and intensity.' },
         { title: 'Apply to painting', desc: 'Use the tips to apply light and shadow.' }
       ]
+    },
+    tools: {
+      converter: { title: 'Convert to Grayscale', desc: 'Upload a photo and convert it to grayscale. Adjust brightness and contrast to isolate the values that matter.' },
+      posterizar: { title: 'Posterize', desc: 'Reduce any image to a few gray tones to see only the value regions — like blocks. This is the most effective way to train your eye for painting.' },
+      zonas: { title: 'Map Zones', desc: 'Divide the image into a grid and discover the dominant value of each zone on the grayscale — it\'s the tonal map you build before painting.' },
+      riscoLinear: { title: 'Linear Sketch', desc: 'Extract the contours of any image as a line drawing. Ideal for studying shapes, preparing the canvas with a base outline, or simplifying a complex reference.' },
+      isolador: { title: 'Tonal Isolator', desc: 'Hover or drag over the image to isolate the exact tonal value of any point — without optical illusions.' },
+      janela: { title: 'Physical Window Simulator', desc: 'Isolate details by blocking the surrounding context. Drag the cutout block over the photo to study values, textures, and micro-anatomy without interference from surrounding lights.' },
+      quadricular: { title: 'Grid Image', desc: 'Overlay a grid on the reference to copy the image square by square — the classic technique for those who want to draw with precision without needing to know how to draw.' },
+      ilusao: { title: 'Value Optical Illusion', desc: 'The greatest enemy of tonal perception isn\'t lack of coordination — it\'s the brain itself, which tries to "correct" what we see. Three steps to train your eye.' },
+      localizador: { title: 'Locate Value', desc: 'Click any point on the image to find the exact tonal value (0–10). Isolate a value range to study the tonal distribution.' },
+      paleta: { title: 'Extract Palette', desc: 'Analyzes the image and extracts dominant colors with exact hex values for mixing.' },
+      exercicios: { title: 'Progressive Exercises', desc: '8 structured weeks from basics to advanced application. Each week has a focus and practical exercises.' },
+      luz: { title: 'Light Analysis', desc: 'Identifies the direction of light in the reference and shows how it affects values in each zone of the image.',
+        upload: 'Click or drag an image',
+        uploadLoaded: 'Image loaded',
+        changeImage: 'Change Image',
+        mapLabel: 'Light Map',
+        lightDir: 'Light Direction',
+        lightZones: 'Light Zones',
+        contrast: 'Contrast',
+        highContrast: 'High contrast — light and shadow well defined',
+        midContrast: 'Medium contrast — mid tones dominate',
+        lowContrast: 'Low contrast — little tonal variation',
+        tipPrefix: 'Tip:',
+        tipBody: 'The light comes from <span class="text-fg font-medium">{direction}</span>. When painting, start with shadows on the opposite side and gradually add light. Contrast of <span class="text-fg font-medium">{contrast}%</span> — ',
+        tipHigh: 'use pure black in shadows and white in highlights.',
+        tipMid: 'avoid pure black, use dark gray layers.',
+        tipLow: 'focus on smooth mid-tone transitions.',
+        dirRight: 'Right', dirDown: 'Below', dirLeft: 'Left', dirUp: 'Above',
+        dirTopLeft: 'Top Left', dirBottomLeft: 'Bottom Left',
+        dirTopRight: 'Top Right', dirBottomRight: 'Bottom Right',
+        zoneHighlights: 'Highlights', zoneLights: 'Lights', zoneMids: 'Mids', zoneDarks: 'Darks', zoneShadows: 'Shadows'
+      }
     }
   },
   es: {
@@ -436,7 +514,12 @@ const dashboardTranslations = {
         { title: 'Dibujo Lineal', desc: 'Extrae el contorno de la imagen como línea — ideal para estudiar formas y preparar el lienzo.' },
         { title: 'Ventana Física', desc: 'Isola un área de la imagen con una máscara — como una tarjeta recortada. Arrastra para estudiar detalles.' },
         { title: 'Imagen Cuadriculada', desc: 'Superpone una cuadrícula en la imagen para copiar cuadrado por cuadrado — técnica clásica para dibujar con precisión.' },
-        { title: 'Ilusión Óptica', desc: 'Ve cómo el cerebro engaña — el mismo gris se ve diferente según el fondo. Contraste simultáneo en práctica.' }
+        { title: 'Ilusión Óptica', desc: 'Ve cómo el cerebro engaña — el mismo gris se ve diferente según el fondo. Contraste simultáneo en práctica.' },
+        { title: 'Aislador Tonal', desc: 'Pasa el mouse sobre la imagen para aislar el valor tonal exacto de cualquier punto — sin ilusiones ópticas.' },
+        { title: 'Localizar Valor', desc: 'Haz clic en cualquier punto de la imagen para descubrir el valor tonal exacto (0–10) y estudiar la distribución.' },
+        { title: 'Extraer Paleta', desc: 'Analiza la imagen y extrae los colores dominantes con los valores hex exactos para mezclar.' },
+        { title: 'Ejercicios', desc: '8 semanas estructuradas desde lo básico hasta la aplicación avanzada. Ejercicios prácticos para entrenar la vista.' },
+        { title: 'Análisis de Luz', desc: 'Identifica la dirección de la luz en la referencia y muestra cómo afecta los valores en cada zona de la imagen.' }
       ]
     },
     ensino: {
@@ -553,6 +636,40 @@ const dashboardTranslations = {
         { title: 'Ve el mapa de luz', desc: 'El sistema identifica la dirección e intensidad.' },
         { title: 'Aplica en la pintura', desc: 'Usa los consejos para aplicar luz y sombra.' }
       ]
+    },
+    tools: {
+      converter: { title: 'Convertir a Grises', desc: 'Sube una foto y conviértela a escala de grises. Ajusta brillo y contraste para aislar los valores que importan.' },
+      posterizar: { title: 'Posterizar', desc: 'Reduce cualquier imagen a pocos tonos de gris para ver solo las regiones de valor — como bloques. Es la forma más eficaz de entrenar la vista para pintar.' },
+      zonas: { title: 'Mapear Zonas', desc: 'Divide la imagen en una cuadrícula y descubre el valor dominante de cada zona en la escala de grises — es el mapa tonal que construyes antes de pintar.' },
+      riscoLinear: { title: 'Dibujo Lineal', desc: 'Extrae los contornos de cualquier imagen como un dibujo de línea. Ideal para estudiar formas, preparar el lienzo con un contorno base, o simplificar una referencia compleja.' },
+      isolador: { title: 'Aislador Tonal', desc: 'Pasa el mouse o arrastra sobre la imagen para aislar el valor tonal exacto de cualquier punto — sin ilusiones ópticas.' },
+      janela: { title: 'Simulador de Ventana Física', desc: 'Aísla detalles bloqueando el contexto alrededor. Arrastra el bloque vaciado sobre la foto para estudiar valores, texturas y micro-anatomía sin interferencia de las luces.' },
+      quadricular: { title: 'Imagen Cuadriculada', desc: 'Superpone una cuadrícula en la referencia para copiar la imagen cuadrado por cuadrado — la técnica clásica para quienes quieren dibujar con precisión sin saber dibujar.' },
+      ilusao: { title: 'Ilusión Óptica del Valor', desc: 'El mayor enemigo de la percepción tonal no es la falta de coordinación — es el cerebro mismo, que intenta "corregir" lo que vemos. Tres pasos para entrenar la vista.' },
+      localizador: { title: 'Localizar Valor', desc: 'Haz clic en cualquier punto de la imagen para descubrir el valor tonal exacto (0–10). Aísla un rango de valores para estudiar la distribución tonal.' },
+      paleta: { title: 'Extraer Paleta', desc: 'Analiza la imagen y extrae los colores dominantes con los valores hex exactos para mezclar.' },
+      exercicios: { title: 'Ejercicios Progresivos', desc: '8 semanas estructuradas desde lo básico hasta la aplicación avanzada. Cada semana tiene un enfoque y ejercicios prácticos.' },
+      luz: { title: 'Análisis de Luz', desc: 'Identifica la dirección de la luz en la referencia y muestra cómo afecta los valores en cada zona de la imagen.',
+        upload: 'Haz clic o arrastra una imagen',
+        uploadLoaded: 'Imagen cargada',
+        changeImage: 'Cambiar Imagen',
+        mapLabel: 'Mapa de Luz',
+        lightDir: 'Dirección de la Luz',
+        lightZones: 'Zonas de Luz',
+        contrast: 'Contraste',
+        highContrast: 'Alto contraste — luz y sombra bien definidas',
+        midContrast: 'Contraste medio — tonos intermedios dominan',
+        lowContrast: 'Bajo contraste — poca variación tonal',
+        tipPrefix: 'Consejo:',
+        tipBody: 'La luz viene de <span class="text-fg font-medium">{direction}</span>. Al pintar, empieza por las sombras del lado opuesto y ve añadiendo luz gradualmente. Contraste de <span class="text-fg font-medium">{contrast}%</span> — ',
+        tipHigh: 'usa negro puro en las sombras y blanco en los altos luces.',
+        tipMid: 'evita el negro puro, usa capas de gris oscuro.',
+        tipLow: 'enfócate en transiciones suaves de tono medio.',
+        dirRight: 'Derecha', dirDown: 'Abajo', dirLeft: 'Izquierda', dirUp: 'Arriba',
+        dirTopLeft: 'Superior Izquierda', dirBottomLeft: 'Inferior Izquierda',
+        dirTopRight: 'Superior Derecha', dirBottomRight: 'Inferior Derecha',
+        zoneHighlights: 'Altas Luces', zoneLights: 'Claras', zoneMids: 'Medios', zoneDarks: 'Oscuros', zoneShadows: 'Sombras'
+      }
     }
   }
 };
@@ -581,24 +698,6 @@ function getDashboardTranslation() {
   }
 
   const escalaCinza = getEscalaCinza();
-
-  const dicas = [
-    'Comece sempre com a cor mais clara (branco) e adicione o preto aos poucos.',
-    'Use uma espessura limpa para cada mistura — contamina altera o valor.',
-    'Teste o tom sobre um papel de papel branco para avaliar corretamente.',
-    'O olho se adapta rapidamente: observe cada mistura por no máximo 5 segundos.',
-    'Prepare todos os 11 valores de uma vez para ter a escala completa.',
-  ];
-
-  const pigmentos = {
-    branco: { nome: 'Branco de Titânio', codigo: 'PW6', desc: 'O branco mais opaco e usado em pintura hiper realista; cobertura máxima e neutralidade de tom.' },
-    preto:  { nome: 'Negro de Marfim',   codigo: 'PBk9', desc: 'Preto neutro e levemente amadeirado, não puxa a mistura para o azul ou o marrom como outros pretos.' },
-  };
-  const pigmentosAlternativos = [
-    { nome: 'Branco de Zinco',  codigo: 'PW4',  papel: 'Alternativa ao Branco de Titânio', desc: 'Mais transparente e frio; produz cinzas ligeiramente mais suaves.' },
-    { nome: 'Preto Marte',      codigo: 'PBk11', papel: 'Alternativa ao Negro de Marfim', desc: 'Preto opaco levemente avermelhado, seca mais rípido em óleo.' },
-    { nome: 'Negro Fumo',       codigo: 'PBk6/7', papel: 'Alternativa ao Negro de Marfim', desc: 'Muito intenso e frio; cobre bem, mas domina a mistura em pequenas quantidades.' },
-  ];
 
   // ── Premium ──────────────────────────────────────────────────────────
   const proParam = new URLSearchParams(location.search).get('pro');
@@ -715,9 +814,9 @@ function getDashboardTranslation() {
     const dotsHtml = slides.map((_, i) => `
       <button onclick="homeGoSlide(${i})" class="w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-accent w-5' : 'bg-fg/20 hover:bg-fg/40'}" data-dot="${i}"></button>`).join('');
 
-    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'zonas', 'riscoLinear', 'janela', 'quadricular', 'ilusao'];
-    const moduleIcons = ['▮', '▤', '⊑', '◧', '▦', '◐', '⊞', '#', '◐'];
-    const proTools = ['converter', 'posterizar', 'zonas', 'janela', 'quadricular', 'ilusao'];
+    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'zonas', 'riscoLinear', 'isolador', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
+    const moduleIcons = ['▮', '▤', '⊑', '◧', '▦', '◐', '◉', '⊞', '#', '⊙', '⊕', '◎', '📖', '☀'];
+    const proTools = ['converter', 'posterizar', 'zonas', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
     const modulos = moduleIds.map((id, i) => {
       const module = t.home.modules[i];
       const isProTool = proTools.includes(id);
@@ -1377,8 +1476,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Converter para Cinzas</h1>
-            <p class="text-muted max-w-2xl font-light">Faça o upload de uma foto e converta-a para escala de cinzas. Ajuste brilho e contraste para isolar os valores que importam.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.converter.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.converter.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.converter, t.instrucoes.comoUsar)}
@@ -1673,8 +1772,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Posterizar</h1>
-            <p class="text-muted max-w-2xl font-light">Reduza qualquer imagem a poucos tons de cinza para enxergar apenas as regiões de valor — como blocos. Essa é a forma mais eficaz de treinar o olhar para pintar.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.posterizar.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.posterizar.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.posterizar, t.instrucoes.comoUsar)}
@@ -1927,8 +2026,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Mapear Zonas</h1>
-            <p class="text-muted max-w-2xl font-light">Divida a imagem em uma grade e descubra o valor dominante de cada zona na escala de cinza — é o mapa tonal que você monta antes de pintar.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.zonas.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.zonas.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.zonas, t.instrucoes.comoUsar)}
@@ -2267,8 +2366,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Risco Linear</h1>
-            <p class="text-muted max-w-2xl font-light">Extraia os contornos de qualquer imagem como um desenho de linha. Ideal para estudar formas, preparar a tela com o contorno base, ou simplificar uma referência complexa.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.riscoLinear.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.riscoLinear.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.risco, t.instrucoes.comoUsar)}
@@ -2600,8 +2699,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Isolador Tonal Dinâmico</h1>
-            <p class="text-muted max-w-2xl font-light">Passe o mouse ou arraste o dedo sobre a imagem para isolar o valor tonal exato de qualquer ponto — sem ilusões de ótica.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.isolador.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.isolador.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.isolador, t.instrucoes.comoUsar)}
@@ -3076,8 +3175,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Simulador de Janela Física</h1>
-            <p class="text-muted max-w-2xl font-light">Isole detalhes bloqueando o contexto ao redor. Arraste o bloco vazado sobre a foto para estudar valores, texturas e micro-anatomias sem sofrer interferãncia das luzes ao redor.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.janela.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.janela.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.janela, t.instrucoes.comoUsar)}
@@ -3303,8 +3402,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Quadricular Imagem</h1>
-            <p class="text-muted max-w-2xl font-light">Sobreponha uma grade na referência para copiar a imagem quadrado por quadrado — a técnica clássica para quem quer desenhar com precisão sem precisar saber desenhar.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.quadricular.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.quadricular.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.quadricular, t.instrucoes.comoUsar)}
@@ -3985,8 +4084,8 @@ function getDashboardTranslation() {
 
           <!-- Header -->
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Ilusão de Óptica do Valor</h1>
-            <p class="text-muted max-w-2xl font-light">O maior inimigo da percepção tonal não é a falta de coordenação — é o próprio <span class="text-fg font-medium">cérebro</span>, que tenta "corrigir" o que vemos. Três passos para treinar o olho.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.ilusao.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.ilusao.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.ilusao, t.instrucoes.comoUsar)}
@@ -4182,8 +4281,8 @@ function getDashboardTranslation() {
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-5xl mx-auto">
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Localizar Valor</h1>
-            <p class="text-muted max-w-2xl font-light">Clique em qualquer ponto da imagem para descobrir o valor tonal exato (0–10). Isole uma faixa de valores para estudar a distribuição tonal.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.localizador.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.localizador.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.localizador, t.instrucoes.comoUsar)}
@@ -4606,8 +4705,8 @@ function getDashboardTranslation() {
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-5xl mx-auto">
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Extrair Paleta</h1>
-            <p class="text-muted max-w-2xl font-light">Analisa a imagem e extrai as cores dominantes com os valores hex exatos para misturar.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.paleta.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.paleta.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.paleta, t.instrucoes.comoUsar)}
@@ -4769,8 +4868,8 @@ function getDashboardTranslation() {
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-4xl mx-auto">
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Exercícios Progressivos</h1>
-            <p class="text-muted max-w-2xl font-light">8 semanas estruturadas do básico à aplicação avançada. Cada semana tem um foco e exercícios práticos.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.exercicios.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.exercicios.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.exercicios, t.instrucoes.comoUsar)}
@@ -4826,15 +4925,15 @@ function getDashboardTranslation() {
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-5xl mx-auto">
           <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">Análise de Luz</h1>
-            <p class="text-muted max-w-2xl font-light">Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.luz.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.luz.desc}</p>
           </div>
 
           ${renderInstructionCard(t.instrucoes.luz, t.instrucoes.comoUsar)}
 
           <div id="la-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('la-file-input').click()">
             <input type="file" id="la-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="laProcessFile(event)" />
-            <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
+            <p class="font-display text-xl text-muted">${t.tools.luz.upload}</p>
           </div>
           <div id="la-result" class="hidden">
             <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -4843,27 +4942,27 @@ function getDashboardTranslation() {
                 <canvas id="la-canvas-orig" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">Mapa de Luz</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">${t.tools.luz.mapLabel}</p>
                 <canvas id="la-canvas-map" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
             </div>
             <div class="grid md:grid-cols-3 gap-4 mb-6">
               <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">Direção da Luz</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">${t.tools.luz.lightDir}</p>
                 <div class="flex items-center gap-4">
                   <div id="la-arrow" class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl">↘</div>
                   <div>
-                    <p id="la-direction" class="text-fg font-medium">Superior Esquerda</p>
+                    <p id="la-direction" class="text-fg font-medium">${t.tools.luz.dirTopLeft}</p>
                     <p id="la-angle" class="text-xs text-muted mt-1">~135°</p>
                   </div>
                 </div>
               </div>
               <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">Zonas de Luz</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">${t.tools.luz.lightZones}</p>
                 <div id="la-zones" class="space-y-1.5"></div>
               </div>
               <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">Contraste</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">${t.tools.luz.contrast}</p>
                 <p id="la-contrast-val" class="text-3xl font-display font-bold text-fg mb-1"></p>
                 <p id="la-contrast-desc" class="text-xs text-muted"></p>
                 <div class="mt-3 h-2 rounded-full overflow-hidden bg-white/5">
@@ -4901,8 +5000,8 @@ function getDashboardTranslation() {
 
         document.getElementById('la-result').classList.remove('hidden');
         document.getElementById('la-upload-zone').innerHTML = `
-          <p class="text-muted text-sm">Imagem carregada</p>
-          <button onclick="document.getElementById('la-file-input').value=''; document.getElementById('la-file-input').click()" class="mt-2 px-4 py-1.5 text-xs rounded-full border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">Trocar Imagem</button>
+          <p class="text-muted text-sm">${getDashboardTranslation().tools.luz.uploadLoaded}</p>
+          <button onclick="document.getElementById('la-file-input').value=''; document.getElementById('la-file-input').click()" class="mt-2 px-4 py-1.5 text-xs rounded-full border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">${getDashboardTranslation().tools.luz.changeImage}</button>
         `;
         laAnalyze();
       };
@@ -4914,6 +5013,7 @@ function getDashboardTranslation() {
   function laAnalyze() {
     const { imageData, w, h } = luzState;
     const src = imageData.data;
+    const t = getDashboardTranslation().tools.luz;
 
     const cMap = document.getElementById('la-canvas-map');
     cMap.width = w; cMap.height = h;
@@ -4963,31 +5063,42 @@ function getDashboardTranslation() {
     const normalizedAngle = ((angle % 360) + 360) % 360;
 
     let arrow, direction;
-    if (normalizedAngle > 315 || normalizedAngle <= 45) { arrow = '→'; direction = 'Direita'; }
-    else if (normalizedAngle > 45 && normalizedAngle <= 135) { arrow = '↓'; direction = 'Abaixo'; }
-    else if (normalizedAngle > 135 && normalizedAngle <= 225) { arrow = '←'; direction = 'Esquerda'; }
-    else { arrow = '↑'; direction = 'Acima'; }
+    if (normalizedAngle > 315 || normalizedAngle <= 45) { arrow = '→'; direction = t.dirRight; }
+    else if (normalizedAngle > 45 && normalizedAngle <= 135) { arrow = '↓'; direction = t.dirDown; }
+    else if (normalizedAngle > 135 && normalizedAngle <= 225) { arrow = '←'; direction = t.dirLeft; }
+    else { arrow = '↑'; direction = t.dirUp; }
 
     if (Math.abs(yBias) > 30 && Math.abs(xBias) > 30) {
       const diagAngle = Math.atan2(yBias > 0 ? -1 : 1, xBias > 0 ? -1 : 1);
       const deg = diagAngle * 180 / Math.PI;
-      if (deg > -45 && deg <= 45) { arrow = '↘'; direction = 'Superior Esquerda'; }
-      else if (deg > 45 && deg <= 135) { arrow = '↗'; direction = 'Inferior Esquerda'; }
-      else if (deg > -135 && deg <= -45) { arrow = '↙'; direction = 'Superior Direita'; }
-      else { arrow = '↖'; direction = 'Inferior Direita'; }
+      if (deg > -45 && deg <= 45) { arrow = '↘'; direction = t.dirTopLeft; }
+      else if (deg > 45 && deg <= 135) { arrow = '↗'; direction = t.dirBottomLeft; }
+      else if (deg > -135 && deg <= -45) { arrow = '↙'; direction = t.dirTopRight; }
+      else { arrow = '↖'; direction = t.dirBottomRight; }
     }
 
     document.getElementById('la-arrow').textContent = arrow;
     document.getElementById('la-direction').textContent = direction;
     document.getElementById('la-angle').textContent = '~' + Math.round(normalizedAngle) + '°';
 
-    const zoneLabels = [
-      { pct: Math.round(src.filter((_,i) => i%4===0 && 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2] > 230).length / (w*h) * 100), label: 'Destaques', color: 'bg-white' },
-      { pct: Math.round(src.filter((_,i) => i%4===0 && {l: 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2]}.l > 180 && {l: 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2]}.l <= 230).length / (w*h) * 100), label: 'Claras', color: 'bg-gray-300' },
-      { pct: Math.round(src.filter((_,i) => i%4===0 && {l: 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2]}.l > 75 && {l: 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2]}.l <= 180).length / (w*h) * 100), label: 'Médios', color: 'bg-gray-500' },
-      { pct: Math.round(src.filter((_,i) => i%4===0 && {l: 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2]}.l > 25 && {l: 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2]}.l <= 75).length / (w*h) * 100), label: 'Escuras', color: 'bg-gray-700' },
-      { pct: Math.round(src.filter((_,i) => i%4===0 && 0.299*src[i]+0.587*src[i+1]+0.114*src[i+2] <= 25).length / (w*h) * 100), label: 'Sombras', color: 'bg-gray-900' },
+    const zoneData = [
+      { min: 230, max: 256, label: t.zoneHighlights, color: 'bg-white' },
+      { min: 180, max: 230, label: t.zoneLights, color: 'bg-gray-300' },
+      { min: 75, max: 180, label: t.zoneMids, color: 'bg-gray-500' },
+      { min: 25, max: 75, label: t.zoneDarks, color: 'bg-gray-700' },
+      { min: 0, max: 25, label: t.zoneShadows, color: 'bg-gray-900' },
     ];
+    const zoneCounts = new Array(5).fill(0);
+    for (let i = 0; i < src.length; i += 4) {
+      const luma = 0.299*src[i] + 0.587*src[i+1] + 0.114*src[i+2];
+      if (luma > 230) zoneCounts[0]++;
+      else if (luma > 180) zoneCounts[1]++;
+      else if (luma > 75) zoneCounts[2]++;
+      else if (luma > 25) zoneCounts[3]++;
+      else zoneCounts[4]++;
+    }
+    const totalPx = w * h;
+    const zoneLabels = zoneData.map((z, idx) => ({ ...z, pct: Math.round(zoneCounts[idx] / totalPx * 100) }));
 
     document.getElementById('la-zones').innerHTML = zoneLabels.map(z =>
       `<div class="flex items-center gap-2 text-xs"><div class="w-3 h-3 rounded ${z.color} border border-white/10"></div><span class="text-muted flex-1">${z.label}</span><span class="text-fg font-mono">${z.pct}%</span></div>`
@@ -4999,9 +5110,9 @@ function getDashboardTranslation() {
     const bar = document.getElementById('la-contrast-bar');
     bar.style.width = contrastPct + '%';
     bar.style.background = contrastPct > 70 ? '#22c55e' : contrastPct > 40 ? '#eab308' : '#ef4444';
-    document.getElementById('la-contrast-desc').textContent = contrastPct > 70 ? 'Alto contraste — luz e sombra bem definidas' : contrastPct > 40 ? 'Contraste médio — tons intermediários dominam' : 'Baixo contraste — pouca variação tonal';
+    document.getElementById('la-contrast-desc').textContent = contrastPct > 70 ? t.highContrast : contrastPct > 40 ? t.midContrast : t.lowContrast;
 
-    document.getElementById('la-tip').innerHTML = `<span class="text-accent font-medium">Dica:</span> A luz vem de <span class="text-fg font-medium">${direction}</span>. Ao pintar, comece pelas sombras do lado oposto e vá adicionando luz gradualmente. Contraste de <span class="text-fg font-medium">${contrastPct}%</span> — ${contrastPct > 70 ? 'use preto puro nas sombras e branco nos destaques.' : contrastPct > 40 ? 'evite preto puro, use camadas de cinza escuro.' : 'foque em transições suaves de meia-tom.'}`;
+    document.getElementById('la-tip').innerHTML = `<span class="text-accent font-medium">${t.tipPrefix}</span> ${t.tipBody.replace('{direction}', direction).replace('{contrast}', contrastPct)} ${contrastPct > 70 ? t.tipHigh : contrastPct > 40 ? t.tipMid : t.tipLow}`;
   }
 
   // ── TUTORIAIS (YouTube embutido) ────────────────────────────────────────
