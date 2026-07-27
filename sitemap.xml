@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Main page - Portuguese (default) -->
+  <url>
+    <loc>https://tono.art.br</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://tono.art.br?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://tono.art.br?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://tono.art.br?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tono.art.br"/>
+  </url>
+  
+  <!-- English version -->
+  <url>
+    <loc>https://tono.art.br?lang=en</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://tono.art.br?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://tono.art.br?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://tono.art.br?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tono.art.br"/>
+  </url>
+  
+  <!-- Spanish version -->
+  <url>
+    <loc>https://tono.art.br?lang=es</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://tono.art.br?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://tono.art.br?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es-es" href="https://tono.art.br?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tono.art.br"/>
+  </url>
+  
+  <!-- Sales page -->
+  <url>
+    <loc>https://tono.art.br/sales-page.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Tools pages (individual tool pages for better SEO) -->
+  <url>
+    <loc>https://tono.art.br/index.html#escala</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#treino</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#converter</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#posterizar</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#zonas</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#riscoLinear</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#isolador</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#janela</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#quadricular</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#ilusao</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#localizador</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#paleta</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#exercicios</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tono.art.br/index.html#luz</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

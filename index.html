@@ -3,16 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tono — Escala e Valor Tonal para Artistas</title>
-  <meta name="description" content="Ferramentas interativas para aprender escala de cinzas, valores tonais e aplicar na prática da pintura.">
-  <meta property="og:title" content="Tono — Escala e Valor Tonal para Artistas">
-  <meta property="og:description" content="Ferramentas interativas para aprender escala de cinzas, valores tonais e aplicar na prática da pintura.">
+  <title>Tono — Escala de Cinzas e Valores Tonais para Artistas | Acesso Imediato</title>
+  <meta name="description" content="15 ferramentas interativas para aprender escala de cinzas, valores tonais e dominar a pintura. Acesso imediato por R$ 97. Garantia de 7 dias.">
+  <meta name="keywords" content="escala de cinzas, valores tonais, pintura, arte, desenho, tons de cinza, gradiente, grisaile, art education, tonal values, grayscale">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Leo Barbosa">
+  <link rel="canonical" href="https://tono.art.br">
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tono.art.br">
+  <meta property="og:title" content="Tono — Escala de Cinzas e Valores Tonais para Artistas">
+  <meta property="og:description" content="15 ferramentas interativas para aprender escala de cinzas, valores tonais e dominar a pintura. Acesso imediato por R$ 97.">
+  <meta property="og:image" content="https://tono.art.br/images/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tono - Plataforma de Escala de Cinzas para Artistas">
   <meta property="og:site_name" content="Tono">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tono — Escala e Valor Tonal para Artistas">
-  <meta name="twitter:description" content="Ferramentas interativas para aprender escala de cinzas, valores tonais e aplicar na prática da pintura.">
+  <meta name="twitter:site" content="@tonoart">
+  <meta name="twitter:creator" content="@leobarbosart">
+  <meta name="twitter:title" content="Tono — Escala de Cinzas e Valores Tonais para Artistas">
+  <meta name="twitter:description" content="15 ferramentas interativas para aprender escala de cinzas, valores tonais e dominar a pintura. Acesso imediato por R$ 97.">
+  <meta name="twitter:image" content="https://tono.art.br/images/og-banner.png">
+  <meta name="twitter:image:alt" content="Tono - Plataforma de Escala de Cinzas para Artistas">
+
+  <!-- Hreflang for multilingual SEO -->
+  <link rel="alternate" hreflang="pt-br" href="https://tono.art.br?lang=pt">
+  <link rel="alternate" hreflang="en-us" href="https://tono.art.br?lang=en">
+  <link rel="alternate" hreflang="es-es" href="https://tono.art.br?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://tono.art.br">
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tono - Escala de Cinzas e Valores Tonais",
+    "description": "15 ferramentas interativas para artistas treinarem valores tonais e escala de cinzas. Inclui escala de cinzas, treino de valores, converter para cinzas, posterizar, mapear zonas e mais.",
+    "url": "https://tono.art.br",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "97.00",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Leo Barbosa"
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Leo Barbosa",
+      "url": "https://www.instagram.com/leobarbosart"
+    },
+    "featureList": [
+      "Escala de Cinzas",
+      "Treino de Valores",
+      "Converter para Cinzas",
+      "Posterizar",
+      "Mapear Zonas",
+      "Risco Linear",
+      "Isolador Tonal",
+      "Janela Física",
+      "Quadricular",
+      "Ilusão de Óptica",
+      "Localizar Valor",
+      "Extrair Paleta",
+      "Exercícios",
+      "Análise de Luz",
+      "Tutoriais"
+    ],
+    "screenshot": "https://tono.art.br/images/original.webp",
+    "softwareVersion": "1.0",
+    "applicationSubCategory": "Art Education"
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://tono.art.br"
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="images/logo-oficial/logo-sb-tono-b.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -335,11 +424,70 @@
       if (dropdown) dropdown.classList.add('hidden');
       if (dropdownM) dropdownM.classList.add('hidden');
       
+      // Update dynamic meta tags for SEO
+      updateMetaTags(lang);
+      
       applyTranslations();
       
       // Re-render current page to apply translations in dashboard
       const currentPage = window.location.hash.replace('#', '') || 'home';
       navigate(currentPage);
+    }
+
+    function updateMetaTags(lang) {
+      const metaTags = {
+        pt: {
+          title: 'Tono — Escala de Cinzas e Valores Tonais para Artistas | Acesso Imediato',
+          description: '15 ferramentas interativas para aprender escala de cinzas, valores tonais e dominar a pintura. Acesso imediato por R$ 97. Garantia de 7 dias.',
+          ogTitle: 'Tono — Escala de Cinzas e Valores Tonais para Artistas',
+          ogDescription: '15 ferramentas interativas para aprender escala de cinzas, valores tonais e dominar a pintura. Acesso imediato por R$ 97.'
+        },
+        en: {
+          title: 'Tono — Grayscale and Tonal Values for Artists | Instant Access',
+          description: '15 interactive tools to learn grayscale, tonal values and master painting. Instant access for R$97. 7-day guarantee.',
+          ogTitle: 'Tono — Grayscale and Tonal Values for Artists',
+          ogDescription: '15 interactive tools to learn grayscale, tonal values and master painting. Instant access for R$97.'
+        },
+        es: {
+          title: 'Tono — Escala de Grises y Valores Tonales para Artistas | Acceso Inmediato',
+          description: '15 herramientas interactivas para aprender escala de grises, valores tonales y dominar la pintura. Acceso inmediato por R$97. Garantía de 7 días.',
+          ogTitle: 'Tono — Escala de Grises y Valores Tonales para Artistas',
+          ogDescription: '15 herramientas interactivas para aprender escala de grises, valores tonales y dominar la pintura. Acceso inmediato por R$97.'
+        }
+      };
+
+      const t = metaTags[lang] || metaTags.pt;
+      
+      // Update title
+      document.title = t.title;
+      
+      // Update meta description
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', t.description);
+      
+      // Update Open Graph tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', t.ogTitle);
+      
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', t.ogDescription);
+      
+      // Update Twitter tags
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute('content', t.ogTitle);
+      
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.setAttribute('content', t.ogDescription);
+      
+      // Update hreflang links
+      const hreflangPt = document.querySelector('link[hreflang="pt-br"]');
+      if (hreflangPt) hreflangPt.setAttribute('href', 'https://tono.art.br?lang=pt');
+      
+      const hreflangEn = document.querySelector('link[hreflang="en-us"]');
+      if (hreflangEn) hreflangEn.setAttribute('href', 'https://tono.art.br?lang=en');
+      
+      const hreflangEs = document.querySelector('link[hreflang="es-es"]');
+      if (hreflangEs) hreflangEs.setAttribute('href', 'https://tono.art.br?lang=es');
     }
 
     function applyTranslations() {
