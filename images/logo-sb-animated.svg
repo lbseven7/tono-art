@@ -1,10 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
-    <!-- Gradiente identico para ambos os aneis -->
+    <!-- Gradiente com 11 tons do Tono -->
     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#888888;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="0%"    stop-color="#FFFFFF" />
+      <stop offset="10%"   stop-color="#E6E6E6" />
+      <stop offset="20%"   stop-color="#CCCCCC" />
+      <stop offset="30%"   stop-color="#B3B3B3" />
+      <stop offset="40%"   stop-color="#999999" />
+      <stop offset="50%"   stop-color="#808080" />
+      <stop offset="60%"   stop-color="#666666" />
+      <stop offset="70%"   stop-color="#4D4D4D" />
+      <stop offset="80%"   stop-color="#333333" />
+      <stop offset="90%"   stop-color="#191919" />
+      <stop offset="100%"  stop-color="#000000" />
     </linearGradient>
     
     <!-- Estilo de animacao -->
