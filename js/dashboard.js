@@ -5061,9 +5061,21 @@ function getDashboardTranslation() {
                 <p class="text-xs text-muted/60">Leo comenta esta tela</p>
               </div>
               <audio controls preload="none" class="h-8 max-w-[280px] w-full accent-accent">
-                <source src="audio/dica-mestre/explicacao-tela.mp3" type="audio/mpeg">
+                <source src="audio/dica-mestre/analise-casa-didi.m4a" type="audio/mp4">
               </audio>
             </div>
+
+            <a href="https://youtube.com/shorts/8EFlIwBUs3w" target="_blank" rel="noopener noreferrer"
+               class="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/20 hover:bg-red-500/20 hover:border-red-500/30 transition-all duration-200 text-sm text-muted hover:text-fg group">
+              <span class="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 text-sm group-hover:bg-red-500/20 group-hover:scale-110 transition-all">▶</span>
+              <div class="flex flex-col gap-0.5">
+                <span class="text-sm font-medium text-fg/80 group-hover:text-fg transition-colors">Vídeo do processo</span>
+                <span class="text-xs text-muted/60">Ver processo criativo no YouTube →</span>
+              </div>
+              <svg class="w-5 h-5 ml-auto shrink-0 text-red-400/60 group-hover:text-red-400 group-hover:translate-x-0.5 transition-all" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.804 0 12c.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0C23.512 20.55 23.971 18.196 24 12c-.029-6.185-.484-8.549-4.385-8.816zM9 16V8l8 4-8 4z"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>`;
