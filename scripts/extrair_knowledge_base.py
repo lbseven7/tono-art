@@ -20,13 +20,7 @@ PDFS_DOWNLOADS = [
     "Valores_Tonais_101_Guia_Completo.pdf",
 ]
 
-# PDFs da pasta pdf/ do projeto (traducoes, guias, ideias)
-PDFS_PROJETO = [
-    "05-ideias-conteudo-nicho.pdf",
-    "06-video-value-elemento-arte.pdf",
-    "07-video-como-ver-entender-valores.pdf",
-    "08-video-valores-fundamento-importante.pdf",
-]
+# PDFs da pasta pdf/ do projeto ( automatico - todos os .pdf da pasta )
 
 
 def limpar_texto(texto: str) -> str:
@@ -112,14 +106,11 @@ def main():
         
         print(f"  OK {dados['arquivo']} ({dados['paginas']} pag, {len(chunks)} chunks)")
     
-    # PDFs do projeto
+    # PDFs do projeto (automatico - todos os .pdf da pasta pdf/)
     print("\n--- PDFs do Projeto (pdf/) ---")
     pdf_dir = PROJECT_DIR / "pdf"
-    for pdf_nome in PDFS_PROJETO:
-        caminho = pdf_dir / pdf_nome
-        if not caminho.exists():
-            print(f"  ! Nao encontrado: {pdf_nome}")
-            continue
+    pdfs_projeto = sorted(pdf_dir.glob("*.pdf"))
+    for caminho in pdfs_projeto:
         
         dados = extrair_texto_pdf(caminho)
         chunks = chunk_texto(dados["texto"])

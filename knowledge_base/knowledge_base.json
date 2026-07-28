@@ -7,6 +7,10 @@
     "tonalidade.pdf",
     "valor-tonal.pdf",
     "Valores_Tonais_101_Guia_Completo.pdf",
+    "01-fundamentos-valor-tonal.pdf",
+    "02-misturas-percepcao.pdf",
+    "03-tecnicas-ferramentas.pdf",
+    "04-grayscale-escala-de-cinza.pdf",
     "05-ideias-conteudo-nicho.pdf",
     "06-video-value-elemento-arte.pdf",
     "07-video-como-ver-entender-valores.pdf",
@@ -338,6 +342,65 @@
     },
     {
       "id": 7,
+      "arquivo": "01-fundamentos-valor-tonal.pdf",
+      "titulo": "01 Fundamentos Valor Tonal",
+      "origem": "projeto",
+      "paginas": 10,
+      "tamanho_kb": 6234,
+      "chunks": [
+        "Fundamentos do Valor Tonal tonoCast  Tutoriais\n\ntono.art.br\n\nSumário Ep. 01 O que é Valor Tonal Ep. 02 Escala de Cinzas Ep. 03 Luz e Sombra\n\nEp. 01 O que é Valor Tonal tonoCast Ep. 01  O que é Valor Tonal Slide 1  Perguntas 1. Leo, pra começar o que é valor tonal? Muita gente confunde isso com cor. 2. E por que isso importa tanto pra quem pinta? 3. Então cor e valor são coisas completamente diferentes? 4. Como alguém começa a treinar isso? Slide 2  Respostas",
+        "É a pergunta que todo mundo faz no começo, e é ótima porque desbloqueia tudo. Valor é a quantidade de luz que uma superfície reflete. Não é cor, não é brilho  é o quão claro ou escuro algo é. Pensa assim: quando você tira uma foto e coloca em preto e branco, o que sobra? São os valores. A cor sumiu, mas a imagem ainda faz sentido. Isso porque os valores estão certos. Porque toda pintura que funciona tem bons valores. Uma pintura com cores perfeitas mas valores errados parece estranha  mesmo que o espectador não consiga explicar por quê. É instintivo. O olho humano entende profundidade e forma através de valores. Se você erra isso, a pintura parece fora do lugar, mesmo que cada cor esteja no lugar certo. Completamente. Cor é o matiz  vermelho, azul, amarelo. Valor é a posição na escala de cinza. Um vermelho vivo pode ter o mesmo valor que um cinza médio. São coisas diferentes. Por isso que o estudo de valores em cinza é tão poderoso  ele isola o que realmente importa pra estrutura da pintura. Começa simples. Olha pra qualquer objeto e tenta classificar: é claro, médio ou escuro? Depois compara dois tons adjacentes: qual é mais claro? E aí usa a ferramenta de escala de cinzas na plataforma pra verificar se sua percepção tá batendo com a realidade. É assim que se calibra o olhar.\n\nEp. 02 Escala de Cinzas tonoCast Ep. 02  Escala de Cinzas",
+        "Slide 1  Perguntas 1. Leo, a gente fala muito em escala de cinzas. O que é isso exatamente? 2. Por que exatamente 11 valores? Por que não 5 ou 20? 3. E como se estuda essa escala? 4. Tem algum erro que a gente comete sem perceber? Slide 2  Respostas A escala de cinzas é o vocabulário visual do artista. São 11 valores, do branco puro ao preto absoluto. Cada valor é um passo de luz. Do 0 ao 10. O 0 é branco puro  o máximo de luz. O 10 é preto absoluto  ausência total de luz. No meio, nove tons de cinza que vão diminuindo a luz gradualmente. Onze é o ponto ideal. Menos que isso empobrece a transição  você perde suavidade. Mais que isso complica sem benefício real. Com 11 valores você representa qualquer cena realista com fidelidade. É como um piano: 88 teclas são suficientes pra tocar qualquer música. Mais teclas não necessariamente melhoram a música. Primeiro, memoriza a posição de cada valor. Depois olha pra uma referência e tenta identificar o valor de cada região. E aí mistura tinta pra reproduzir cada tom exato. A ferramenta de Escala de Cinzas na plataforma te permite explorar cada valor interativamente  e o Guia de Misturas mostra as proporções exatas de branco e preto pra cada um. Confundir valor com saturação. Um vermelho muito vivo parece forte, mas quando você converte pra preto e branco, ele pode ter o mesmo valor que um cinza suave. A intensidade da cor engana. Por isso que o estudo em cinza é tão importante  ele remove a distração e te mostra o que realmente tá acontecendo com os valores.",
+        "Ep. 03 Luz e Sombra",
+        "tonoCast Ep. 03  Luz e Sombra Slide 1  Perguntas 1. Leo, a gente sempre ouve falar que luz cria forma. O que isso quer dizer na prática? 2. Quais são os componentes básicos de luz e sombra? 3. E como isso se traduz em valores? 4. Tem um exercício simples pra começar a enxergar isso? Slide 2  Respostas Quer dizer que sem luz, não existe volume, profundidade nem textura. Tudo vira plano. Uma esfera sob luz uniforme parece um círculo. Mas quando a luz vem de um lado, a esfera ganha forma  porque a luz cria sombra, e a sombra revela o volume. É assim que o olho entende tridimensionalidade. Cinco. A luz direta, que vem da fonte  sol, lâmpada, janela. A sombra projetada, que é quando o objeto bloqueia a luz e projeta sombra em outra superfície. A sombra formada, que é a parte do objeto que não recebe luz diretamente. O reflexo, que é luz que quica em superfícies e ilumina sombras. E o contorno terminador, que é a fronteira entre luz e sombra no objeto. Cada componente tem um valor diferente. Luzes ficam nos valores baixos, de 0 a 3. Meios-tons no médio, de 4 a 6. Sombras nos valores altos, de 7 a 10. Quando você entende isso, consegue analisar qualquer referência e saber exatamente que valor usar em cada região. É como ter um mapa. Olha pra sua mão sobre uma mesa. Onde termina a luz? Onde começa a sombra? Qual é o valor do reflexo na mesa? Começa a classificar. Não precisa de nada fancy  só o olhar treinado. Tono  tono.art.br tutoriais tonoCast  valores tonais para artistas"
+      ],
+      "total_chunks": 5
+    },
+    {
+      "id": 8,
+      "arquivo": "02-misturas-percepcao.pdf",
+      "titulo": "02 Misturas Percepcao",
+      "origem": "projeto",
+      "paginas": 8,
+      "tamanho_kb": 2728,
+      "chunks": [
+        "Misturas e Percepção Visual tonoCast  Tutoriais\n\ntono.art.br\n\nSumário Ep. 04 Misturas e Paleta Ep. 05 Ilusão de Óptica\n\nEp. 04 Misturas e Paleta",
+        "tonoCast Ep. 04  Misturas e Paleta Slide 1  Perguntas 1. Leo, misturar tinta dá medo de muita gente. É difícil? 2. Quais são as proporções básicas? 3. Qual é o erro mais comum? 4. E pra quem quer trabalhar com colorido? Slide 2  Respostas Não é difícil  é ciência com um pouco de intuição. Cada tom de cinza é obtido combinando branco e preto em proporções específicas. Se você sabe as proporções, consegue reproduzir qualquer valor com precisão. O medo vem do improviso. Quando você sabe o que está fazendo, vira rotina. Pra valor 1, que é bem claro, é 90 branco com 10 preto. Pra valor 3, 70 branco com 30 preto. Valor 5, que é o médio, 50 e 50. Valor 7, 30 branco com 70 preto. E valor 9, que é bem escuro, 10 branco com 90 preto. O preto domina rápido demais  por isso a gente começa sempre com muito pouco dele. Adicionar preto demais. Preto é muito potente. Uma gota a mais e você pula dois valores. Outro erro é não testar na tela  o tom na paleta pode parecer diferente aplicado. E o terceiro é misturar sem referência. Sempre compare com a escala. A gente tem o Guia de Misturas na plataforma que mostra essas proporções exatas pra cada valor. Menos cores é mais harmonia. Começa com 3 ou 4 cores e explora tudo que pode obter com elas. Pra valores tonais, branco e preto é suficiente. Mas quando entra a cor, a mesma lógica se aplica: você precisa controlar os valores das suas misturas, senão a pintura fica sem estrutura.",
+        "Ep. 05 Ilusão de Óptica tonoCast Ep. 05  Ilusão de Óptica do Valor Slide 1  Perguntas 1. Leo, a gente já falou que o olho engana. Mas como exatamente ele engana com valores? 2. Isso acontece o tempo todo? 3. Como combate isso? 4. Qual é a lição principal? Slide 2  Respostas\n\nO cérebro adapta. Ele compara o que vê com o que está ao redor. Isso se chama contraste simultâneo. O mesmo cinza parece diferente dependendo do fundo. Se você coloca um quadrado cinza num fundo branco, ele parece mais escuro. Num fundo preto, parece mais claro. São iguais  mas o cérebro corrige baseado no contexto. O tempo todo. Quando você pinta, escolhe valores errados porque compara com o vizinho errado. O cérebro adapta automaticamente. Você olha pra uma sombra e pensa que é mais escura do que realmente é, porque o fundo ao redor é claro. É por isso que muita gente pinta sombras excessivamente escuras. Três caminhos. Primeiro, isola. Usa um recorte pra ver apenas o tom, sem contexto. Segundo, compara diretamente  segura o pincel ao lado da referência e vê se o tom bate. Terceiro, usa ferramentas. O comparador de amostras na plataforma remove o viés do cérebro e te mostra a realidade. Não confia no que vê. Verifica. Sua percepção é útil, mas precisa ser calibrada. É por isso que a gente treina  não pra ver melhor, mas pra ver com mais precisão. Tono  tono.art.br tutoriais tonoCast  valores tonais para artistas"
+      ],
+      "total_chunks": 3
+    },
+    {
+      "id": 9,
+      "arquivo": "03-tecnicas-ferramentas.pdf",
+      "titulo": "03 Tecnicas Ferramentas",
+      "origem": "projeto",
+      "paginas": 10,
+      "tamanho_kb": 2458,
+      "chunks": [
+        "Técnicas e Ferramentas tonoCast  Tutoriais\n\ntono.art.br\n\nSumário Ep. 06 Posterização e Zonas Ep. 07 Risco Linear e Quadricular Ep. 08 Converter e Isolador\n\nEp. 06 Posterização e Zonas tonoCast Ep. 06  Posterização e Zonas Slide 1  Perguntas 1. Leo, o que é posterizar? É aquele efeito de foto antiga? 2. Pra que serve isso? 3. E as zonas? O que é isso? 4. Como aplica isso na prática?\n\nSlide 2  Respostas É parecido, mas no contexto de pintura tem outro significado. Posterizar é reduzir uma imagem a poucos tons. Tipo pegar uma foto com milhões de tons e deixar só 4, 8 ou 16 valores. Cada região vira um bloco sólido de cinza. É como simplificar uma música pra ouvir só as notas principais. Pra enxergar a estrutura tonal. Quando você posteriza uma foto em 5 tons, de repente consegue ver onde são as luzes, onde são os meios-tons e onde são as sombras  sem distração de detalhes. É como um raio-x da pintura. Muitos pintores posterizam a referência antes de começar a trabalhar. O Ansel Adams criou um sistema que divide os tons em 10 zonas. Do 0 ao X. Zona 0 é preto puro, Zona X é branco puro, e Zona V é o cinza médio  18 de reflexão. Cada zona é um passo de luz. Entender zonas é entender exposição e valor com precisão quase científica. Posteriza uma foto em 5 tons. Identifica qual zona cada região pertence. Pinta cada zona com o valor correspondente. A plataforma tem as ferramentas de Posterizar e Mapear Zonas pra fazer exatamente isso  de forma interativa.",
+        "Ep. 07 Risco Linear e Quadricular tonoCast Ep. 07  Risco Linear e Quadricular Slide 1  Perguntas 1. Leo, antes de pintar, a gente precisa desenhar. Risco linear e quadricular  qual a diferença? 2. Como funciona o risco linear na prática? 3. E o quadricular? 4. Qual é a dica de ouro? Slide 2  Respostas Risco linear é extrair o contorno da imagem como linha pura. Sem cor, sem valor  só a forma. É como pegar o esqueleto da referência. Quadricular é sobrepor uma grade na referência e copiar quadrado por quadrado. São técnicas diferentes pra chegar no mesmo lugar: transferir a referência pra tela com precisão. Olha pra referência e identifica as bordas principais. Desenha apenas as linhas que separam regiões de valor. Usa linhas mais grossas onde o contraste é forte e mais finas onde é suave. Não é desenhar tudo  é desenhar o que importa pra estrutura. Divide a referência numa grade  pode ser 5x5, 10x10, depende do detalhe que você quer. Faz a mesma grade na tela, proporcional. E copia o conteúdo de cada quadrado individualmente. O segredo é que quebra o problema em partes menores. Em vez de desenhar um rosto inteiro, você desenha um olho, depois uma boca, depois um nariz  cada um no seu quadrado.\n\nQuadriculares maiores capturam mais detalhe. 10x10 é mais demorado, mas mais preciso. 5x5 é mais rápido, bom pra sketches. A ferramenta de Quadricular Imagem na plataforma sobrepõe a grade automaticamente  você só precisa copiar.",
+        "Ep. 08 Converter e Isolador tonoCast Ep. 08  Converter e Isolador Slide 1  Perguntas 1. Leo, a plataforma tem ferramentas de conversão e isolamento. Pra que servem? 2. Quando usar o conversor? 3. E o isolador? 4. Como as duas trabalham juntas? Slide 2  Respostas\n\nSão ferramentas de simplificação do olhar. Converter transforma qualquer imagem em escala de cinza  remove a cor pra você ver apenas os valores. Isolador é uma máscara que esconde tudo exceto uma área pequena. Tipo olhar por um buraco no papel. As duas ajudam a remover distrações e focar no que importa. Quando a referência colorida distrai seu olhar. Às vezes a cor é tão bonita que você começa a pintar a cor e esquece dos valores. O conversor remove isso. Você vê a estrutura tonal pura. E quando você converte e depois posteriza, revela a estrutura tonal completa  como um mapa. Quer comparar um trecho da referência com sua pintura? Posiciona a janela sobre a área desejada, compara o que vê com sua paleta, e ajusta até bater. É especialmente útil pra verificar valor exato sem influência do que está ao redor. Remove o contraste simultâneo. Primeiro, converte pra cinzas. Depois, isola uma área. Identifica o valor. Mistura e aplica. É um workflow simples que te dá precisão. A plataforma tem as duas ferramentas  Converter pra Cinzas e Janela Física  prontas pra usar. Tono  tono.art.br tutoriais tonoCast  valores tonais para artistas"
+      ],
+      "total_chunks": 3
+    },
+    {
+      "id": 10,
+      "arquivo": "04-grayscale-escala-de-cinza.pdf",
+      "titulo": "04 Grayscale Escala De Cinza",
+      "origem": "projeto",
+      "paginas": 8,
+      "tamanho_kb": 69,
+      "chunks": [
+        "Grayscale  Escala de Cinza tonoCast  Tutoriais\n\ntono.art.br\n\nSumário Ep. 09 Grayscale (Escala de Cinza)\n\nEp. 09 Grayscale (Escala de Cinza) Grayscale (Escala de Cinza) O que é Grayscale (Escala de Cinza)? A Grayscale, ou Escala de Cinza, é um conceito fundamental no campo do design gráfico e da programação, especialmente em áreas que envolvem manipulação de imagens e gráficos. Trata-se de uma representação visual onde as cores são convertidas em tons de cinza, variando do preto ao branco. Essa técnica é amplamente utilizada em diversos contextos, desde a edição de fotografias até a criação de interfaces de usuário, pois permite uma análise mais clara de contrastes e formas sem a distração das cores. Como funciona a Grayscale? A Grayscale funciona através da conversão de cada pixel de uma imagem colorida em um valor que representa sua luminosidade. Essa conversão é geralmente feita utilizando uma fórmula que considera os componentes de cor RGB (vermelho, verde e azul). O resultado é um valor que varia de 0 (preto) a 255 (branco), criando uma paleta de 256 tons de cinza. Essa abordagem é essencial para designers que desejam focar na estrutura e na composição de uma imagem, sem a interferência das cores. Aplicações da Escala de Cinza no Design No design gráfico, a Escala de Cinza é frequentemente utilizada para criar um efeito dramático e atemporal. Imagens em preto e branco podem transmitir emoções e atmosferas que, muitas vezes, são ofuscadas pelo uso excessivo de cores.",
+        "Além disso, a Grayscale é uma excelente escolha para projetos que buscam um visual minimalista, onde a simplicidade e a clareza são prioritárias. Designers utilizam essa técnica para destacar elementos específicos, como tipografia e formas, permitindo que o espectador se concentre no que realmente importa. Grayscale na Programação e Desenvolvimento Web No contexto da programação e do desenvolvimento web, a Escala de Cinza é frequentemente aplicada em CSS e manipulação de imagens. Por exemplo, os desenvolvedores podem usar filtros CSS para transformar imagens coloridas em tons de cinza, criando um efeito visual interessante e moderno. Além disso, a Grayscale pode ser utilizada em gráficos e visualizações de dados, onde a clareza e a legibilidade são essenciais. Essa técnica ajuda a evitar a sobrecarga visual, permitindo que os usuários se concentrem nas informações apresentadas. Benefícios da Grayscale para Acessibilidade A Escala de Cinza também desempenha um papel importante na acessibilidade digital. Ao utilizar tons de cinza, os designers podem criar interfaces que são mais fáceis de serem visualizadas por pessoas com deficiências visuais, como daltonismo. A redução da complexidade cromática permite que os elementos sejam percebidos de forma mais clara, melhorando a experiência do usuário. Além disso, a Grayscale pode ser uma solução eficaz para garantir que o conteúdo seja legível em diferentes dispositivos e condições de iluminação. Ferramentas para Trabalhar com Grayscale Existem diversas ferramentas e softwares que facilitam o trabalho com a Escala de Cinza:  Adobe Photoshop e GIMP  opções avançadas para converter imagens coloridas em tons de cinza  OpenCV e PIL (Python Imaging Library)  manipulação de imagens em Grayscale de forma programática",
+        "Filtros CSS  transformação de imagens coloridas diretamente no navegador Grayscale e Fotografia Na fotografia, a Grayscale é uma técnica clássica que continua a ser valorizada por muitos fotógrafos contemporâneos. A conversão de imagens coloridas para preto e branco pode realçar texturas, padrões e formas, criando composições visuais impactantes. Fotógrafos utilizam a Escala de Cinza para contar histórias de maneira mais profunda, explorando a luz e a sombra de uma forma que muitas vezes é perdida em imagens coloridas. Desafios ao Trabalhar com Grayscale Apesar dos muitos benefícios, trabalhar com a Grayscale também apresenta desafios:  Perda de informações de cor  pode ser crucial em algumas aplicações  Alteração na percepção  a conversão pode mudar como a imagem é interpretada  Necessidade de cuidado  é essencial considerar quando e como utilizar a Escala de Cinza Grayscale em Interfaces de Usuário Em interfaces de usuário, a Grayscale pode ser uma poderosa ferramenta de design. Usar tons de cinza em botões, menus e outros elementos da interface pode criar uma hierarquia visual clara, ajudando os usuários a navegar mais facilmente pelo conteúdo. Além disso, a Escala de Cinza pode ser utilizada para destacar elementos interativos, como hover effects, onde a mudança de tonalidade pode indicar que um elemento é clicável.",
+        "Considerações Finais A Grayscale é uma técnica versátil e poderosa que permeia diversas áreas do design e da programação. Desde a fotografia até o desenvolvimento web, a Escala de Cinza oferece uma maneira única de explorar a forma, a textura e a composição, permitindo que designers e desenvolvedores criem experiências visuais impactantes. Ao entender e aplicar corretamente a Grayscale, é possível aprimorar a comunicação visual e a acessibilidade, garantindo que o conteúdo seja não apenas bonito, mas também funcional e inclusivo. Tono  tono.art.br tutoriais tonoCast  valores tonais para artistas"
+      ],
+      "total_chunks": 4
+    },
+    {
+      "id": 11,
       "arquivo": "05-ideias-conteudo-nicho.pdf",
       "titulo": "05 Ideias Conteudo Nicho",
       "origem": "projeto",
@@ -357,7 +420,7 @@
       "total_chunks": 9
     },
     {
-      "id": 8,
+      "id": 12,
       "arquivo": "06-video-value-elemento-arte.pdf",
       "titulo": "06 Video Value Elemento Arte",
       "origem": "projeto",
@@ -372,7 +435,7 @@
       "total_chunks": 4
     },
     {
-      "id": 9,
+      "id": 13,
       "arquivo": "07-video-como-ver-entender-valores.pdf",
       "titulo": "07 Video Como Ver Entender Valores",
       "origem": "projeto",
@@ -386,7 +449,7 @@
       "total_chunks": 3
     },
     {
-      "id": 10,
+      "id": 14,
       "arquivo": "08-video-valores-fundamento-importante.pdf",
       "titulo": "08 Video Valores Fundamento Importante",
       "origem": "projeto",
