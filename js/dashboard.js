@@ -116,6 +116,7 @@ const dashboardTranslations = {
       partes: 'partes',
       guiaMisturasExtra: 'Use este guia como referência ao preparar suas tintas.'
     },
+    rgbInfo: 'RGB = Red + Green + Blue. Cada cor é formada pela mistura de Vermelho, Verde e Azul, variando de 0 a 255 por canal.',
     instrucoes: {
       comoUsar: 'Como usar',
       escala: [
@@ -340,6 +341,7 @@ const dashboardTranslations = {
       partes: 'parts',
       guiaMisturasExtra: 'Use this guide as a reference when preparing your paints.'
     },
+    rgbInfo: 'RGB = Red + Green + Blue. Each color is formed by mixing Red, Green, and Blue, ranging from 0 to 255 per channel.',
     instrucoes: {
       comoUsar: 'How to use',
       escala: [
@@ -564,6 +566,7 @@ const dashboardTranslations = {
       partes: 'partes',
       guiaMisturasExtra: 'Use esta guía como referencia al preparar tus pinturas.'
     },
+    rgbInfo: 'RGB = Red + Green + Blue. Cada color se forma mezclando Rojo, Verde y Azul, con un rango de 0 a 255 por canal.',
     instrucoes: {
       comoUsar: 'Cómo usar',
       escala: [
@@ -2953,6 +2956,7 @@ function getDashboardTranslation() {
     // Dados numêricos
     const panel = document.getElementById('iso-picked-content');
     if (panel) {
+      const t = getDashboardTranslation();
       panel.innerHTML = `
         <div class="flex items-center gap-4">
           <div>
@@ -2978,6 +2982,7 @@ function getDashboardTranslation() {
             <p class="font-mono text-fg">${valor <= 3 ? 'Claro' : valor <= 7 ? 'Médio' : 'Escuro'}</p>
           </div>
         </div>
+        <p class="text-[10px] text-muted/60 italic leading-tight">${t.rgbInfo}</p>
         <div class="p-3 rounded-lg border border-accent/20 bg-accent/[0.04]">
           <p class="text-xs text-accent">Mistura: <span class="font-medium">${escala.branco} partes branco → ${escala.preto} partes preto</span></p>
         </div>`;
@@ -4308,6 +4313,7 @@ function getDashboardTranslation() {
                   <div class="flex justify-between"><span class="text-muted">R</span><span id="lv-r" class="font-mono text-fg">128</span></div>
                   <div class="flex justify-between"><span class="text-muted">G</span><span id="lv-g" class="font-mono text-fg">128</span></div>
                   <div class="flex justify-between"><span class="text-muted">B</span><span id="lv-b" class="font-mono text-fg">128</span></div>
+                  <p class="text-[10px] text-muted/60 italic leading-tight pt-0.5">${t.rgbInfo}</p>
                   <div class="flex justify-between border-t border-white/10 pt-2"><span class="text-muted">Hex</span><span id="lv-hex" class="font-mono text-accent">#808080</span></div>
                   <div class="flex justify-between"><span class="text-muted">Brilho</span><span id="lv-bri" class="font-mono text-fg">50%</span></div>
                 </div>
@@ -4801,7 +4807,8 @@ function getDashboardTranslation() {
     })).sort((a, b) => b.pct - a.pct);
 
     const cont = document.getElementById('pe-palette');
-    cont.innerHTML = palette.map(p => {
+    const t = getDashboardTranslation();
+    cont.innerHTML = `<p class="col-span-full text-[10px] text-muted/60 italic leading-tight mb-1">${t.rgbInfo}</p>` + palette.map(p => {
       const luma = 0.299*p.r + 0.587*p.g + 0.114*p.b;
       const textColor = luma > 140 ? '#000000' : '#ffffff';
       return `<div class="rounded-xl border border-white/10 overflow-hidden">
