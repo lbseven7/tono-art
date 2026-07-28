@@ -1068,7 +1068,7 @@ function getDashboardTranslation() {
         : `navigate('${id}')`;
       return `
         <button onclick="${clickAction}" class="group text-left block h-full p-8 rounded-2xl border border-white/10 hover:border-accent/40 bg-white/[0.02] hover:bg-white/[0.04] transition-all card-hover">
-          <div class="text-accent mb-6 text-2xl">${moduleIcons[i]}${isProTool ? ' <span class="text-[10px] align-top border border-accent/30 rounded px-1.5 py-0.5 ml-1 text-accent/60">PRO</span>' : ''}</div>
+          <div class="text-accent mb-6 text-2xl">${moduleIcons[i]}</div>
           <h3 class="font-display text-2xl mb-3">${module.title}</h3>
           <p class="text-muted text-base leading-relaxed mb-6 font-light">${module.desc}</p>
           <span class="inline-flex items-center gap-2 text-base text-accent group-hover:gap-3 transition-all">${t.home.acessar}</span>
