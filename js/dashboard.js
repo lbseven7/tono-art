@@ -5007,7 +5007,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">01</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/dica-mestre/passo-1.jpg" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/slide-09.jpg" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Esboço inicial com os valores fundamentais.</p>
               </div>
@@ -5015,7 +5015,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">02</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/dica-mestre/passo-2.jpg" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/slide-09.jpg" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Construção das massas de luz e sombra.</p>
               </div>
@@ -5023,7 +5023,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">03</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/dica-mestre/passo-3.jpg" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/slide-09.jpg" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Finalização com ajustes de valor e detalhes.</p>
               </div>
@@ -5049,8 +5049,7 @@ function getDashboardTranslation() {
             </div>
 
             <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden mb-6">
-              <div class="aspect-[16/9] max-h-[520px] bg-black/40 flex items-center justify-center text-muted/30 text-sm">
-                <img src="images/dica-mestre/tela-mestre.jpg" alt="Tela do mestre" class="w-full h-full object-cover" loading="lazy" />
+              <div class="aspect-[16/9] max-h-[520px] bg-black/40 flex items-center justify-center text-muted/30 text-sm">                  <img src="images/slide-09.jpg" alt="Tela do mestre" class="w-full h-full object-cover" loading="lazy" />
               </div>
               <p class="px-5 py-4 text-sm text-muted italic">Exemplo de aplicação dos valores tonais em uma pintura completa.</p>
             </div>
