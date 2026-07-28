@@ -116,6 +116,93 @@ const dashboardTranslations = {
       guiaMisturasExtra: 'Use este guia como referência ao preparar suas tintas.'
     },
     rgbInfo: 'RGB = Red + Green + Blue. Cada cor é formada pela mistura de Vermelho, Verde e Azul, variando de 0 a 255 por canal.',
+    ui: {
+      uploadHint: 'Clique ou arraste uma imagem',
+      uploadTypes: 'Aceita JPG, PNG e WebP. Recomendado até 10MB.',
+      original: 'Original',
+      resultado: 'Resultado',
+      brilho: 'Brilho',
+      contraste: 'Contraste',
+      metodoConversao: 'Método de Conversão',
+      redefinir: 'Redefinir Ajustes',
+      baixarImagem: 'Baixar Imagem (PNG)',
+      baixarGuia: 'Baixar Guia (PNG)',
+      baixarPosterizado: 'Baixar Posterizado (PNG)',
+      baixarRiscoLinear: 'Baixar Risco Linear (PNG)',
+      baixarResultado: 'Baixar Resultado (PNG)',
+      trocarImagem: 'Trocar Imagem',
+      tamanhoAbertura: 'Tamanho da Abertura',
+      arrasteJanela: 'Arraste a janela na imagem',
+      passeMouse: 'Passe o mouse na imagem',
+      isolarFaixa: 'Isolar Faixa de Valores',
+      tamanhoGrade: 'Tamanho da Grade',
+      colunas: 'Colunas',
+      linhas: 'Linhas',
+      corGrade: 'Cor da grade',
+      espessura: 'Espessura',
+      escalaCinzasPB: 'Escala de cinzas (P&B)',
+      dicaUso: 'Dica de Uso',
+      calculoProporcao: 'Cálculo de Proporção',
+      sobreAlgoritmo: 'Sobre o Algoritmo',
+      gradeAutomatica: 'Grade automática',
+      quadRef: 'Quad. ref.',
+      quadTela: 'Quad. tela',
+      fatorEscala: 'Fator de escala',
+      areaTela: 'Área na tela',
+      tamanhoCelula: 'Tamanho de cada célula',
+      aplicarGrade: 'Aplicar grade ao preview',
+      explicacaoProporcao1: 'Informe as <span class="text-fg font-medium">medidas da sua referência</span> (foto, esboço) e as medidas da <span class="text-fg font-medium">tela ou papel</span> onde vai pintar. A calculadora descobre automaticamente a grade ideal para transferir o desenho com as proporções corretas.',
+      explicacaoProporcao2: '<span class="text-accent font-medium">Como usar:</span> Ajuste as medidas abaixo. O <span class="text-fg">fator de escala</span> mostra quanto ampliar. O botão <span class="text-accent">"Aplicar grade ao preview"</span> transporta a grade calculada para a visualização acima.',
+      dicaProporcao: 'Dica: comece com 5 colunas na grade e ajuste conforme necessário.',
+      centralizarJanela: 'Centralizar Janela',
+      hexLabel: 'Hex',
+      brilhoLabel: 'Brilho',
+      valorMedio: 'Valor Médio',
+      luminosidade: 'Luminosidade',
+      faixaDominante: 'Faixa Dominante',
+      ajustes: 'Ajustes',
+      numeroTons: 'Número de Tons',
+      dicaTons: 'Menos tons = formas mais simplificadas. 3—5 é ideal para estudo.',
+      legenda: 'Legenda',
+      metodoLuminancia: 'Luminância <span class="text-accent text-xs">(recomendado)</span>',
+      metodoMedia: 'Média simples',
+      limiar: 'Limiar (Sensibilidade)',
+      suavizacao: 'Suavização (Gauss)',
+      inverterCores: 'Inverter cores (fundo branco)',
+      linhasPretas: 'Linhas pretas em fundo branco — ideal para impressão e desenho na tela.',
+      dicaLimiar: 'Menor = mais detalhes → Maior = apenas contornos fortes',
+      dicaSuavizacao: 'Remove ruído antes da detecção. 0 = sem suavização.',
+      atalhos: 'Atalhos rápidos:',
+      clarosRange: 'Claros (0—3)',
+      mediosRange: 'Médios (4—7)',
+      escurosRange: 'Escuros (8—10)',
+      todosLabel: 'Todos',
+      opacidadeFundo: 'Opacidade do Fundo',
+      dicaOpacidade: 'Quanto do fundo dessaturado permanece visível.',
+      distribuicaoValores: 'Distribuição de Valores',
+      dicaDistribuicao: 'Quantos pixels da imagem pertencem a cada faixa tonal.',
+      limparIsolamento: 'Limpar Isolamento',
+      aparencia: 'Aparência',
+      mesmoValor: 'Mesmo valor, fundos diferentes',
+      todosFundos: 'Todos os fundos — mesmo valor no centro',
+      squint: 'Squint',
+      isoladorDigital: 'Isolador Digital',
+      brancoLabel: '0 (Branco)',
+      medioLabel: '5 (Médio)',
+      pretoLabel: '10 (Preto)',
+      metodoMediaDesc: 'Média aritmética dos canais R, G e B.',
+      metodoLumiDesc: 'Pesos ITU-R BT.601. Mais próximo da percepção humana.',
+      uploadLoaded: 'Imagem carregada',
+      cliqueImagem: 'Clique na imagem',
+      valorTonal: 'valor tonal (0–10)',
+      ativarIsolamento: 'Ativar isolamento tonal',
+      descIsolamento: 'Quando ativo, apenas os pixels dentro da faixa selecionada ficam visíveis — o resto fica dessaturado.',
+      valorMinimo: 'Valor Mínimo (Claro)',
+      valorMaximo: 'Valor Máximo (Escuro)',
+      zona: 'Zona',
+      squintIntensity: 'Intensidade do Squint',
+      redefinir: 'Redefinir'
+    },
     instrucoes: {
       comoUsar: 'Como usar',
       escala: [
@@ -334,6 +421,93 @@ const dashboardTranslations = {
       guiaMisturasExtra: 'Use this guide as a reference when preparing your paints.'
     },
     rgbInfo: 'RGB = Red + Green + Blue. Each color is formed by mixing Red, Green, and Blue, ranging from 0 to 255 per channel.',
+    ui: {
+      uploadHint: 'Click or drag an image',
+      uploadTypes: 'Accepts JPG, PNG and WebP. Recommended up to 10MB.',
+      original: 'Original',
+      resultado: 'Result',
+      brilho: 'Brightness',
+      contraste: 'Contrast',
+      metodoConversao: 'Conversion Method',
+      redefinir: 'Reset Settings',
+      baixarImagem: 'Download Image (PNG)',
+      baixarGuia: 'Download Guide (PNG)',
+      baixarPosterizado: 'Download Posterized (PNG)',
+      baixarRiscoLinear: 'Download Linear Sketch (PNG)',
+      baixarResultado: 'Download Result (PNG)',
+      trocarImagem: 'Change Image',
+      tamanhoAbertura: 'Opening Size',
+      arrasteJanela: 'Drag the window on the image',
+      passeMouse: 'Hover over the image',
+      isolarFaixa: 'Isolate Value Range',
+      tamanhoGrade: 'Grid Size',
+      colunas: 'Columns',
+      linhas: 'Rows',
+      corGrade: 'Grid color',
+      espessura: 'Thickness',
+      escalaCinzasPB: 'Grayscale (B&W)',
+      dicaUso: 'Usage Tip',
+      calculoProporcao: 'Proportion Calculator',
+      sobreAlgoritmo: 'About the Algorithm',
+      gradeAutomatica: 'Automatic grid',
+      quadRef: 'Grid ref.',
+      quadTela: 'Grid canvas',
+      fatorEscala: 'Scale factor',
+      areaTela: 'Canvas area',
+      tamanhoCelula: 'Cell size',
+      aplicarGrade: 'Apply grid to preview',
+      explicacaoProporcao1: 'Enter your <span class="text-fg font-medium">reference measurements</span> (photo, sketch) and the <span class="text-fg font-medium">canvas or paper</span> measurements where you will paint. The calculator automatically finds the ideal grid to transfer the drawing with the correct proportions.',
+      explicacaoProporcao2: '<span class="text-accent font-medium">How to use:</span> Adjust the measurements below. The <span class="text-fg">scale factor</span> shows how much to enlarge. The <span class="text-accent">"Apply grid to preview"</span> button transfers the calculated grid to the view above.',
+      dicaProporcao: 'Tip: start with 5 columns in the grid and adjust as needed.',
+      centralizarJanela: 'Center Window',
+      hexLabel: 'Hex',
+      brilhoLabel: 'Brightness',
+      valorMedio: 'Average Value',
+      luminosidade: 'Luminosity',
+      faixaDominante: 'Dominant Range',
+      ajustes: 'Settings',
+      numeroTons: 'Number of Tones',
+      dicaTons: 'Fewer tones = simpler shapes. 3—5 is ideal for study.',
+      legenda: 'Legend',
+      metodoLuminancia: 'Luminance <span class="text-accent text-xs">(recommended)</span>',
+      metodoMedia: 'Simple average',
+      limiar: 'Threshold (Sensitivity)',
+      suavizacao: 'Smoothing (Gaussian)',
+      inverterCores: 'Invert colors (white background)',
+      linhasPretas: 'Black lines on white background — ideal for printing and canvas drawing.',
+      dicaLimiar: 'Lower = more details → Higher = strong contours only',
+      dicaSuavizacao: 'Removes noise before detection. 0 = no smoothing.',
+      atalhos: 'Quick shortcuts:',
+      clarosRange: 'Lights (0—3)',
+      mediosRange: 'Mids (4—7)',
+      escurosRange: 'Darks (8—10)',
+      todosLabel: 'All',
+      opacidadeFundo: 'Background Opacity',
+      dicaOpacidade: 'How much of the desaturated background remains visible.',
+      distribuicaoValores: 'Value Distribution',
+      dicaDistribuicao: 'How many pixels belong to each tonal range.',
+      limparIsolamento: 'Clear Isolation',
+      aparencia: 'Appearance',
+      mesmoValor: 'Same value, different backgrounds',
+      todosFundos: 'All backgrounds — same value in the center',
+      squint: 'Squint',
+      isoladorDigital: 'Digital Isolator',
+      brancoLabel: '0 (White)',
+      medioLabel: '5 (Mid)',
+      pretoLabel: '10 (Black)',
+      metodoMediaDesc: 'Arithmetic mean of R, G and B channels.',
+      metodoLumiDesc: 'ITU-R BT.601 weights. Closest to human perception.',
+      uploadLoaded: 'Image loaded',
+      cliqueImagem: 'Click on the image',
+      valorTonal: 'tonal value (0–10)',
+      ativarIsolamento: 'Enable tonal isolation',
+      descIsolamento: 'When active, only pixels within the selected range are visible — the rest becomes desaturated.',
+      valorMinimo: 'Min Value (Light)',
+      valorMaximo: 'Max Value (Dark)',
+      zona: 'Zone',
+      squintIntensity: 'Squint Intensity',
+      redefinir: 'Reset'
+    },
     instrucoes: {
       comoUsar: 'How to use',
       escala: [
@@ -552,6 +726,93 @@ const dashboardTranslations = {
       guiaMisturasExtra: 'Use esta guía como referencia al preparar tus pinturas.'
     },
     rgbInfo: 'RGB = Red + Green + Blue. Cada color se forma mezclando Rojo, Verde y Azul, con un rango de 0 a 255 por canal.',
+    ui: {
+      uploadHint: 'Haz clic o arrastra una imagen',
+      uploadTypes: 'Acepta JPG, PNG y WebP. Recomendado hasta 10MB.',
+      original: 'Original',
+      resultado: 'Resultado',
+      brilho: 'Brillo',
+      contraste: 'Contraste',
+      metodoConversao: 'Método de Conversión',
+      redefinir: 'Restablecer Ajustes',
+      baixarImagem: 'Descargar Imagen (PNG)',
+      baixarGuia: 'Descargar Guía (PNG)',
+      baixarPosterizado: 'Descargar Posterizado (PNG)',
+      baixarRiscoLinear: 'Descargar Dibujo Lineal (PNG)',
+      baixarResultado: 'Descargar Resultado (PNG)',
+      trocarImagem: 'Cambiar Imagen',
+      tamanhoAbertura: 'Tamaño de la Abertura',
+      arrasteJanela: 'Arrastra la ventana sobre la imagen',
+      passeMouse: 'Pasa el mouse sobre la imagen',
+      isolarFaixa: 'Aislar Rango de Valores',
+      tamanhoGrade: 'Tamaño de la Cuadrícula',
+      colunas: 'Columnas',
+      linhas: 'Filas',
+      corGrade: 'Color de cuadrícula',
+      espessura: 'Grosor',
+      escalaCinzasPB: 'Escala de grises (B&N)',
+      dicaUso: 'Consejo de Uso',
+      calculoProporcao: 'Cálculo de Proporción',
+      sobreAlgoritmo: 'Sobre el Algoritmo',
+      gradeAutomatica: 'Cuadrícula automática',
+      quadRef: 'Cuad. ref.',
+      quadTela: 'Cuad. lienzo',
+      fatorEscala: 'Factor de escala',
+      areaTela: 'Área en el lienzo',
+      tamanhoCelula: 'Tamaño de cada celda',
+      aplicarGrade: 'Aplicar cuadrícula al preview',
+      explicacaoProporcao1: 'Ingresa las <span class="text-fg font-medium">medidas de tu referencia</span> (foto, boceto) y las medidas del <span class="text-fg font-medium">lienzo o papel</span> donde vas a pintar. La calculadora descubre automáticamente la cuadrícula ideal para transferir el dibujo con las proporciones correctas.',
+      explicacaoProporcao2: '<span class="text-accent font-medium">Cómo usar:</span> Ajusta las medidas abajo. El <span class="text-fg">factor de escala</span> muestra cuánto ampliar. El botón <span class="text-accent">"Aplicar cuadrícula al preview"</span> transporta la cuadrícula calculada a la visualización de arriba.',
+      dicaProporcao: 'Consejo: comienza con 5 columnas en la cuadrícula y ajusta según sea necesario.',
+      centralizarJanela: 'Centrar Ventana',
+      hexLabel: 'Hex',
+      brilhoLabel: 'Brillo',
+      valorMedio: 'Valor Medio',
+      luminosidade: 'Luminosidad',
+      faixaDominante: 'Rango Dominante',
+      ajustes: 'Ajustes',
+      numeroTons: 'Número de Tonos',
+      dicaTons: 'Menos tonos = formas más simplificadas. 3—5 es ideal para estudio.',
+      legenda: 'Leyenda',
+      metodoLuminancia: 'Luminancia <span class="text-accent text-xs">(recomendado)</span>',
+      metodoMedia: 'Media simple',
+      limiar: 'Umbral (Sensibilidad)',
+      suavizacao: 'Suavizado (Gauss)',
+      inverterCores: 'Invertir colores (fondo blanco)',
+      linhasPretas: 'Líneas negras sobre fondo blanco — ideal para impresión y dibujo en lienzo.',
+      dicaLimiar: 'Menor = más detalles → Mayor = solo contornos fuertes',
+      dicaSuavizacao: 'Elimina ruido antes de la detección. 0 = sin suavizado.',
+      atalhos: 'Atajos rápidos:',
+      clarosRange: 'Claros (0—3)',
+      mediosRange: 'Medios (4—7)',
+      escurosRange: 'Oscuros (8—10)',
+      todosLabel: 'Todos',
+      opacidadeFundo: 'Opacidad del Fondo',
+      dicaOpacidade: 'Cuánto del fondo desaturado permanece visible.',
+      distribuicaoValores: 'Distribución de Valores',
+      dicaDistribuicao: 'Cuántos píxeles pertenecen a cada rango tonal.',
+      limparIsolamento: 'Limpiar Aislamiento',
+      aparencia: 'Apariencia',
+      mesmoValor: 'Mismo valor, fondos diferentes',
+      todosFundos: 'Todos los fondos — mismo valor en el centro',
+      squint: 'Squint',
+      isoladorDigital: 'Aislador Digital',
+      brancoLabel: '0 (Blanco)',
+      medioLabel: '5 (Medio)',
+      pretoLabel: '10 (Negro)',
+      metodoMediaDesc: 'Media aritmética de los canales R, G y B.',
+      metodoLumiDesc: 'Pesos ITU-R BT.601. Más cercano a la percepción humana.',
+      uploadLoaded: 'Imagen cargada',
+      cliqueImagem: 'Haz clic en la imagen',
+      valorTonal: 'valor tonal (0–10)',
+      ativarIsolamento: 'Activar aislamiento tonal',
+      descIsolamento: 'Cuando está activo, solo los píxeles dentro del rango seleccionado son visibles — el resto se desatura.',
+      valorMinimo: 'Valor Mínimo (Claro)',
+      valorMaximo: 'Valor Máximo (Oscuro)',
+      zona: 'Zona',
+      squintIntensity: 'Intensidad del Squint',
+      redefinir: 'Restablecer'
+    },
     instrucoes: {
       comoUsar: 'Cómo usar',
       escala: [
@@ -1132,7 +1393,7 @@ function getDashboardTranslation() {
             <div class="flex items-center justify-between mb-1">
               <h3 class="font-display text-xl">${t.escalaPage.guiaMisturas}</h3>
               <button onclick="escalaBaixarGuia()" class="px-4 py-2 rounded-full border border-white/10 text-xs hover:border-accent/40 transition-colors">
-                Baixar Guia (PNG)
+                ${t.ui.baixarGuia}
               </button>
             </div>
             <p class="text-sm text-muted mb-5 font-light">${t.escalaPage.guiaMisturasDesc.replace('{branco}', pigmentos.branco.nome).replace('{preto}', pigmentos.preto.nome)}</p>
@@ -1561,8 +1822,8 @@ function getDashboardTranslation() {
               <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
+              <p class="font-display text-xl">${t.ui.uploadHint}</p>
+              <p class="text-muted text-sm">${t.ui.uploadTypes}</p>
             </div>
           </div>
 
@@ -1570,11 +1831,11 @@ function getDashboardTranslation() {
           <div id="canvas-section" class="hidden mb-8">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">Original</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">${t.ui.original}</p>
                 <canvas id="canvas-original" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">Resultado</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">${t.ui.resultado}</p>
                 <canvas id="canvas-resultado" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
             </div>
@@ -1583,19 +1844,19 @@ function getDashboardTranslation() {
           <!-- Stats (hidden until image) -->
           <div id="stats-section" class="hidden mb-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-center">
-              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">Valor Médio</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">${t.ui.valorMedio}</p>
               <p id="stat-valor" class="font-display text-2xl">—</p>
             </div>
             <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-center">
-              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">Luminosidade</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">${t.ui.luminosidade}</p>
               <p id="stat-lumi" class="font-display text-2xl">—</p>
             </div>
             <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-center">
-              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">Faixa Dominante</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">${t.ui.faixaDominante}</p>
               <p id="stat-faixa" class="font-display text-xl">—</p>
             </div>
             <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02] text-center">
-              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">Contraste</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-accent mb-1">${t.ui.contraste}</p>
               <p id="stat-contraste" class="font-display text-xl">—</p>
             </div>
           </div>
@@ -1606,17 +1867,17 @@ function getDashboardTranslation() {
 
               <!-- Sliders -->
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Ajustes</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.ajustes}</h3>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Brilho</span>
+                    <span>${t.ui.brilho}</span>
                     <span id="val-brilho" class="text-accent font-mono">0</span>
                   </div>
                   <input type="range" id="sl-brilho" min="-100" max="100" value="0" class="w-full" oninput="onSlider('brilho', this.value)" />
                 </div>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Contraste</span>
+                    <span>${t.ui.contraste}</span>
                     <span id="val-contraste" class="text-accent font-mono">0</span>
                   </div>
                   <input type="range" id="sl-contraste" min="-100" max="100" value="0" class="w-full" oninput="onSlider('contraste', this.value)" />
@@ -1633,11 +1894,11 @@ function getDashboardTranslation() {
 
               <!-- Método -->
               <div>
-                <h3 class="font-display text-xl mb-4">Método de Conversão</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.metodoConversao}</h3>
                 <div class="space-y-3">
                   ${[
-                    { id:'luminancia', label:'Luminância <span class="text-accent text-xs">(recomendado)</span>', desc:'Pesos ITU-R BT.601: 0.299R + 0.587G + 0.114B. Mais próximo da percepção humana.' },
-                    { id:'media',      label:'Média simples',         desc:'Média aritmética dos canais R, G e B.' },
+                    { id:'luminancia', label:'${t.ui.metodoLuminancia}', desc:'${t.ui.metodoLumiDesc}' },
+                    { id:'media',      label:'${t.ui.metodoMedia}',         desc:'${t.ui.metodoMediaDesc}' },
                     { id:'maximo',     label:'Valor míximo',          desc:'Usa o canal com maior valor entre R, G e B.' },
                   ].map(m => `
                     <label class="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${m.id==='luminancia'?'border-accent/40 bg-accent/[0.04]':'border-white/10 hover:border-white/20'}" id="lbl-${m.id}">
@@ -1655,17 +1916,17 @@ function getDashboardTranslation() {
           <!-- Botções -->
           <div class="flex flex-col sm:flex-row gap-4">
             <button onclick="resetarAjustes()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-              Redefinir Ajustes
+              ${t.ui.redefinir}
             </button>
             <button id="btn-download" onclick="baixarImagem()" disabled
               class="flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               style="background:#d88800;color:hsl(0 0% 4%)"
               onmouseenter="if(!this.disabled) this.style.background='#c07800'"
               onmouseleave="if(!this.disabled) this.style.background='#d88800'">
-              Baixar Imagem (PNG)
+              ${t.ui.baixarImagem}
             </button>
             <button onclick="document.getElementById('file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-              Trocar Imagem
+              ${t.ui.trocarImagem}
             </button>
           </div>
 
@@ -1857,8 +2118,8 @@ function getDashboardTranslation() {
               <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
+              <p class="font-display text-xl">${t.ui.uploadHint}</p>
+              <p class="text-muted text-sm">${t.ui.uploadTypes}</p>
             </div>
           </div>
 
@@ -1866,7 +2127,7 @@ function getDashboardTranslation() {
           <div id="pz-canvas-section" class="hidden mb-8">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">Original</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">${t.ui.original}</p>
                 <canvas id="pz-canvas-original" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
               <div>
@@ -1880,7 +2141,7 @@ function getDashboardTranslation() {
           <div id="pz-controls-section" class="hidden p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Número de Tons</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.numeroTons}</h3>
                 <div class="flex flex-wrap gap-3" id="pz-levels">
                   ${[3,4,5,7,11].map(n => `
                     <button onclick="pzSetNiveis(${n})" data-nivel="${n}"
@@ -1888,13 +2149,13 @@ function getDashboardTranslation() {
                       ${n} tons
                     </button>`).join('')}
                 </div>
-                <p class="text-xs text-muted mt-2">Menos tons = formas mais simplificadas. 3—5 é ideal para estudo.</p>
+                <p class="text-xs text-muted mt-2">${t.ui.dicaTons}</p>
 
-                <h3 class="font-display text-xl mt-6 mb-4">Método de Conversão</h3>
+                <h3 class="font-display text-xl mt-6 mb-4">${t.ui.metodoConversao}</h3>
                 <div class="space-y-3">
                   ${[
-                    { id:'luminancia', label:'Luminância <span class="text-accent text-xs">(recomendado)</span>', desc:'Pesos ITU-R BT.601. Mais próximo da percepção humana.' },
-                    { id:'media',      label:'Média simples',         desc:'Média aritmética dos canais R, G e B.' },
+                    { id:'luminancia', label:'${t.ui.metodoLuminancia}', desc:'Pesos ITU-R BT.601. Mais próximo da percepção humana.' },
+                    { id:'media',      label:'${t.ui.metodoMedia}',         desc:'Média aritmética dos canais R, G e B.' },
                   ].map(m => `
                     <label class="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${m.id==='luminancia'?'border-accent/40 bg-accent/[0.04]':'border-white/10 hover:border-white/20'}" id="pz-lbl-${m.id}">
                       <input type="radio" name="pz-metodo" value="${m.id}" ${m.id==='luminancia'?'checked':''} class="mt-1 accent-[#d88800]" onchange="pzOnMetodo('${m.id}')" />
@@ -1907,7 +2168,7 @@ function getDashboardTranslation() {
               </div>
 
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Legenda</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.legenda}</h3>
                 <div id="pz-legenda" class="space-y-2"></div>
               </div>
             </div>
@@ -1920,10 +2181,10 @@ function getDashboardTranslation() {
               style="background:#d88800;color:hsl(0 0% 4%)"
               onmouseenter="this.style.background='#c07800'"
               onmouseleave="this.style.background='#d88800'">
-              Baixar Posterizado (PNG)
+              ${t.ui.baixarPosterizado}
             </button>
             <button onclick="document.getElementById('pz-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-              Trocar Imagem
+              ${t.ui.trocarImagem}
             </button>
           </div>
 
@@ -2037,7 +2298,7 @@ function getDashboardTranslation() {
     }
     ctx.putImageData(out, 0, 0);
 
-    // Legenda
+    // ${t.ui.legenda}
     const legenda = document.getElementById('pz-legenda');
     let html = '';
     for (let i = 0; i < niveis; i++) {
@@ -2113,8 +2374,8 @@ function getDashboardTranslation() {
               <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
+              <p class="font-display text-xl">${t.ui.uploadHint}</p>
+              <p class="text-muted text-sm">${t.ui.uploadTypes}</p>
             </div>
           </div>
 
@@ -2122,7 +2383,7 @@ function getDashboardTranslation() {
           <div id="rl-canvas-section" class="hidden mb-8">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">Original</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">${t.ui.original}</p>
                 <canvas id="rl-canvas-original" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
               <div>
@@ -2136,34 +2397,34 @@ function getDashboardTranslation() {
           <div id="rl-controls-section" class="hidden p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Ajustes</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.ajustes}</h3>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Limiar (Sensibilidade)</span>
+                    <span>${t.ui.limiar}</span>
                     <span id="rl-val-limiar" class="text-accent font-mono">30</span>
                   </div>
                   <input type="range" id="rl-sl-limiar" min="5" max="120" value="30" class="w-full" oninput="rlOnSlider('limiar', this.value)" />
-                  <p class="text-xs text-muted mt-1">Menor = mais detalhes → Maior = apenas contornos fortes</p>
+                  <p class="text-xs text-muted mt-1">${t.ui.dicaLimiar}</p>
                 </div>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Suavização (Gauss)</span>
+                    <span>${t.ui.suavizacao}</span>
                     <span id="rl-val-suavizacao" class="text-accent font-mono">2</span>
                   </div>
                   <input type="range" id="rl-sl-suavizacao" min="0" max="6" value="2" class="w-full" oninput="rlOnSlider('suavizacao', this.value)" />
-                  <p class="text-xs text-muted mt-1">Remove ruído antes da detecção. 0 = sem suavização.</p>
+                  <p class="text-xs text-muted mt-1">${t.ui.dicaSuavizacao}</p>
                 </div>
                 <div>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" id="rl-inversao-toggle" onchange="rlOnInversao()" class="accent-[#d88800] w-4 h-4" />
-                    <span class="text-sm">Inverter cores (fundo branco)</span>
+                    <span class="text-sm">${t.ui.inverterCores}</span>
                   </label>
-                  <p class="text-xs text-muted mt-1 ml-7">Linhas pretas em fundo branco — ideal para impressão e desenho na tela.</p>
+                  <p class="text-xs text-muted mt-1 ml-7">${t.ui.linhasPretas}</p>
                 </div>
               </div>
 
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Sobre o Algoritmo</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.sobreAlgoritmo}</h3>
                 <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
                   <p class="text-sm text-muted leading-relaxed">
                     O algoritmo <span class="text-fg font-medium">Sobel</span> detecta bordas calculando o gradiente de intensidade em cada pixel. Primeiro, a imagem é convertida para cinzas e suavizada (filtro Gaussiano). Depois, duas míscaras 3×3 calculam a variação horizontal e vertical. A intensidade do contorno é dada pela magnitude do gradiente — pixels com variação alta são bordas.
@@ -2178,18 +2439,18 @@ function getDashboardTranslation() {
 
           <!-- Botções -->
           <div id="rl-actions" class="hidden flex flex-col sm:flex-row gap-4">
-            <button onclick="rlResetarAjustes()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-              Redefinir Ajustes
+            <button onclick="rlResetar${t.ui.ajustes}()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
+              ${t.ui.redefinir}
             </button>
             <button id="rl-btn-download" onclick="rlBaixarImagem()"
               class="flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
               style="background:#d88800;color:hsl(0 0% 4%)"
               onmouseenter="this.style.background='#c07800'"
               onmouseleave="this.style.background='#d88800'">
-              Baixar Risco Linear (PNG)
+              ${t.ui.baixarRiscoLinear}
             </button>
             <button onclick="document.getElementById('rl-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-              Trocar Imagem
+              ${t.ui.trocarImagem}
             </button>
           </div>
 
@@ -2446,8 +2707,8 @@ function getDashboardTranslation() {
               <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
+              <p class="font-display text-xl">${t.ui.uploadHint}</p>
+              <p class="text-muted text-sm">${t.ui.uploadTypes}</p>
             </div>
           </div>
 
@@ -2457,7 +2718,7 @@ function getDashboardTranslation() {
               <!-- Canvas + hover wrapper -->
               <div class="lg:col-span-2">
                 <div id="iso-canvas-wrapper" class="relative rounded-xl border border-white/10 overflow-hidden cursor-crosshair" style="background:#000">
-                  <p id="iso-canvas-label" class="absolute top-3 left-3 z-10 text-[10px] uppercase tracking-[0.2em] text-accent bg-bg/80 backdrop-blur-sm px-2 py-1 rounded">Passe o mouse na imagem</p>
+                  <p id="iso-canvas-label" class="absolute top-3 left-3 z-10 text-[10px] uppercase tracking-[0.2em] text-accent bg-bg/80 backdrop-blur-sm px-2 py-1 rounded">${t.ui.passeMouse}</p>
                   <canvas id="iso-canvas" class="block" style="max-width:100%;height:auto"></canvas>
                 </div>
               </div>
@@ -2476,7 +2737,7 @@ function getDashboardTranslation() {
                 <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
                   <p class="text-xs uppercase tracking-[0.2em] text-muted mb-4">Dados do Pixel</p>
                   <div id="iso-picked-content" class="space-y-3">
-                    <p class="text-muted text-sm">Passe o mouse na imagem</p>
+                    <p class="text-muted text-sm">${t.ui.passeMouse}</p>
                   </div>
                 </div>
 
@@ -2488,7 +2749,7 @@ function getDashboardTranslation() {
                     <div id="iso-scale-marker" class="absolute top-[-2px] w-1 h-[28px] rounded-sm transition-all duration-100 ease-out" style="background:#d88800;box-shadow:0 0 8px #d88800;left:50%;display:none"></div>
                   </div>
                   <div class="mt-2 flex justify-between text-[10px] text-muted font-mono">
-                    <span>0 (Branco)</span><span>5</span><span>10 (Preto)</span>
+                    <span>${t.ui.brancoLabel}</span><span>5</span><span>${t.ui.pretoLabel}</span>
                   </div>
                 </div>
 
@@ -2506,12 +2767,12 @@ function getDashboardTranslation() {
             <div class="p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
               <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-6">
-                  <h3 class="font-display text-xl mb-4">Isolar Faixa de Valores</h3>
+                  <h3 class="font-display text-xl mb-4">${t.ui.isolarFaixa}</h3>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" id="iso-modo-toggle" onchange="isoOnModoIsolacao()" class="accent-[#d88800] w-4 h-4" />
-                    <span class="text-sm">Ativar isolamento tonal</span>
+                    <span class="text-sm">${t.ui.ativarIsolamento}</span>
                   </label>
-                  <p class="text-xs text-muted">Quando ativo, apenas os pixels dentro da faixa selecionada ficam visíveis — o resto fica dessaturado.</p>
+                  <p class="text-xs text-muted">${t.ui.descIsolamento}</p>
 
                   <div class="space-y-3">
                     <div>
@@ -2533,27 +2794,27 @@ function getDashboardTranslation() {
                   <div>
                     <p class="text-xs text-muted mb-2">Atalhos rípidos:</p>
                     <div class="flex flex-wrap gap-2">
-                      <button onclick="isoSetFaixa(0,3)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Claros (0—3)</button>
-                      <button onclick="isoSetFaixa(4,7)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Médios (4—7)</button>
-                      <button onclick="isoSetFaixa(8,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Escuros (8—10)</button>
-                      <button onclick="isoSetFaixa(0,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Todos</button>
+                      <button onclick="isoSetFaixa(0,3)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.clarosRange}</button>
+                      <button onclick="isoSetFaixa(4,7)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.mediosRange}</button>
+                      <button onclick="isoSetFaixa(8,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.escurosRange}</button>
+                      <button onclick="isoSetFaixa(0,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.todosLabel}</button>
                     </div>
                   </div>
 
                   <div>
                     <div class="flex justify-between text-sm mb-2">
-                      <span>Opacidade do Fundo</span>
+                      <span>${t.ui.opacidadeFundo}</span>
                       <span id="iso-val-opacidade" class="text-accent font-mono">80%</span>
                     </div>
                     <input type="range" id="iso-sl-opacidade" min="0" max="100" value="80" class="w-full" oninput="isoOnOpacidade()" />
-                    <p class="text-xs text-muted mt-1">Quanto do fundo dessaturado permanece visível.</p>
+                    <p class="text-xs text-muted mt-1">${t.ui.dicaOpacidade}</p>
                   </div>
                 </div>
 
                 <div class="space-y-6">
-                  <h3 class="font-display text-xl mb-4">Distribuição de Valores</h3>
+                  <h3 class="font-display text-xl mb-4">${t.ui.distribuicaoValores}</h3>
                   <div id="iso-histograma" class="space-y-2"></div>
-                  <p class="text-xs text-muted">Quantos pixels da imagem pertencem a cada faixa tonal.</p>
+                  <p class="text-xs text-muted">${t.ui.dicaDistribuicao}</p>
                 </div>
               </div>
             </div>
@@ -2561,17 +2822,17 @@ function getDashboardTranslation() {
             <!-- Botções -->
             <div class="flex flex-col sm:flex-row gap-4">
               <button onclick="isoLimparIsolamento()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Limpar Isolamento
+                ${t.ui.limparIsolamento}
               </button>
               <button onclick="isoBaixarImagem()"
                 class="flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
                 style="background:#d88800;color:hsl(0 0% 4%)"
                 onmouseenter="this.style.background='#c07800'"
                 onmouseleave="this.style.background='#d88800'">
-                Baixar Resultado (PNG)
+                ${t.ui.baixarResultado}
               </button>
               <button onclick="document.getElementById('iso-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Trocar Imagem
+                ${t.ui.trocarImagem}
               </button>
             </div>
           </div>
@@ -2924,8 +3185,8 @@ function getDashboardTranslation() {
               <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M8.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/><path d="M21 15l-5-5L5 21"/></svg>
               </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
+              <p class="font-display text-xl">${t.ui.uploadHint}</p>
+              <p class="text-muted text-sm">${t.ui.uploadTypes}</p>
             </div>
           </div>
 
@@ -2936,12 +3197,12 @@ function getDashboardTranslation() {
             <div class="flex items-center gap-4 md:gap-6 p-4 md:p-5 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
               <div class="flex-1">
                 <div class="flex justify-between text-sm mb-2">
-                  <span>Tamanho da Abertura</span>
+                  <span>${t.ui.tamanhoAbertura}</span>
                   <span id="jn-val-tamanho" class="text-accent font-mono">120</span>
                 </div>
                 <input type="range" id="jn-sl-tamanho" min="30" max="400" value="120" class="w-full" oninput="jnOnTamanho(this.value)" />
               </div>
-              <div class="text-xs text-muted hidden md:block">Arraste a janela na imagem</div>
+              <div class="text-xs text-muted hidden md:block">${t.ui.arrasteJanela}</div>
             </div>
 
             <!-- Canvas -->
@@ -2954,17 +3215,17 @@ function getDashboardTranslation() {
             <!-- Botções -->
             <div class="flex flex-col sm:flex-row gap-4 mt-6">
               <button onclick="jnResetar()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Centralizar Janela
+                ${t.ui.centralizarJanela}
               </button>
               <button onclick="jnBaixarImagem()"
                 class="flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
                 style="background:#d88800;color:hsl(0 0% 4%)"
                 onmouseenter="this.style.background='#c07800'"
                 onmouseleave="this.style.background='#d88800'">
-                Baixar Resultado (PNG)
+                ${t.ui.baixarResultado}
               </button>
               <button onclick="document.getElementById('jn-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Trocar Imagem
+                ${t.ui.trocarImagem}
               </button>
             </div>
           </div>
@@ -3151,8 +3412,8 @@ function getDashboardTranslation() {
               <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
               </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
+              <p class="font-display text-xl">${t.ui.uploadHint}</p>
+              <p class="text-muted text-sm">${t.ui.uploadTypes}</p>
             </div>
           </div>
 
@@ -3160,11 +3421,11 @@ function getDashboardTranslation() {
           <div id="qd-canvas-section" class="hidden mb-8">
             <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">Original</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">${t.ui.original}</p>
                 <canvas id="qd-canvas-original" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">Quadriculada</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-accent mb-3">${t.ui.resultado}</p>
                 <canvas id="qd-canvas-resultado" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
             </div>
@@ -3174,25 +3435,25 @@ function getDashboardTranslation() {
           <div id="qd-controls-section" class="hidden p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
             <div class="grid md:grid-cols-2 gap-8">
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Tamanho da Grade</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.tamanhoGrade}</h3>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Colunas</span>
+                    <span>${t.ui.colunas}</span>
                     <span id="qd-val-cols" class="text-accent font-mono">5</span>
                   </div>
                   <input type="range" id="qd-sl-cols" min="2" max="20" value="5" class="w-full" oninput="qdOnCols(this.value)" />
                 </div>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Linhas</span>
+                    <span>${t.ui.linhas}</span>
                     <span id="qd-val-rows" class="text-accent font-mono">5</span>
                   </div>
                   <input type="range" id="qd-sl-rows" min="2" max="20" value="5" class="w-full" oninput="qdOnRows(this.value)" />
                 </div>
 
-                <h3 class="font-display text-xl mt-6 mb-4">Aparência</h3>
+                <h3 class="font-display text-xl mt-6 mb-4">${t.ui.aparencia}</h3>
                 <div>
-                  <p class="text-sm mb-2">Cor da grade</p>
+                  <p class="text-sm mb-2">${t.ui.corGrade}</p>
                   <div class="flex gap-3" id="qd-cores">
                     <button onclick="qdSetCor('#ffffff')" data-cor="#ffffff" class="w-9 h-9 rounded-lg border-2 border-accent bg-white transition-all"></button>
                     <button onclick="qdSetCor('#000000')" data-cor="#000000" class="w-9 h-9 rounded-lg border-2 border-white/10 bg-black transition-all"></button>
@@ -3202,19 +3463,19 @@ function getDashboardTranslation() {
                 </div>
                 <div>
                   <div class="flex justify-between text-sm mb-2">
-                    <span>Espessura</span>
+                    <span>${t.ui.espessura}</span>
                     <span id="qd-val-esp" class="text-accent font-mono">1px</span>
                   </div>
                   <input type="range" id="qd-sl-esp" min="1" max="5" value="1" class="w-full" oninput="qdOnEsp(this.value)" />
                 </div>
                 <label class="flex items-center gap-3 cursor-pointer">
                   <input type="checkbox" id="qd-grayscale-toggle" onchange="qdOnGrayscale()" class="accent-[#d88800] w-4 h-4" />
-                  <span class="text-sm">Escala de cinzas (P&B)</span>
+                  <span class="text-sm">${t.ui.escalaCinzasPB}</span>
                 </label>
               </div>
 
               <div class="space-y-6">
-                <h3 class="font-display text-xl mb-4">Dica de Uso</h3>
+                <h3 class="font-display text-xl mb-4">${t.ui.dicaUso}</h3>
                 <div class="p-5 rounded-xl border border-white/10 bg-white/[0.02]">
                   <p class="text-sm text-muted leading-relaxed">
                     Crie uma grade <span class="text-fg font-medium">idêntica</span> na sua tela ou papel. Cada célula é um pedaço pequeno para desenhar separadamente. Comece com <span class="text-accent font-medium">5×5</span> e aumente para mais detalhe.
@@ -3229,7 +3490,21 @@ function getDashboardTranslation() {
 
           <!-- Painel de Cálculo de Proporção -->
           <div id="qd-calc-section" class="hidden p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
-            <h3 class="font-display text-xl mb-6">Cálculo de Proporção</h3>
+            <h3 class="font-display text-xl mb-4">${t.ui.calculoProporcao}</h3>
+
+            <!-- Explicação de uso -->
+            <div class="p-4 mb-6 rounded-xl border border-accent/20 bg-accent/[0.04]">
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 rounded-full bg-accent/15 flex items-center justify-center shrink-0 mt-0.5">
+                  <i class="fa-solid fa-lightbulb text-accent text-xs"></i>
+                </div>
+                <div class="text-xs text-muted leading-relaxed space-y-2">
+                  <p>${t.ui.explicacaoProporcao1}</p>
+                  <p>${t.ui.explicacaoProporcao2}</p>
+                  <p class="text-accent/70 italic">${t.ui.dicaProporcao}</p>
+                </div>
+              </div>
+            </div>
             <div class="grid md:grid-cols-2 gap-6">
               <!-- Coluna 1: Inputs -->
               <div class="space-y-5">
@@ -3274,14 +3549,14 @@ function getDashboardTranslation() {
 
                 <!-- Grade automática -->
                 <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03]">
-                  <p class="text-[11px] text-muted mb-2">Grade automática</p>
+                  <p class="text-[11px] text-muted mb-2">${t.ui.gradeAutomatica}</p>
                   <div class="grid grid-cols-3 gap-2 text-center">
                     <div>
-                      <p class="text-[10px] text-muted">Quad. ref.</p>
+                      <p class="text-[10px] text-muted">${t.ui.quadRef}</p>
                       <p id="qd-calc-quad-ref" class="text-sm text-fg font-mono">2×2 cm</p>
                     </div>
                     <div>
-                      <p class="text-[10px] text-muted">Quad. tela</p>
+                      <p class="text-[10px] text-muted">${t.ui.quadTela}</p>
                       <p id="qd-calc-quad-tela" class="text-sm text-accent font-mono font-medium">8.3×8.3 cm</p>
                     </div>
                     <div>
@@ -3293,7 +3568,7 @@ function getDashboardTranslation() {
 
                 <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 leading-relaxed"></p>
                 <button onclick="qdAplicarGradeCalculada()" class="w-full px-4 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-medium hover:bg-accent/25 transition-colors">
-                  <i class="fa-solid fa-table-cells-large mr-2"></i>Aplicar grade ao preview
+                  <i class="fa-solid fa-table-cells-large mr-2"></i>${t.ui.aplicarGrade}
                 </button>
               </div>
 
@@ -3301,17 +3576,17 @@ function getDashboardTranslation() {
               <div class="space-y-4">
                 <div class="grid grid-cols-2 gap-3">
                   <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03] text-center">
-                    <p class="text-[10px] text-muted mb-1">Fator de escala</p>
+                    <p class="text-[10px] text-muted mb-1">${t.ui.fatorEscala}</p>
                     <p id="qd-calc-escala" class="text-xl text-accent font-mono font-bold">×4.17</p>
                   </div>
                   <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03] text-center">
-                    <p class="text-[10px] text-muted mb-1">Área na tela</p>
+                    <p class="text-[10px] text-muted mb-1">${t.ui.areaTela}</p>
                     <p id="qd-calc-area" class="text-sm text-fg font-mono font-medium">33.3 × 50 cm</p>
                   </div>
                 </div>
 
                 <div class="p-3 rounded-xl border border-white/10 bg-white/[0.03]">
-                  <p class="text-[11px] text-muted mb-2">Tamanho de cada célula</p>
+                  <p class="text-[11px] text-muted mb-2">${t.ui.tamanhoCelula}</p>
                   <div class="grid grid-cols-2 gap-2 text-center">
                     <div>
                       <p class="text-[10px] text-muted">Referência</p>
@@ -3351,7 +3626,7 @@ function getDashboardTranslation() {
               <i class="fa-solid fa-table mr-2"></i>Grade em Branco
             </button>
             <button onclick="document.getElementById('qd-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-              Trocar Imagem
+              ${t.ui.trocarImagem}
             </button>
           </div>
 
@@ -3885,13 +4160,13 @@ function getDashboardTranslation() {
                 style="background:linear-gradient(to right,#fff,#888,#000)"
                 oninput="ioSetValor(+this.value)" />
               <div class="flex justify-between text-[10px] text-muted mt-1">
-                <span>0 (Branco)</span><span>5 (Médio)</span><span>10 (Preto)</span>
+                <span>${t.ui.brancoLabel}</span><span>${t.ui.medioLabel}</span><span>${t.ui.pretoLabel}</span>
               </div>
             </div>
 
             <!-- Demo principal: 3 fundos -->
             <div class="mb-8">
-              <h3 class="font-display text-xl mb-3">Mesmo valor, fundos diferentes</h3>
+              <h3 class="font-display text-xl mb-3">${t.ui.mesmoValor}</h3>
               <div class="grid grid-cols-3 gap-4">
                 ${fundos.map(f => {
                   const bg = escalaCinza[f.bg].hex;
@@ -3914,8 +4189,8 @@ function getDashboardTranslation() {
 
             <!-- Demo estendida: 11 fundos -->
             <div>
-              <h3 class="font-display text-xl mb-2">Todos os fundos — mesmo valor no centro</h3>
-              <p class="text-sm text-muted mb-4">Todos os quadrados centrais são <span class="text-fg font-medium">exactamente</span> o cinza ${v}.</p>
+              <h3 class="font-display text-xl mb-2">${t.ui.todosLabel} os fundos — mesmo valor no centro</h3>
+              <p class="text-sm text-muted mb-4">${t.ui.todosLabel} os quadrados centrais são <span class="text-fg font-medium">exactamente</span> o cinza ${v}.</p>
               <div class="overflow-x-auto pb-2 -mx-2 px-2">
                 <div class="flex gap-2" style="min-width:max-content">
                   ${escalaCinza.map((f, i) => `
@@ -3951,15 +4226,35 @@ function getDashboardTranslation() {
                 <p class="text-sm text-muted leading-relaxed">Segure sobre a referência e sobre a tela para ver o valor puro, sem interferência do cérebro.</p>
               </div>
 
-              <!-- Squint -->
+              <!-- ${t.ui.squint} -->
               <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
-                <div class="w-full h-32 rounded-xl border border-white/10 bg-white/[0.04] flex items-center justify-center mb-4">
-                  <svg width="80" height="40" viewBox="0 0 80 40" fill="none">
+                <input type="file" id="il-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="ilusaoUpload(event)" />
+                <div id="il-upload-zone" class="w-full rounded-xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-3 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02] mb-4" style="min-height:140px" onclick="document.getElementById('il-file-input').click()">
+                  <svg width="40" height="40" viewBox="0 0 80 40" fill="none" class="opacity-40">
                     <path d="M5 20 Q20 8 40 8 Q60 8 75 20 Q60 32 40 32 Q20 32 5 20Z" stroke="#d88800" stroke-width="2" fill="none"/>
                     <line x1="10" y1="19" x2="70" y2="19" stroke="#d88800" stroke-width="2"/>
                   </svg>
+                  <p class="text-sm text-muted">${t.ui.uploadHint}</p>
                 </div>
-                <h3 class="font-display text-lg mb-2">Squint</h3>
+                <div id="il-image-wrap" class="hidden">
+                  <div class="relative rounded-xl overflow-hidden border border-white/10 mb-4">
+                    <img id="il-squint-img" src="" class="w-full" style="display:block;image-rendering:auto;filter:blur(0px);transition:filter 0.3s ease" />
+                  </div>
+                  <div class="space-y-3 mb-4">
+                    <div>
+                      <div class="flex justify-between text-sm mb-1">
+                        <span class="text-muted">${t.ui.squintIntensity}</span>
+                        <span id="il-blur-val" class="text-accent font-mono text-xs">0px</span>
+                      </div>
+                      <input type="range" id="il-blur" min="0" max="12" value="0" step="0.5" class="w-full accent-[#d88800]" oninput="ilusaoBlur(this.value)" />
+                    </div>
+                    <div class="flex gap-2">
+                      <button onclick="document.getElementById('il-blur').value=0; ilusaoBlur(0)" class="px-3 py-1.5 rounded-full border border-white/10 text-xs text-muted hover:border-accent/40 hover:text-fg transition-colors">${t.ui.redefinir}</button>
+                      <button onclick="document.getElementById('il-file-input').click()" class="px-3 py-1.5 rounded-full border border-white/10 text-xs text-muted hover:border-accent/40 hover:text-fg transition-colors">${t.ui.trocarImagem}</button>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="font-display text-lg mb-2">${t.ui.squint}</h3>
                 <p class="text-sm text-muted leading-relaxed mb-3"><span class="text-fg font-medium">Aperte levemente os olhos</span> ao avaliar valores na referência.</p>
                 <p class="text-sm text-muted leading-relaxed">Isto reduz o contraste abrupto e permite ver os valores reais, sem o cérebro "corrigir".</p>
               </div>
@@ -3971,7 +4266,7 @@ function getDashboardTranslation() {
                     <span class="text-accent text-xs font-medium text-center leading-tight px-1">Isolar<br/>valor</span>
                   </div>
                 </div>
-                <h3 class="font-display text-lg mb-2">Isolador Digital</h3>
+                <h3 class="font-display text-lg mb-2">${t.ui.isoladorDigital}</h3>
                 <p class="text-sm text-muted leading-relaxed mb-3">O <span class="text-accent font-medium">Isolador Tonal</span> faz exactamente a mesma coisa que a máscara — mas digitalmente.</p>
                 <button onclick="navigate('isolador')" class="w-full px-4 py-3 min-h-[44px] rounded-xl text-sm font-medium bg-accent text-bg hover:brightness-110 active:scale-95 transition-all">
                   Experimentar o Isolador →
@@ -3988,6 +4283,30 @@ function getDashboardTranslation() {
   function ioSetValor(v) {
     ilusaoState.valor = v;
     renderIlusao();
+  }
+
+  // ── Squint handlers ──────────────────────────────────────────────────────
+  function ilusaoUpload(e) {
+    const file = e.target.files ? e.target.files[0] : null;
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const img = document.getElementById('il-squint-img');
+      if (!img) return;
+      img.src = ev.target.result;
+      document.getElementById('il-upload-zone').classList.add('hidden');
+      document.getElementById('il-image-wrap').classList.remove('hidden');
+      document.getElementById('il-blur').value = 0;
+      ilusaoBlur(0);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function ilusaoBlur(val) {
+    const img = document.getElementById('il-squint-img');
+    const lbl = document.getElementById('il-blur-val');
+    if (img) img.style.filter = `blur(${val}px)`;
+    if (lbl) lbl.textContent = val + 'px';
   }
 
   // ══════════════════════════════════════════════════════════════════════
@@ -4019,7 +4338,7 @@ function getDashboardTranslation() {
 
           <input type="file" id="lv-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="lvProcessFile(event)" />
           <div id="lv-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('lv-file-input').click()">
-            <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
+            <p class="font-display text-xl text-muted">${t.ui.uploadHint}</p>
           </div>
           <div id="lv-result" class="hidden">
             <div class="grid md:grid-cols-[1fr,280px] gap-6">
@@ -4028,30 +4347,30 @@ function getDashboardTranslation() {
                 <div id="lv-loupe" class="hidden fixed w-32 h-32 rounded-full border-2 border-accent pointer-events-none z-50 shadow-2xl" style="image-rendering:pixelated"></div>
                 <div class="flex gap-3 mt-3">
                   <button id="lv-clear-btn" onclick="lvLimparIsolamento()" class="hidden px-5 py-2 rounded-full border border-white/10 text-xs hover:border-accent/40 transition-colors">
-                    Limpar Isolamento
+                    ${t.ui.limparIsolamento}
                   </button>
                   <button onclick="document.getElementById('lv-file-input').click()" class="px-5 py-2 rounded-full border border-white/10 text-xs hover:border-accent/40 transition-colors">
-                    Trocar Imagem
+                    ${t.ui.trocarImagem}
                   </button>
                 </div>
               </div>
               <div id="lv-info" class="p-6 rounded-2xl border border-white/10 bg-white/[0.02] space-y-5 self-start sticky top-20">
-                <p class="text-xs uppercase tracking-[0.2em] text-muted">Clique na imagem</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-muted">${t.ui.cliqueImagem}</p>
                 <div class="text-center py-8">
                   <div id="lv-color-preview" class="w-20 h-20 rounded-2xl mx-auto mb-4 border border-white/10" style="background:#808080"></div>
                   <p id="lv-valor" class="font-display text-5xl font-bold text-accent">5</p>
-                  <p class="text-xs text-muted mt-1">valor tonal (0–10)</p>
+                  <p class="text-xs text-muted mt-1">${t.ui.valorTonal}</p>
                 </div>
                 <div class="space-y-2 text-sm">
                   <div class="flex justify-between"><span class="text-muted">R</span><span id="lv-r" class="font-mono text-fg">128</span></div>
                   <div class="flex justify-between"><span class="text-muted">G</span><span id="lv-g" class="font-mono text-fg">128</span></div>
                   <div class="flex justify-between"><span class="text-muted">B</span><span id="lv-b" class="font-mono text-fg">128</span></div>
                   <p class="text-[10px] text-muted/60 italic leading-tight pt-0.5">${t.rgbInfo}</p>
-                  <div class="flex justify-between border-t border-white/10 pt-2"><span class="text-muted">Hex</span><span id="lv-hex" class="font-mono text-accent">#808080</span></div>
-                  <div class="flex justify-between"><span class="text-muted">Brilho</span><span id="lv-bri" class="font-mono text-fg">50%</span></div>
+                  <div class="flex justify-between border-t border-white/10 pt-2"><span class="text-muted">${t.ui.hexLabel}</span><span id="lv-hex" class="font-mono text-accent">#808080</span></div>
+                  <div class="flex justify-between"><span class="text-muted">${t.ui.brilhoLabel}</span><span id="lv-bri" class="font-mono text-fg">50%</span></div>
                 </div>
                 <div class="pt-2 border-t border-white/10">
-                  <p class="text-[10px] uppercase tracking-[0.2em] text-muted mb-2">Zona</p>
+                  <p class="text-[10px] uppercase tracking-[0.2em] text-muted mb-2">${t.ui.zona}</p>
                   <div id="lv-zona-bar" class="flex gap-0.5 h-6 rounded-lg overflow-hidden"></div>
                   <p id="lv-zona-text" class="text-xs text-muted mt-2 text-center"></p>
                 </div>
@@ -4062,24 +4381,24 @@ function getDashboardTranslation() {
             <div class="p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mt-6">
               <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-6">
-                  <h3 class="font-display text-xl mb-4">Isolar Faixa de Valores</h3>
+                  <h3 class="font-display text-xl mb-4">${t.ui.isolarFaixa}</h3>
                   <label class="flex items-center gap-3 cursor-pointer">
                     <input type="checkbox" id="lv-modo-toggle" onchange="lvOnModoIsolacao()" class="accent-[#d88800] w-4 h-4" />
-                    <span class="text-sm">Ativar isolamento tonal</span>
+                    <span class="text-sm">${t.ui.ativarIsolamento}</span>
                   </label>
-                  <p class="text-xs text-muted">Quando ativo, apenas os pixels dentro da faixa selecionada ficam visíveis — o resto fica dessaturado.</p>
+                  <p class="text-xs text-muted">${t.ui.descIsolamento}</p>
 
                   <div class="space-y-3">
                     <div>
                       <div class="flex justify-between text-sm mb-2">
-                        <span>Valor Mínimo (Claro)</span>
+                        <span>${t.ui.valorMinimo}</span>
                         <span id="lv-val-min" class="text-accent font-mono">0</span>
                       </div>
                       <input type="range" id="lv-sl-min" min="0" max="10" value="0" class="w-full" oninput="lvOnFaixa()" />
                     </div>
                     <div>
                       <div class="flex justify-between text-sm mb-2">
-                        <span>Valor Máximo (Escuro)</span>
+                        <span>${t.ui.valorMaximo}</span>
                         <span id="lv-val-max" class="text-accent font-mono">10</span>
                       </div>
                       <input type="range" id="lv-sl-max" min="0" max="10" value="10" class="w-full" oninput="lvOnFaixa()" />
@@ -4087,29 +4406,29 @@ function getDashboardTranslation() {
                   </div>
 
                   <div>
-                    <p class="text-xs text-muted mb-2">Atalhos rápidos:</p>
+                    <p class="text-xs text-muted mb-2">${t.ui.atalhos}</p>
                     <div class="flex flex-wrap gap-2">
-                      <button onclick="lvSetFaixa(0,3)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Claros (0–3)</button>
-                      <button onclick="lvSetFaixa(4,7)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Médios (4–7)</button>
-                      <button onclick="lvSetFaixa(8,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Escuros (8–10)</button>
-                      <button onclick="lvSetFaixa(0,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">Todos</button>
+                      <button onclick="lvSetFaixa(0,3)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.clarosRange}</button>
+                      <button onclick="lvSetFaixa(4,7)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.mediosRange}</button>
+                      <button onclick="lvSetFaixa(8,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.escurosRange}</button>
+                      <button onclick="lvSetFaixa(0,10)" class="px-3 py-1.5 rounded-lg text-xs border border-white/10 text-muted hover:border-accent/40 hover:text-accent transition-all">${t.ui.todosLabel}</button>
                     </div>
                   </div>
 
                   <div>
                     <div class="flex justify-between text-sm mb-2">
-                      <span>Opacidade do Fundo</span>
+                      <span>${t.ui.opacidadeFundo}</span>
                       <span id="lv-val-opacidade" class="text-accent font-mono">80%</span>
                     </div>
                     <input type="range" id="lv-sl-opacidade" min="0" max="100" value="80" class="w-full" oninput="lvOnOpacidade()" />
-                    <p class="text-xs text-muted mt-1">Quanto do fundo dessaturado permanece visível.</p>
+                    <p class="text-xs text-muted mt-1">${t.ui.dicaOpacidade}</p>
                   </div>
                 </div>
 
                 <div class="space-y-6">
-                  <h3 class="font-display text-xl mb-4">Distribuição de Valores</h3>
+                  <h3 class="font-display text-xl mb-4">${t.ui.distribuicaoValores}</h3>
                   <div id="lv-histograma" class="space-y-2"></div>
-                  <p class="text-xs text-muted">Quantos pixels da imagem pertencem a cada faixa tonal.</p>
+                  <p class="text-xs text-muted">${t.ui.dicaDistribuicao}</p>
                 </div>
               </div>
             </div>
@@ -4121,7 +4440,7 @@ function getDashboardTranslation() {
                 style="background:#d88800;color:hsl(0 0% 4%)"
                 onmouseenter="this.style.background='#c07800'"
                 onmouseleave="this.style.background='#d88800'">
-                Baixar Resultado (PNG)
+                ${t.ui.baixarResultado}
               </button>
             </div>
           </div>
@@ -4130,6 +4449,7 @@ function getDashboardTranslation() {
   }
 
   function lvProcessFile(e) {
+    const t = getDashboardTranslation();
     const file = e.target.files ? e.target.files[0] : e.dataTransfer.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -4158,8 +4478,8 @@ function getDashboardTranslation() {
 
         document.getElementById('lv-result').classList.remove('hidden');
         document.getElementById('lv-upload-zone').innerHTML = `
-          <p class="text-muted text-sm">Imagem carregada</p>
-          <button onclick="document.getElementById('lv-file-input').value=''; document.getElementById('lv-file-input').click()" class="mt-2 px-4 py-1.5 text-xs rounded-full border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">Trocar Imagem</button>
+          <p class="text-muted text-sm">${t.ui.uploadLoaded}</p>
+          <button onclick="document.getElementById('lv-file-input').value=''; document.getElementById('lv-file-input').click()" class="mt-2 px-4 py-1.5 text-xs rounded-full border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">${t.ui.trocarImagem}</button>
         `;
         c.onclick = lvClick;
         c.onmousemove = lvMove;
@@ -4451,7 +4771,7 @@ function getDashboardTranslation() {
 
           <div id="pe-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('pe-file-input').click()">
             <input type="file" id="pe-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="peProcessFile(event)" />
-            <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
+            <p class="font-display text-xl text-muted">${t.ui.uploadHint}</p>
           </div>
           <div id="pe-result" class="hidden">
             <canvas id="pe-canvas" class="w-full rounded-xl border border-white/10 mb-6" style="max-height:350px;object-fit:contain"></canvas>
@@ -4462,6 +4782,7 @@ function getDashboardTranslation() {
   }
 
   function peProcessFile(e) {
+    const t = getDashboardTranslation();
     const file = e.target.files ? e.target.files[0] : e.dataTransfer.files[0];
     if (!file) return;
     const reader = new FileReader();
@@ -4480,7 +4801,7 @@ function getDashboardTranslation() {
         document.getElementById('pe-result').classList.remove('hidden');
         document.getElementById('pe-upload-zone').innerHTML = `
           <p class="text-muted text-sm">Imagem carregada</p>
-          <button onclick="document.getElementById('pe-file-input').value=''; document.getElementById('pe-file-input').click()" class="mt-2 px-4 py-1.5 text-xs rounded-full border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">Trocar Imagem</button>
+          <button onclick="document.getElementById('pe-file-input').value=''; document.getElementById('pe-file-input').click()" class="mt-2 px-4 py-1.5 text-xs rounded-full border border-white/10 text-muted hover:border-accent/40 hover:text-fg transition-colors">${t.ui.trocarImagem}</button>
         `;
         peExtractPalette();
       };
@@ -4677,7 +4998,7 @@ function getDashboardTranslation() {
           <div id="la-result" class="hidden">
             <div class="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">Original</p>
+                <p class="text-xs uppercase tracking-[0.2em] text-muted mb-3">${t.ui.original}</p>
                 <canvas id="la-canvas-orig" class="w-full rounded-xl border border-white/10" style="max-height:400px;object-fit:contain"></canvas>
               </div>
               <div>
