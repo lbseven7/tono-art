@@ -1150,7 +1150,12 @@ function getDashboardTranslation() {
           <div id="escala-details"></div>
 
           <div class="mt-16 p-8 rounded-2xl border border-white/10 bg-white/[0.02] fade-in">
-            <h3 class="font-display text-xl mb-1">${t.escalaPage.guiaMisturas}</h3>
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="font-display text-xl">${t.escalaPage.guiaMisturas}</h3>
+              <button onclick="escalaBaixarGuia()" class="px-4 py-2 rounded-full border border-white/10 text-xs hover:border-accent/40 transition-colors">
+                Baixar Guia (PNG)
+              </button>
+            </div>
             <p class="text-sm text-muted mb-5 font-light">${t.escalaPage.guiaMisturasDesc.replace('{branco}', pigmentos.branco.nome).replace('{preto}', pigmentos.preto.nome)}</p>
             <div class="space-y-3">${rows}</div>
           </div>
@@ -1175,6 +1180,85 @@ function getDashboardTranslation() {
     renderEscalaStrip();
     renderEscalaPreview();
     renderEscalaDetails();
+  }
+
+  function escalaBaixarGuia() {
+    const t = getDashboardTranslation();
+    const escalaCinza = getEscalaCinza();
+    const pigmentos = {
+      branco: t.pigmentos.branco.nome,
+      preto: t.pigmentos.preto.nome
+    };
+    const dpr = 2;
+    const swatchW = 80, rowH = 72, padX = 40, padTop = 70, padBot = 30;
+    const barX = 500, barW = 260, barH = 24;
+    const canvasW = padX + swatchW + 20 + 400 + 20 + barW + padX;
+    const canvasH = padTop + escalaCinza.length * rowH + padBot;
+    const c = document.createElement('canvas');
+    c.width = canvasW * dpr; c.height = canvasH * dpr;
+    const ctx = c.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.fillStyle = '#111111';
+    ctx.fillRect(0, 0, canvasW, canvasH);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 20px sans-serif';
+    ctx.fillText(t.escalaPage.guiaMisturas, padX, 40);
+    ctx.fillStyle = '#888888';
+    ctx.font = '12px sans-serif';
+    ctx.fillText(pigmentos.branco + ' + ' + pigmentos.preto, padX, 58);
+
+    escalaCinza.forEach((v, i) => {
+      const y = padTop + i * rowH;
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 24px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText(String(v.valor), padX, y + 36);
+      ctx.fillStyle = v.hex;
+      ctx.fillRect(padX + 50, y + 6, swatchW, 44);
+      ctx.strokeStyle = '#333333';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(padX + 50, y + 6, swatchW, 44);
+      ctx.fillStyle = '#cccccc';
+      ctx.font = '13px sans-serif';
+      ctx.fillText(v.nome, padX + 150, y + 22);
+      ctx.fillStyle = '#888888';
+      ctx.font = '11px monospace';
+      ctx.fillText(v.hex, padX + 150, y + 40);
+      ctx.fillStyle = '#333333';
+      ctx.fillRect(barX, y + 10, barW, barH);
+      if (v.branco > 0) {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(barX, y + 10, barW * v.branco / 10, barH);
+      }
+      if (v.preto > 0) {
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(barX + barW * v.branco / 10, y + 10, barW * v.preto / 10, barH);
+      }
+      ctx.strokeStyle = '#444444';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(barX, y + 10, barW, barH);
+      ctx.fillStyle = '#aaaaaa';
+      ctx.font = '11px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(v.branco + 'B', barX - 6, y + 27);
+      ctx.textAlign = 'left';
+      ctx.fillText(v.preto + 'P', barX + barW + 6, y + 27);
+      ctx.fillStyle = '#777777';
+      ctx.font = '11px sans-serif';
+      ctx.textAlign = 'right';
+      const ratio = v.branco === 0 ? '100% ' + pigmentos.preto : v.preto === 0 ? '100% ' + pigmentos.branco : v.branco + ':' + v.preto;
+      ctx.fillText(ratio, barX + barW + 50, y + 27);
+      ctx.textAlign = 'left';
+    });
+
+    c.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'guia-misturas.png';
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }, 'image/png');
   }
 
   function renderEscalaStrip() {
@@ -4292,8 +4376,8 @@ function getDashboardTranslation() {
 
           ${renderInstructionCard(t.instrucoes.localizador, t.instrucoes.comoUsar)}
 
+          <input type="file" id="lv-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="lvProcessFile(event)" />
           <div id="lv-upload-zone" class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]" style="min-height:200px" onclick="document.getElementById('lv-file-input').click()">
-            <input type="file" id="lv-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="lvProcessFile(event)" />
             <p class="font-display text-xl text-muted">Clique ou arraste uma imagem</p>
           </div>
           <div id="lv-result" class="hidden">
@@ -4301,6 +4385,14 @@ function getDashboardTranslation() {
               <div class="relative">
                 <canvas id="lv-canvas" class="w-full rounded-xl border border-white/10 cursor-crosshair" style="max-height:500px;object-fit:contain"></canvas>
                 <div id="lv-loupe" class="hidden fixed w-32 h-32 rounded-full border-2 border-accent pointer-events-none z-50 shadow-2xl" style="image-rendering:pixelated"></div>
+                <div class="flex gap-3 mt-3">
+                  <button id="lv-clear-btn" onclick="lvLimparIsolamento()" class="hidden px-5 py-2 rounded-full border border-white/10 text-xs hover:border-accent/40 transition-colors">
+                    Limpar Isolamento
+                  </button>
+                  <button onclick="document.getElementById('lv-file-input').click()" class="px-5 py-2 rounded-full border border-white/10 text-xs hover:border-accent/40 transition-colors">
+                    Trocar Imagem
+                  </button>
+                </div>
               </div>
               <div id="lv-info" class="p-6 rounded-2xl border border-white/10 bg-white/[0.02] space-y-5 self-start sticky top-20">
                 <p class="text-xs uppercase tracking-[0.2em] text-muted">Clique na imagem</p>
@@ -4382,19 +4474,13 @@ function getDashboardTranslation() {
             </div>
 
             <!-- Botões -->
-            <div class="flex flex-col sm:flex-row gap-4 mt-6">
-              <button onclick="lvLimparIsolamento()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Limpar Isolamento
-              </button>
+            <div class="flex justify-center mt-6">
               <button id="lv-download-btn" onclick="lvBaixarImagem()"
-                class="hidden flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
+                class="hidden px-8 py-4 rounded-full text-sm font-medium transition-colors"
                 style="background:#d88800;color:hsl(0 0% 4%)"
                 onmouseenter="this.style.background='#c07800'"
                 onmouseleave="this.style.background='#d88800'">
                 Baixar Resultado (PNG)
-              </button>
-              <button onclick="document.getElementById('lv-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Trocar Imagem
               </button>
             </div>
           </div>
@@ -4576,13 +4662,16 @@ function getDashboardTranslation() {
 
   function lvAplicarIsolamento() {
     const dlBtn = document.getElementById('lv-download-btn');
+    const clBtn = document.getElementById('lv-clear-btn');
     if (!localizadorState.originalImageData || !localizadorState.modoIsolacao) {
       lvRenderOriginal();
       if (localizadorState.picked) lvClickAt(localizadorState.picked.cx, localizadorState.picked.cy);
       if (dlBtn) dlBtn.classList.add('hidden');
+      if (clBtn) clBtn.classList.add('hidden');
       return;
     }
     if (dlBtn) dlBtn.classList.remove('hidden');
+    if (clBtn) clBtn.classList.remove('hidden');
     const c = document.getElementById('lv-canvas');
     const ctx = c.getContext('2d');
     const W = c.width, H = c.height;
@@ -4629,8 +4718,7 @@ function getDashboardTranslation() {
     if (slMax) slMax.value = 10;
     if (vlMin) vlMin.textContent = '0';
     if (vlMax) vlMax.textContent = '10';
-    lvRenderOriginal();
-    if (localizadorState.picked) lvClickAt(localizadorState.picked.cx, localizadorState.picked.cy);
+    lvAplicarIsolamento();
   }
 
   function lvClickAt(cx, cy) {
