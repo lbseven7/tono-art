@@ -4386,8 +4386,8 @@ function getDashboardTranslation() {
               <button onclick="lvLimparIsolamento()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
                 Limpar Isolamento
               </button>
-              <button onclick="lvBaixarImagem()"
-                class="flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
+              <button id="lv-download-btn" onclick="lvBaixarImagem()"
+                class="hidden flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
                 style="background:#d88800;color:hsl(0 0% 4%)"
                 onmouseenter="this.style.background='#c07800'"
                 onmouseleave="this.style.background='#d88800'">
@@ -4575,11 +4575,14 @@ function getDashboardTranslation() {
   }
 
   function lvAplicarIsolamento() {
+    const dlBtn = document.getElementById('lv-download-btn');
     if (!localizadorState.originalImageData || !localizadorState.modoIsolacao) {
       lvRenderOriginal();
       if (localizadorState.picked) lvClickAt(localizadorState.picked.cx, localizadorState.picked.cy);
+      if (dlBtn) dlBtn.classList.add('hidden');
       return;
     }
+    if (dlBtn) dlBtn.classList.remove('hidden');
     const c = document.getElementById('lv-canvas');
     const ctx = c.getContext('2d');
     const W = c.width, H = c.height;
