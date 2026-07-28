@@ -7,15 +7,25 @@ from pathlib import Path
 from pypdf import PdfReader
 
 DOWNLOADS_DIR = Path.home() / "Downloads"
-KB_DIR = Path(__file__).parent / "knowledge_base"
+PROJECT_DIR = Path(__file__).parent.parent
+KB_DIR = PROJECT_DIR / "knowledge_base"
 
-PDFS = [
+# PDFs da pasta ~/Downloads (livros e materiais de referencia)
+PDFS_DOWNLOADS = [
     "foba lenguaje visual Valor y Claes Tonales teorico.pdf",
     "Introducao_aos_Estudos_das_Artes_Visuais.pdf",
     "LIVRO_UNICO.pdf",
     "tonalidade.pdf",
     "valor-tonal.pdf",
     "Valores_Tonais_101_Guia_Completo.pdf",
+]
+
+# PDFs da pasta pdf/ do projeto (traducoes, guias, ideias)
+PDFS_PROJETO = [
+    "05-ideias-conteudo-nicho.pdf",
+    "06-video-value-elemento-arte.pdf",
+    "07-video-como-ver-entender-valores.pdf",
+    "08-video-valores-fundamento-importante.pdf",
 ]
 
 
@@ -68,14 +78,16 @@ def main():
     KB_DIR.mkdir(exist_ok=True)
     
     knowledge_base = {
-        "versao": "1.0",
+        "versao": "1.1",
         "fontes": [],
         "documentos": [],
     }
     
     print("Extraindo texto dos PDFs...\n")
     
-    for pdf_nome in PDFS:
+    # PDFs do Downloads
+    print("--- PDFs do Downloads ---")
+    for pdf_nome in PDFS_DOWNLOADS:
         caminho = DOWNLOADS_DIR / pdf_nome
         if not caminho.exists():
             print(f"  ! Nao encontrado: {pdf_nome}")
@@ -88,6 +100,35 @@ def main():
             "id": len(knowledge_base["documentos"]) + 1,
             "arquivo": dados["arquivo"],
             "titulo": dados["titulo"],
+            "origem": "downloads",
+            "paginas": dados["paginas"],
+            "tamanho_kb": dados["tamanho_kb"],
+            "chunks": chunks,
+            "total_chunks": len(chunks),
+        }
+        
+        knowledge_base["documentos"].append(doc)
+        knowledge_base["fontes"].append(dados["arquivo"])
+        
+        print(f"  OK {dados['arquivo']} ({dados['paginas']} pag, {len(chunks)} chunks)")
+    
+    # PDFs do projeto
+    print("\n--- PDFs do Projeto (pdf/) ---")
+    pdf_dir = PROJECT_DIR / "pdf"
+    for pdf_nome in PDFS_PROJETO:
+        caminho = pdf_dir / pdf_nome
+        if not caminho.exists():
+            print(f"  ! Nao encontrado: {pdf_nome}")
+            continue
+        
+        dados = extrair_texto_pdf(caminho)
+        chunks = chunk_texto(dados["texto"])
+        
+        doc = {
+            "id": len(knowledge_base["documentos"]) + 1,
+            "arquivo": dados["arquivo"],
+            "titulo": dados["titulo"],
+            "origem": "projeto",
             "paginas": dados["paginas"],
             "tamanho_kb": dados["tamanho_kb"],
             "chunks": chunks,
