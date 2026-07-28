@@ -29,15 +29,15 @@
   </defs>
   
   <!-- Aneis (circulos com furo no centro) -->
-  <!-- Externo: circulo raio 95 com furo raio 70 -->
+  <!-- Externo: circulo raio 95 com furo raio 80 -->
   <g class="externo">
     <circle cx="100" cy="100" r="95" fill="url(#grad)"/>
-    <circle cx="100" cy="100" r="70" fill="#1a1a1a"/>
+    <circle cx="100" cy="100" r="80" fill="#1a1a1a"/>
   </g>
   
-  <!-- Interno: circulo raio 55 com furo raio 30 -->
+  <!-- Interno: circulo raio 60 com furo raio 35 -->
   <g class="interno">
-    <circle cx="100" cy="100" r="55" fill="url(#grad)"/>
-    <circle cx="100" cy="100" r="30" fill="#1a1a1a"/>
+    <circle cx="100" cy="100" r="60" fill="url(#grad)"/>
+    <circle cx="100" cy="100" r="35" fill="#1a1a1a"/>
   </g>
 </svg>
