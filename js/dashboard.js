@@ -54,7 +54,8 @@ const dashboardTranslations = {
         { title: 'Localizar Valor', desc: 'Clique em qualquer ponto da imagem para descobrir o valor tonal exato (0–10) e estudar a distribuição.' },
         { title: 'Extrair Paleta', desc: 'Analisa a imagem e extrai as cores dominantes com os valores hex exatos para misturar.' },
         { title: 'Exercícios', desc: '8 semanas estruturadas do básico à aplicação avançada. Exercícios práticos para treinar o olhar.' },
-        { title: 'Análise de Luz', desc: 'Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.' }
+        { title: 'Análise de Luz', desc: 'Identifica a direção da luz na referência e mostra como ela afeta os valores em cada zona da imagem.' },
+        { title: 'Dica de Mestre', desc: 'Passo a passo com explicação de um exercício real, direto do ateliê. Ouça o áudio enquanto acompanha as imagens.' }
       ]
     },
     treino: {
@@ -302,7 +303,8 @@ const dashboardTranslations = {
         dirTopLeft: 'Superior Esquerda', dirBottomLeft: 'Inferior Esquerda',
         dirTopRight: 'Superior Direita', dirBottomRight: 'Inferior Direita',
         zoneHighlights: 'Destaques', zoneLights: 'Claras', zoneMids: 'Médios', zoneDarks: 'Escuras', zoneShadows: 'Sombras'
-      }
+      },
+      dicamestre: { title: 'Dica de Mestre', desc: 'Passo a passo com a explicação de um exercício real, direto do ateliê. Ouça o áudio enquanto acompanha as imagens.' }
     }
   },
   en: {
@@ -375,7 +377,8 @@ const dashboardTranslations = {
         { title: 'Locate Value', desc: 'Click any point on the image to find the exact tonal value (0–10) and study the tonal distribution.' },
         { title: 'Extract Palette', desc: 'Analyzes the image and extracts dominant colors with exact hex values for mixing.' },
         { title: 'Exercises', desc: '8 structured weeks from basics to advanced application. Practical exercises to train your eye.' },
-        { title: 'Light Analysis', desc: 'Identifies the direction of light in the reference and shows how it affects values in each zone of the image.' }
+        { title: 'Light Analysis', desc: 'Identifies the direction of light in the reference and shows how it affects values in each zone of the image.' },
+        { title: "Master's Tip", desc: 'Step-by-step walkthrough of a real studio exercise. Listen to the audio while following the images.' }
       ]
     },
     ensino: {
@@ -607,7 +610,8 @@ const dashboardTranslations = {
         dirTopLeft: 'Top Left', dirBottomLeft: 'Bottom Left',
         dirTopRight: 'Top Right', dirBottomRight: 'Bottom Right',
         zoneHighlights: 'Highlights', zoneLights: 'Lights', zoneMids: 'Mids', zoneDarks: 'Darks', zoneShadows: 'Shadows'
-      }
+      },
+      dicamestre: { title: "Master's Tip", desc: 'Step-by-step walkthrough of a real studio exercise. Listen to the audio while following the images.' }
     }
   },
   es: {
@@ -680,7 +684,8 @@ const dashboardTranslations = {
         { title: 'Localizar Valor', desc: 'Haz clic en cualquier punto de la imagen para descubrir el valor tonal exacto (0–10) y estudiar la distribución.' },
         { title: 'Extraer Paleta', desc: 'Analiza la imagen y extrae los colores dominantes con los valores hex exactos para mezclar.' },
         { title: 'Ejercicios', desc: '8 semanas estructuradas desde lo básico hasta la aplicación avanzada. Ejercicios prácticos para entrenar la vista.' },
-        { title: 'Análisis de Luz', desc: 'Identifica la dirección de la luz en la referencia y muestra cómo afecta los valores en cada zona de la imagen.' }
+        { title: 'Análisis de Luz', desc: 'Identifica la dirección de la luz en la referencia y muestra cómo afecta los valores en cada zona de la imagen.' },
+        { title: 'Consejo de Maestro', desc: 'Paso a paso con explicación de un ejercicio real, directo del taller. Escucha el audio mientras sigues las imágenes.' }
       ]
     },
     ensino: {
@@ -912,7 +917,8 @@ const dashboardTranslations = {
         dirTopLeft: 'Superior Izquierda', dirBottomLeft: 'Inferior Izquierda',
         dirTopRight: 'Superior Derecha', dirBottomRight: 'Inferior Derecha',
         zoneHighlights: 'Altas Luces', zoneLights: 'Claras', zoneMids: 'Medios', zoneDarks: 'Oscuros', zoneShadows: 'Sombras'
-      }
+      },
+      dicamestre: { title: 'Consejo de Maestro', desc: 'Paso a paso con explicación de un ejercicio real, directo del taller. Escucha el audio mientras sigues las imágenes.' }
     }
   }
 };
@@ -975,7 +981,7 @@ function getDashboardTranslation() {
   // ── Router ────────────────────────────────────────────────────────────
   let currentPage = 'home';
   function navigate(page) {
-    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz /*, tutoriais: renderTutoriais */ };
+    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, dicamestre: renderDicaMestre /*, tutoriais: renderTutoriais */ };
     const prev = currentPage;
     currentPage = page;
     document.getElementById('app').innerHTML = '';
@@ -1057,9 +1063,9 @@ function getDashboardTranslation() {
     const dotsHtml = slides.map((_, i) => `
       <button onclick="homeGoSlide(${i})" class="w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-accent w-5' : 'bg-fg/20 hover:bg-fg/40'}" data-dot="${i}"></button>`).join('');
 
-    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'riscoLinear', 'isolador', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
-    const moduleIcons = ['▮', '▤', '⊑', '◧', '◐', '◉', '⊞', '#', '⊙', '⊕', '◎', '📖', '☀'];
-    const proTools = ['converter', 'posterizar', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
+    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'riscoLinear', 'isolador', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz', 'dicamestre'];
+    const moduleIcons = ['▮', '▤', '⊑', '◧', '◐', '◉', '⊞', '#', '⊙', '⊕', '◎', '📖', '☀', '🎯'];
+    const proTools = ['converter', 'posterizar', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz', 'dicamestre'];
     const modulos = moduleIds.map((id, i) => {
       const module = t.home.modules[i];
       const isProTool = proTools.includes(id);
@@ -4971,6 +4977,97 @@ function getDashboardTranslation() {
       document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     }, 'image/png');
+  }
+
+  // ── Dica de Mestre ───────────────────────────────────────────────────────
+  function renderDicaMestre() {
+    const t = getDashboardTranslation();
+    const app = document.getElementById('app');
+    app.innerHTML = `
+      <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16 relative">
+        <!-- Tonal scale rail -->
+        <div class="hidden md:block absolute left-8 top-[72px] bottom-24 w-[5px] rounded-full"
+          style="background:linear-gradient(180deg,#000,#2b2b2b 20%,#555 40%,#808080 55%,#aaa 70%,#d6d6d6 85%,#f5f5f5);"></div>
+
+        <div class="max-w-5xl mx-auto fade-in">
+          <div class="mb-10 md:ml-10">
+            <p class="text-accent font-mono text-xs uppercase tracking-[0.2em] mb-3">Avançado</p>
+            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.dicamestre.title}</h1>
+            <p class="text-muted max-w-2xl font-light">${t.tools.dicamestre.desc}</p>
+          </div>
+
+          <!-- Bloco 1: Os três estágios -->
+          <div class="mb-16 md:ml-10">
+            <div class="flex items-baseline gap-3 mb-6">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-muted/50">Passo a passo</span>
+              <h2 class="font-display text-xl md:text-2xl text-fg">Os três estágios</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
+                <span class="font-mono text-xs text-accent block px-4 pt-3">01</span>
+                <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
+                  <img src="images/dica-mestre/passo-1.jpg" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                </div>
+                <p class="px-4 py-3 text-xs text-muted italic">Esboço inicial com os valores fundamentais.</p>
+              </div>
+
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
+                <span class="font-mono text-xs text-accent block px-4 pt-3">02</span>
+                <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
+                  <img src="images/dica-mestre/passo-2.jpg" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                </div>
+                <p class="px-4 py-3 text-xs text-muted italic">Construção das massas de luz e sombra.</p>
+              </div>
+
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
+                <span class="font-mono text-xs text-accent block px-4 pt-3">03</span>
+                <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
+                  <img src="images/dica-mestre/passo-3.jpg" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                </div>
+                <p class="px-4 py-3 text-xs text-muted italic">Finalização com ajustes de valor e detalhes.</p>
+              </div>
+            </div>
+
+            <div class="bg-white/[0.03] border border-white/10 rounded-xl p-4 flex items-center gap-4 flex-wrap">
+              <span class="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0 text-sm">▶</span>
+              <div class="flex flex-col gap-0.5 mr-auto">
+                <p class="text-sm font-medium">Explicação em áudio</p>
+                <p class="text-xs text-muted/60">Leo comenta os três passos acima</p>
+              </div>
+              <audio controls preload="none" class="h-8 max-w-[280px] w-full accent-accent">
+                <source src="audio/dica-mestre/explicacao-passos.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+
+          <!-- Bloco 2: Na prática -->
+          <div class="md:ml-10">
+            <div class="flex items-baseline gap-3 mb-6">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-muted/50">Na prática</span>
+              <h2 class="font-display text-xl md:text-2xl text-fg">Minha tela</h2>
+            </div>
+
+            <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden mb-6">
+              <div class="aspect-[16/9] max-h-[520px] bg-black/40 flex items-center justify-center text-muted/30 text-sm">
+                <img src="images/dica-mestre/tela-mestre.jpg" alt="Tela do mestre" class="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <p class="px-5 py-4 text-sm text-muted italic">Exemplo de aplicação dos valores tonais em uma pintura completa.</p>
+            </div>
+
+            <div class="bg-white/[0.03] border border-white/10 rounded-xl p-4 flex items-center gap-4 flex-wrap">
+              <span class="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0 text-sm">▶</span>
+              <div class="flex flex-col gap-0.5 mr-auto">
+                <p class="text-sm font-medium">Explicação em áudio</p>
+                <p class="text-xs text-muted/60">Leo comenta esta tela</p>
+              </div>
+              <audio controls preload="none" class="h-8 max-w-[280px] w-full accent-accent">
+                <source src="audio/dica-mestre/explicacao-tela.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>`;
   }
 
   // ══════════════════════════════════════════════════════════════════════
