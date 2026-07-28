@@ -46,7 +46,6 @@ const dashboardTranslations = {
         { title: 'Treino de Valores', desc: 'Pratique identificar valores na escala de cinzas e avalie sua precisão visual.' },
         { title: 'Converter para Cinzas', desc: 'Transforme qualquer imagem em escala de cinzas para estudar a estrutura tonal.' },
         { title: 'Posterizar', desc: 'Reduza a imagem a poucos tons de cinza para enxergar as regiões de valor como blocos.' },
-        { title: 'Mapear Zonas', desc: 'Divida a imagem em zonas de cinza e identifique o valor dominante de cada região — como um mapa tonal.' },
         { title: 'Risco Linear', desc: 'Extraia o contorno da imagem como linha — ideal para estudar formas e preparar a tela.' },
         { title: 'Janela Física', desc: 'Isole uma área da imagem com uma máscara — como um cartão vazado. Arraste para estudar detalhes.' },
         { title: 'Quadricular Imagem', desc: 'Sobreponha uma grade na imagem para copiar quadrado por quadrado — técnica clássica para desenhar com precisão.' },
@@ -139,11 +138,6 @@ const dashboardTranslations = {
         { title: 'Escolha o nível', desc: 'Selecione quantos tons deseja (3 a 11).' },
         { title: 'Analise e baixe', desc: 'Estude as regiões de valor e salve o resultado.' }
       ],
-      zonas: [
-        { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
-        { title: 'Configure a grade', desc: 'Escolha o tamanho da grade e a sobreposição.' },
-        { title: 'Estude o mapa', desc: 'Analise os valores de cada zona e baixe.' }
-      ],
       risco: [
         { title: 'Envie sua foto', desc: 'Clique ou arraste uma imagem JPG, PNG ou WebP.' },
         { title: 'Ajuste sensibilidade', desc: 'Controle o limiar e suavização dos contornos.' },
@@ -193,7 +187,6 @@ const dashboardTranslations = {
     tools: {
       converter: { title: 'Converter para Cinzas', desc: 'Faça o upload de uma foto e converta-a para escala de cinzas. Ajuste brilho e contraste para isolar os valores que importam.' },
       posterizar: { title: 'Posterizar', desc: 'Reduza qualquer imagem a poucos tons de cinza para enxergar apenas as regiões de valor — como blocos. Essa é a forma mais eficaz de treinar o olhar para pintar.' },
-      zonas: { title: 'Mapear Zonas', desc: 'Divida a imagem em uma grade e descubra o valor dominante de cada zona na escala de cinza — é o mapa tonal que você monta antes de pintar.' },
       riscoLinear: { title: 'Risco Linear', desc: 'Extraia os contornos de qualquer imagem como um desenho de linha. Ideal para estudar formas, preparar a tela com o contorno base, ou simplificar uma referência complexa.' },
       isolador: { title: 'Isolador Tonal Dinâmico', desc: 'Passe o mouse ou arraste o dedo sobre a imagem para isolar o valor tonal exato de qualquer ponto — sem ilusões de ótica.' },
       janela: { title: 'Simulador de Janela Física', desc: 'Isole detalhes bloqueando o contexto ao redor. Arraste o bloco vazado sobre a foto para estudar valores, texturas e micro-anatomias sem interferência das luzes ao redor.' },
@@ -287,7 +280,6 @@ const dashboardTranslations = {
         { title: 'Value Training', desc: 'Practice identifying values on the grayscale and evaluate your visual accuracy.' },
         { title: 'Convert to Grayscale', desc: 'Transform any image to grayscale to study the tonal structure.' },
         { title: 'Posterize', desc: 'Reduce the image to a few gray tones to see value regions as blocks.' },
-        { title: 'Map Zones', desc: 'Divide the image into gray zones and identify the dominant value of each region — like a tonal map.' },
         { title: 'Linear Sketch', desc: 'Extract the contour of the image as a line — ideal for studying shapes and preparing the canvas.' },
         { title: 'Physical Window', desc: 'Isolate an area of the image with a mask — like a cut-out card. Drag to study details.' },
         { title: 'Grid Image', desc: 'Overlay a grid on the image to copy square by square — classic technique for precise drawing.' },
@@ -364,11 +356,6 @@ const dashboardTranslations = {
         { title: 'Choose the level', desc: 'Select how many tones you want (3 to 11).' },
         { title: 'Analyze and download', desc: 'Study the value regions and save the result.' }
       ],
-      zonas: [
-        { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
-        { title: 'Configure the grid', desc: 'Choose the grid size and overlay.' },
-        { title: 'Study the map', desc: 'Analyze the values of each zone and download.' }
-      ],
       risco: [
         { title: 'Upload your photo', desc: 'Click or drag a JPG, PNG, or WebP image.' },
         { title: 'Adjust sensitivity', desc: 'Control the threshold and contour smoothing.' },
@@ -418,7 +405,6 @@ const dashboardTranslations = {
     tools: {
       converter: { title: 'Convert to Grayscale', desc: 'Upload a photo and convert it to grayscale. Adjust brightness and contrast to isolate the values that matter.' },
       posterizar: { title: 'Posterize', desc: 'Reduce any image to a few gray tones to see only the value regions — like blocks. This is the most effective way to train your eye for painting.' },
-      zonas: { title: 'Map Zones', desc: 'Divide the image into a grid and discover the dominant value of each zone on the grayscale — it\'s the tonal map you build before painting.' },
       riscoLinear: { title: 'Linear Sketch', desc: 'Extract the contours of any image as a line drawing. Ideal for studying shapes, preparing the canvas with a base outline, or simplifying a complex reference.' },
       isolador: { title: 'Tonal Isolator', desc: 'Hover or drag over the image to isolate the exact tonal value of any point — without optical illusions.' },
       janela: { title: 'Physical Window Simulator', desc: 'Isolate details by blocking the surrounding context. Drag the cutout block over the photo to study values, textures, and micro-anatomy without interference from surrounding lights.' },
@@ -512,7 +498,6 @@ const dashboardTranslations = {
         { title: 'Entrenamiento de Valores', desc: 'Practica identificar valores en la escala de grises y evalúa tu precisión visual.' },
         { title: 'Convertir a Grises', desc: 'Transforma cualquier imagen a escala de grises para estudiar la estructura tonal.' },
         { title: 'Posterizar', desc: 'Reduce la imagen a pocos tonos de gris para ver las regiones de valor como bloques.' },
-        { title: 'Mapear Zonas', desc: 'Divide la imagen en zonas de gris e identifica el valor dominante de cada región — como un mapa tonal.' },
         { title: 'Dibujo Lineal', desc: 'Extrae el contorno de la imagen como línea — ideal para estudiar formas y preparar el lienzo.' },
         { title: 'Ventana Física', desc: 'Isola un área de la imagen con una máscara — como una tarjeta recortada. Arrastra para estudiar detalles.' },
         { title: 'Imagen Cuadriculada', desc: 'Superpone una cuadrícula en la imagen para copiar cuadrado por cuadrado — técnica clásica para dibujar con precisión.' },
@@ -589,11 +574,6 @@ const dashboardTranslations = {
         { title: 'Elige el nivel', desc: 'Selecciona cuántos tonos deseas (3 a 11).' },
         { title: 'Analiza y descarga', desc: 'Estudia las regiones de valor y guarda el resultado.' }
       ],
-      zonas: [
-        { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
-        { title: 'Configura la cuadrícula', desc: 'Elige el tamaño de la cuadrícula y la superposición.' },
-        { title: 'Estudia el mapa', desc: 'Analiza los valores de cada zona y descarga.' }
-      ],
       risco: [
         { title: 'Sube tu foto', desc: 'Haz clic o arrastra una imagen JPG, PNG o WebP.' },
         { title: 'Ajusta la sensibilidad', desc: 'Controla el umbral y la suavización de los contornos.' },
@@ -643,7 +623,6 @@ const dashboardTranslations = {
     tools: {
       converter: { title: 'Convertir a Grises', desc: 'Sube una foto y conviértela a escala de grises. Ajusta brillo y contraste para aislar los valores que importan.' },
       posterizar: { title: 'Posterizar', desc: 'Reduce cualquier imagen a pocos tonos de gris para ver solo las regiones de valor — como bloques. Es la forma más eficaz de entrenar la vista para pintar.' },
-      zonas: { title: 'Mapear Zonas', desc: 'Divide la imagen en una cuadrícula y descubre el valor dominante de cada zona en la escala de grises — es el mapa tonal que construyes antes de pintar.' },
       riscoLinear: { title: 'Dibujo Lineal', desc: 'Extrae los contornos de cualquier imagen como un dibujo de línea. Ideal para estudiar formas, preparar el lienzo con un contorno base, o simplificar una referencia compleja.' },
       isolador: { title: 'Aislador Tonal', desc: 'Pasa el mouse o arrastra sobre la imagen para aislar el valor tonal exacto de cualquier punto — sin ilusiones ópticas.' },
       janela: { title: 'Simulador de Ventana Física', desc: 'Aísla detalles bloqueando el contexto alrededor. Arrastra el bloque vaciado sobre la foto para estudiar valores, texturas y micro-anatomía sin interferencia de las luces.' },
@@ -735,7 +714,7 @@ function getDashboardTranslation() {
   // ── Router ────────────────────────────────────────────────────────────
   let currentPage = 'home';
   function navigate(page) {
-    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, zonas: renderZonas, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz /*, tutoriais: renderTutoriais */ };
+    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz /*, tutoriais: renderTutoriais */ };
     const prev = currentPage;
     currentPage = page;
     document.getElementById('app').innerHTML = '';
@@ -817,9 +796,9 @@ function getDashboardTranslation() {
     const dotsHtml = slides.map((_, i) => `
       <button onclick="homeGoSlide(${i})" class="w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-accent w-5' : 'bg-fg/20 hover:bg-fg/40'}" data-dot="${i}"></button>`).join('');
 
-    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'zonas', 'riscoLinear', 'isolador', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
-    const moduleIcons = ['▮', '▤', '⊑', '◧', '▦', '◐', '◉', '⊞', '#', '⊙', '⊕', '◎', '📖', '☀'];
-    const proTools = ['converter', 'posterizar', 'zonas', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
+    const moduleIds = ['escala', 'treino', 'converter', 'posterizar', 'riscoLinear', 'isolador', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
+    const moduleIcons = ['▮', '▤', '⊑', '◧', '◐', '◉', '⊞', '#', '⊙', '⊕', '◎', '📖', '☀'];
+    const proTools = ['converter', 'posterizar', 'janela', 'quadricular', 'ilusao', 'localizador', 'paleta', 'exercicios', 'luz'];
     const modulos = moduleIds.map((id, i) => {
       const module = t.home.modules[i];
       const isProTool = proTools.includes(id);
@@ -884,7 +863,7 @@ function getDashboardTranslation() {
       { id: 4, duracao: '—', ferramentas: ['luz', 'localizador'], arquivo: 'audio/ep03.m4a' },
       { id: 5, duracao: '—', ferramentas: ['paleta', 'converter'], arquivo: 'audio/ep04.m4a' },
       { id: 6, duracao: '—', ferramentas: ['treino', 'ilusao'], arquivo: 'audio/ep05.m4a' },
-      { id: 7, duracao: '—', ferramentas: ['posterizar', 'zonas'], arquivo: 'audio/ep06.m4a' },
+      { id: 7, duracao: '—', ferramentas: ['posterizar'], arquivo: 'audio/ep06.m4a' },
       { id: 8, duracao: '—', ferramentas: ['quadricular', 'riscoLinear'], arquivo: 'audio/ep07.m4a' },
       { id: 9, duracao: '—', ferramentas: ['converter'], arquivo: 'audio/ep08.m4a' },
       { id: 10, duracao: '—', ferramentas: [], arquivo: 'audio/fim.m4a' },
@@ -2095,346 +2074,8 @@ function getDashboardTranslation() {
     }, 'image/png');
   }
 
-  // ── Mapear Zonas ──────────────────────────────────────────────────────
-  let zonasState = {
-    originalImageData: null,
-    cols: 5,
-    rows: 5,
-    metodo: 'luminancia',
-    overlay: true,
-  };
 
-  function renderZonas() {
-    const t = getDashboardTranslation();
-    const app = document.getElementById('app');
-    app.innerHTML = `
-      <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
-        <div class="max-w-6xl mx-auto">
 
-          <!-- Header -->
-          <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.tools.zonas.title}</h1>
-            <p class="text-muted max-w-2xl font-light">${t.tools.zonas.desc}</p>
-          </div>
-
-          ${renderInstructionCard(t.instrucoes.zonas, t.instrucoes.comoUsar)}
-
-          <!-- Upload zone -->
-          <div id="zn-upload-zone"
-            class="w-full rounded-2xl border-2 border-dashed border-border flex flex-col items-center justify-center gap-4 mb-8 cursor-pointer transition-all hover:border-accent/60 hover:bg-white/[0.02]"
-            style="min-height:220px"
-            onclick="document.getElementById('zn-file-input').click()"
-            ondragover="znHandleDragOver(event)"
-            ondragleave="znHandleDragLeave(event)"
-            ondrop="znHandleDrop(event)">
-            <input type="file" id="zn-file-input" accept="image/jpeg,image/png,image/webp" class="hidden" onchange="znHandleFileChange(event)" />
-            <div id="zn-upload-placeholder" class="flex flex-col items-center gap-3 text-center p-8">
-              <div class="w-14 h-14 rounded-full bg-white/[0.06] flex items-center justify-center">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              </div>
-              <p class="font-display text-xl">Clique ou arraste uma imagem</p>
-              <p class="text-muted text-sm">Aceita JPG, PNG e WebP. Recomendado até 10MB.</p>
-            </div>
-          </div>
-
-          <!-- Result area -->
-          <div id="zn-result-section" class="hidden">
-            <!-- Canvas com grade -->
-            <div class="mb-8">
-              <canvas id="zn-canvas" class="w-full rounded-xl border border-white/10" style="max-height:500px;object-fit:contain"></canvas>
-            </div>
-
-            <!-- Grade numérica (abaixo da imagem) -->
-            <div id="zn-grid-numbers" class="mb-8"></div>
-
-            <!-- Legenda de zonas -->
-            <div id="zn-legend" class="mb-8"></div>
-
-            <!-- Controles -->
-            <div class="p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] mb-6">
-              <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-6">
-                  <h3 class="font-display text-xl mb-4">Tamanho da Grade</h3>
-                  <div class="flex flex-wrap gap-3" id="zn-grid-btns">
-                    ${[
-                      { c:3, r:3, label:'3×3' },
-                      { c:4, r:4, label:'4×4' },
-                      { c:5, r:5, label:'5×5' },
-                      { c:6, r:6, label:'6×6' },
-                      { c:7, r:7, label:'7×7' },
-                    ].map(g => `
-                      <button onclick="znSetGrid(${g.c},${g.r})" data-c="${g.c}"
-                        class="px-4 py-3 rounded-xl text-sm font-medium transition-all ${g.c===5?'border-accent/40 bg-accent/[0.04] text-accent border':'border-white/10 text-muted hover:border-white/20'}">
-                        ${g.label}
-                      </button>`).join('')}
-                  </div>
-                  <p class="text-xs text-muted mt-2">Menos zonas = visão mais simplificada. Comece com 3×3 e aumente conforme a necessidade.</p>
-
-                  <h3 class="font-display text-xl mt-6 mb-4">Sobreposição</h3>
-                  <label class="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" id="zn-overlay-toggle" checked onchange="znToggleOverlay()" class="accent-[#d88800] w-4 h-4" />
-                    <span class="text-sm">Mostrar cores por faixa (escuro / médio / claro)</span>
-                  </label>
-
-                  <h3 class="font-display text-xl mt-6 mb-4">Método</h3>
-                  <div class="space-y-3">
-                    ${[
-                      { id:'luminancia', label:'Luminância <span class="text-accent text-xs">(recomendado)</span>' },
-                      { id:'media',      label:'Média simples' },
-                    ].map(m => `
-                      <label class="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all ${m.id==='luminancia'?'border-accent/40 bg-accent/[0.04]':'border-white/10 hover:border-white/20'}" id="zn-lbl-${m.id}">
-                        <input type="radio" name="zn-metodo" value="${m.id}" ${m.id==='luminancia'?'checked':''} class="mt-1 accent-[#d88800]" onchange="znOnMetodo('${m.id}')" />
-                        <p class="text-sm font-medium">${m.label}</p>
-                      </label>`).join('')}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="font-display text-xl mb-4">Resumo Tonal</h3>
-                  <div id="zn-summary" class="space-y-3"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Botções -->
-            <div class="flex flex-col sm:flex-row gap-4">
-              <button onclick="znBaixarImagem()"
-                class="flex-1 px-8 py-4 rounded-full text-sm font-medium transition-colors"
-                style="background:#d88800;color:hsl(0 0% 4%)"
-                onmouseenter="this.style.background='#c07800'"
-                onmouseleave="this.style.background='#d88800'">
-                Baixar Mapa de Zonas (PNG)
-              </button>
-              <button onclick="document.getElementById('zn-file-input').click()" class="px-6 py-3 rounded-full border border-white/10 text-sm hover:border-accent/40 transition-colors">
-                Trocar Imagem
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>`;
-  }
-
-  function znSetGrid(c, r) {
-    zonasState.cols = c;
-    zonasState.rows = r;
-    document.querySelectorAll('#zn-grid-btns button').forEach(btn => {
-      const v = Number(btn.dataset.c);
-      btn.className = v === c
-        ? 'px-4 py-2.5 md:py-3 rounded-xl text-sm font-medium transition-all border-accent/40 bg-accent/[0.04] text-accent border'
-        : 'px-4 py-2.5 md:py-3 rounded-xl text-sm font-medium transition-all border-white/10 text-muted hover:border-white/20 border';
-    });
-    znProcessar();
-  }
-
-  function znToggleOverlay() {
-    zonasState.overlay = document.getElementById('zn-overlay-toggle').checked;
-    znProcessar();
-  }
-
-  function znOnMetodo(m) {
-    zonasState.metodo = m;
-    ['luminancia','media'].forEach(id => {
-      const lbl = document.getElementById('zn-lbl-' + id);
-      if (!lbl) return;
-      if (id === m) {
-        lbl.style.borderColor = '#d8880066';
-        lbl.style.background  = '#d888000a';
-      } else {
-        lbl.style.borderColor = 'hsl(0 0% 14%)';
-        lbl.style.background  = 'transparent';
-      }
-    });
-    znProcessar();
-  }
-
-  function znHandleDragOver(e) { e.preventDefault(); document.getElementById('zn-upload-zone').classList.add('drag-over'); }
-  function znHandleDragLeave(e) { document.getElementById('zn-upload-zone').classList.remove('drag-over'); }
-  function znHandleDrop(e) {
-    e.preventDefault();
-    document.getElementById('zn-upload-zone').classList.remove('drag-over');
-    if (e.dataTransfer.files[0]) znProcessFile(e.dataTransfer.files[0]);
-  }
-  function znHandleFileChange(e) { if (e.target.files[0]) znProcessFile(e.target.files[0]); }
-
-  function znProcessFile(file) {
-    if (!file.type.match(/image\/(jpeg|png|webp)/)) { alert('Formato não suportado. Use JPG, PNG ou WebP.'); return; }
-    if (file.size > 12 * 1024 * 1024) { alert('Imagem muito grande. Use arquivos de até 10MB.'); return; }
-    const reader = new FileReader();
-    reader.onload = e => {
-      const img = new Image();
-      img.onload = () => {
-        const maxW = 800, maxH = 600;
-        let w = img.width, h = img.height;
-        if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
-        if (h > maxH) { w = Math.round(w * maxH / h); h = maxH; }
-
-        const c = document.getElementById('zn-canvas');
-        c.width = w; c.height = h;
-        const ctx = c.getContext('2d');
-        ctx.drawImage(img, 0, 0, w, h);
-        zonasState.originalImageData = ctx.getImageData(0, 0, w, h);
-
-        document.getElementById('zn-result-section').classList.remove('hidden');
-        document.getElementById('zn-upload-placeholder').innerHTML =
-          `<p class="text-muted text-sm">Imagem carregada: <span class="text-fg">${file.name}</span></p>`;
-
-        znProcessar();
-      };
-      img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-
-  function znProcessar() {
-    if (!zonasState.originalImageData) return;
-    const { originalImageData, cols, rows, metodo, overlay } = zonasState;
-    const W = originalImageData.width, H = originalImageData.height;
-    const src = originalImageData.data;
-    const cellW = Math.floor(W / cols), cellH = Math.floor(H / rows);
-
-    const c = document.getElementById('zn-canvas');
-    c.width = W; c.height = H;
-    const ctx = c.getContext('2d');
-    ctx.putImageData(originalImageData, 0, 0);
-
-    const zonasValores = [];
-    const contagem = Array(11).fill(0);
-
-    for (let r = 0; r < rows; r++) {
-      zonasValores[r] = [];
-      for (let col = 0; col < cols; col++) {
-        let totalGray = 0, count = 0;
-        const x0 = col * cellW, y0 = r * cellH;
-        for (let y = y0; y < y0 + cellH && y < H; y++) {
-          for (let x = x0; x < x0 + cellW && x < W; x++) {
-            const i = (y * W + x) * 4;
-            const rv = src[i], gv = src[i+1], bv = src[i+2];
-            totalGray += metodo === 'luminancia' ? 0.299*rv + 0.587*gv + 0.114*bv : (rv + gv + bv) / 3;
-            count++;
-          }
-        }
-        const avgGray = totalGray / count;
-        const valor = Math.min(10, Math.round((avgGray / 255) * 10));
-        zonasValores[r][col] = valor;
-        contagem[valor]++;
-      }
-    }
-
-    // Overlay colorido
-    if (overlay) {
-      for (let r = 0; r < rows; r++) {
-        for (let col = 0; col < cols; col++) {
-          const v = zonasValores[r][col];
-          const x0 = col * cellW, y0 = r * cellH;
-          let fill;
-          if (v <= 3) fill = 'rgba(255,255,255,0.35)';
-          else if (v <= 7) fill = 'rgba(216,136,0,0.25)';
-          else fill = 'rgba(0,0,0,0.45)';
-          ctx.fillStyle = fill;
-          ctx.fillRect(x0, y0, cellW, cellH);
-        }
-      }
-    }
-
-    // Linhas da grade
-    ctx.strokeStyle = 'rgba(255,255,255,0.25)';
-    ctx.lineWidth = 1;
-    for (let c2 = 1; c2 < cols; c2++) {
-      ctx.beginPath(); ctx.moveTo(c2 * cellW, 0); ctx.lineTo(c2 * cellW, rows * cellH); ctx.stroke();
-    }
-    for (let r2 = 1; r2 < rows; r2++) {
-      ctx.beginPath(); ctx.moveTo(0, r2 * cellH); ctx.lineTo(cols * cellW, r2 * cellH); ctx.stroke();
-    }
-
-    // Números nas células
-    for (let r = 0; r < rows; r++) {
-      for (let col = 0; col < cols; col++) {
-        const v = zonasValores[r][col];
-        const cx = col * cellW + cellW / 2;
-        const cy = r * cellH + cellH / 2;
-        ctx.fillStyle = v <= 5 ? 'rgba(0,0,0,0.7)' : 'rgba(255,255,255,0.85)';
-        ctx.font = `bold ${Math.max(14, Math.min(cellW, cellH) * 0.32)}px Inter, system-ui, sans-serif`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(String(v), cx, cy);
-      }
-    }
-
-    // Grade numérica abaixo da imagem
-    const gridNumEl = document.getElementById('zn-grid-numbers');
-    let gridHtml = `<div class="grid gap-1.5" style="grid-template-columns:repeat(${cols},1fr)">`;
-    for (let r = 0; r < rows; r++) {
-      for (let col = 0; col < cols; col++) {
-        const v = zonasValores[r][col];
-        const hex = escalaCinza[v].hex;
-        const txtColor = v > 5 ? '#333' : '#eee';
-        gridHtml += `<div class="aspect-square rounded-lg flex items-center justify-center border border-white/10" style="background:${hex}">
-          <span class="font-mono text-sm font-bold" style="color:${txtColor}">${v}</span>
-      </div>`;
-      }
-    }
-    gridHtml += '</div>';
-    gridNumEl.innerHTML = gridHtml;
-
-    // Legenda de cores
-    document.getElementById('zn-legend').innerHTML = `
-      <div class="flex flex-wrap gap-4 text-sm">
-        <span class="flex items-center gap-2"><span class="w-4 h-4 rounded" style="background:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.2)"></span> Claros (0—3)</span>
-        <span class="flex items-center gap-2"><span class="w-4 h-4 rounded" style="background:rgba(216,136,0,0.25);border:1px solid rgba(216,136,0,0.3)"></span> Médios (4—7)</span>
-        <span class="flex items-center gap-2"><span class="w-4 h-4 rounded" style="background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.15)"></span> Escuros (8—10)</span>
-      </div>`;
-
-    // Resumo
-    const total = cols * rows;
-    const claros  = contagem.slice(0, 4).reduce((a,b) => a+b, 0);
-    const medios  = contagem.slice(4, 8).reduce((a,b) => a+b, 0);
-    const escuros = contagem.slice(8, 11).reduce((a,b) => a+b, 0);
-    const pctClaros  = Math.round((claros / total) * 100);
-    const pctMedios  = Math.round((medios / total) * 100);
-    const pctEscuros = Math.round((escuros / total) * 100);
-
-    const faixaDominante = claros >= medios && claros >= escuros ? 'Clara'
-      : escuros >= medios ? 'Escura' : 'Mista';
-
-    document.getElementById('zn-summary').innerHTML = `
-      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-xs uppercase tracking-[0.2em] text-accent mb-2">Faixa Dominante</p>
-        <p class="font-display text-2xl">${faixaDominante}</p>
-      </div>
-      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-xs uppercase tracking-[0.2em] text-muted mb-2">Distribuição</p>
-        <div class="flex gap-1 h-3 rounded-full overflow-hidden mb-3">
-          <div class="bg-white/30 rounded-l-full" style="width:${pctClaros}%"></div>
-          <div class="bg-[#d88800]" style="width:${pctMedios}%"></div>
-          <div class="bg-black/50 rounded-r-full" style="width:${pctEscuros}%"></div>
-        </div>
-        <div class="flex justify-between text-xs text-muted">
-          <span>${pctClaros}% claros</span>
-          <span>${pctMedios}% médios</span>
-          <span>${pctEscuros}% escuros</span>
-        </div>
-      </div>
-      <div class="p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-        <p class="text-xs uppercase tracking-[0.2em] text-muted mb-2">Valores Mais Frequentes</p>
-        <div class="flex flex-wrap gap-2 mt-2">
-          ${contagem.map((cnt, i) => cnt > 0 ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs" style="background:${escalaCinza[i].hex};color:${i>5?'#333':'#eee'}"><span class="font-mono font-bold">${i}</span><span class="opacity-70">├ù${cnt}</span></span>` : '').join('')}
-        </div>
-      </div>`;
-  }
-
-  function znBaixarImagem() {
-    const canvas = document.getElementById('zn-canvas');
-    if (!canvas) return;
-    canvas.toBlob(blob => {
-      const url = URL.createObjectURL(blob);
-      const a   = document.createElement('a');
-      a.href = url; a.download = 'mapa-zonas.png';
-      document.body.appendChild(a); a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }, 'image/png');
-  }
 
   // ── Risco Linear ──────────────────────────────────────────────────────
   let riscoState = {
