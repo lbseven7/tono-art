@@ -4754,7 +4754,7 @@ function getDashboardTranslation() {
   // ══════════════════════════════════════════════════════════════════════
   // ── 2. EXTRATOR DE PALETA ────────────────────────────────────────────
   // ══════════════════════════════════════════════════════════════════════
-  let paletaState = { imageData: null };
+  let paletaState = { imageData: null, palette: null, originalImg: null };
 
   function renderPaleta() {
     const t = getDashboardTranslation();
@@ -4775,7 +4775,15 @@ function getDashboardTranslation() {
           </div>
           <div id="pe-result" class="hidden">
             <canvas id="pe-canvas" class="w-full rounded-xl border border-white/10 mb-6" style="max-height:350px;object-fit:contain"></canvas>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="pe-palette"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6" id="pe-palette"></div>
+            <div class="flex justify-center">
+              <button onclick="peBaixar()" class="px-8 py-3 rounded-full text-sm font-medium transition-all"
+                style="background:#d88800;color:hsl(0 0% 4%)"
+                onmouseenter="this.style.background='#c07800'"
+                onmouseleave="this.style.background='#d88800'">
+                ${t.ui.baixarResultado}
+              </button>
+            </div>
           </div>
         </div>
       </div>`;
@@ -4798,6 +4806,7 @@ function getDashboardTranslation() {
         const ctx = c.getContext('2d');
         ctx.drawImage(img, 0, 0, w, h);
         paletaState.imageData = ctx.getImageData(0, 0, w, h);
+        paletaState.originalImg = img;
         document.getElementById('pe-result').classList.remove('hidden');
         document.getElementById('pe-upload-zone').innerHTML = `
           <p class="text-muted text-sm">Imagem carregada</p>
@@ -4859,6 +4868,9 @@ function getDashboardTranslation() {
       pct: Math.round(colorCounts[i] / totalPixels * 100)
     })).sort((a, b) => b.pct - a.pct);
 
+    // Store palette data in state for download
+    paletaState.palette = palette;
+
     const cont = document.getElementById('pe-palette');
     const t = getDashboardTranslation();
     cont.innerHTML = `<p class="col-span-full text-[10px] text-muted/60 italic leading-tight mb-1">${t.rgbInfo}</p>` + palette.map(p => {
@@ -4874,6 +4886,91 @@ function getDashboardTranslation() {
         </div>
       </div>`;
     }).join('');
+  }
+
+  // ── Paleta: download ─────────────────────────────────────────────────────
+  function peBaixar() {
+    const c = document.getElementById('pe-canvas');
+    const palette = paletaState.palette;
+    const originalImg = paletaState.originalImg;
+    if (!c || !palette || palette.length === 0) return;
+
+    // Use original image dimensions (capped for quality vs size)
+    const MAX_OUT = 2000;
+    let outW = originalImg ? originalImg.naturalWidth : c.width;
+    let outH = originalImg ? originalImg.naturalHeight : c.height;
+    if (outW > MAX_OUT) { outH = Math.round(outH * MAX_OUT / outW); outW = MAX_OUT; }
+    if (outH > MAX_OUT) { outW = Math.round(outW * MAX_OUT / outH); outH = MAX_OUT; }
+
+    // Scale palette swatches proportionally to output resolution
+    const scale = Math.max(1, outW / c.width);
+    const swatchH = Math.round(60 * scale);
+    const gap = Math.round(8 * scale);
+    const cols = 4;
+    const rows = Math.ceil(palette.length / cols);
+    const gridW = Math.min(outW, Math.round(400 * scale));
+    const swatchW = (gridW - gap * (cols - 1)) / cols;
+    const totalH = outH + gap + rows * (swatchH + gap);
+
+    const out = document.createElement('canvas');
+    out.width = outW;
+    out.height = totalH;
+    const ctx = out.getContext('2d');
+
+    // Draw image at full resolution
+    if (originalImg) {
+      ctx.drawImage(originalImg, 0, 0, outW, outH);
+    } else {
+      ctx.drawImage(c, 0, 0, outW, outH);
+    }
+
+    // Scale font sizes proportionally
+    const fs1 = Math.max(11, Math.round(11 * scale));
+    const fs2 = Math.max(10, Math.round(10 * scale));
+    const offX = Math.round(6 * scale);
+    const offY1 = Math.round(16 * scale);
+    const offY2 = Math.round(32 * scale);
+    const offY3 = Math.round(48 * scale);
+
+    // Draw palette swatches from stored data
+    palette.forEach((p, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const x = col * (swatchW + gap);
+      const y = outH + gap + row * (swatchH + gap);
+
+      // Color swatch
+      ctx.fillStyle = p.hex;
+      ctx.beginPath();
+      ctx.rect(x, y, swatchW, swatchH);
+      ctx.fill();
+
+      // Hex text
+      ctx.fillStyle = '#fff';
+      ctx.font = `bold ${fs1}px monospace`;
+      ctx.fillText(p.hex, x + offX, y + offY1);
+
+      // RGB text
+      ctx.fillStyle = 'rgba(255,255,255,0.7)';
+      ctx.font = `${fs2}px monospace`;
+      ctx.fillText('R:' + p.r + ' G:' + p.g + ' B:' + p.b, x + offX, y + offY2);
+
+      // Percentage
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = `${fs2}px monospace`;
+      ctx.fillText(p.pct + '%', x + offX, y + offY3);
+    });
+
+    out.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'paleta-extraida.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }, 'image/png');
   }
 
   // ══════════════════════════════════════════════════════════════════════
