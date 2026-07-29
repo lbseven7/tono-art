@@ -986,7 +986,7 @@ function getDashboardTranslation() {
     });
     const btnBackFloat = document.getElementById('btn-back-float');
     if (btnBackFloat) {
-      btnBackFloat.style.display = page === 'home' ? 'none' : 'flex';
+      btnBackFloat.style.display = 'flex';
       btnBackFloat.onclick = () => navigate(prev || 'home');
     }
     window.scrollTo(0, 0);
