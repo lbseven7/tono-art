@@ -340,7 +340,14 @@
   </main>
 
   <script>
-    localStorage.removeItem('tono_pro');
+    // Check URL for ?pro=true immediately and clean the URL
+    var _proParam = new URLSearchParams(location.search).get('pro');
+    if (_proParam === 'true') {
+      localStorage.setItem('tono_pro', 'true');
+      history.replaceState(null, '', location.pathname);
+    } else {
+      localStorage.removeItem('tono_pro');
+    }
 
     // --- Translations ---
     const translations = {
