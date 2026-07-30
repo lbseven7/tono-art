@@ -11,13 +11,23 @@
   <meta name="author" content="Leo Barbosa">
   <link rel="canonical" href="https://tono.art.br/sales-page.html">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) - GA4 + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6RS4FVGQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-TL6RS4FVGQ');
+    gtag('config', 'AW-18354615641');
+  </script>
+
+  <!-- Hotmart Analytics -->
+  <script id="hotmart_launcher_script">
+    (function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
+    (l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
+    e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
+    })(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
+    hot('account','e0e4b695-49f7-3518-b1bd-f55d8a3747a3');
   </script>
 
   <!-- Open Graph / Facebook -->
@@ -1132,6 +1142,41 @@
       var box = document.getElementById('videoPlaceholder');
       box.outerHTML = '<iframe src="https://www.youtube.com/embed/S4i6lk0IlZk?autoplay=1&vq=hd1080&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>';
     }
+
+    // ── Google Ads & GA4: rastrear clique no botão de compra ──
+    document.addEventListener('DOMContentLoaded', function() {
+      // Botão do hero
+      var btnHero = document.querySelector('a.btn-primary[href*="hotmart"]');
+      if (btnHero) {
+        btnHero.addEventListener('click', function() {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18354615641/d63CCKve7dgcENnqlLBE',
+            'value': 97.0,
+            'currency': 'BRL'
+          });
+          gtag('event', 'begin_checkout', {
+            'value': 97.0,
+            'currency': 'BRL'
+          });
+        });
+      }
+
+      // Botão do widget Hotmart (se existir)
+      var hotmartWidget = document.getElementById('hotmart-widget');
+      if (hotmartWidget) {
+        hotmartWidget.addEventListener('click', function() {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18354615641/d63CCKve7dgcENnqlLBE',
+            'value': 97.0,
+            'currency': 'BRL'
+          });
+          gtag('event', 'begin_checkout', {
+            'value': 97.0,
+            'currency': 'BRL'
+          });
+        });
+      }
+    });
   </script>
 
 
