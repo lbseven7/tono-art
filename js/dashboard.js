@@ -5011,7 +5011,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">01</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/slide-09.jpg" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/esboco.png" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Esboço inicial com os valores fundamentais.</p>
               </div>
@@ -5019,7 +5019,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">02</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/slide-09.jpg" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/construcao.png" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Construção das massas de luz e sombra.</p>
               </div>
@@ -5027,7 +5027,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">03</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/slide-09.jpg" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/finalizacao.png" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Finalização com ajustes de valor e detalhes.</p>
               </div>
