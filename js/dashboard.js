@@ -304,7 +304,8 @@ const dashboardTranslations = {
         dirTopRight: 'Superior Direita', dirBottomRight: 'Inferior Direita',
         zoneHighlights: 'Destaques', zoneLights: 'Claras', zoneMids: 'Médios', zoneDarks: 'Escuras', zoneShadows: 'Sombras'
       },
-      dicamestre: { title: 'Dica de Mestre', desc: 'Passo a passo com a explicação de um exercício real, direto do ateliê. Ouça o áudio enquanto acompanha as imagens.' }
+      dicamestre: { title: 'Dica de Mestre', desc: 'Passo a passo com a explicação de um exercício real, direto do ateliê. Ouça o áudio enquanto acompanha as imagens.' },
+      sobre: { title: 'Sobre o Tono', desc: 'Conheça a história, o criador e as ferramentas do Tono — a plataforma definitiva para dominar valores tonais e escala de cinzas.' }
     }
   },
   en: {
@@ -611,7 +612,8 @@ const dashboardTranslations = {
         dirTopRight: 'Top Right', dirBottomRight: 'Bottom Right',
         zoneHighlights: 'Highlights', zoneLights: 'Lights', zoneMids: 'Mids', zoneDarks: 'Darks', zoneShadows: 'Shadows'
       },
-      dicamestre: { title: "Master's Tip", desc: 'Step-by-step walkthrough of a real studio exercise. Listen to the audio while following the images.' }
+      dicamestre: { title: "Master's Tip", desc: 'Step-by-step walkthrough of a real studio exercise. Listen to the audio while following the images.' },
+      sobre: { title: 'About Tono', desc: 'Learn about the story, the creator, and the tools of Tono — the ultimate platform for mastering tonal values and grayscale.' }
     }
   },
   es: {
@@ -918,7 +920,8 @@ const dashboardTranslations = {
         dirTopRight: 'Superior Derecha', dirBottomRight: 'Inferior Derecha',
         zoneHighlights: 'Altas Luces', zoneLights: 'Claras', zoneMids: 'Medios', zoneDarks: 'Oscuros', zoneShadows: 'Sombras'
       },
-      dicamestre: { title: 'Consejo de Maestro', desc: 'Paso a paso con explicación de un ejercicio real, directo del taller. Escucha el audio mientras sigues las imágenes.' }
+      dicamestre: { title: 'Consejo de Maestro', desc: 'Paso a paso con explicación de un ejercicio real, directo del taller. Escucha el audio mientras sigues las imágenes.' },
+      sobre: { title: 'Sobre Tono', desc: 'Conoce la historia, el creador y las herramientas de Tono — la plataforma definitiva para dominar los valores tonales y la escala de grises.' }
     }
   }
 };
@@ -981,7 +984,7 @@ function getDashboardTranslation() {
   // ── Router ────────────────────────────────────────────────────────────
   let currentPage = 'home';
   function navigate(page) {
-    const map = { home: renderHome, ensino: renderEnsino, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, dicamestre: renderDicaMestre /*, tutoriais: renderTutoriais */ };
+    const map = { home: renderHome, ensino: renderEnsino, sobre: renderSobre, escala: renderEscala, treino: renderTreino, misturas: renderEscala, converter: renderConverter, posterizar: renderPosterizar, riscoLinear: renderRiscoLinear, isolador: renderIsolador, janela: renderJanela,       quadricular: renderQuadricular, ilusao: renderIlusao,       localizador: renderLocalizador, paleta: renderPaleta, exercicios: renderExercicios, luz: renderLuz, dicamestre: renderDicaMestre /*, tutoriais: renderTutoriais */ };
     const prev = currentPage;
     currentPage = page;
     document.getElementById('app').innerHTML = '';
@@ -3572,7 +3575,6 @@ function getDashboardTranslation() {
                   </div>
                 </div>
 
-                <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 leading-relaxed"></p>
                 <button onclick="qdAplicarGradeCalculada()" class="w-full px-4 py-2.5 rounded-xl bg-accent/15 border border-accent/30 text-accent text-sm font-medium hover:bg-accent/25 transition-colors">
                   <i class="fa-solid fa-table-cells-large mr-2"></i>${t.ui.aplicarGrade}
                 </button>
@@ -3604,6 +3606,8 @@ function getDashboardTranslation() {
                     </div>
                   </div>
                 </div>
+
+                <p id="qd-calc-alert" class="hidden text-xs text-yellow-500/90 leading-relaxed mb-3"></p>
 
                 <div>
                   <p class="text-[11px] text-muted mb-1.5">Preview da grade</p>
@@ -5007,7 +5011,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">01</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/slide-09.jpg" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/esboco.png" alt="Passo 1" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Esboço inicial com os valores fundamentais.</p>
               </div>
@@ -5015,7 +5019,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">02</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/slide-09.jpg" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/construcao.png" alt="Passo 2" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Construção das massas de luz e sombra.</p>
               </div>
@@ -5023,7 +5027,7 @@ function getDashboardTranslation() {
               <div class="bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden">
                 <span class="font-mono text-xs text-accent block px-4 pt-3">03</span>
                 <div class="aspect-[4/3] bg-black/40 mx-3 mt-2 rounded-lg flex items-center justify-center text-muted/30 text-sm">
-                  <img src="images/slide-09.jpg" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
+                  <img src="images/finalizacao.png" alt="Passo 3" class="w-full h-full object-cover rounded-lg" loading="lazy" />
                 </div>
                 <p class="px-4 py-3 text-xs text-muted italic">Finalização com ajustes de valor e detalhes.</p>
               </div>
@@ -5464,6 +5468,209 @@ function getDashboardTranslation() {
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharTutorial(); });
 
+  // ── Scroll Reveal (IntersectionObserver) ──────────────────────────────
+  function initReveal() {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // ── Sobre (About Page) ──────────────────────────────────────────────────
+  function renderSobre() {
+    const t = getDashboardTranslation();
+    const app = document.getElementById('app');
+    
+    const ferramentas = [
+      { icon: '▮', nome: t.escalaPage?.header || 'Escala de Cinzas' },
+      { icon: '▤', nome: t.treino?.header || 'Treino de Valores' },
+      { icon: '⊑', nome: t.tools.converter?.title || 'Converter' },
+      { icon: '◧', nome: t.tools.posterizar?.title || 'Posterizar' },
+      { icon: '◐', nome: t.tools.riscoLinear?.title || 'Risco Linear' },
+      { icon: '◉', nome: t.tools.isolador?.title || 'Isolador Tonal' },
+      { icon: '⊞', nome: t.tools.janela?.title || 'Janela Física' },
+      { icon: '#', nome: t.tools.quadricular?.title || 'Quadricular' },
+      { icon: '⊙', nome: t.tools.ilusao?.title || 'Ilusão de Óptica' },
+      { icon: '⊕', nome: t.tools.localizador?.title || 'Localizar Valor' },
+      { icon: '◎', nome: t.tools.paleta?.title || 'Extrair Paleta' },
+      { icon: '📖', nome: t.tools.exercicios?.title || 'Exercícios' },
+      { icon: '☀', nome: t.tools.luz?.title || 'Análise de Luz' },
+      { icon: '🎯', nome: t.tools.dicamestre?.title || 'Dica de Mestre' }
+    ];
+
+    const proCount = 10;
+
+    app.innerHTML = `
+      <div style="min-height:calc(100vh - 4rem)" class="relative">
+        <!-- Grayscale decorative bar -->
+        <div class="hidden md:block absolute left-8 top-[72px] bottom-24 w-[5px] rounded-full"
+          style="background:linear-gradient(180deg,#000,#2b2b2b 20%,#555 40%,#808080 55%,#aaa 70%,#d6d6d6 85%,#f5f5f5);"></div>
+
+        <div class="max-w-5xl mx-auto px-6 py-12 md:py-16 fade-in">
+          <!-- Hero -->
+          <div class="md:ml-10 mb-24">
+            <div class="flex items-center gap-4 mb-6">
+              <img src="images/logo-oficial/logo-sb-tono-b.png" alt="TONO" class="h-16 w-auto">
+            </div>
+            <p class="text-accent font-mono text-xs uppercase tracking-[0.2em] mb-4">${t.tools.sobre?.title || 'Sobre o Tono'}</p>
+            <h1 class="font-display text-4xl md:text-6xl mb-6 leading-tight">
+              A plataforma definitiva<br>
+              <span class="text-accent">para dominar valores tonais</span>
+            </h1>
+            <p class="text-muted text-lg max-w-2xl leading-relaxed font-light">
+              O Tono nasceu de uma necessidade real: oferecer ferramentas digitais interativas para artistas 
+              treinarem a percepção de valores tonais e escala de cinzas — a habilidade mais fundamental 
+              e ao mesmo tempo mais negligenciada na jornada de todo pintor.
+            </p>
+
+            <!-- Video -->
+            <div class="mt-16 max-w-4xl">
+              <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl" style="aspect-ratio:16/9">
+                <video class="w-full h-full object-contain" controls playsinline preload="metadata" poster="images/logo-oficial/logo-sb-tono-b.png">
+                  <source src="tono-video.mp4" type="video/mp4">
+                </video>
+              </div>
+              <p class="text-xs text-muted/50 text-center mt-3 font-light tracking-wide">
+                Assista à apresentação do Tono
+              </p>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="md:ml-10 mb-24">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
+                <span class="block text-3xl font-display text-accent mb-1">14</span>
+                <span class="text-xs text-muted uppercase tracking-wider">Ferramentas</span>
+              </div>
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
+                <span class="block text-3xl font-display text-accent mb-1">${proCount}</span>
+                <span class="text-xs text-muted uppercase tracking-wider">Ferramentas PRO</span>
+              </div>
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
+                <span class="block text-3xl font-display text-accent mb-1">10</span>
+                <span class="text-xs text-muted uppercase tracking-wider">Episódios TonoCast</span>
+              </div>
+              <div class="bg-white/[0.03] border border-white/10 rounded-xl p-6 text-center">
+                <span class="block text-3xl font-display text-accent mb-1">8</span>
+                <span class="text-xs text-muted uppercase tracking-wider">Semanas de Curso</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story -->
+          <div class="md:ml-10 mb-24">
+            <div class="flex items-baseline gap-3 mb-10 pt-6 md:pt-8 reveal">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-muted/50">História</span>
+              <h2 class="font-display text-2xl md:text-3xl text-fg">Como tudo começou</h2>
+            </div>
+            <div class="max-w-3xl space-y-5 text-muted leading-relaxed">
+              <p class="text-lg text-fg/90">
+                O Tono foi criado por <strong class="text-fg">Leo Barbosa</strong>, artista visual e professor 
+                de pintura que, ao longo de anos de ateliê, percebeu que a maior dificuldade dos alunos 
+                não estava em misturar cores, mas em <strong class="text-fg">enxergar valores tonais com precisão</strong>.
+              </p>
+              <p>
+                Enquanto existem inúmeros recursos para teoria da cor, poucos abordam de forma prática 
+                e interativa o treino de escala de cinzas — a base de toda pintura realista. Foi dessa 
+                lacuna que nasceu o Tono: um conjunto de ferramentas digitais que simulam exercícios 
+                clássicos de ateliê, combinados com tecnologia de processamento de imagem em tempo real.
+              </p>
+              <p>
+                Hoje, o Tono conta com <strong class="text-fg">14 ferramentas</strong> que abrangem desde 
+                a escala de cinzas básica até análise avançada de luz, passando por conversão para cinzas, 
+                posterização, extração de paleta, isolamento tonal e muito mais. Tudo projetado para 
+                funcionar no navegador, sem instalação, em qualquer dispositivo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Ferramentas -->
+          <div class="md:ml-10 mb-24">
+            <div class="flex items-baseline gap-3 mb-12 pt-6 md:pt-8 reveal">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-muted/50">Ferramentas</span>
+              <h2 class="font-display text-2xl md:text-3xl text-fg">Todas as ferramentas</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              ${ferramentas.map((f, i) => `
+                <div class="bg-white/[0.03] border border-white/10 rounded-lg p-5 hover:border-accent/30 transition-colors hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                  <span class="text-accent text-lg block mb-1.5">${f.icon}</span>
+                  <span class="text-xs text-fg/80">${f.nome}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Creator -->
+          <div class="md:ml-10 mb-32">
+            <div class="flex items-baseline gap-3 mb-10 pt-6 md:pt-8 reveal">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-muted/50">Criador</span>
+              <h2 class="font-display text-2xl md:text-3xl text-fg">Leo Barbosa</h2>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-accent/30 shrink-0 bg-white/[0.03]">
+                <img src="images/logo-oficial/logo-sb-tono-b.png" alt="Leo Barbosa" class="w-full h-full object-contain p-4 opacity-70">
+              </div>
+              <div class="max-w-2xl space-y-4 text-muted">
+                <p>
+                  Leo Barbosa é artista visual, professor e criador do Tono. Com mais de uma década 
+                  dedicada ao estudo da pintura tonal, desenvolveu uma metodologia própria que integra 
+                  ferramentas digitais com exercícios clássicos de ateliê.
+                </p>
+                <p>
+                  Acreditando que <strong class="text-fg">qualquer pessoa pode aprender a pintar</strong> 
+                  — desde que tenha as ferramentas certas e um método estruturado —, Leo criou o Tono 
+                  para democratizar o acesso ao treino de percepção visual.
+                </p>
+                <a href="https://www.instagram.com/leob_pinturas" target="_blank" rel="noopener" 
+                   class="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                  <i class="fa-brands fa-instagram"></i> @leob_pinturas
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="md:ml-10">
+            <div class="bg-gradient-to-br from-accent/10 to-transparent border border-accent/20 rounded-2xl p-8 md:p-12 text-center">
+              <h2 class="font-display text-2xl md:text-3xl text-fg mb-4">Pronto para dominar os valores tonais?</h2>
+              <p class="text-muted max-w-lg mx-auto mb-8 text-base">
+                Acesse todas as ferramentas, incluindo as funcionalidades PRO, e transforme sua percepção visual.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="navigate('escala')" 
+                  class="px-8 py-4 bg-fg text-bg rounded-full text-sm font-medium hover:bg-accent transition-all active:scale-95">
+                  Explorar Ferramentas
+                </button>
+                <a href="sales-page.html" 
+                  class="px-8 py-4 border border-accent/30 text-accent rounded-full text-sm font-medium hover:bg-accent/10 transition-all active:scale-95">
+                  Tono Pro
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer note -->
+          <div class="md:ml-10 mt-20 pt-8 border-t border-white/5">
+            <p class="text-xs text-muted/50 text-center">
+              © 2026 Tono — Plataforma de Escala de Cinzas e Valores Tonais
+            </p>
+          </div>
+        </div>
+      </div>
+    `;
+    initReveal();
+  }
 
     navigate('home');
 
