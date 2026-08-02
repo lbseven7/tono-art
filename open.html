@@ -561,7 +561,7 @@
 
     // Init theme
     const savedTheme = localStorage.getItem('tono_theme');
-    if (savedTheme === 'light' || (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+    if (savedTheme !== 'dark') {
       document.documentElement.classList.add('light');
     }
     updateIcons();
