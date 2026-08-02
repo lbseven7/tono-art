@@ -1002,7 +1002,7 @@ function getDashboardTranslation() {
   }
 
   // ── Home Carousel ─────────────────────────────────────────────────────
-  const homeCarousel = { total: 9, atual: 0, timer: null };
+  const homeCarousel = { total: 8, atual: 0, timer: null };
 
   function homeUpdateSlide() {
     document.querySelectorAll('[data-slide]').forEach((el, i) => {
@@ -1051,7 +1051,6 @@ function getDashboardTranslation() {
       'images/slide-02.jpg',
       'images/slide-03.jpg',
       'images/slide-04.jpg',
-      'images/slide-05.jpg',
       'images/slide-06.jpg',
       'images/slide-07.jpg',
       'images/slide-08.jpg',
@@ -5091,44 +5090,44 @@ function getDashboardTranslation() {
   function renderExercicios() {
     const t = getDashboardTranslation();
     const semanas = [
-      { semana: 1, titulo: 'Escala de Cinzas', foco: 'Valor tonal', exercicios: [
-        { nome: 'Barra de 11 valores', desc: 'Pinte uma barra contínua do branco ao preto em 11 passos iguais. Use apenas preto e branco.', tempo: '2h', dificuldade: 'Fácil' },
-        { nome: 'Esfera em grayscale', desc: 'Pinte uma esfera com sombra, meia-tom e destaque usando apenas valores.', tempo: '3h', dificuldade: 'Médio' },
-        { nome: 'Cubo com luz direcional', desc: 'Pratique 3 planos com valores distintos sob uma mesma fonte de luz.', tempo: '2h', dificuldade: 'Fácil' },
+      { semana: 1, titulo: 'Perder o medo da tela', foco: 'Primeiro contato', exercicios: [
+        { nome: 'A silhueta do seu café', desc: 'Pinte a xícara de café da sua mesa em silhueta: fundo claro, xícara escura. Sem pressa, sem erro.', tempo: '1h', dificuldade: 'Fácil' },
+        { nome: 'A sombra da sua mão', desc: 'Acenda uma lâmpada e pinte a sombra projetada pela sua mão na parede. A sombra é a moldura da luz.', tempo: '1h30', dificuldade: 'Fácil' },
+        { nome: 'O primeiro degradê', desc: 'Faça uma faixa do branco ao preto sem travar. Não precisa ficar bonito — feio também é progresso.', tempo: '1h', dificuldade: 'Fácil' },
       ]},
-      { semana: 2, titulo: 'Misturas e Proporções', foco: 'Controle de tom', exercicios: [
-        { nome: 'Cartela de 50 cinzas', desc: 'Misture 50 tons de cinza partindo de proporções exatas de preto e branco.', tempo: '3h', dificuldade: 'Médio' },
-        { nome: 'Degradê vertical', desc: 'Pinte um degradê suave de 30cm sem bandas visíveis.', tempo: '2h', dificuldade: 'Médio' },
-        { nome: 'Match de valor', desc: 'Use um cartão cinza de referência e tente reproduzir o mesmo tom na tela.', tempo: '1h', dificuldade: 'Fácil' },
+      { semana: 2, titulo: 'Brilho e profundidade', foco: 'Volume com 3 valores', exercicios: [
+        { nome: 'Bola de bilhar na mesa', desc: 'Pinte uma bola com sombra, brilho e reflexo. É o exercício que mais ensina volume em menos tempo.', tempo: '2h', dificuldade: 'Médio' },
+        { nome: 'Copo d\'água na janela', desc: 'Pinte um copo com água iluminado pela janela e estude onde a luz atravessa o vidro.', tempo: '2h30', dificuldade: 'Médio' },
+        { nome: 'Retrato em 3 tons', desc: 'Reduza um rosto a só 3 valores: luz, meia-luz e sombra. Menos informação, mais verdade.', tempo: '3h', dificuldade: 'Médio' },
       ]},
-      { semana: 3, titulo: 'Formas e Silhuetas', foco: 'Contorno e preenchimento', exercicios: [
-        { nome: 'Natur-morto simplificado', desc: 'Reduza uma natureza-morta a 3 valores: fundo, objeto claro, objeto escuro.', tempo: '3h', dificuldade: 'Médio' },
-        { nome: 'Silhuetas de frutas', desc: 'Pinte apenas as silhuetas de frutas usando um único valor médio.', tempo: '2h', dificuldade: 'Fácil' },
-        { nome: 'Composição com recortes', desc: 'Crie uma composição onde o negative space é tão importante quanto o positive.', tempo: '3h', dificuldade: 'Difícil' },
+      { semana: 3, titulo: 'Luz que transforma', foco: 'Direção da luz', exercicios: [
+        { nome: 'O pôr do sol em cinzas', desc: 'Pinte um pôr do sol só com valores: o céu em degradê e a silhueta do horizonte. Simples e lindo.', tempo: '2h', dificuldade: 'Fácil' },
+        { nome: 'Luz de janela lateral', desc: 'Rosto iluminado de lado: metade na luz, metade na sombra. A luz lateral constrói qualquer rosto.', tempo: '3h', dificuldade: 'Médio' },
+        { nome: 'A sombra da persiana', desc: 'Pinte a sombra da persiana na parede. Reproduzir esse tipo de luz deixa qualquer quadro realista.', tempo: '2h', dificuldade: 'Médio' },
       ]},
-      { semana: 4, titulo: 'Transições e Blending', foco: 'Suavidade de tons', exercicios: [
-        { nome: 'Bola de bilhar', desc: 'Pinte uma esfera com reflexo especular e sombra de oclusão.', tempo: '4h', dificuldade: 'Difícil' },
-        { nome: 'Rosto em escala de cinzas', desc: 'Use a técnica de grade para transferir um retrato em P&B.', tempo: '6h', dificuldade: 'Difícil' },
-        { nome: 'Tecido dobrado', desc: 'Pratique dobras e sombras em tecido branco sobre fundo escuro.', tempo: '3h', dificuldade: 'Médio' },
+      { semana: 4, titulo: 'Texturas que contam histórias', foco: 'Superfícies reais', exercicios: [
+        { nome: 'Camiseta amassada', desc: 'Amasse uma camiseta branca e pinte as dobras. As dobras ensinam mais que qualquer aula teórica.', tempo: '3h', dificuldade: 'Médio' },
+        { nome: 'O brilho da chaleira', desc: 'Pinte uma panela ou chaleira refletindo a luz. Metais mostram os valores mais extremos.', tempo: '3h', dificuldade: 'Médio' },
+        { nome: 'Casca de pão', desc: 'Pinte um pão ou uma fruta com casca cheia de textura. Comer depois é opcional.', tempo: '2h', dificuldade: 'Fácil' },
       ]},
-      { semana: 5, titulo: 'Texturas', foco: 'Superfícies diferentes', exercicios: [
-        { nome: 'Madeira', desc: 'Pinte a textura de madeira com veios e variações de tom.', tempo: '3h', dificuldade: 'Médio' },
-        { nome: 'Metal', desc: 'Trabalhe reflexos especulares e sombras duras em uma superfície metálica.', tempo: '3h', dificuldade: 'Médio' },
-        { nome: 'Pele humana', desc: 'Pratique tons de pele com transições suaves e poros simulados.', tempo: '4h', dificuldade: 'Difícil' },
+      { semana: 5, titulo: 'A natureza como professora', foco: 'Formas orgânicas', exercicios: [
+        { nome: 'Frutas na mesa', desc: 'Três frutas com uma única fonte de luz. Pinte os valores sem se perder em cada detalhe da polpa.', tempo: '3h', dificuldade: 'Médio' },
+        { nome: 'Folha contra a luz', desc: 'Escolha uma folha e estude a luz atravessando-a. Natureza morta não precisa ser entediante.', tempo: '2h', dificuldade: 'Fácil' },
+        { nome: 'Alguém na janela', desc: 'Pinte alguém (ou a si mesmo) com luz natural da janela — o retrato mais clássico de todos.', tempo: '4h', dificuldade: 'Difícil' },
       ]},
-      { semana: 6, titulo: 'Luz e Sombra', foco: 'Direção e intensidade', exercicios: [
-        { nome: 'Retrato com chiaroscuro', desc: 'Use contraste extremo de luz e sombra no estilo Caravaggio.', tempo: '5h', dificuldade: 'Difícil' },
-        { nome: 'Sombras projetadas', desc: 'Pinte um objeto projetando sombra em superfície curva.', tempo: '3h', dificuldade: 'Médio' },
-        { nome: 'Luz ambiente', desc: 'Cena com múltiplas fontes de luz e sombras coloridas.', tempo: '4h', dificuldade: 'Difícil' },
+      { semana: 6, titulo: 'Contraste que emociona', foco: 'Atmosfera e drama', exercicios: [
+        { nome: 'Estilo Caravaggio', desc: 'Cena escura com um único foco de luz forte, quase teatro. Contraste dramático que emociona.', tempo: '4h', dificuldade: 'Difícil' },
+        { nome: 'Noite de luar', desc: 'Pinte uma cena noturna iluminada pela lua. É a noite que ensina a verdadeira luz.', tempo: '3h', dificuldade: 'Médio' },
+        { nome: 'Dia nublado', desc: 'Estude a luz difusa de um dia fechado, quase sem sombras. O realismo também mora na suavidade.', tempo: '2h', dificuldade: 'Médio' },
       ]},
-      { semana: 7, titulo: 'Referência e Grade', foco: 'Transferência precisa', exercicios: [
-        { nome: 'Retrato com grade 5×5', desc: 'Use o quadricular para transferir um retrato com precisão.', tempo: '6h', dificuldade: 'Difícil' },
-        { nome: 'Detalhe ampliado', desc: 'Amplie um olho ou boca e pinte com grade densa (10×10).', tempo: '5h', dificuldade: 'Difícil' },
-        { nome: 'Comparação lado a lado', desc: 'Pinte ao lado da referência e compare visualmente para ajustar valores.', tempo: '4h', dificuldade: 'Médio' },
+      { semana: 7, titulo: 'O quadro da sua casa', foco: 'Aplicar tudo', exercicios: [
+        { nome: 'Um canto que você ama', desc: 'Escolha um canto da sua casa que você adora e pinte em preto e branco. Arte é sobre o que importa para você.', tempo: '5h', dificuldade: 'Difícil' },
+        { nome: 'Retrato de quem você ama', desc: 'Um retrato completo usando tudo que você aprendeu. O presente mais valioso que um artista pode dar.', tempo: '6h', dificuldade: 'Difícil' },
+        { nome: 'Compare com o mestre', desc: 'Refaça o passo a passo do Leo (os três estágios) e compare o seu resultado com o dele.', tempo: '4h', dificuldade: 'Médio' },
       ]},
-      { semana: 8, titulo: 'Projeto Final', foco: 'Integração completa', exercicios: [
-        { nome: 'Projeto: objeto com textura', desc: 'Escolha um objeto com textura e luz definida. Pinte em tamanho real.', tempo: '8h', dificuldade: 'Difícil' },
-        { nome: 'Projeto: retrato completo', desc: 'Retrato completo usando todas as técnicas das semanas anteriores.', tempo: '10h', dificuldade: 'Difícil' },
+      { semana: 8, titulo: 'Sua assinatura', foco: 'Projeto final', exercicios: [
+        { nome: 'Sua obra-prima', desc: 'Pinte o seu melhor quadro em preto e branco. Tudo o que você aprendeu em uma única obra.', tempo: '8h', dificuldade: 'Difícil' },
+        { nome: 'A sua exposição', desc: 'Fotografe os seus melhores trabalhos e monte a sua mini exposição — até na parede de casa vale.', tempo: '2h', dificuldade: 'Fácil' },
       ]},
     ];
 
