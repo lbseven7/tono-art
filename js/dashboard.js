@@ -1172,10 +1172,10 @@ function getDashboardTranslation() {
     app.innerHTML = `
       <div style="min-height:calc(100vh - 4rem)" class="px-6 py-12 md:py-16">
         <div class="max-w-3xl mx-auto">
-          <div class="fade-in mb-10">
-            <h1 class="font-display text-4xl md:text-5xl mb-4">${t.ensino.header}</h1>
-            <p class="text-muted max-w-2xl font-light">${t.ensino.desc}</p>
+          <div class="mb-10 rounded-2xl overflow-hidden border border-white/10">
+            <img src="images/tonocast.png" alt="TonoCast" class="w-full h-auto object-cover" loading="lazy" />
           </div>
+          <p class="text-muted max-w-2xl font-light mb-10">${t.ensino.desc}</p>
           <div class="space-y-4">
             ${listaHtml}
           </div>
